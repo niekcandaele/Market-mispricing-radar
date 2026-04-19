@@ -11,3 +11,4 @@ See `PROJECT_PLAN.md` for the initial project plan.
 
 Project workflow and repo conventions live in `docs/repo-workflow.md`.
 Judge-facing app flow notes live in `docs/app-flow.md`.
+MVP source validation notes live in `docs/mvp-source-validation.md`.
