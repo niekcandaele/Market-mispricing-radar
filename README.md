@@ -8,3 +8,5 @@ Primary goals:
 - mirror important Zerve artifacts locally
 
 See `PROJECT_PLAN.md` for the initial project plan.
+
+Project workflow and repo conventions live in `docs/repo-workflow.md`.
