@@ -132,3 +132,37 @@ Proceed with:
 The live notebook surface is better than expected and fairly integrated.
 
 The biggest mismatch versus our earlier abstract understanding is that the notebook already brings a lot of operational controls into one place, which should make the MVP path simpler.
+
+## Notebook execution and automation quirks
+
+Further validation on 2026-04-19 surfaced an important implementation wrinkle.
+
+### What worked
+- the Polymarket Gamma endpoint was validated outside Zerve against `https://gamma-api.polymarket.com/markets?closed=false&limit=20`
+- the notebook cell content could be updated to a standard-library Python version using `urllib.request` and `json`
+- the target variable name `polymarket_raw_markets` could be staged in the notebook cell
+
+### What did not validate yet
+- a confirmed successful notebook-side run with visible printed output
+- a clearly surfaced traceback or runtime error in the current UI state
+- reliable browser-driven triggering of the run action for the active cell
+
+### Observed friction
+- the notebook editor behaves like a Monaco-style editor with a hidden textarea layer, which made direct automation fragile
+- side panels such as Source Control and the AI Agent reduced the visible canvas area and likely obscured output regions
+- repeated automation attempts could edit the cell text, but visible stdout did not appear in the page text snapshot afterward
+- the run control remained hard to verify through automation, even when the cell showed a prior runtime indicator like `1.2s`
+
+### Practical implication
+For now, the repo should treat Zerve notebook execution visibility as an active blocker for the first ingestion proof, not as a solved step.
+
+That means:
+- endpoint connectivity is partially validated
+- notebook code staging is partially validated
+- end-to-end notebook execution is still unconfirmed
+
+### Recommended next step
+Investigate one of these paths:
+1. manually trigger the notebook block once in the live UI and inspect the resulting output region
+2. identify a more reliable notebook automation hook or keyboard path for running the active cell
+3. test whether a less cluttered notebook state without side panels makes output and run state visible
