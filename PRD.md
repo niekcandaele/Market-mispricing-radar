@@ -172,11 +172,14 @@ Only if the MVP works well:
 ## 10. Recommended sources
 
 ### MVP recommendation
-- Polymarket
-- Kalshi or Metaculus, depending on integration friction
+- Polymarket first
 
-### Why not many more
-Because the hackathon reward is not breadth for its own sake. Too many sources increase mapping pain and lower polish.
+### Expansion path
+- add Kalshi or Metaculus only after the first end-to-end version works
+- consider external social or news context only after the core ranking and app are stable
+
+### Why not many more immediately
+Because the hackathon reward is not breadth for its own sake. Too many sources too early increase mapping pain, reduce polish, and make it harder to ship a coherent product.
 
 ## 11. Product requirements
 

@@ -116,12 +116,16 @@ Likely candidates:
 Outputs:
 - approved PRD
 - approved MVP scope
-- source shortlist
+- staged source strategy
 
-Decision questions:
-- Polymarket only, or Polymarket plus one more source?
-- app only, or app plus API?
-- is cross-source market matching in or out for MVP?
+Working decision:
+- start with Polymarket only for MVP
+- keep additional sources explicitly open for later expansion
+- do not require cross-source market matching in MVP
+- prefer app first, API later
+
+Reference:
+- `docs/source-strategy.md`
 
 ### Phase 1. Source validation and schema
 
