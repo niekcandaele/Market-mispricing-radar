@@ -152,6 +152,8 @@ Further validation on 2026-04-19 surfaced an important implementation wrinkle.
 - side panels such as Source Control and the AI Agent reduced the visible canvas area and likely obscured output regions
 - repeated automation attempts could edit the cell text, but visible stdout did not appear in the page text snapshot afterward
 - the run control remained hard to verify through automation, even when the cell showed a prior runtime indicator like `1.2s`
+- a later direct local Playwright-over-CDP fallback reached the already-open Zerve tab without relying on the browser tool, but still failed to produce visible stdout or traceback after both a button-click path and a `Shift+Enter` path
+- screenshots captured after those fallback attempts still showed `Run this block`, which suggests the run action may not actually be firing from automation or the UI is not transitioning into a visible running state
 
 ### Practical implication
 For now, the repo should treat Zerve notebook execution visibility as an active blocker for the first ingestion proof, not as a solved step.
@@ -159,6 +161,7 @@ For now, the repo should treat Zerve notebook execution visibility as an active 
 That means:
 - endpoint connectivity is partially validated
 - notebook code staging is partially validated
+- even a direct local CDP automation fallback did not yield visible output or error text
 - end-to-end notebook execution is still unconfirmed
 
 ### Recommended next step
