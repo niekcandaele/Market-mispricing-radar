@@ -6,325 +6,228 @@ Chosen concept for ZerveHack.
 
 This repository is the support layer for planning, backup, project management, and portable artifacts. The core analysis and deployment are expected to happen in Zerve, with selected assets copied between this repo and Zerve as needed.
 
-## Goal
+Primary planning document:
+- `PRD.md`
 
-Build a market intelligence product that detects potentially mispriced or fragile prediction markets and explains why they are being flagged.
+This file is the execution-oriented plan.
 
-The hackathon version should combine:
-- real analytical depth
-- a clear scoring methodology
-- a usable deployed interface
-- strong storytelling for judges
+## Executive direction
 
-## Product concept
+We are building a prediction-market intelligence product in Zerve that ranks potentially mispriced or fragile markets and explains why they are flagged.
 
-Market Mispricing Radar ingests prediction market data and ranks markets that appear:
-- miscalibrated
-- stale
-- unusually divergent across venues
-- inconsistent with recent information flow
-- unstable as an event approaches
+The intended final artifact is:
+- a public Zerve project
+- a deployed Streamlit app in Zerve
+- optionally a FastAPI endpoint if it is low-friction after the app works
 
-The product should not claim guaranteed arbitrage or certain truth. It should surface promising anomalies, quantify uncertainty, and explain the evidence.
+## What the Zerve docs change in our plan
 
-## Why this idea fits the hackathon
+After reviewing the Zerve docs, a few things are now clear:
 
-This direction matches the hackathon criteria well:
-- analytical depth: build a real scoring and evaluation pipeline
-- end-to-end workflow: ingest, analyze, explain, deploy
-- storytelling: easy to demo with concrete flagged markets
-- creativity: combines market structure, calibration, divergence, and freshness into one system
+- Zerve is not just a notebook. It is a DAG-style block environment with durable stored outputs between blocks.
+- The cleanest hackathon path is to use a Zerve development layer for the pipeline and a Zerve Streamlit deployment for the final interface.
+- FastAPI deployment is real and supported, but should be secondary to the app.
+- Scheduled jobs are useful, but should come after the pipeline is stable because active scheduled layers become read-only.
+- Fleets are available for parallel work, but we should use them only if they materially help ingestion or evaluation.
+- Secrets, functions, classes, and environment requirements are supported natively, which reduces the need for external infrastructure.
 
-It also fits Zerve's product positioning:
-- AI-native data workflows
-- notebook to deployment in one platform
-- context-aware analysis
-- parallel processing where useful
-- productionized output rather than a dead-end notebook
+That means the architecture should be explicitly Zerve-native rather than “some code plus maybe deployment later”.
 
 ## Working assumptions
 
 - Zerve is the primary runtime for analysis and deployment.
 - Native Zerve deployment is preferred over a separate VPS.
-- This Git repo is the system of record for plans, notes, schemas, prompts, exported code, and backup artifacts.
-- We should keep scope tight enough to finish a polished demo before the deadline.
+- Git remains the system of record for plans, notes, exported code, prompt drafts, demo materials, and backups.
+- We should optimize for a polished and explainable result, not maximum feature count.
 
-## High-level architecture
-
-### 1. Data ingestion layer
-
-Candidate sources:
-- Polymarket
-- Kalshi
-- Metaculus
-- optional news or trend source later if needed
-
-Responsibilities:
-- fetch active questions/markets
-- normalize titles, timestamps, probabilities, categories, status
-- store snapshots for repeatable analysis
-
-### 2. Market normalization layer
-
-Responsibilities:
-- map similar questions across platforms when possible
-- standardize implied probabilities and metadata
-- derive event horizon and recency features
-- assign market type and topic tags
-
-### 3. Feature engineering layer
-
-Initial feature families:
-- cross-market disagreement
-- probability movement and volatility
-- staleness or update lag
-- resolution proximity
-- historical calibration signals if obtainable
-- optional external information mismatch later
-
-### 4. Scoring and explanation layer
-
-Responsibilities:
-- compute a mispricing or fragility score
-- break score into explainable components
-- attach confidence and caveats
-- produce ranked outputs for the app and demo
-
-### 5. Evaluation layer
-
-Responsibilities:
-- test whether the scoring surfaces interesting and credible cases
-- compare top-ranked outputs against sanity checks
-- avoid obviously noisy or misleading rankings
-- document limitations clearly
-
-### 6. Presentation layer
-
-Preferred final artifact:
-- Streamlit app deployed in Zerve
-
-Optional secondary artifact:
-- FastAPI endpoint in Zerve
-
-Core UI needs:
-- ranked market list
-- market detail view
-- explanation of why flagged
-- uncertainty/confidence display
-- source and timestamp visibility
-
-### 7. Refresh layer
-
-Responsibilities:
-- scheduled refresh of ingestion and scoring
-- preserve enough history for comparisons
-- keep the demo data recent
-
-Likely implementation:
-- Zerve scheduled jobs
-
-## System split: Git vs Zerve
+## Build strategy
 
 ### In Git
 
 Use this repo for:
-- project plans
+- product docs
 - architecture notes
-- requirements
-- scoring design notes
+- scoring notes
 - experiment logs
-- exported code backups
+- sample schemas
 - app copy and demo script drafts
-- data schemas and mapping rules
+- exported snippets and backups from Zerve
 
 ### In Zerve
 
 Use Zerve for:
-- data ingestion workflows
-- exploratory analysis
-- scoring pipeline execution
-- app deployment
-- API deployment if included
-- scheduled refresh jobs
+- ingestion and transformation blocks
+- feature engineering
+- scoring computation
+- explanation generation
+- deployment of the Streamlit app
+- optional FastAPI deployment
+- optional scheduled refresh
 
-### Sync pattern
+## Recommended Zerve architecture
 
-Expected workflow:
-1. design locally in Git
-2. implement or iterate in Zerve
-3. copy important logic, prompts, notes, and exports back into Git
-4. keep the repo as the durable backup and planning layer
+### Development layer
+
+Use the development layer as the main pipeline.
+
+Target outputs:
+- `normalized_markets`
+- `market_features`
+- `ranked_markets`
+- `market_explanations`
+- `refresh_metadata`
+
+Suggested pipeline stages:
+1. source constants and source config
+2. raw source fetchers
+3. normalization blocks
+4. feature engineering blocks
+5. scoring blocks
+6. explanation assembly
+7. QA and ranking outputs
+
+### Deployment layer
+
+Primary deployment:
+- Streamlit app consuming ranked and explained outputs from the development layer
+
+Optional deployment:
+- FastAPI endpoint serving ranked outputs and market detail views
+
+### Scheduled jobs layer
+
+Use only after the pipeline is stable.
+
+Purpose:
+- periodic re-run of ingestion and scoring
+- fresh data for the demo
+
+### Assets
+
+Likely candidates:
+- helper functions for normalization
+- helper functions for scoring
+- constants and secrets for external APIs
 
 ## Phases
 
-### Phase 0. Planning and framing
+### Phase 0. Decision lock
 
-Output:
-- project plan
-- architecture sketch
-- scoped MVP
+Outputs:
+- approved PRD
+- approved MVP scope
 - source shortlist
 
-Questions to settle:
-- which market sources are in scope for MVP
-- whether we do app only or app plus API
-- whether cross-platform matching is reliable enough for MVP
+Decision questions:
+- Polymarket only, or Polymarket plus one more source?
+- app only, or app plus API?
+- is cross-source market matching in or out for MVP?
 
-### Phase 1. Data feasibility
+### Phase 1. Source validation and schema
 
-Output:
-- verified access to selected APIs or datasets
-- sample normalized records
-- list of source limitations and edge cases
+Outputs:
+- tested source access
+- draft normalized schema
+- list of source limitations
 
 Success criteria:
-- can reliably fetch active markets
-- can extract enough metadata for ranking
-- can store snapshots for iteration
+- we can reliably fetch active markets
+- we know which fields are trustworthy
+- we know what to store for scoring and debugging
 
-### Phase 2. MVP scoring pipeline
+### Phase 2. First scoring pipeline
 
-Output:
-- first normalized dataset
-- initial scoring formula
-- top ranked markets with human-readable reasons
+Outputs:
+- normalized data
+- initial feature set
+- first ranked results
+- explanation components
 
 Success criteria:
 - rankings are plausible
+- at least several results feel genuinely interesting
 - explanations are understandable
-- system produces demo-worthy examples
 
-### Phase 3. App prototype
+### Phase 3. Judge-facing app
 
-Output:
-- deployed app with ranked list and details
-- usable interface for judges
-
-Success criteria:
-- demo flow works cleanly
-- outputs are readable and convincing
-- no obvious broken states in the happy path
-
-### Phase 4. Validation and polish
-
-Output:
-- improved score quality
-- better explanations
-- polished visuals and copy
-- concise demo narrative
+Outputs:
+- Zerve Streamlit app
+- ranked list page
+- market detail view
+- methodology page or section
 
 Success criteria:
-- project tells a strong story in under 3 minutes
-- top examples feel genuinely interesting
-- app and project run without embarrassing failures
+- app works with the pipeline outputs
+- a judge can understand the concept quickly
+- the happy-path demo is clean
 
-### Phase 5. Submission packaging
+### Phase 4. Polish and validation
 
-Output:
+Outputs:
+- improved ranking quality
+- cleaner app presentation
+- stronger caveats and framing
+- demo flow and summary draft
+
+Success criteria:
+- polished enough for a 3-minute demo
+- no obvious nonsense in the top-ranked markets
+- product feels intentional rather than stitched together
+
+### Phase 5. Optional extensions
+
+Possible outputs:
+- FastAPI deployment
+- scheduled refresh
+- more sources
+- stronger history and change tracking
+
+Rule:
+- only do these if the main app is already strong
+
+## Requirements summary
+
+### Must-have
+- one strong question
+- one coherent ranking system
+- one deployed app
+- clear explanations
 - public Zerve project
-- summary copy
-- demo video plan or script
-- social post draft if needed
 
-Success criteria:
-- all required deliverables exist
-- links are shareable
-- story aligns with judging criteria
+### Nice-to-have
+- API deployment
+- scheduled refresh
+- second or third source
+- richer history
 
-## MVP definition
+### Avoid
+- too many sources too early
+- fake sophistication
+- giant infrastructure setup
+- reliance on anything outside Zerve unless necessary
 
-The MVP should probably do only this:
-- ingest one or two prediction market sources
-- normalize a manageable subset of active markets
-- compute a simple but defensible ranking score
-- show the ranked results in a deployed app
-- explain each ranking with a few clear signals
+## Scope guidance
 
-That is enough to be real.
+The MVP should probably be:
+- one or two sources
+- one normalized schema
+- one interpretable scoring model
+- one Streamlit app
+- one simple story
 
-## Stretch goals
-
-Possible stretch goals, only after MVP works:
-- add Metaculus or another forecasting source
-- add external trend or news signal
-- expose an API
-- add historical tracking views
-- add topic-specific views such as politics, economics, or AI
-- add scheduled refresh with status reporting
-
-## Requirements
-
-### Functional requirements
-
-- fetch market data from selected source APIs
-- normalize records into a common internal schema
-- compute per-market ranking features
-- generate a composite score and explanation
-- present ranked results in a usable app
-- show source attribution and freshness
-
-### Non-functional requirements
-
-- must be understandable quickly by judges
-- must run reliably enough for a live demo
-- must avoid overclaiming confidence
-- must stay within hackathon scope and time
-- should visibly demonstrate Zerve-native workflow value
-
-## Risks
-
-- source APIs may be messy or inconsistent
-- market matching across platforms may be harder than expected
-- a flashy score can become fake if not grounded
-- too many data sources could swamp the project
-- external signal integration may add noise instead of value
-
-## Risk controls
-
-- start with fewer sources
-- keep the first score interpretable
-- prefer strong explanation over faux sophistication
-- treat cross-platform matching as optional until proven
-- keep one clear demo path working at all times
-
-## Open questions
-
-- Which exact sources should be MVP, Polymarket only or Polymarket plus Kalshi?
-- Do we need cross-platform question matching for version one?
-- Should the first app focus on a single topic vertical to improve clarity?
-- How much historical backfill can we reasonably get during the hackathon?
-- Do we want an API in the final submission, or only if it is nearly free after the app works?
+That is enough to win if it is sharp.
 
 ## Immediate next steps
 
-1. confirm repo structure
-2. decide MVP source scope
-3. verify source access and rate limits
-4. define the first internal market schema
-5. outline the first scoring formula
-6. sketch the first app screen set
-
-## Proposed repo structure
-
-```text
-market-mispricing-radar/
-  PROJECT_PLAN.md
-  README.md
-  docs/
-    architecture.md
-    scoring-notes.md
-    demo-outline.md
-  zerve/
-    exports/
-    prompts/
-    snippets/
-  data/
-    samples/
-    schemas/
-```
+1. approve the PRD direction
+2. choose the MVP sources
+3. create `docs/architecture.md`
+4. create `docs/schema.md`
+5. create `docs/scoring-model-v1.md`
+6. map these docs to the existing Forgejo issues
 
 ## Initial principle
 
-We win this by being sharp, not huge.
+We win this by being sharp, grounded, and visibly Zerve-native.
 
-The project should feel like a focused, opinionated market intelligence tool with real analytical teeth, not a generic dashboard and not an overbuilt science fair monster.
+Not by being the biggest project in the room.
