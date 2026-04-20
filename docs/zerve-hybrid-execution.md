@@ -95,3 +95,13 @@ Replace the probe block with a slightly more production-shaped ingestion block t
 - keeps `polymarket_raw_markets` as the named output
 - prints a short refresh summary
 - prepares the handoff into normalization/scoring blocks
+
+That next-step block is now mirrored locally at:
+- `zerve/snippets/polymarket_ingestion_block.py`
+
+It is shaped to emit:
+- `source_config`
+- `polymarket_raw_markets`
+- `ingestion_metadata`
+
+The snippet keeps the browser-like request headers that avoided the earlier Zerve-side `HTTP 403` failure.
