@@ -143,6 +143,9 @@ Likely outputs:
 - `ranked_markets`
 - `score_components`
 
+Current local mirror:
+- `zerve/snippets/polymarket_scoring_block.py`
+
 #### F. Explanation assembly
 
 Responsibilities:
