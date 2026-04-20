@@ -14,6 +14,7 @@ Judge-facing app flow notes live in `docs/app-flow.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Local scoring prototype notes live in `docs/local-ranking-prototype.md`.
 Local demo-view notes live in `docs/local-demo-view.md`.
+The current local bridge artifacts also carry heuristic category/topic context for app shaping.
 
 Prototype harness:
 - `python3 scripts/polymarket_ranker.py`

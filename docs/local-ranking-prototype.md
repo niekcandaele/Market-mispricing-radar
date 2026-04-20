@@ -76,6 +76,11 @@ That bundle currently emits:
 - `market_explanations`
 - `refresh_metadata`
 
+The current local bundle also adds lightweight heuristic category context:
+- per-market `category`
+- per-market `topic_tags`
+- refresh-level `category_breakdown`
+
 These map directly onto the planned app flow:
 - `ranked_markets` for the Radar screen list/table
 - `headline_reason` inside `ranked_markets` for the Radar screen one-line reason
@@ -89,6 +94,7 @@ These map directly onto the planned app flow:
 Two useful implementation details showed up immediately:
 - the Polymarket endpoint rejected a bare standard-library `urllib` request with HTTP 403, so the prototype now sends a browser-like user agent header
 - some records can still appear open in the API while their end date is already in the past, so the prototype flags that case explicitly with `past_resolution_still_open`
+- Polymarket market payloads do not reliably expose a clean app-ready category field for this MVP, so the prototype currently uses a lightweight keyword heuristic over the market and event text to derive `category` and `topic_tags`
 
 ## Why this is useful now
 
@@ -117,6 +123,9 @@ python3 scripts/polymarket_ranker.py --top 10
 python3 scripts/polymarket_ranker.py --limit 300 --json
 python3 scripts/polymarket_ranker.py --app-json
 ```
+
+Important limit:
+- the category and topic fields are heuristic bridge fields for app shaping, not source-authoritative taxonomy
 
 ## How this should feed back into Zerve
 

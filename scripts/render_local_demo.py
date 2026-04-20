@@ -45,6 +45,7 @@ def radar_rows(rows: list[dict]) -> str:
             "<tr>"
             f"<td>{row['rank']}</td>"
             f"<td><a href=\"#detail-{esc(row['market_id'])}\">{esc(row['title'])}</a></td>"
+            f"<td>{esc(row['category'])}</td>"
             f"<td>{esc(row['source'])}</td>"
             f"<td>{row['current_probability']:.3f}</td>"
             f"<td>{row['final_score']:.3f}</td>"
@@ -69,14 +70,17 @@ def detail_cards(rows: list[dict], explanations: dict[str, dict]) -> str:
         )
         caveats = "".join(f"<li>{esc(item)}</li>" for item in exp["caveats"])
         signals = "".join(f"<li>{esc(item)}</li>" for item in exp["supporting_signals"])
+        tags = "".join(f"<li>{esc(item)}</li>" for item in exp["topic_tags"])
         rendered.append(
             f"<section class=\"detail-card\" id=\"detail-{esc(row['market_id'])}\">"
             f"<h3>{esc(row['title'])}</h3>"
-            f"<p class=\"meta\">Score {row['final_score']:.3f} • Probability {row['current_probability']:.3f} • <a href=\"{esc(row['source_url'])}\">Source</a></p>"
+            f"<p class=\"meta\">Category {esc(row['category'])} • Score {row['final_score']:.3f} • Probability {row['current_probability']:.3f} • <a href=\"{esc(row['source_url'])}\">Source</a></p>"
+            f"<p class=\"meta\">Event context: {esc(row.get('event_title') or 'n/a')}</p>"
             f"<p><strong>{esc(exp['headline_reason'])}</strong></p>"
             f"<p>{esc(exp['short_explanation'])}</p>"
             f"<p>{esc(exp['detailed_explanation'])}</p>"
             "<div class=\"grid\">"
+            f"<div><h4>Topic tags</h4><ul>{tags}</ul></div>"
             f"<div><h4>Caveats</h4><ul>{caveats}</ul></div>"
             f"<div><h4>Supporting signals</h4><ul>{signals}</ul></div>"
             f"<div><h4>Score components</h4><ul>{components}</ul></div>"
@@ -91,6 +95,10 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     explanations = explanation_lookup(bundle["market_explanations"])
     details = bundle["ranked_markets"][:detail_count]
     refresh = bundle["refresh_metadata"]
+    category_breakdown = "".join(
+        f"<li><strong>{esc(item['category'])}</strong>: {esc(item['market_count'])}</li>"
+        for item in refresh.get("category_breakdown", [])[:8]
+    )
     return f"""<!doctype html>
 <html lang=\"en\">
 <head>
@@ -117,9 +125,16 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     <div class=\"grid\">
       <div><strong>Fetched at</strong><br>{esc(refresh['fetched_at'])}</div>
       <div><strong>Markets processed</strong><br>{esc(refresh['market_count'])}</div>
+      <div><strong>Category count</strong><br>{esc(len(refresh.get('category_breakdown', [])))}</div>
       <div><strong>Pipeline version</strong><br>{esc(refresh['pipeline_version'])}</div>
       <div><strong>Score version</strong><br>{esc(refresh['score_version'])}</div>
     </div>
+  </section>
+
+  <section class=\"panel\">
+    <h2>Category snapshot</h2>
+    <p class=\"meta\">Heuristic category mix from <code>refresh_metadata.category_breakdown</code>.</p>
+    <ul>{category_breakdown}</ul>
   </section>
 
   <section class=\"panel\">
@@ -127,7 +142,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     <p class=\"meta\">Top flagged markets from <code>ranked_markets</code>.</p>
     <table>
       <thead>
-        <tr><th>Rank</th><th>Market</th><th>Source</th><th>Prob.</th><th>Score</th><th>Headline reason</th><th>Stale age</th></tr>
+        <tr><th>Rank</th><th>Market</th><th>Category</th><th>Source</th><th>Prob.</th><th>Score</th><th>Headline reason</th><th>Stale age</th></tr>
       </thead>
       <tbody>
         {radar_rows(ranked)}

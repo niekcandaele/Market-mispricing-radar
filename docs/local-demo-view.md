@@ -18,10 +18,11 @@ Default output:
 
 The demo page is intentionally simple.
 
-It renders three core sections from the app bundle:
+It renders four core sections from the app bundle:
 1. a refresh trust panel from `refresh_metadata`
-2. a Radar table from `ranked_markets`
-3. Market Detail cards from `market_explanations`
+2. a category snapshot from `refresh_metadata.category_breakdown`
+3. a Radar table from `ranked_markets`
+4. Market Detail cards from `market_explanations`
 
 It also includes a short methodology section so the page loosely matches the planned judge-facing app flow.
 
@@ -52,6 +53,7 @@ This demo generator is the first lightweight consumer of that shape.
 
 That makes it useful for checking:
 - whether the Radar table reads cleanly
+- whether category context is good enough to support later filtering
 - whether the explanation fields feel judge-friendly
 - whether the refresh metadata is sufficient for trust cues
 - whether the current bundle shape is awkward anywhere before Zerve work resumes
@@ -64,6 +66,9 @@ The intended migration path is:
 1. keep refining the bundle shape locally until it feels coherent
 2. port the same variable structure into Zerve once notebook execution becomes reliable again
 3. recreate the same sections in Streamlit using the Zerve-side variables
+
+Current limit:
+- category and topic labels in the local demo are heuristic, not source-authoritative
 
 ## Constraint
 
