@@ -90,6 +90,19 @@ Current limit:
 - category and topic labels in the local demo are heuristic, not source-authoritative
 - this is still a single-page local validation artifact, not a full multi-screen deployed app
 
+## Mirrored Streamlit bridge
+
+The repo also carries a mirrored Streamlit app at `zerve/app/streamlit_app.py`.
+
+For local iteration, prefer running it against a saved bundle artifact instead of forcing the app to import the heavier snippet fallback chain every time:
+
+```bash
+python3 scripts/export_streamlit_bundle.py --limit 200
+MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
+```
+
+That path is useful because it keeps the app focused on the deployment-layer handoff: loading the bundle shape, surfacing QA trust notes, and rendering the judge-facing Radar/Detail/Methodology flow.
+
 ## Constraint
 
 This page is a validation artifact, not a substitute for the actual Zerve app.
