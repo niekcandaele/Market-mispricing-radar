@@ -33,6 +33,6 @@ Zerve snippet mirror:
 Zerve app scaffold mirror:
 - `python3 -m py_compile zerve/app/streamlit_app.py`
 
-The mirrored Streamlit scaffold now includes a refresh-trust sidebar, resettable Radar filters, fuller Market Detail header context, and a methodology screen structured around the judge-facing trust notes.
+The mirrored Streamlit scaffold now includes a refresh-trust sidebar, resettable Radar filters, fuller Market Detail header context, visual score cards, readable supporting-signal tables, same-category peer comparison, and a methodology screen structured around the judge-facing trust notes.
 
 The local demo now includes interactive Radar-style controls for filtering, sorting, click-through detail selection, filter reset states, a small same-category peer comparison block, raw supporting-signal values in the selected detail view, and compact score-breakdown cards for the selected market.
