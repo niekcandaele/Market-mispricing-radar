@@ -35,6 +35,7 @@ The current local demo now mirrors these planned Radar widgets and interactions:
 - click-through market selection from the Radar table into the detail view
 - reset-filters actions for empty states
 - a small same-category peer comparison block in the selected detail view
+- raw supporting-signal values in the selected detail view
 
 Those controls drive both the Radar table and the selected market detail view.
 
@@ -69,6 +70,7 @@ That makes it useful for checking:
 - whether the interactive controls feel coherent enough for the later Streamlit app
 - whether row-driven detail selection feels natural
 - whether same-category comparison helps the selected market feel more interpretable
+- whether raw supporting-signal values make the score easier to trust
 - whether the explanation fields feel judge-friendly
 - whether the refresh metadata is sufficient for trust cues
 - whether the current bundle shape is awkward anywhere before Zerve work resumes

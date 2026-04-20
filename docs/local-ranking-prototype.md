@@ -81,6 +81,9 @@ The current local bundle also adds lightweight heuristic category context:
 - per-market `topic_tags`
 - refresh-level `category_breakdown`
 
+For market detail rendering, the bundle now also carries concrete supporting-signal values via:
+- `market_explanations[*].supporting_signal_values`
+
 These map directly onto the planned app flow:
 - `ranked_markets` for the Radar screen list/table
 - `headline_reason` inside `ranked_markets` for the Radar screen one-line reason

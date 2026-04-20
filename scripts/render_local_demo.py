@@ -75,6 +75,8 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     tr.is-selected {{ background: #eff6ff; }}
     .peer-table {{ width: 100%; border-collapse: collapse; margin-top: .5rem; }}
     .peer-table th, .peer-table td {{ padding: .5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }}
+    .signal-table {{ width: 100%; border-collapse: collapse; margin-top: .5rem; }}
+    .signal-table th, .signal-table td {{ padding: .45rem .5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }}
     ul {{ margin: .5rem 0 0 1.1rem; }}
     code {{ background: #e2e8f0; padding: .1rem .3rem; border-radius: 4px; }}
     .empty {{ padding: 1rem; border: 1px dashed #cbd5e1; border-radius: 10px; color: #475569; background: #f8fafc; }}
@@ -307,13 +309,37 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       }});
     }}
 
-    function detailNote(row) {{
+    function detailNote(row, exp) {{
       const notes = [];
       if (row.time_since_update_hours == null) notes.push('staleness age unavailable');
       if (row.time_to_resolution_hours == null) notes.push('resolution horizon unavailable');
       if (row.current_probability == null) notes.push('current probability unavailable');
+      const signalValues = exp.supporting_signal_values || {{}};
+      if (signalValues.liquidity == null) notes.push('liquidity unavailable');
+      if (signalValues.price_distance_from_mid == null) notes.push('midpoint distance unavailable');
       if (!notes.length) return '';
       return `<div class="detail-note">Available data is shown first. Missing fields for this record: ${{escapeHtml(notes.join(', '))}}.</div>`;
+    }}
+
+    function formatSignalValue(key, value) {{
+      if (value == null) return 'n/a';
+      if (key === 'time_since_update_hours' || key === 'time_to_resolution_hours') return `${{Number(value).toFixed(1)}}h`;
+      if (key === 'price_distance_from_mid' || key === 'one_month_price_change_abs') return Number(value).toFixed(3);
+      if (key === 'liquidity' || key === 'volume_24hr') return Number(value).toLocaleString(undefined, {{ maximumFractionDigits: 0 }});
+      return escapeHtml(value);
+    }}
+
+    function supportingSignalTable(exp) {{
+      const signalValues = exp.supporting_signal_values || {{}};
+      const rows = (exp.supporting_signals || []).map(key => `
+        <tr>
+          <td>${{escapeHtml(key)}}</td>
+          <td>${{formatSignalValue(key, signalValues[key])}}</td>
+        </tr>
+      `).join('');
+      return rows
+        ? `<table class="signal-table"><thead><tr><th>Signal</th><th>Value</th></tr></thead><tbody>${{rows}}</tbody></table>`
+        : '<p class="muted">No supporting signals available.</p>';
     }}
 
     function peerComparisonRows(rows, selectedRow) {{
@@ -332,7 +358,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       const exp = explanationLookup[selectedRow.market_id] || {{ caveats: [], supporting_signals: [], score_components: {{}}, topic_tags: [] }};
       const topicTags = (exp.topic_tags || []).map(tag => `<span class="pill">${{escapeHtml(tag)}}</span>`).join('');
       const caveats = (exp.caveats || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
-      const signals = (exp.supporting_signals || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
+      const signals = supportingSignalTable(exp);
       const components = Object.entries(exp.score_components || {{}}).map(([key, value]) => `<li><strong>${{escapeHtml(key)}}</strong>: ${{escapeHtml(value)}}</li>`).join('');
       const peers = peerComparisonRows(rows, selectedRow);
       const peerTable = peers.length
@@ -350,7 +376,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
           <div class="pill-list">${{topicTags || '<span class="muted">No topic tags</span>'}}</div>
           <div class="grid" style="margin-top: 1rem;">
             <div><h4>Caveats</h4><ul>${{caveats}}</ul></div>
-            <div><h4>Supporting signals</h4><ul>${{signals}}</ul></div>
+            <div><h4>Supporting signals</h4>${{signals}}</div>
             <div><h4>Score components</h4><ul>${{components}}</ul></div>
           </div>
           <div style="margin-top: 1rem;">
@@ -358,7 +384,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
             <p class="meta">A small comparison slice from the current filtered dataset.</p>
             ${{peerTable}}
           </div>
-          ${{detailNote(selectedRow)}}
+          ${{detailNote(selectedRow, exp)}}
         </section>
       `;
     }}
