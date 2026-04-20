@@ -13,12 +13,13 @@ The goal is to keep validating the scoring path and to keep portable logic in Gi
 The prototype script lives at:
 - `scripts/polymarket_ranker.py`
 
-It does five things:
+It does six things:
 1. fetches live active Polymarket markets from the Gamma API
 2. normalizes a core subset of fields from the raw payload
 3. computes a first-pass fragility score inspired by `docs/scoring-model-v1.md`
 4. assigns a readable primary reason code per market
-5. prints the top ranked rows for inspection
+5. derives explanation-ready fields from the score components
+6. prints the top ranked rows for inspection
 
 ## Current implementation choices
 
@@ -62,6 +63,19 @@ Current reason codes include:
 - `weak_data_quality`
 - plus simpler fallback reason labels for the strongest single component
 
+Current explanation-oriented fields include:
+- `headline_reason`
+- `short_explanation`
+- `detailed_explanation`
+- `caveats`
+- `supporting_signals`
+
+These map directly onto the planned app flow:
+- `headline_reason` for the Radar screen one-line reason
+- `short_explanation` and `detailed_explanation` for the Market Detail explanation section
+- `caveats` for the detail-view caveat block
+- `supporting_signals` for the supporting-signals section and score explanation scaffolding
+
 ## Practical quirks already surfaced
 
 Two useful implementation details showed up immediately:
@@ -104,6 +118,7 @@ Once the notebook execution path is reliable again, this prototype should be por
 3. move the normalization logic into a dedicated normalization block
 4. move the score calculation into a scoring block
 5. keep reason codes and score components explicit so the Streamlit layer can explain results cleanly
+6. map `headline_reason`, `short_explanation`, `detailed_explanation`, `caveats`, and `supporting_signals` into the `market_explanations` output expected by the planned app flow in `docs/app-flow.md`
 
 ## Important constraint
 

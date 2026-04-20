@@ -230,6 +230,85 @@ def confidence_band(penalty: float) -> str:
     return "high"
 
 
+def explanation_fields(market: dict[str, Any]) -> dict[str, Any]:
+    reason = market["primary_reason_code"]
+    stale_hours = market.get("time_since_update_hours")
+    end_hours = market.get("time_to_resolution_hours")
+    yes_price = market.get("yes_price")
+
+    headline_reason = "This market was flagged for a blend of suspicious score components."
+    short_explanation = "The score found a combination of features worth inspecting more closely."
+    detailed_explanation = (
+        "The prototype flagged this market because several score components combined into a relatively high fragility signal. "
+        "The raw fields and component values should be inspected before treating it as a genuinely interesting opportunity."
+    )
+
+    if reason == "stale_near_resolution":
+        headline_reason = "High score driven by stale updates close to resolution."
+        short_explanation = "This market looks slow to update despite having limited time left before resolution."
+        detailed_explanation = (
+            f"The market has not updated for roughly {stale_hours:.1f} hours while only about {end_hours:.1f} hours remain until resolution. "
+            "That stale-near-deadline combination is one of the clearest v1 fragility patterns."
+        )
+    elif reason == "extreme_price_low_support":
+        headline_reason = "Extreme pricing is being carried with relatively weak support."
+        short_explanation = "The current probability is far from the midpoint and does not look strongly supported by the weaker-support component."
+        detailed_explanation = (
+            f"The market is currently priced around {yes_price:.3f}, which is quite far from a neutral midpoint, while the support-side component still looks weak enough to keep it inspectable. "
+            "In v1 that combination is treated as a fragile extreme rather than as proof the price is wrong."
+        )
+    elif reason == "high_instability":
+        headline_reason = "Recent movement or instability is doing meaningful work in the score."
+        short_explanation = "The movement proxy and nearby supporting components make this market look more unstable than a quiet baseline."
+        detailed_explanation = (
+            "The volatility proxy is elevated enough to matter, and the surrounding score components do not fully calm that down. "
+            "This is the v1 path for markets that look more unstable than simply stale or extreme."
+        )
+    elif reason == "past_resolution_still_open":
+        headline_reason = "The source still presents this market as open even though its end date is in the past."
+        short_explanation = "This looks like a source-status inconsistency rather than a normal live market signal."
+        detailed_explanation = (
+            f"The market still appears open in the fetched payload, but the recorded resolution horizon is about {end_hours:.1f} hours in the past. "
+            "That makes it useful as a data-quality or source-behavior flag, even if it is not a strong product-facing candidate."
+        )
+    elif reason == "weak_data_quality":
+        headline_reason = "The record has enough missing or awkward fields to deserve caution."
+        short_explanation = "This market is being flagged partly because the available data is incomplete or structurally awkward."
+        detailed_explanation = (
+            "The current record is not clean enough to treat the score as high-confidence. "
+            "Any review should start by validating whether the source fields are trustworthy enough for comparison."
+        )
+
+    caveats = ["single-source MVP", f"confidence:{market['confidence_band']}"]
+    if stale_hours is not None and stale_hours < 6.0:
+        caveats.append("fresh-market caveat")
+    if end_hours is not None and end_hours < 0:
+        caveats.append("source status may be inconsistent")
+    if end_hours is not None and end_hours > 720.0:
+        caveats.append("long-horizon market")
+    if market.get("data_quality_penalty", 0.0) > 0.0:
+        caveats.append("data-quality penalty applied")
+    if market.get("heuristic_penalty", 0.0) > 0.0:
+        caveats.append("heuristic penalty applied")
+
+    supporting_signals = [
+        "time_since_update_hours",
+        "time_to_resolution_hours",
+        "price_distance_from_mid",
+        "liquidity",
+        "volume_24hr",
+        "one_month_price_change_abs",
+    ]
+
+    return {
+        "headline_reason": headline_reason,
+        "short_explanation": short_explanation,
+        "detailed_explanation": detailed_explanation,
+        "caveats": caveats,
+        "supporting_signals": supporting_signals,
+    }
+
+
 def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     staleness_values = [m["time_since_update_hours"] for m in markets if m["time_since_update_hours"] is not None]
     support_values = [math.log1p((m["liquidity"] or 0.0) + (m["volume_24hr"] or 0.0)) for m in markets if (m["liquidity"] is not None or m["volume_24hr"] is not None)]
@@ -246,7 +325,8 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             support_metric = math.log1p((market["liquidity"] or 0.0) + (market["volume_24hr"] or 0.0))
         liquidity_component = percentile_rank(support_metric, support_values, reverse=True)
         volatility_component = percentile_rank(market["one_month_price_change_abs"], volatility_values)
-        penalty = data_quality_penalty(market)
+        data_penalty = data_quality_penalty(market)
+        penalty = data_penalty
 
         if market["time_to_resolution_hours"] is not None:
             if market["time_to_resolution_hours"] < 0:
@@ -269,6 +349,7 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             ):
                 penalty += 0.20
         penalty = clamp(penalty)
+        heuristic_penalty = max(penalty - data_penalty, 0.0)
 
         raw_score = (
             0.35 * staleness_component
@@ -287,7 +368,8 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "extremeness_component": round(extremeness_component, 4),
             "liquidity_component": round(liquidity_component, 4),
             "volatility_component": round(volatility_component, 4),
-            "data_quality_penalty": round(penalty, 4),
+            "data_quality_penalty": round(data_penalty, 4),
+            "heuristic_penalty": round(heuristic_penalty, 4),
         }
 
         ranked.append({
@@ -305,6 +387,7 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for market in ranked:
         market["final_score"] = round((market["raw_score"] - min_raw) / span, 4)
         del market["raw_score"]
+        market.update(explanation_fields(market))
 
     ranked.sort(key=lambda item: item["final_score"], reverse=True)
     for index, market in enumerate(ranked, start=1):
