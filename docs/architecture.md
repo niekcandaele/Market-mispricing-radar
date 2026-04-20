@@ -156,6 +156,9 @@ Responsibilities:
 Likely outputs:
 - `market_explanations`
 
+Current local mirror:
+- `zerve/snippets/polymarket_explanations_block.py`
+
 #### G. Validation and QA
 
 Responsibilities:
