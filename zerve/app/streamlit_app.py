@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import importlib.util
 from collections import Counter
+import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -34,10 +36,179 @@ FILTER_STATE_DEFAULTS = {
 }
 
 
+SOURCE_NAME = "polymarket"
+TOP_PREVIEW_COUNT = 5
+LOCAL_BUNDLE_ENV_VAR = "MMR_APP_BUNDLE_PATH"
+
+
+def qa_market_key(row: dict[str, Any]) -> str:
+    return str(row.get("market_id") or "")
+
+
+def build_qa_summary(bundle: dict[str, Any]) -> dict[str, Any]:
+    ranked_rows = bundle.get("ranked_markets") or []
+    explanation_rows = bundle.get("market_explanations") or []
+    bundle_refresh_metadata = bundle.get("refresh_metadata") or {}
+
+    rank_ids = [qa_market_key(row) for row in ranked_rows if qa_market_key(row)]
+    explanation_ids = [qa_market_key(row) for row in explanation_rows if qa_market_key(row)]
+    missing_explanations = sorted(set(rank_ids) - set(explanation_ids))
+    extra_explanations = sorted(set(explanation_ids) - set(rank_ids))
+    rank_counts = Counter(row.get("rank") for row in ranked_rows if row.get("rank") is not None)
+    duplicate_ranks = sorted(rank for rank, count in rank_counts.items() if count > 1)
+    reason_counts = Counter(row.get("primary_reason_code") or "unknown" for row in ranked_rows)
+    confidence_counts = Counter(row.get("confidence_band") or "unknown" for row in ranked_rows)
+    category_counts = Counter(row.get("category") or "uncategorized" for row in ranked_rows)
+
+    warnings: list[dict[str, Any]] = []
+    if not ranked_rows:
+        warnings.append({
+            "code": "no_ranked_markets",
+            "severity": "high",
+            "message": "No ranked markets were present in the app bundle.",
+        })
+    if len(ranked_rows) != len(explanation_rows):
+        warnings.append({
+            "code": "bundle_count_mismatch",
+            "severity": "high",
+            "message": "Ranked-market count does not match explanation count.",
+            "ranked_market_count": len(ranked_rows),
+            "explained_market_count": len(explanation_rows),
+        })
+    if missing_explanations:
+        warnings.append({
+            "code": "missing_explanations",
+            "severity": "high",
+            "message": "Some ranked markets are missing explanation records.",
+            "market_ids": missing_explanations[:10],
+            "truncated": len(missing_explanations) > 10,
+        })
+    if extra_explanations:
+        warnings.append({
+            "code": "orphan_explanations",
+            "severity": "medium",
+            "message": "Some explanation records do not map to ranked markets.",
+            "market_ids": extra_explanations[:10],
+            "truncated": len(extra_explanations) > 10,
+        })
+    if duplicate_ranks:
+        warnings.append({
+            "code": "duplicate_ranks",
+            "severity": "medium",
+            "message": "Multiple ranked rows share the same rank value.",
+            "ranks": duplicate_ranks,
+        })
+    if ranked_rows and confidence_counts.get("low", 0) / max(len(ranked_rows), 1) >= 0.5:
+        warnings.append({
+            "code": "many_low_confidence_results",
+            "severity": "medium",
+            "message": "At least half of the ranked markets are currently low confidence.",
+            "low_confidence_count": confidence_counts.get("low", 0),
+        })
+    if bundle_refresh_metadata.get("open_market_count", 0) == 0 and ranked_rows:
+        warnings.append({
+            "code": "no_open_markets",
+            "severity": "medium",
+            "message": "The refresh contains ranked markets but zero open markets in metadata.",
+        })
+    if len(category_counts) <= 1 and ranked_rows:
+        warnings.append({
+            "code": "thin_category_coverage",
+            "severity": "low",
+            "message": "The current ranked slice falls into only one inferred category.",
+            "category_count": len(category_counts),
+        })
+
+    return {
+        "source": SOURCE_NAME,
+        "refresh_metadata": bundle_refresh_metadata,
+        "counts": {
+            "ranked_market_count": len(ranked_rows),
+            "explained_market_count": len(explanation_rows),
+            "open_market_count": bundle_refresh_metadata.get("open_market_count"),
+            "category_count": len(category_counts),
+            "warning_count": len(warnings),
+        },
+        "reason_breakdown": [
+            {"reason_code": reason, "market_count": count}
+            for reason, count in reason_counts.most_common()
+        ],
+        "confidence_breakdown": [
+            {"confidence_band": band, "market_count": count}
+            for band, count in confidence_counts.most_common()
+        ],
+        "top_preview": [
+            {
+                "market_id": row.get("market_id"),
+                "rank": row.get("rank"),
+                "title": row.get("title"),
+                "final_score": row.get("final_score"),
+                "primary_reason_code": row.get("primary_reason_code"),
+                "headline_reason": row.get("headline_reason"),
+                "confidence_band": row.get("confidence_band"),
+            }
+            for row in ranked_rows[:TOP_PREVIEW_COUNT]
+        ],
+        "validation_checks": {
+            "counts_match": len(ranked_rows) == len(explanation_rows),
+            "missing_explanations": len(missing_explanations),
+            "orphan_explanations": len(extra_explanations),
+            "duplicate_rank_count": len(duplicate_ranks),
+            "refresh_id_present": bool(bundle_refresh_metadata.get("refresh_id")),
+            "fetched_at_present": bool(bundle_refresh_metadata.get("fetched_at")),
+        },
+        "warnings": warnings,
+        "notes": [
+            "This QA summary is meant for app-side sanity checks, not as a replacement for deeper model evaluation.",
+            "Warnings are machine-readable so the app can surface trust signals cleanly.",
+        ],
+    }
+
+
+def load_local_bundle_artifact() -> tuple[dict[str, Any] | None, Path | None]:
+    repo_root = Path(__file__).resolve().parents[2]
+    configured_path = os.environ.get(LOCAL_BUNDLE_ENV_VAR)
+    candidate_paths: list[Path] = []
+    if configured_path:
+        candidate_paths.append(Path(configured_path).expanduser())
+    candidate_paths.append(repo_root / "artifacts" / "streamlit" / "app_bundle.json")
+
+    for path in candidate_paths:
+        if not path.exists() or not path.is_file():
+            continue
+        payload = json.loads(path.read_text())
+        if isinstance(payload, dict) and all(key in payload for key in ["ranked_markets", "market_explanations", "refresh_metadata"]):
+            return payload, path
+        if isinstance(payload, dict) and isinstance(payload.get("app_bundle"), dict):
+            return payload["app_bundle"], path
+        raise RuntimeError(f"Local app bundle at {path} does not match the expected bundle shape.")
+
+    return None, None
+
+
+bundle_input_origin = "zerve-upstream"
+loaded_local_bundle_path: Path | None = None
+
+
 try:
     app_bundle
+except NameError:
+    app_bundle = None
+
+
+try:
     qa_summary
 except NameError:
+    qa_summary = None
+
+
+if app_bundle is None:
+    app_bundle, loaded_local_bundle_path = load_local_bundle_artifact()
+    if app_bundle is not None:
+        bundle_input_origin = "local-artifact"
+
+
+if app_bundle is None:
     snippet_dir = Path(__file__).resolve().parents[1] / "snippets"
 
     bundle_path = snippet_dir / "polymarket_app_bundle_block.py"
@@ -55,6 +226,11 @@ except NameError:
     qa_module = importlib.util.module_from_spec(qa_spec)
     qa_spec.loader.exec_module(qa_module)
     qa_summary = qa_module.qa_summary
+    bundle_input_origin = "snippet-fallback"
+
+
+if qa_summary is None:
+    qa_summary = build_qa_summary(app_bundle)
 
 
 ranked_markets = app_bundle.get("ranked_markets", [])
@@ -182,6 +358,7 @@ def methodology_live_context_rows() -> list[dict[str, Any]]:
         {"label": "Refresh ID", "value": refresh_metadata.get("refresh_id") or "unknown"},
         {"label": "Fetched at", "value": refresh_metadata.get("fetched_at") or "unknown"},
         {"label": "Source count", "value": source_count(ranked_markets)},
+        {"label": "Bundle origin", "value": bundle_input_origin.replace("-", " ")},
         {"label": "QA warnings", "value": len(qa_summary.get("warnings") or [])},
     ]
 
@@ -546,6 +723,9 @@ def render_app() -> None:
         st.write(f"Open markets: {refresh_metadata.get('open_market_count') or 0}")
         st.write(f"Source count: {source_count(ranked_markets)}")
         st.write(f"Score version: {refresh_metadata.get('score_version') or 'unknown'}")
+        st.write(f"Bundle origin: {bundle_input_origin.replace('-', ' ')}")
+        if loaded_local_bundle_path is not None:
+            st.caption(str(loaded_local_bundle_path))
 
         warnings = top_warning_messages()
         if warnings:
@@ -735,7 +915,7 @@ def render_app() -> None:
         st.subheader("Methodology")
         if pipeline_ready():
             st.markdown("#### Current run context")
-            context_cols = st.columns(4)
+            context_cols = st.columns(5)
             for column, item in zip(context_cols, methodology_live_context_rows()):
                 column.metric(item["label"], item["value"])
 
