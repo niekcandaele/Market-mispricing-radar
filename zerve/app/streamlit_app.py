@@ -22,6 +22,16 @@ except ImportError:  # pragma: no cover - local syntax validation should still w
     st = None
 
 
+FILTER_STATE_DEFAULTS = {
+    "source_filter": "All",
+    "category_filter": "All",
+    "min_score": 0.0,
+    "result_limit": 10,
+    "sort_desc": True,
+    "selected_market_id": None,
+}
+
+
 try:
     app_bundle
     qa_summary
@@ -68,6 +78,14 @@ def available_categories(rows: list[dict[str, Any]]) -> list[str]:
     return sorted({row.get("category") for row in rows if row.get("category")})
 
 
+def source_count(rows: list[dict[str, Any]]) -> int:
+    return len({row.get("source") for row in rows if row.get("source")})
+
+
+def category_breakdown_rows() -> list[dict[str, Any]]:
+    return refresh_metadata.get("category_breakdown") or []
+
+
 def filter_rows(
     rows: list[dict[str, Any]],
     source_filter: str,
@@ -100,18 +118,116 @@ def top_warning_messages() -> list[str]:
     return warnings
 
 
-def methodology_lines() -> list[str]:
+def methodology_sections() -> list[tuple[str, list[str]]]:
     return [
-        "Ranks markets that look stale, fragile, extreme, or weakly supported.",
-        "Uses interpretable score components rather than opaque model output.",
-        "Does not claim guaranteed arbitrage or perfect fair value.",
-        "Current MVP is Polymarket-first and single-source by design.",
+        (
+            "What the product does",
+            [
+                "Ranks markets that look stale, fragile, extreme, or weakly supported.",
+                "Surfaces interpretable reasons for inspection instead of opaque scores alone.",
+            ],
+        ),
+        (
+            "What the product does not claim",
+            [
+                "Not guaranteed arbitrage.",
+                "Not a perfect fair-value model.",
+                "Not financial advice.",
+            ],
+        ),
+        (
+            "Current MVP scope",
+            [
+                "Polymarket-first.",
+                "Single-source anomaly scoring.",
+                "Explainable component-based ranking.",
+            ],
+        ),
+        (
+            "Score ingredients",
+            [
+                "Staleness.",
+                "Time to resolution.",
+                "Price extremeness.",
+                "Liquidity support.",
+                "Volatility or movement anomaly when available.",
+            ],
+        ),
+        (
+            "Caveats",
+            [
+                "Single-source MVP.",
+                "Some market structures may be simplified or excluded.",
+                "Quality depends on source freshness and available metadata.",
+            ],
+        ),
     ]
+
+
+def format_hours(value: Any) -> str:
+    if not isinstance(value, (int, float)):
+        return "unknown"
+    return f"{value:.1f}h"
+
+
+def ensure_filter_defaults() -> None:
+    if st is None:
+        return
+    for key, value in FILTER_STATE_DEFAULTS.items():
+        if key not in st.session_state:
+            st.session_state[key] = value
+
+
+def reset_filter_state() -> None:
+    if st is None:
+        return
+    for key, value in FILTER_STATE_DEFAULTS.items():
+        st.session_state[key] = value
+
+
+def normalize_filter_choices(source_options: list[str], category_options: list[str]) -> None:
+    if st is None:
+        return
+    if st.session_state.get("source_filter") not in source_options:
+        st.session_state["source_filter"] = "All"
+    if st.session_state.get("category_filter") not in category_options:
+        st.session_state["category_filter"] = "All"
+    if st.session_state.get("result_limit") not in [10, 25, 50, 100]:
+        st.session_state["result_limit"] = 10
+
+
+def selected_market(filtered: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if not filtered or st is None:
+        return filtered[0] if filtered else None
+
+    market_ids = [row.get("market_id") for row in filtered if row.get("market_id")]
+    if not market_ids:
+        return filtered[0]
+
+    current_market_id = st.session_state.get("selected_market_id")
+    if current_market_id not in market_ids:
+        st.session_state["selected_market_id"] = market_ids[0]
+        current_market_id = market_ids[0]
+
+    label_lookup = {row.get("market_id"): market_label(row) for row in filtered if row.get("market_id")}
+    selected_market_id = st.selectbox(
+        "Select market",
+        market_ids,
+        format_func=lambda item: label_lookup.get(item, item),
+        key="selected_market_id",
+    )
+    return next((row for row in filtered if row.get("market_id") == selected_market_id), filtered[0])
 
 
 def render_app() -> None:
     if st is None:
         raise RuntimeError("streamlit is not installed. Use this file inside Zerve or install streamlit locally.")
+
+    ensure_filter_defaults()
+
+    source_options = ["All"] + sorted({row.get("source") or "unknown" for row in ranked_markets})
+    category_options = ["All"] + available_categories(ranked_markets)
+    normalize_filter_choices(source_options, category_options)
 
     st.set_page_config(page_title="Market Mispricing Radar", layout="wide")
     st.title("Market Mispricing Radar")
@@ -119,19 +235,21 @@ def render_app() -> None:
 
     with st.sidebar:
         st.header("Controls")
-        source_options = ["All"] + sorted({row.get("source") or "unknown" for row in ranked_markets})
-        category_options = ["All"] + available_categories(ranked_markets)
-        source_filter = st.selectbox("Source", source_options, index=0)
-        category_filter = st.selectbox("Category", category_options, index=0)
-        min_score = st.slider("Minimum score", 0.0, 1.0, 0.0, 0.05)
-        result_limit = st.selectbox("Result count", [10, 25, 50, 100], index=0)
-        sort_desc = st.toggle("Sort highest first", value=True)
+        st.selectbox("Source", source_options, key="source_filter")
+        st.selectbox("Category", category_options, key="category_filter")
+        st.slider("Minimum score", 0.0, 1.0, step=0.05, key="min_score")
+        st.selectbox("Result count", [10, 25, 50, 100], key="result_limit")
+        st.toggle("Sort highest first", key="sort_desc")
+        if st.button("Reset filters", use_container_width=True):
+            reset_filter_state()
+            st.rerun()
 
         st.header("Refresh trust")
         st.write(f"Refresh ID: {refresh_metadata.get('refresh_id') or 'unknown'}")
         st.write(f"Fetched at: {refresh_metadata.get('fetched_at') or 'unknown'}")
         st.write(f"Market count: {refresh_metadata.get('market_count') or 0}")
         st.write(f"Open markets: {refresh_metadata.get('open_market_count') or 0}")
+        st.write(f"Source count: {source_count(ranked_markets)}")
         st.write(f"Score version: {refresh_metadata.get('score_version') or 'unknown'}")
 
         warnings = top_warning_messages()
@@ -140,14 +258,34 @@ def render_app() -> None:
             for item in warnings:
                 st.warning(item)
 
-    filtered = filter_rows(ranked_markets, source_filter, category_filter, min_score, result_limit, sort_desc)
+    filtered = filter_rows(
+        ranked_markets,
+        st.session_state["source_filter"],
+        st.session_state["category_filter"],
+        st.session_state["min_score"],
+        st.session_state["result_limit"],
+        st.session_state["sort_desc"],
+    )
 
     radar_tab, detail_tab, methodology_tab = st.tabs(["Radar", "Market Detail", "Methodology"])
 
     with radar_tab:
         st.subheader("Ranked Radar")
+        trust_cols = st.columns(4)
+        trust_cols[0].metric("Refresh ID", refresh_metadata.get("refresh_id") or "unknown")
+        trust_cols[1].metric("Processed", refresh_metadata.get("market_count") or 0)
+        trust_cols[2].metric("Open markets", refresh_metadata.get("open_market_count") or 0)
+        trust_cols[3].metric("Sources", source_count(ranked_markets))
+
+        if category_breakdown_rows():
+            st.markdown("#### Category snapshot")
+            st.dataframe(category_breakdown_rows(), use_container_width=True)
+
         if not filtered:
-            st.info("No results match the current filters. Reset or lower the score threshold.")
+            st.info("No results match the current filters.")
+            if st.button("Reset filters from empty state", key="reset-empty-state"):
+                reset_filter_state()
+                st.rerun()
         else:
             radar_rows = [
                 {
@@ -166,31 +304,36 @@ def render_app() -> None:
 
     with detail_tab:
         st.subheader("Market Detail")
-        if not filtered:
+        selected_row = selected_market(filtered)
+        if selected_row is None:
             st.info("No market is available for the current filters.")
         else:
-            selected_label = st.selectbox(
-                "Select market",
-                [market_label(row) for row in filtered],
-                index=0,
-            )
-            selected_row = next(row for row in filtered if market_label(row) == selected_label)
             explanation = explanation_lookup.get(selected_row.get("market_id"), {})
 
-            left, right = st.columns([2, 1])
-            with left:
-                st.markdown(f"### {selected_row.get('title')}")
-                st.write(explanation.get("headline_reason") or selected_row.get("headline_reason"))
-                st.write(explanation.get("short_explanation") or "No short explanation available.")
-                st.write(explanation.get("detailed_explanation") or "No detailed explanation available.")
+            st.markdown(f"### {selected_row.get('title')}")
+            header_left, header_mid, header_right = st.columns(3)
+            with header_left:
+                st.write(f"Source: {selected_row.get('source') or 'unknown'}")
+                st.write(f"Status: {selected_row.get('status') or 'unknown'}")
+                st.write(f"Refresh: {refresh_metadata.get('fetched_at') or 'unknown'}")
                 if selected_row.get("source_url"):
                     st.link_button("Open source market", selected_row["source_url"])
-            with right:
+            with header_mid:
                 st.metric("Final score", selected_row.get("final_score") or 0.0)
                 st.metric("Current probability", selected_row.get("current_probability") or 0.0)
                 st.write(f"Confidence: {selected_row.get('confidence_band') or 'unknown'}")
                 st.write(f"Reason code: {selected_row.get('primary_reason_code') or 'unknown'}")
-                st.write(f"Status: {selected_row.get('status') or 'unknown'}")
+            with header_right:
+                st.write(f"Resolution horizon: {format_hours(selected_row.get('time_to_resolution_hours'))}")
+                st.write(f"Last update age: {format_hours(selected_row.get('time_since_update_hours'))}")
+                st.write(f"Category: {selected_row.get('category') or 'unknown'}")
+                topics = selected_row.get("topic_tags") or []
+                st.write(f"Topics: {', '.join(topics) if topics else 'none'}")
+
+            st.markdown("#### Explanation")
+            st.write(explanation.get("headline_reason") or selected_row.get("headline_reason"))
+            st.write(explanation.get("short_explanation") or "No short explanation available.")
+            st.write(explanation.get("detailed_explanation") or "No detailed explanation available.")
 
             st.markdown("#### Score breakdown")
             st.json(explanation.get("score_components") or {}, expanded=False)
@@ -208,10 +351,10 @@ def render_app() -> None:
 
     with methodology_tab:
         st.subheader("Methodology")
-        for line in methodology_lines():
-            st.write(f"- {line}")
-        st.markdown("#### Current scope")
-        st.write("Polymarket-first, component-based anomaly ranking, honest caveats, and refresh-tied outputs.")
+        for heading, lines in methodology_sections():
+            st.markdown(f"#### {heading}")
+            for line in lines:
+                st.write(f"- {line}")
 
 
 def main() -> None:
