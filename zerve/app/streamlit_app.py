@@ -262,6 +262,24 @@ def peer_comparison_rows(filtered: list[dict[str, Any]], selected_row: dict[str,
     ]
 
 
+def radar_card_rows(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "market_id": row.get("market_id"),
+            "rank": row.get("rank"),
+            "title": row.get("title"),
+            "headline_reason": row.get("headline_reason"),
+            "category": row.get("category"),
+            "source": row.get("source"),
+            "score": row.get("final_score"),
+            "probability": row.get("current_probability"),
+            "hours_since_update": row.get("time_since_update_hours"),
+            "source_url": row.get("source_url"),
+        }
+        for row in filtered
+    ]
+
+
 def ensure_filter_defaults() -> None:
     if st is None:
         return
@@ -379,20 +397,29 @@ def render_app() -> None:
                 reset_filter_state()
                 st.rerun()
         else:
-            radar_rows = [
-                {
-                    "rank": row.get("rank"),
-                    "title": row.get("title"),
-                    "source": row.get("source"),
-                    "category": row.get("category"),
-                    "probability": row.get("current_probability"),
-                    "score": row.get("final_score"),
-                    "headline_reason": row.get("headline_reason"),
-                    "hours_since_update": row.get("time_since_update_hours"),
-                }
-                for row in filtered
-            ]
-            st.dataframe(radar_rows, use_container_width=True)
+            st.caption(f"Showing {len(filtered)} filtered results. Use the focus action to sync a market into the detail tab.")
+            for row in radar_card_rows(filtered):
+                with st.container(border=True):
+                    top_left, top_mid, top_right = st.columns([3, 1, 1])
+                    with top_left:
+                        st.markdown(f"**#{row.get('rank')} · {row.get('title')}**")
+                        st.write(row.get("headline_reason") or "No headline reason available.")
+                        st.caption(f"{row.get('source') or 'unknown source'} • {row.get('category') or 'uncategorized'}")
+                    with top_mid:
+                        st.metric("Score", row.get("score") or 0.0)
+                    with top_right:
+                        st.metric("Probability", row.get("probability") or 0.0)
+
+                    meta_cols = st.columns([1, 1, 2])
+                    meta_cols[0].write(f"Update age: {format_hours(row.get('hours_since_update'))}")
+                    meta_cols[1].write(f"Focused: {'yes' if row.get('market_id') == st.session_state.get('selected_market_id') else 'no'}")
+                    with meta_cols[2]:
+                        action_cols = st.columns(2)
+                        if action_cols[0].button("Focus in detail", key=f"focus-{row.get('market_id')}", use_container_width=True):
+                            st.session_state["selected_market_id"] = row.get("market_id")
+                            st.success("Focused market updated. Open the Market Detail tab to inspect it.")
+                        if row.get("source_url"):
+                            action_cols[1].link_button("Open source", row["source_url"], use_container_width=True)
 
     with detail_tab:
         st.subheader("Market Detail")
