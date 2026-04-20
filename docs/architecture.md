@@ -194,6 +194,9 @@ Primary deployment target:
 
 The app should read prepared variables from the development layer using Zerve variable references.
 
+Current local mirror:
+- `zerve/app/streamlit_app.py`
+
 ### Streamlit responsibilities
 - display top ranked markets
 - allow selection or filtering of markets
