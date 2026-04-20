@@ -217,15 +217,32 @@ After replacing the broken code through the editor's own change handler:
 
 This does not yet prove the app rendered successfully, but it does show that the deployment code can be repaired and re-previewed without manual typing.
 
-### Still not confirmed
-- the exact `from zerve import variable` access pattern in a fully running live Streamlit deployment
+### Live notebook-variable wiring proof
+A later live validation pass confirmed the deployed Streamlit preview can read notebook outputs successfully.
+
+The probing sequence mattered:
+- a first deployed app using `variable("polymarket_raw_markets")` failed with `TypeError: variable() missing 1 required positional argument: 'variable_name'`
+- a signature-probe deployment then revealed the real runtime signature inside the deployed app was `variable(block_name: str, variable_name: str)` from `zerve.variable_loader`
+- a second attempt using the visible UI block title failed with `Block 'Polymarket Data Fetch Implementation' not found in DAG metadata. Available blocks: 'fetch_polymarket_data'`
+- switching to the internal DAG block name succeeded: `variable("fetch_polymarket_data", "polymarket_raw_markets")`
+
+Confirmed working deployed preview behavior:
+- deployed preview URL rendered successfully after the update
+- the app displayed `market_count: 5`
+- the app displayed the first market's question, slug, id, and sample keys from `polymarket_raw_markets`
+- this proves the Streamlit deploy path can consume notebook outputs end to end when the real DAG block name is used
+
+### Still worth watching
 - whether the editor `onChange` path also persists cleanly through the underlying deployment save API in every case
 - whether deployment code lives behind a stable internal API that is easier to automate directly than the React-layer hook
+- whether Zerve exposes a friendlier documented way to discover the required internal block name for deployed variable access
 
 ### Practical implication
-The Streamlit deployment path is more real than assumed earlier: it has its own code editor, preview URL, runtime, and error surface.
+The Streamlit deployment path is now fully validated for notebook-variable handoff, with one important caveat:
+- deployed app code must call `variable(block_name, variable_name)`
+- the `block_name` must be the internal DAG/block identifier, not necessarily the human-visible notebook block title
 
-The remaining gap is now narrower and more specific:
-- not "does Streamlit deployment exist"
-- not even primarily "can we patch code there"
-- but "can we cleanly prove live notebook-variable wiring in a successful deployed preview"
+That moves the remaining work from deployment feasibility to productization:
+- wire the real app to the confirmed call pattern
+- keep local artifact/snippet fallbacks for offline iteration
+- improve the ingestion block so the deployed app can consume a stronger upstream payload
