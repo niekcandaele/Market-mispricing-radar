@@ -22,7 +22,7 @@ USER_AGENT = "Mozilla/5.0 (compatible; MarketMispricingRadar/0.1; +https://git.h
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--limit", type=int, default=200, help="number of markets to fetch")
+    parser.add_argument("--limit", type=int, default=500, help="number of markets to fetch")
     parser.add_argument("--top", type=int, default=15, help="number of ranked rows to print")
     parser.add_argument("--json", action="store_true", help="emit ranked rows as JSON")
     return parser.parse_args()
@@ -80,6 +80,18 @@ def percentile_rank(value: float | None, values: list[float], reverse: bool = Fa
         less_or_equal = sum(1 for item in ordered if item <= value)
         base = (less_or_equal - 1) / (len(ordered) - 1)
     return 1.0 - base if reverse else base
+
+
+def absolute_staleness_signal(hours: float | None) -> float:
+    if hours is None:
+        return 0.0
+    return clamp((hours - 6.0) / 42.0)
+
+
+def event_horizon_signal(hours: float | None) -> float:
+    if hours is None or hours < 0:
+        return 0.0
+    return clamp((720.0 - hours) / 720.0)
 
 
 def fetch_markets(limit: int) -> list[dict[str, Any]]:
@@ -220,19 +232,15 @@ def confidence_band(penalty: float) -> str:
 
 def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     staleness_values = [m["time_since_update_hours"] for m in markets if m["time_since_update_hours"] is not None]
-    resolution_values = [m["time_to_resolution_hours"] for m in markets if m["time_to_resolution_hours"] is not None and m["time_to_resolution_hours"] >= 0]
     support_values = [math.log1p((m["liquidity"] or 0.0) + (m["volume_24hr"] or 0.0)) for m in markets if (m["liquidity"] is not None or m["volume_24hr"] is not None)]
     volatility_values = [m["one_month_price_change_abs"] for m in markets if m["one_month_price_change_abs"] is not None]
 
     ranked: list[dict[str, Any]] = []
     raw_scores: list[float] = []
     for market in markets:
-        staleness_component = percentile_rank(market["time_since_update_hours"], staleness_values)
-        if market["time_to_resolution_hours"] is not None and market["time_to_resolution_hours"] < 0:
-            event_horizon_component = 1.0
-        else:
-            event_horizon_component = percentile_rank(market["time_to_resolution_hours"], resolution_values, reverse=True)
-        extremeness_component = clamp((market["price_distance_from_mid"] or 0.0) * 2.0)
+        staleness_component = percentile_rank(market["time_since_update_hours"], staleness_values) * absolute_staleness_signal(market["time_since_update_hours"])
+        event_horizon_component = event_horizon_signal(market["time_to_resolution_hours"])
+        extremeness_component = clamp(((market["price_distance_from_mid"] or 0.0) - 0.15) / 0.35)
         support_metric = None
         if market["liquidity"] is not None or market["volume_24hr"] is not None:
             support_metric = math.log1p((market["liquidity"] or 0.0) + (market["volume_24hr"] or 0.0))
@@ -240,15 +248,37 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
         volatility_component = percentile_rank(market["one_month_price_change_abs"], volatility_values)
         penalty = data_quality_penalty(market)
 
+        if market["time_to_resolution_hours"] is not None:
+            if market["time_to_resolution_hours"] < 0:
+                penalty += 0.35
+            elif market["time_to_resolution_hours"] > 720.0:
+                penalty += min(0.25, (market["time_to_resolution_hours"] - 720.0) / 5000.0)
+        if market["time_since_update_hours"] is not None and market["time_since_update_hours"] < 1.0:
+            penalty += 0.05
+        if market["yes_price"] is not None:
+            if (
+                (market["yes_price"] <= 0.01 or market["yes_price"] >= 0.99)
+                and (market["time_to_resolution_hours"] is None or market["time_to_resolution_hours"] > 168.0)
+                and (market["time_since_update_hours"] is None or market["time_since_update_hours"] < 12.0)
+            ):
+                penalty += 0.40
+            elif (
+                (market["yes_price"] <= 0.05 or market["yes_price"] >= 0.95)
+                and (market["time_to_resolution_hours"] is None or market["time_to_resolution_hours"] > 720.0)
+                and (market["time_since_update_hours"] is None or market["time_since_update_hours"] < 6.0)
+            ):
+                penalty += 0.20
+        penalty = clamp(penalty)
+
         raw_score = (
-            0.30 * staleness_component
-            + 0.20 * event_horizon_component
-            + 0.15 * extremeness_component
-            + 0.15 * liquidity_component
+            0.35 * staleness_component
+            + 0.25 * event_horizon_component
+            + 0.05 * extremeness_component
+            + 0.10 * liquidity_component
             + 0.10 * volatility_component
-            + 0.05 * staleness_component * event_horizon_component
-            + 0.05 * extremeness_component * liquidity_component
-            - 0.20 * penalty
+            + 0.10 * staleness_component * event_horizon_component
+            + 0.10 * extremeness_component * liquidity_component
+            - 0.30 * penalty
         )
 
         component_scores = {

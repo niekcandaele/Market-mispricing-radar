@@ -38,6 +38,22 @@ Current score components:
 - recent movement proxy via `oneMonthPriceChange`
 - data quality penalty
 
+## First tuning pass
+
+A first review of the prototype output exposed a few obvious ranking pathologies:
+- percentile-only freshness overreacted to tiny differences when almost every fetched market had been updated only minutes ago
+- percentile-only event-horizon logic still rewarded far-future markets just because other fetched markets were even farther out
+- ultra-longshot futures could dominate the top results even when they were neither stale nor close to resolution
+- the first `--limit 200` slice was too order-biased and overrepresented one cluster of sports futures
+
+The current prototype now compensates for that by:
+- gating freshness with an absolute threshold, so sub-6-hour updates do not get fake stale credit
+- using an absolute event-horizon signal that only meaningfully activates inside a roughly 30-day window
+- adding extra penalties for overdue markets, very far-future markets, and ultra-extreme longshots that are neither stale nor near resolution
+- raising the default fetch size to 500 markets to reduce API-order bias in the scored sample
+
+These changes do not make the score "done", but they do make the first-pass output less obviously silly.
+
 Current reason codes include:
 - `stale_near_resolution`
 - `extreme_price_low_support`
@@ -69,6 +85,8 @@ From the repo root:
 ```bash
 python3 scripts/polymarket_ranker.py
 ```
+
+Default behavior now fetches 500 markets to reduce narrow-slice bias.
 
 Useful options:
 
