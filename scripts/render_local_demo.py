@@ -19,7 +19,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=500, help="number of markets to fetch")
     parser.add_argument("--top", type=int, default=10, help="initial number of ranked rows to show in the radar section")
-    parser.add_argument("--detail-count", type=int, default=3, help="number of detail cards to render from the filtered view")
+    parser.add_argument("--detail-count", type=int, default=1, help="number of selected detail cards to render from the filtered view")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="output HTML path")
     return parser.parse_args()
 
@@ -44,6 +44,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
         f"<li><strong>{esc(item['category'])}</strong>: {esc(item['market_count'])}</li>"
         for item in refresh.get("category_breakdown", [])[:8]
     )
+    source_count = len({row["source"] for row in bundle.get("ranked_markets", [])})
     bundle_json = json.dumps(bundle)
     return f"""<!doctype html>
 <html lang="en">
@@ -57,8 +58,9 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }}
     .controls {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; align-items: end; }}
     .control label {{ display: block; font-size: .9rem; color: #334155; margin-bottom: .25rem; }}
-    .control select, .control input {{ width: 100%; padding: .5rem; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }}
-    .range-readout {{ font-size: .9rem; color: #475569; margin-top: .25rem; }}
+    .control select, .control input, .control button {{ width: 100%; padding: .5rem; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }}
+    .control button {{ cursor: pointer; background: #f8fafc; }}
+    .range-readout, .status-readout {{ font-size: .9rem; color: #475569; margin-top: .25rem; }}
     table {{ width: 100%; border-collapse: collapse; background: white; }}
     th, td {{ text-align: left; padding: .65rem; border-bottom: 1px solid #e5e7eb; vertical-align: top; }}
     th {{ background: #f1f5f9; }}
@@ -67,6 +69,10 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     .pill-list {{ display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }}
     .pill {{ background: #e2e8f0; color: #0f172a; border-radius: 999px; padding: .2rem .55rem; font-size: .85rem; }}
     .muted {{ color: #64748b; }}
+    .detail-note {{ font-size: .92rem; color: #475569; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: .75rem; margin-top: 1rem; }}
+    .market-link {{ color: #0f172a; font-weight: 600; text-decoration: none; }}
+    .market-link:hover {{ text-decoration: underline; }}
+    tr.is-selected {{ background: #eff6ff; }}
     ul {{ margin: .5rem 0 0 1.1rem; }}
     code {{ background: #e2e8f0; padding: .1rem .3rem; border-radius: 4px; }}
     .empty {{ padding: 1rem; border: 1px dashed #cbd5e1; border-radius: 10px; color: #475569; background: #f8fafc; }}
@@ -79,9 +85,12 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     <div class="grid">
       <div><strong>Fetched at</strong><br>{esc(refresh['fetched_at'])}</div>
       <div><strong>Markets processed</strong><br>{esc(refresh['market_count'])}</div>
+      <div><strong>Open markets</strong><br>{esc(refresh['open_market_count'])}</div>
+      <div><strong>Source count</strong><br>{esc(source_count)}</div>
       <div><strong>Category count</strong><br>{esc(len(refresh.get('category_breakdown', [])))}</div>
       <div><strong>Pipeline version</strong><br>{esc(refresh['pipeline_version'])}</div>
       <div><strong>Score version</strong><br>{esc(refresh['score_version'])}</div>
+      <div><strong>Refresh ID</strong><br>{esc(refresh['refresh_id'])}</div>
     </div>
   </section>
 
@@ -125,26 +134,34 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
           <option value="resolution_asc">Closest to resolution</option>
         </select>
       </div>
+      <div class="control">
+        <label>&nbsp;</label>
+        <button id="reset-filters" type="button">Reset filters</button>
+      </div>
     </div>
+    <div class="status-readout" id="result-status"></div>
   </section>
 
   <section class="panel">
     <h2>Radar</h2>
-    <p class="meta">Interactive local view over <code>ranked_markets</code>.</p>
+    <p class="meta">Interactive local view over <code>ranked_markets</code>. Click a market title to open its detail view below.</p>
     <table>
       <thead>
         <tr><th>Rank</th><th>Market</th><th>Category</th><th>Source</th><th>Prob.</th><th>Score</th><th>Headline reason</th><th>Stale age</th></tr>
       </thead>
       <tbody id="radar-body"></tbody>
     </table>
-    <div id="radar-empty" class="empty" style="display:none; margin-top: 1rem;">No results match the current filters. Reset the controls and try again.</div>
+    <div id="radar-empty" class="empty" style="display:none; margin-top: 1rem;">
+      <p>No results match the current filters.</p>
+      <button id="reset-from-empty" type="button">Reset filters</button>
+    </div>
   </section>
 
-  <section class="panel">
+  <section class="panel" id="detail-panel">
     <h2>Market detail</h2>
-    <p class="meta">Sample detail cards from the currently filtered results.</p>
+    <p class="meta">Detail view for the currently selected market from the filtered Radar list.</p>
     <div id="detail-cards"></div>
-    <div id="detail-empty" class="empty" style="display:none;">No detail cards are available because the current filters returned no rows.</div>
+    <div id="detail-empty" class="empty" style="display:none;">No detail card is available because the current filters returned no rows.</div>
   </section>
 
   <section class="panel">
@@ -162,6 +179,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     const explanationLookup = Object.fromEntries(bundle.market_explanations.map(item => [item.market_id, item]));
     const initialTop = {top};
     const detailCount = {detail_count};
+    let selectedMarketId = null;
 
     const sourceFilter = document.getElementById('source-filter');
     const categoryFilter = document.getElementById('category-filter');
@@ -169,8 +187,12 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     const scoreReadout = document.getElementById('score-threshold-readout');
     const resultCount = document.getElementById('result-count');
     const sortOrder = document.getElementById('sort-order');
+    const resetFiltersButton = document.getElementById('reset-filters');
+    const resetFromEmptyButton = document.getElementById('reset-from-empty');
+    const resultStatus = document.getElementById('result-status');
     const radarBody = document.getElementById('radar-body');
     const radarEmpty = document.getElementById('radar-empty');
+    const detailPanel = document.getElementById('detail-panel');
     const detailCards = document.getElementById('detail-cards');
     const detailEmpty = document.getElementById('detail-empty');
 
@@ -229,11 +251,31 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
         return true;
       }});
 
-      rows = sortRows(rows, sortOrder.value).slice(0, limit);
-      return rows;
+      return sortRows(rows, sortOrder.value).slice(0, limit);
     }}
 
-    function renderRadar(rows) {{
+    function resetFilters() {{
+      sourceFilter.value = 'all';
+      categoryFilter.value = 'all';
+      scoreThreshold.value = '0';
+      resultCount.value = String(initialTop);
+      sortOrder.value = 'score_desc';
+      selectedMarketId = null;
+      refreshView();
+    }}
+
+    function syncSelectedMarket(rows) {{
+      if (!rows.length) {{
+        selectedMarketId = null;
+        return null;
+      }}
+      const matching = rows.find(row => row.market_id === selectedMarketId);
+      if (matching) return matching;
+      selectedMarketId = rows[0].market_id;
+      return rows[0];
+    }}
+
+    function renderRadar(rows, selectedRow) {{
       if (!rows.length) {{
         radarBody.innerHTML = '';
         radarEmpty.style.display = 'block';
@@ -241,9 +283,9 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       }}
       radarEmpty.style.display = 'none';
       radarBody.innerHTML = rows.map(row => `
-        <tr>
+        <tr class="${{row.market_id === selectedRow?.market_id ? 'is-selected' : ''}}">
           <td>${{escapeHtml(row.rank)}}</td>
-          <td><a href="#detail-${{escapeHtml(row.market_id)}}">${{escapeHtml(row.title)}}</a></td>
+          <td><a class="market-link" data-market-id="${{escapeHtml(row.market_id)}}" href="#detail-panel">${{escapeHtml(row.title)}}</a></td>
           <td>${{escapeHtml(row.category)}}</td>
           <td>${{escapeHtml(row.source)}}</td>
           <td>${{numberOrNull(row.current_probability)?.toFixed(3) ?? 'n/a'}}</td>
@@ -252,46 +294,67 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
           <td>${{numberOrNull(row.time_since_update_hours)?.toFixed(1) ?? 'n/a'}}h</td>
         </tr>
       `).join('');
+
+      radarBody.querySelectorAll('[data-market-id]').forEach(link => {{
+        link.addEventListener('click', event => {{
+          event.preventDefault();
+          selectedMarketId = link.getAttribute('data-market-id');
+          refreshView();
+          detailPanel.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+        }});
+      }});
     }}
 
-    function renderDetails(rows) {{
-      const detailRows = rows.slice(0, detailCount);
-      if (!detailRows.length) {{
+    function detailNote(row) {{
+      const notes = [];
+      if (row.time_since_update_hours == null) notes.push('staleness age unavailable');
+      if (row.time_to_resolution_hours == null) notes.push('resolution horizon unavailable');
+      if (row.current_probability == null) notes.push('current probability unavailable');
+      if (!notes.length) return '';
+      return `<div class="detail-note">Available data is shown first. Missing fields for this record: ${{escapeHtml(notes.join(', '))}}.</div>`;
+    }}
+
+    function renderDetails(selectedRow) {{
+      if (!selectedRow) {{
         detailCards.innerHTML = '';
         detailEmpty.style.display = 'block';
         return;
       }}
       detailEmpty.style.display = 'none';
-      detailCards.innerHTML = detailRows.map(row => {{
-        const exp = explanationLookup[row.market_id] || {{ caveats: [], supporting_signals: [], score_components: {{}}, topic_tags: [] }};
-        const topicTags = (exp.topic_tags || []).map(tag => `<span class="pill">${{escapeHtml(tag)}}</span>`).join('');
-        const caveats = (exp.caveats || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
-        const signals = (exp.supporting_signals || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
-        const components = Object.entries(exp.score_components || {{}}).map(([key, value]) => `<li><strong>${{escapeHtml(key)}}</strong>: ${{escapeHtml(value)}}</li>`).join('');
-        return `
-          <section class="detail-card" id="detail-${{escapeHtml(row.market_id)}}">
-            <h3>${{escapeHtml(row.title)}}</h3>
-            <p class="meta">Category ${{escapeHtml(row.category)}} • Score ${{numberOrNull(row.final_score)?.toFixed(3) ?? 'n/a'}} • Probability ${{numberOrNull(row.current_probability)?.toFixed(3) ?? 'n/a'}} • <a href="${{escapeHtml(row.source_url)}}">Source</a></p>
-            <p class="meta">Event context: ${{escapeHtml(row.event_title || 'n/a')}}</p>
-            <p><strong>${{escapeHtml(exp.headline_reason || row.headline_reason)}}</strong></p>
-            <p>${{escapeHtml(exp.short_explanation || '')}}</p>
-            <p>${{escapeHtml(exp.detailed_explanation || '')}}</p>
-            <div class="pill-list">${{topicTags || '<span class="muted">No topic tags</span>'}}</div>
-            <div class="grid" style="margin-top: 1rem;">
-              <div><h4>Caveats</h4><ul>${{caveats}}</ul></div>
-              <div><h4>Supporting signals</h4><ul>${{signals}}</ul></div>
-              <div><h4>Score components</h4><ul>${{components}}</ul></div>
-            </div>
-          </section>
-        `;
-      }}).join('');
+      const exp = explanationLookup[selectedRow.market_id] || {{ caveats: [], supporting_signals: [], score_components: {{}}, topic_tags: [] }};
+      const topicTags = (exp.topic_tags || []).map(tag => `<span class="pill">${{escapeHtml(tag)}}</span>`).join('');
+      const caveats = (exp.caveats || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
+      const signals = (exp.supporting_signals || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
+      const components = Object.entries(exp.score_components || {{}}).map(([key, value]) => `<li><strong>${{escapeHtml(key)}}</strong>: ${{escapeHtml(value)}}</li>`).join('');
+      detailCards.innerHTML = `
+        <section class="detail-card" id="detail-${{escapeHtml(selectedRow.market_id)}}">
+          <h3>${{escapeHtml(selectedRow.title)}}</h3>
+          <p class="meta">Category ${{escapeHtml(selectedRow.category)}} • Source ${{escapeHtml(selectedRow.source)}} • Status ${{escapeHtml(selectedRow.status || 'n/a')}}</p>
+          <p class="meta">Score ${{numberOrNull(selectedRow.final_score)?.toFixed(3) ?? 'n/a'}} • Probability ${{numberOrNull(selectedRow.current_probability)?.toFixed(3) ?? 'n/a'}} • Resolution horizon ${{numberOrNull(selectedRow.time_to_resolution_hours)?.toFixed(1) ?? 'n/a'}}h • Refreshed ${{escapeHtml(bundle.refresh_metadata.fetched_at)}}</p>
+          <p class="meta">Event context: ${{escapeHtml(selectedRow.event_title || 'n/a')}} • <a href="${{escapeHtml(selectedRow.source_url)}}" target="_blank" rel="noreferrer">Open source market</a></p>
+          <p><strong>${{escapeHtml(exp.headline_reason || selectedRow.headline_reason)}}</strong></p>
+          <p>${{escapeHtml(exp.short_explanation || '')}}</p>
+          <p>${{escapeHtml(exp.detailed_explanation || '')}}</p>
+          <div class="pill-list">${{topicTags || '<span class="muted">No topic tags</span>'}}</div>
+          <div class="grid" style="margin-top: 1rem;">
+            <div><h4>Caveats</h4><ul>${{caveats}}</ul></div>
+            <div><h4>Supporting signals</h4><ul>${{signals}}</ul></div>
+            <div><h4>Score components</h4><ul>${{components}}</ul></div>
+          </div>
+          ${{detailNote(selectedRow)}}
+        </section>
+      `;
     }}
 
     function refreshView() {{
       scoreReadout.textContent = Number(scoreThreshold.value || '0').toFixed(2);
       const rows = filteredRows();
-      renderRadar(rows);
-      renderDetails(rows);
+      const selectedRow = syncSelectedMarket(rows);
+      resultStatus.textContent = rows.length
+        ? `Showing ${{rows.length}} result${{rows.length === 1 ? '' : 's'}}. Selected market: ${{selectedRow?.title ?? 'n/a'}}.`
+        : 'Showing 0 results.';
+      renderRadar(rows, selectedRow);
+      renderDetails(selectedRow);
     }}
 
     const sources = [...new Set(bundle.ranked_markets.map(row => row.source))].sort();
@@ -305,6 +368,8 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       control.addEventListener('input', refreshView);
       control.addEventListener('change', refreshView);
     }});
+    resetFiltersButton.addEventListener('click', resetFilters);
+    resetFromEmptyButton.addEventListener('click', resetFilters);
 
     refreshView();
   </script>
