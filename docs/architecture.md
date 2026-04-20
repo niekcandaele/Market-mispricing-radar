@@ -209,6 +209,9 @@ Preferred notebook-to-app contract:
 Current local mirror:
 - `zerve/app/streamlit_app.py`
 
+See also:
+- `docs/zerve-notebook-block-map.md`
+
 ### Streamlit responsibilities
 - display top ranked markets
 - allow selection or filtering of markets
