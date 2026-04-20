@@ -5,6 +5,11 @@ Expected upstream variables in Zerve:
 - app_bundle
 - qa_summary
 
+In deployed Zerve Streamlit, this app can also load those variables through
+`from zerve import variable` using block-level lookups. Override block names with:
+- `MMR_ZERVE_APP_BUNDLE_BLOCK`
+- `MMR_ZERVE_QA_BLOCK`
+
 When run locally, this file falls back to importing the mirrored bridge blocks.
 It is intentionally lightweight and aimed at proving the deployment-layer handoff,
 not at replacing the richer local HTML demo.
@@ -39,6 +44,18 @@ FILTER_STATE_DEFAULTS = {
 SOURCE_NAME = "polymarket"
 TOP_PREVIEW_COUNT = 5
 LOCAL_BUNDLE_ENV_VAR = "MMR_APP_BUNDLE_PATH"
+ZERVE_APP_BUNDLE_BLOCK_ENV_VAR = "MMR_ZERVE_APP_BUNDLE_BLOCK"
+ZERVE_QA_BLOCK_ENV_VAR = "MMR_ZERVE_QA_BLOCK"
+DEFAULT_ZERVE_APP_BUNDLE_BLOCKS = (
+    "build_app_bundle",
+    "polymarket_app_bundle_block",
+    "app_bundle",
+)
+DEFAULT_ZERVE_QA_BLOCKS = (
+    "build_qa_summary",
+    "polymarket_qa_block",
+    "qa_summary",
+)
 
 
 def qa_market_key(row: dict[str, Any]) -> str:
@@ -186,8 +203,50 @@ def load_local_bundle_artifact() -> tuple[dict[str, Any] | None, Path | None]:
     return None, None
 
 
+def load_zerve_variable(
+    block_env_var: str,
+    default_blocks: tuple[str, ...],
+    variable_name: str,
+) -> tuple[Any | None, str | None, list[dict[str, str]]]:
+    try:
+        from zerve import variable as zerve_variable
+    except ImportError:
+        return None, None, []
+
+    configured_block = (os.environ.get(block_env_var) or "").strip()
+    block_candidates = [configured_block] if configured_block else list(default_blocks)
+    errors: list[dict[str, str]] = []
+
+    for block_name in block_candidates:
+        if not block_name:
+            continue
+        try:
+            return zerve_variable(block_name, variable_name), block_name, errors
+        except Exception as exc:
+            errors.append(
+                {
+                    "block_name": block_name,
+                    "variable_name": variable_name,
+                    "error": f"{type(exc).__name__}: {exc}",
+                }
+            )
+
+    return None, None, errors
+
+
+def zerve_block_context() -> str | None:
+    if not loaded_zerve_block_names:
+        return None
+    return ", ".join(
+        f"{variable_name}: {block_name}"
+        for variable_name, block_name in sorted(loaded_zerve_block_names.items())
+    )
+
+
 bundle_input_origin = "zerve-upstream"
 loaded_local_bundle_path: Path | None = None
+loaded_zerve_block_names: dict[str, str] = {}
+zerve_variable_load_errors: list[dict[str, str]] = []
 
 
 try:
@@ -200,6 +259,30 @@ try:
     qa_summary
 except NameError:
     qa_summary = None
+
+
+if app_bundle is None:
+    app_bundle, app_bundle_block_name, app_bundle_errors = load_zerve_variable(
+        ZERVE_APP_BUNDLE_BLOCK_ENV_VAR,
+        DEFAULT_ZERVE_APP_BUNDLE_BLOCKS,
+        "app_bundle",
+    )
+    zerve_variable_load_errors.extend(app_bundle_errors)
+    if app_bundle is not None and app_bundle_block_name is not None:
+        bundle_input_origin = "zerve-variable"
+        loaded_zerve_block_names["app_bundle"] = app_bundle_block_name
+
+
+if qa_summary is None:
+    qa_summary, qa_block_name, qa_errors = load_zerve_variable(
+        ZERVE_QA_BLOCK_ENV_VAR,
+        DEFAULT_ZERVE_QA_BLOCKS,
+        "qa_summary",
+    )
+    zerve_variable_load_errors.extend(qa_errors)
+    if qa_summary is not None and qa_block_name is not None:
+        bundle_input_origin = "zerve-variable"
+        loaded_zerve_block_names["qa_summary"] = qa_block_name
 
 
 if app_bundle is None:
@@ -354,13 +437,17 @@ def filtered_reason_breakdown(filtered: list[dict[str, Any]]) -> list[dict[str, 
 
 
 def methodology_live_context_rows() -> list[dict[str, Any]]:
-    return [
+    rows = [
         {"label": "Refresh ID", "value": refresh_metadata.get("refresh_id") or "unknown"},
         {"label": "Fetched at", "value": refresh_metadata.get("fetched_at") or "unknown"},
         {"label": "Source count", "value": source_count(ranked_markets)},
         {"label": "Bundle origin", "value": bundle_input_origin.replace("-", " ")},
         {"label": "QA warnings", "value": len(qa_summary.get("warnings") or [])},
     ]
+    block_context = zerve_block_context()
+    if block_context:
+        rows.append({"label": "Zerve blocks", "value": block_context})
+    return rows
 
 
 
@@ -724,7 +811,10 @@ def render_app() -> None:
         st.write(f"Source count: {source_count(ranked_markets)}")
         st.write(f"Score version: {refresh_metadata.get('score_version') or 'unknown'}")
         st.write(f"Bundle origin: {bundle_input_origin.replace('-', ' ')}")
-        if loaded_local_bundle_path is not None:
+        block_context = zerve_block_context()
+        if block_context:
+            st.caption(f"Zerve blocks: {block_context}")
+        elif loaded_local_bundle_path is not None:
             st.caption(str(loaded_local_bundle_path))
 
         warnings = top_warning_messages()
