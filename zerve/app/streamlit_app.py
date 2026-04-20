@@ -170,6 +170,98 @@ def format_hours(value: Any) -> str:
     return f"{value:.1f}h"
 
 
+def format_value(value: Any) -> str:
+    if value is None:
+        return "unknown"
+    if isinstance(value, float):
+        return f"{value:.3f}"
+    return str(value)
+
+
+def component_label(key: str) -> str:
+    labels = {
+        "staleness_component": "Staleness",
+        "event_horizon_component": "Time to resolution",
+        "extremeness_component": "Price extremeness",
+        "liquidity_component": "Liquidity support",
+        "volatility_component": "Volatility",
+        "data_quality_penalty": "Data quality penalty",
+        "heuristic_penalty": "Heuristic penalty",
+    }
+    return labels.get(key, key.replace("_", " ").title())
+
+
+def signal_label(key: str) -> str:
+    labels = {
+        "time_since_update_hours": "Time since update",
+        "time_to_resolution_hours": "Time to resolution",
+        "price_distance_from_mid": "Distance from midpoint",
+        "liquidity": "Liquidity",
+        "volume_24hr": "24h volume",
+        "one_month_price_change_abs": "One-month move",
+    }
+    return labels.get(key, key.replace("_", " ").title())
+
+
+def score_component_rows(explanation: dict[str, Any]) -> list[dict[str, Any]]:
+    components = explanation.get("score_components") or {}
+    ordered = [
+        "staleness_component",
+        "event_horizon_component",
+        "extremeness_component",
+        "liquidity_component",
+        "volatility_component",
+        "data_quality_penalty",
+        "heuristic_penalty",
+    ]
+    rows = []
+    for key in ordered:
+        value = components.get(key)
+        if value is None:
+            continue
+        rows.append({"label": component_label(key), "value": float(value)})
+    return rows
+
+
+def supporting_signal_rows(explanation: dict[str, Any]) -> list[dict[str, Any]]:
+    values = explanation.get("supporting_signal_values") or {}
+    ordered = [
+        "time_since_update_hours",
+        "time_to_resolution_hours",
+        "price_distance_from_mid",
+        "liquidity",
+        "volume_24hr",
+        "one_month_price_change_abs",
+    ]
+    rows = []
+    for key in ordered:
+        rows.append({"signal": signal_label(key), "value": format_value(values.get(key))})
+    return rows
+
+
+def peer_comparison_rows(filtered: list[dict[str, Any]], selected_row: dict[str, Any]) -> list[dict[str, Any]]:
+    selected_market_id = selected_row.get("market_id")
+    selected_category = selected_row.get("category")
+    if not selected_category:
+        return []
+
+    peers = [
+        row for row in filtered
+        if row.get("market_id") != selected_market_id and row.get("category") == selected_category
+    ]
+    peers.sort(key=lambda item: item.get("final_score") or 0.0, reverse=True)
+    return [
+        {
+            "rank": row.get("rank"),
+            "title": row.get("title"),
+            "score": row.get("final_score"),
+            "probability": row.get("current_probability"),
+            "reason": row.get("primary_reason_code"),
+        }
+        for row in peers[:5]
+    ]
+
+
 def ensure_filter_defaults() -> None:
     if st is None:
         return
@@ -336,10 +428,26 @@ def render_app() -> None:
             st.write(explanation.get("detailed_explanation") or "No detailed explanation available.")
 
             st.markdown("#### Score breakdown")
-            st.json(explanation.get("score_components") or {}, expanded=False)
+            component_rows = score_component_rows(explanation)
+            if component_rows:
+                metric_cols = st.columns(min(4, len(component_rows)))
+                for index, row in enumerate(component_rows):
+                    column = metric_cols[index % len(metric_cols)]
+                    with column:
+                        st.metric(row["label"], f"{row['value']:.3f}")
+                        st.progress(max(0.0, min(1.0, row["value"])))
+            else:
+                st.write("No score components are available for this market.")
 
             st.markdown("#### Supporting signals")
-            st.json(explanation.get("supporting_signal_values") or {}, expanded=False)
+            st.dataframe(supporting_signal_rows(explanation), use_container_width=True)
+
+            st.markdown("#### Same-category peers")
+            peer_rows = peer_comparison_rows(filtered, selected_row)
+            if peer_rows:
+                st.dataframe(peer_rows, use_container_width=True)
+            else:
+                st.write("No same-category peers are visible in the current filtered result set.")
 
             st.markdown("#### Caveats")
             caveats = explanation.get("caveats") or []
