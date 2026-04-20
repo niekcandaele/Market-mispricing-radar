@@ -23,6 +23,7 @@ except ImportError:  # pragma: no cover - local syntax validation should still w
 
 
 FILTER_STATE_DEFAULTS = {
+    "active_view": "Radar",
     "source_filter": "All",
     "category_filter": "All",
     "min_score": 0.0,
@@ -332,6 +333,8 @@ def normalize_filter_choices(source_options: list[str], category_options: list[s
         st.session_state["category_filter"] = "All"
     if st.session_state.get("result_limit") not in [10, 25, 50, 100]:
         st.session_state["result_limit"] = 10
+    if st.session_state.get("active_view") not in ["Radar", "Market Detail", "Methodology"]:
+        st.session_state["active_view"] = "Radar"
 
 
 def selected_market(filtered: list[dict[str, Any]]) -> dict[str, Any] | None:
@@ -377,6 +380,9 @@ def render_app() -> None:
             st.write(f"- {line}")
 
     with st.sidebar:
+        st.header("Navigation")
+        st.radio("View", ["Radar", "Market Detail", "Methodology"], key="active_view", label_visibility="collapsed")
+
         st.header("Controls")
         st.selectbox("Source", source_options, key="source_filter")
         st.selectbox("Category", category_options, key="category_filter")
@@ -410,9 +416,9 @@ def render_app() -> None:
         st.session_state["sort_desc"],
     )
 
-    radar_tab, detail_tab, methodology_tab = st.tabs(["Radar", "Market Detail", "Methodology"])
+    active_view = st.session_state["active_view"]
 
-    with radar_tab:
+    if active_view == "Radar":
         st.subheader("Ranked Radar")
         trust_cols = st.columns(4)
         trust_cols[0].metric("Refresh ID", refresh_metadata.get("refresh_id") or "unknown")
@@ -432,7 +438,7 @@ def render_app() -> None:
                 reset_filter_state()
                 st.rerun()
         else:
-            st.caption(f"Showing {len(filtered)} filtered results. Use the focus action to sync a market into the detail tab.")
+            st.caption(f"Showing {len(filtered)} filtered results. Focus a market to jump directly into the detail view.")
             for row in radar_card_rows(filtered):
                 with st.container(border=True):
                     top_left, top_mid, top_right = st.columns([3, 1, 1])
@@ -452,11 +458,12 @@ def render_app() -> None:
                         action_cols = st.columns(2)
                         if action_cols[0].button("Focus in detail", key=f"focus-{row.get('market_id')}", use_container_width=True):
                             st.session_state["selected_market_id"] = row.get("market_id")
-                            st.success("Focused market updated. Open the Market Detail tab to inspect it.")
+                            st.session_state["active_view"] = "Market Detail"
+                            st.rerun()
                         if row.get("source_url"):
                             action_cols[1].link_button("Open source", row["source_url"], use_container_width=True)
 
-    with detail_tab:
+    elif active_view == "Market Detail":
         st.subheader("Market Detail")
         selected_row = selected_market(filtered)
         if not pipeline_ready():
@@ -529,7 +536,7 @@ def render_app() -> None:
             else:
                 st.write("No important detail fields are currently missing for this market.")
 
-    with methodology_tab:
+    else:
         st.subheader("Methodology")
         for heading, lines in methodology_sections():
             st.markdown(f"#### {heading}")
