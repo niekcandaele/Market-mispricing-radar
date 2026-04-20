@@ -13,6 +13,7 @@ not at replacing the richer local HTML demo.
 from __future__ import annotations
 
 import importlib.util
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -122,6 +123,33 @@ def top_warning_messages() -> list[str]:
         message = warning.get("message") or warning.get("code") or "Unnamed warning"
         warnings.append(f"{severity}: {message}")
     return warnings
+
+
+
+def filtered_slice_summary(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    focused_market_id = None if st is None else st.session_state.get("selected_market_id")
+    visible_scores = [row.get("final_score") for row in filtered if isinstance(row.get("final_score"), (int, float))]
+    visible_categories = {row.get("category") for row in filtered if row.get("category")}
+    focused_visible = any(row.get("market_id") == focused_market_id for row in filtered)
+    return [
+        {"label": "Visible results", "value": len(filtered)},
+        {"label": "Top visible score", "value": f"{max(visible_scores):.3f}" if visible_scores else "unknown"},
+        {"label": "Visible categories", "value": len(visible_categories)},
+        {"label": "Focused in slice", "value": "yes" if focused_visible else "no"},
+    ]
+
+
+
+def filtered_reason_breakdown(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    reason_counts = Counter(
+        row.get("primary_reason_code") or "unknown"
+        for row in filtered
+    )
+    return [
+        {"reason_code": reason_code, "count": count}
+        for reason_code, count in reason_counts.most_common(5)
+    ]
+
 
 
 def methodology_sections() -> list[tuple[str, list[str]]]:
@@ -488,10 +516,21 @@ def render_app() -> None:
             st.markdown("#### Category snapshot")
             st.dataframe(category_breakdown_rows(), use_container_width=True)
 
+        if filtered:
+            st.markdown("#### Current filtered slice")
+            summary_cols = st.columns(4)
+            for column, item in zip(summary_cols, filtered_slice_summary(filtered)):
+                column.metric(item["label"], item["value"])
+
+            reason_rows = filtered_reason_breakdown(filtered)
+            if reason_rows:
+                st.markdown("#### Dominant reason codes in current slice")
+                st.dataframe(reason_rows, use_container_width=True)
+
         if not pipeline_ready():
             st.info("No ranked results are available yet. Refresh the pipeline and try again.")
         elif not filtered:
-            st.info("No results match the current filters.")
+            st.info("No results match the current filters, so there is no current slice summary to show.")
             if st.button("Reset filters from empty state", key="reset-empty-state"):
                 reset_filter_state()
                 st.rerun()
