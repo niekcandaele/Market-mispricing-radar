@@ -29,7 +29,7 @@ FILTER_STATE_DEFAULTS = {
     "category_filter": "All",
     "min_score": 0.0,
     "result_limit": 10,
-    "sort_desc": True,
+    "sort_mode": "score_desc",
     "selected_market_id": None,
 }
 
@@ -99,7 +99,7 @@ def filter_rows(
     category_filter: str,
     min_score: float,
     limit: int,
-    sort_desc: bool,
+    sort_mode: str,
 ) -> list[dict[str, Any]]:
     filtered = []
     for row in rows:
@@ -112,7 +112,22 @@ def filter_rows(
             continue
         filtered.append(row)
 
-    filtered.sort(key=lambda item: item.get("final_score") or 0.0, reverse=sort_desc)
+    if sort_mode == "stale_desc":
+        filtered.sort(
+            key=lambda item: (
+                item.get("time_since_update_hours") is None,
+                -(item.get("time_since_update_hours") or 0.0),
+            )
+        )
+    elif sort_mode == "resolution_asc":
+        filtered.sort(
+            key=lambda item: (
+                item.get("time_to_resolution_hours") is None,
+                item.get("time_to_resolution_hours") or float("inf"),
+            )
+        )
+    else:
+        filtered.sort(key=lambda item: item.get("final_score") or 0.0, reverse=True)
     return filtered[:limit]
 
 
@@ -390,6 +405,8 @@ def normalize_filter_choices(source_options: list[str], category_options: list[s
         st.session_state["category_filter"] = "All"
     if st.session_state.get("result_limit") not in [10, 25, 50, 100]:
         st.session_state["result_limit"] = 10
+    if st.session_state.get("sort_mode") not in ["score_desc", "stale_desc", "resolution_asc"]:
+        st.session_state["sort_mode"] = "score_desc"
     if st.session_state.get("active_view") not in ["Radar", "Market Detail", "Methodology"]:
         st.session_state["active_view"] = "Radar"
 
@@ -498,7 +515,16 @@ def render_app() -> None:
         st.selectbox("Category", category_options, key="category_filter")
         st.slider("Minimum score", 0.0, 1.0, step=0.05, key="min_score")
         st.selectbox("Result count", [10, 25, 50, 100], key="result_limit")
-        st.toggle("Sort highest first", key="sort_desc")
+        st.selectbox(
+            "Sort",
+            ["score_desc", "stale_desc", "resolution_asc"],
+            format_func=lambda item: {
+                "score_desc": "Highest score",
+                "stale_desc": "Most stale",
+                "resolution_asc": "Closest to resolution",
+            }.get(item, item),
+            key="sort_mode",
+        )
         if st.button("Reset filters", use_container_width=True):
             reset_filter_state()
             st.rerun()
@@ -523,7 +549,7 @@ def render_app() -> None:
         st.session_state["category_filter"],
         st.session_state["min_score"],
         st.session_state["result_limit"],
-        st.session_state["sort_desc"],
+        st.session_state["sort_mode"],
     )
 
     active_view = st.session_state["active_view"]
