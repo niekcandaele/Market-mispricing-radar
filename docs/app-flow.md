@@ -265,6 +265,9 @@ Narration:
 The app should mostly present precomputed outputs.
 Do not move core ingestion, normalization, or scoring logic into the Streamlit layer.
 
+Current mirrored scaffold:
+- `zerve/app/streamlit_app.py`
+
 ### MVP cutoff rule
 
 If time is short, ship:
