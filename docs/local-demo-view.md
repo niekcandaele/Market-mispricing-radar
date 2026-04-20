@@ -26,14 +26,16 @@ It renders four core sections from the app bundle:
 
 It also includes a short methodology section so the page loosely matches the planned judge-facing app flow.
 
-The current local demo now mirrors these planned Radar widgets:
+The current local demo now mirrors these planned Radar widgets and interactions:
 - source filter
 - category filter
 - minimum score threshold
 - result count selector
 - sort control
+- click-through market selection from the Radar table into the detail view
+- reset-filters actions for empty states
 
-Those controls drive both the Radar table and the sample detail cards.
+Those controls drive both the Radar table and the selected market detail view.
 
 ## How to run it
 
@@ -64,6 +66,7 @@ That makes it useful for checking:
 - whether the Radar table reads cleanly
 - whether category context is good enough to support later filtering
 - whether the interactive controls feel coherent enough for the later Streamlit app
+- whether row-driven detail selection feels natural
 - whether the explanation fields feel judge-friendly
 - whether the refresh metadata is sufficient for trust cues
 - whether the current bundle shape is awkward anywhere before Zerve work resumes
@@ -79,6 +82,7 @@ The intended migration path is:
 
 Current limit:
 - category and topic labels in the local demo are heuristic, not source-authoritative
+- this is still a single-page local validation artifact, not a full multi-screen deployed app
 
 ## Constraint
 
