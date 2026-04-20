@@ -169,3 +169,41 @@ Investigate one of these paths:
 1. manually trigger the notebook block once in the live UI and inspect the resulting output region
 2. identify a more reliable notebook automation hook or keyboard path for running the active cell
 3. test whether a less cluttered notebook state without side panels makes output and run state visible
+
+## Deployment tab validation (2026-04-20)
+
+Further live validation moved beyond notebook blocks and into the built-in deployment flow.
+
+### What was confirmed
+- opening `Deploy` from the notebook exposes first-class deployment types including Streamlit, Gradio, Dash, FastAPI, Flask, and Custom
+- choosing `Streamlit` opens a dedicated deployment tab inside the same notebook workspace
+- the default run command is shown as `streamlit run app/main.py --server.port 8080 --server.address 0.0.0.0`
+- the editable code surface is labeled `main.py` in the deployment UI
+- Zerve automatically provisions a preview deployment URL for the Streamlit tab
+- the preview deployment can surface runtime failures directly in the rendered preview
+
+### Important implementation detail
+There is a notable path mismatch in the visible UI:
+- editor label: `main.py`
+- default run command: `streamlit run app/main.py ...`
+
+This strongly suggests the deployment editor content is materialized into an `/app/main.py` runtime path behind the scenes, even though the visible tab label is shorter.
+
+### Live runtime signal
+A deliberately rough browser-driven code edit triggered a preview error modal showing:
+- `File "/app/main.py", line 11`
+- `IndentationError: unexpected indent`
+
+That result matters because it confirms the preview deployment path is real and that deployment-side Python errors are surfaced back through the Zerve UI.
+
+### Still not confirmed
+- the exact `from zerve import variable` access pattern in a live Streamlit deployment
+- whether deployment code edits can be patched more cleanly through automation than through the Monaco-style editor surface
+- whether deployment code lives behind a stable internal API that is easier to automate than the editor itself
+
+### Practical implication
+The Streamlit deployment path is more real than assumed earlier: it has its own code editor, preview URL, runtime, and error surface.
+
+The remaining gap is now narrower and more specific:
+- not "does Streamlit deployment exist"
+- but "what is the cleanest live variable wiring path from notebook outputs into deployment code"
