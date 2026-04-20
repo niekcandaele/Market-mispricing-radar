@@ -502,6 +502,14 @@ def market_explanation_record(row: dict[str, Any]) -> dict[str, Any]:
         "primary_reason_code": row["primary_reason_code"],
         "caveats": row["caveats"],
         "supporting_signals": row["supporting_signals"],
+        "supporting_signal_values": {
+            "time_since_update_hours": row["time_since_update_hours"],
+            "time_to_resolution_hours": row["time_to_resolution_hours"],
+            "price_distance_from_mid": row["price_distance_from_mid"],
+            "liquidity": row["liquidity"],
+            "volume_24hr": row["volume_24hr"],
+            "one_month_price_change_abs": row["one_month_price_change_abs"],
+        },
         "score_components": {
             "staleness_component": row["staleness_component"],
             "event_horizon_component": row["event_horizon_component"],

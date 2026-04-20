@@ -20,4 +20,4 @@ Prototype harness:
 - `python3 scripts/polymarket_ranker.py`
 - `python3 scripts/render_local_demo.py`
 
-The local demo now includes interactive Radar-style controls for filtering, sorting, click-through detail selection, filter reset states, and a small same-category peer comparison block.
+The local demo now includes interactive Radar-style controls for filtering, sorting, click-through detail selection, filter reset states, a small same-category peer comparison block, and raw supporting-signal values in the selected detail view.
