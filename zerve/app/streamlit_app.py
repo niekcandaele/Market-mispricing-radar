@@ -353,6 +353,35 @@ def focused_market_outside_filters(filtered: list[dict[str, Any]]) -> bool:
 
 
 
+def filtered_market_ids(filtered: list[dict[str, Any]]) -> list[str]:
+    return [row.get("market_id") for row in filtered if row.get("market_id")]
+
+
+
+def filtered_position_context(selected_row: dict[str, Any], filtered: list[dict[str, Any]]) -> str | None:
+    market_id = selected_row.get("market_id")
+    market_ids = filtered_market_ids(filtered)
+    if not market_id:
+        return None
+    if market_id not in market_ids:
+        return None
+    index = market_ids.index(market_id)
+    return f"Showing result {index + 1} of {len(market_ids)} in the current Radar slice."
+
+
+
+def adjacent_market_ids(selected_row: dict[str, Any], filtered: list[dict[str, Any]]) -> tuple[str | None, str | None]:
+    market_id = selected_row.get("market_id")
+    market_ids = filtered_market_ids(filtered)
+    if not market_id or market_id not in market_ids:
+        return None, None
+    index = market_ids.index(market_id)
+    previous_id = market_ids[index - 1] if index > 0 else None
+    next_id = market_ids[index + 1] if index + 1 < len(market_ids) else None
+    return previous_id, next_id
+
+
+
 def selected_market(filtered: list[dict[str, Any]]) -> dict[str, Any] | None:
     filtered_market_ids = [row.get("market_id") for row in filtered if row.get("market_id")]
 
@@ -512,6 +541,23 @@ def render_app() -> None:
                     st.rerun()
 
             explanation = explanation_lookup.get(selected_row.get("market_id"), {})
+
+            position_context = filtered_position_context(selected_row, filtered)
+            previous_market_id, next_market_id = adjacent_market_ids(selected_row, filtered)
+            if position_context:
+                st.caption(position_context)
+                nav_cols = st.columns(3)
+                if nav_cols[0].button("Previous result", disabled=previous_market_id is None, use_container_width=True):
+                    st.session_state["selected_market_id"] = previous_market_id
+                    st.rerun()
+                if nav_cols[1].button("Back to Radar", use_container_width=True):
+                    st.session_state["active_view"] = "Radar"
+                    st.rerun()
+                if nav_cols[2].button("Next result", disabled=next_market_id is None, use_container_width=True):
+                    st.session_state["selected_market_id"] = next_market_id
+                    st.rerun()
+            else:
+                st.caption("This market is being shown outside the current Radar slice.")
 
             st.markdown(f"### {selected_row.get('title')}")
             header_left, header_mid, header_right = st.columns(3)
