@@ -59,6 +59,11 @@ except NameError:
 ranked_markets = app_bundle.get("ranked_markets", [])
 market_explanations = app_bundle.get("market_explanations", [])
 refresh_metadata = app_bundle.get("refresh_metadata", {})
+ranked_market_lookup = {
+    row.get("market_id"): row
+    for row in ranked_markets
+    if row.get("market_id")
+}
 explanation_lookup = {
     row.get("market_id"): row
     for row in market_explanations
@@ -337,27 +342,51 @@ def normalize_filter_choices(source_options: list[str], category_options: list[s
         st.session_state["active_view"] = "Radar"
 
 
-def selected_market(filtered: list[dict[str, Any]]) -> dict[str, Any] | None:
-    if not filtered or st is None:
-        return filtered[0] if filtered else None
+def focused_market_outside_filters(filtered: list[dict[str, Any]]) -> bool:
+    if st is None:
+        return False
+    current_market_id = st.session_state.get("selected_market_id")
+    if current_market_id not in ranked_market_lookup:
+        return False
+    filtered_market_ids = {row.get("market_id") for row in filtered if row.get("market_id")}
+    return current_market_id not in filtered_market_ids
 
-    market_ids = [row.get("market_id") for row in filtered if row.get("market_id")]
-    if not market_ids:
-        return filtered[0]
+
+
+def selected_market(filtered: list[dict[str, Any]]) -> dict[str, Any] | None:
+    filtered_market_ids = [row.get("market_id") for row in filtered if row.get("market_id")]
+
+    if st is None:
+        if filtered:
+            return filtered[0]
+        return ranked_markets[0] if ranked_markets else None
 
     current_market_id = st.session_state.get("selected_market_id")
-    if current_market_id not in market_ids:
-        st.session_state["selected_market_id"] = market_ids[0]
-        current_market_id = market_ids[0]
+    if current_market_id not in ranked_market_lookup:
+        if filtered_market_ids:
+            current_market_id = filtered_market_ids[0]
+            st.session_state["selected_market_id"] = current_market_id
+        elif ranked_markets:
+            current_market_id = ranked_markets[0].get("market_id")
+            st.session_state["selected_market_id"] = current_market_id
+        else:
+            return None
 
-    label_lookup = {row.get("market_id"): market_label(row) for row in filtered if row.get("market_id")}
+    select_options = list(filtered_market_ids)
+    if current_market_id and current_market_id not in select_options:
+        select_options = [current_market_id] + select_options
+
+    label_lookup = {market_id: market_label(row) for market_id, row in ranked_market_lookup.items()}
+    if current_market_id in ranked_market_lookup and current_market_id not in filtered_market_ids:
+        label_lookup[current_market_id] = f"{label_lookup.get(current_market_id, current_market_id)} (outside current filters)"
+
     selected_market_id = st.selectbox(
         "Select market",
-        market_ids,
+        select_options,
         format_func=lambda item: label_lookup.get(item, item),
         key="selected_market_id",
     )
-    return next((row for row in filtered if row.get("market_id") == selected_market_id), filtered[0])
+    return ranked_market_lookup.get(selected_market_id)
 
 
 def render_app() -> None:
@@ -471,6 +500,17 @@ def render_app() -> None:
         elif selected_row is None:
             st.info("No market is available for the current filters.")
         else:
+            if focused_market_outside_filters(filtered):
+                st.warning("The focused market is outside the current Radar filters. The detail view is preserving that selection instead of silently swapping to a different market.")
+                action_cols = st.columns(2)
+                if action_cols[0].button("Reset filters to recover focused market", use_container_width=True):
+                    reset_filter_state()
+                    st.session_state["active_view"] = "Market Detail"
+                    st.rerun()
+                if action_cols[1].button("Return to Radar", use_container_width=True):
+                    st.session_state["active_view"] = "Radar"
+                    st.rerun()
+
             explanation = explanation_lookup.get(selected_row.get("market_id"), {})
 
             st.markdown(f"### {selected_row.get('title')}")
