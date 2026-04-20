@@ -13,6 +13,8 @@ Project workflow and repo conventions live in `docs/repo-workflow.md`.
 Judge-facing app flow notes live in `docs/app-flow.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Local scoring prototype notes live in `docs/local-ranking-prototype.md`.
+Local demo-view notes live in `docs/local-demo-view.md`.
 
 Prototype harness:
 - `python3 scripts/polymarket_ranker.py`
+- `python3 scripts/render_local_demo.py`
