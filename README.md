@@ -28,5 +28,6 @@ Zerve snippet mirror:
 - `python3 zerve/snippets/polymarket_scoring_block.py`
 - `python3 zerve/snippets/polymarket_explanations_block.py`
 - `python3 zerve/snippets/polymarket_app_bundle_block.py`
+- `python3 zerve/snippets/polymarket_qa_block.py`
 
 The local demo now includes interactive Radar-style controls for filtering, sorting, click-through detail selection, filter reset states, a small same-category peer comparison block, raw supporting-signal values in the selected detail view, and compact score-breakdown cards for the selected market.
