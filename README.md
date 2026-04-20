@@ -24,5 +24,6 @@ Prototype harness:
 Zerve snippet mirror:
 - `python3 zerve/snippets/polymarket_ingestion_block.py`
 - `python3 zerve/snippets/polymarket_normalization_block.py`
+- `python3 zerve/snippets/polymarket_feature_block.py`
 
 The local demo now includes interactive Radar-style controls for filtering, sorting, click-through detail selection, filter reset states, a small same-category peer comparison block, raw supporting-signal values in the selected detail view, and compact score-breakdown cards for the selected market.

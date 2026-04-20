@@ -129,6 +129,9 @@ Responsibilities:
 Likely outputs:
 - `market_features`
 
+Current local mirror:
+- `zerve/snippets/polymarket_feature_block.py`
+
 #### E. Scoring
 
 Responsibilities:
