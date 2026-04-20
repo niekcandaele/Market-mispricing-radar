@@ -9,6 +9,7 @@ ranked results.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import datetime as dt
 import json
 import math
@@ -20,6 +21,29 @@ API_URL = "https://gamma-api.polymarket.com/markets?closed=false&limit={limit}"
 USER_AGENT = "Mozilla/5.0 (compatible; MarketMispricingRadar/0.1; +https://git.home.candaele.dev/jefkes-workspace/market-mispricing-radar)"
 PIPELINE_VERSION = "local-prototype-v0.4"
 SCORE_VERSION = "v1-prototype"
+
+CATEGORY_RULES: list[tuple[str, list[str]]] = [
+    ("sports", ["nba", "nfl", "mlb", "nhl", "soccer", "football", "ufc", "fight", "tennis", "golf", "f1", "formula 1", "championship", "world cup", "playoff", "finals"]),
+    ("politics", ["election", "president", "senate", "house", "parliament", "prime minister", "trump", "biden", "democrat", "republican", "vote", "mayor", "governor"]),
+    ("crypto", ["bitcoin", "btc", "ethereum", "eth", "solana", "sol", "crypto", "token", "memecoin", "dogecoin", "airdrop"]),
+    ("finance-business", ["fed", "inflation", "recession", "gdp", "tariff", "ipo", "stock", "nasdaq", "s&p", "earnings", "economy", "interest rate"]),
+    ("technology", ["ai", "openai", "gpt", "anthropic", "google", "meta", "microsoft", "tesla", "apple", "iphone", "robot", "chip", "semiconductor"]),
+    ("science-health", ["covid", "vaccine", "fda", "clinical", "space", "spacex", "nasa", "drug", "trial", "mars", "rocket"]),
+    ("entertainment", ["movie", "album", "song", "music", "netflix", "oscar", "emmy", "grammy", "gta", "game", "trailer", "drake", "rihanna", "celebrity"]),
+    ("world", ["ukraine", "russia", "china", "israel", "gaza", "ceasefire", "earthquake", "pope", "india", "europe", "iran"]),
+]
+
+TOPIC_RULES: list[tuple[str, list[str]]] = [
+    ("ai", ["ai", "openai", "gpt", "anthropic"]),
+    ("crypto", ["bitcoin", "btc", "ethereum", "eth", "crypto", "token", "solana", "sol"]),
+    ("elections", ["election", "vote", "president", "senate", "parliament"]),
+    ("war-geopolitics", ["ukraine", "russia", "ceasefire", "israel", "gaza", "iran", "china"]),
+    ("music", ["album", "song", "music", "drake", "rihanna"]),
+    ("gaming", ["gta", "game", "xbox", "playstation", "nintendo"]),
+    ("movies-tv", ["movie", "netflix", "oscar", "emmy", "series"]),
+    ("sports", ["nba", "nfl", "mlb", "nhl", "soccer", "ufc", "tennis", "golf", "f1", "formula 1"]),
+    ("macro", ["fed", "inflation", "recession", "gdp", "tariff", "interest rate", "economy"]),
+]
 
 
 def parse_args() -> argparse.Namespace:
@@ -133,10 +157,53 @@ def yes_no_prices(market: dict[str, Any]) -> tuple[float | None, float | None]:
     return (yes_price, no_price)
 
 
+def first_event(raw: dict[str, Any]) -> dict[str, Any]:
+    events = raw.get("events")
+    if isinstance(events, list) and events and isinstance(events[0], dict):
+        return events[0]
+    return {}
+
+
+def infer_category_and_topics(raw: dict[str, Any]) -> tuple[str, list[str], str | None]:
+    event = first_event(raw)
+    text = " ".join(
+        str(value)
+        for value in [
+            raw.get("question"),
+            raw.get("description"),
+            raw.get("slug"),
+            event.get("title"),
+            event.get("description"),
+            event.get("slug"),
+        ]
+        if value
+    ).lower()
+
+    category = "general"
+    for candidate, keywords in CATEGORY_RULES:
+        if any(keyword in text for keyword in keywords):
+            category = candidate
+            break
+
+    topic_tags: list[str] = []
+    for tag, keywords in TOPIC_RULES:
+        if any(keyword in text for keyword in keywords):
+            topic_tags.append(tag)
+
+    if category != "general" and category not in topic_tags:
+        topic_tags.insert(0, category)
+    if not topic_tags:
+        topic_tags = [category]
+
+    event_title = event.get("title") if isinstance(event.get("title"), str) else None
+    return category, topic_tags[:4], event_title
+
+
 def normalize_market(raw: dict[str, Any], fetched_at: dt.datetime) -> dict[str, Any]:
     updated_at = parse_iso(raw.get("updatedAt"))
     resolution_at = parse_iso(raw.get("endDate") or raw.get("endDateIso"))
     yes_price, no_price = yes_no_prices(raw)
+    category, topic_tags, event_title = infer_category_and_topics(raw)
     liquidity = coerce_float(raw.get("liquidityNum")) or coerce_float(raw.get("liquidity"))
     volume = coerce_float(raw.get("volumeNum")) or coerce_float(raw.get("volume"))
     volume_24hr = coerce_float(raw.get("volume24hr")) or coerce_float(raw.get("volume24hrClob"))
@@ -163,6 +230,10 @@ def normalize_market(raw: dict[str, Any], fetched_at: dt.datetime) -> dict[str, 
         "source_market_id": str(raw.get("id")),
         "source_url": f"https://polymarket.com/event/{slug}",
         "title": title,
+        "description": raw.get("description") or None,
+        "event_title": event_title,
+        "category": category,
+        "topic_tags": topic_tags,
         "status": status,
         "is_binary": len(parse_jsonish_list(raw.get("outcomes"))) == 2,
         "resolution_at": resolution_at.isoformat().replace("+00:00", "Z") if resolution_at else None,
@@ -405,6 +476,9 @@ def ranked_market_record(row: dict[str, Any]) -> dict[str, Any]:
         "source_market_id": row["source_market_id"],
         "source_url": row["source_url"],
         "title": row["title"],
+        "event_title": row["event_title"],
+        "category": row["category"],
+        "topic_tags": row["topic_tags"],
         "status": row["status"],
         "rank": row["rank"],
         "final_score": row["final_score"],
@@ -420,6 +494,8 @@ def ranked_market_record(row: dict[str, Any]) -> dict[str, Any]:
 def market_explanation_record(row: dict[str, Any]) -> dict[str, Any]:
     return {
         "market_id": row["market_id"],
+        "category": row["category"],
+        "topic_tags": row["topic_tags"],
         "headline_reason": row["headline_reason"],
         "short_explanation": row["short_explanation"],
         "detailed_explanation": row["detailed_explanation"],
@@ -439,6 +515,7 @@ def market_explanation_record(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def app_bundle(rows: list[dict[str, Any]], raw_markets: list[dict[str, Any]], fetched_at: dt.datetime) -> dict[str, Any]:
+    category_counts = Counter(row["category"] for row in rows)
     return {
         "ranked_markets": [ranked_market_record(row) for row in rows],
         "market_explanations": [market_explanation_record(row) for row in rows],
@@ -448,9 +525,13 @@ def app_bundle(rows: list[dict[str, Any]], raw_markets: list[dict[str, Any]], fe
             "fetched_at": fetched_at.isoformat().replace("+00:00", "Z"),
             "market_count": len(raw_markets),
             "open_market_count": sum(1 for row in rows if row["status"] == "open"),
+            "category_breakdown": [
+                {"category": category, "market_count": count}
+                for category, count in category_counts.most_common()
+            ],
             "pipeline_version": PIPELINE_VERSION,
             "score_version": SCORE_VERSION,
-            "notes": "Generated from the local prototype app-ready bundle mode.",
+            "notes": "Generated from the local prototype app-ready bundle mode with heuristic category context.",
         },
     }
 
