@@ -36,6 +36,7 @@ The current local demo now mirrors these planned Radar widgets and interactions:
 - reset-filters actions for empty states
 - a small same-category peer comparison block in the selected detail view
 - raw supporting-signal values in the selected detail view
+- score-component cards with compact visual bars in the selected detail view
 
 Those controls drive both the Radar table and the selected market detail view.
 
@@ -71,6 +72,7 @@ That makes it useful for checking:
 - whether row-driven detail selection feels natural
 - whether same-category comparison helps the selected market feel more interpretable
 - whether raw supporting-signal values make the score easier to trust
+- whether the score breakdown reads like a real app section instead of a debug dump
 - whether the explanation fields feel judge-friendly
 - whether the refresh metadata is sufficient for trust cues
 - whether the current bundle shape is awkward anywhere before Zerve work resumes

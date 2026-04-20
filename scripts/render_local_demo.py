@@ -77,6 +77,13 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     .peer-table th, .peer-table td {{ padding: .5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }}
     .signal-table {{ width: 100%; border-collapse: collapse; margin-top: .5rem; }}
     .signal-table th, .signal-table td {{ padding: .45rem .5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }}
+    .score-breakdown {{ display: grid; gap: .75rem; }}
+    .score-card {{ border: 1px solid #e5e7eb; border-radius: 10px; padding: .75rem; background: #f8fafc; }}
+    .score-card-header {{ display: flex; justify-content: space-between; gap: .75rem; font-size: .95rem; margin-bottom: .45rem; }}
+    .score-card-label {{ font-weight: 600; color: #0f172a; }}
+    .score-card-value {{ color: #334155; font-variant-numeric: tabular-nums; }}
+    .score-bar-track {{ width: 100%; height: .5rem; border-radius: 999px; background: #e2e8f0; overflow: hidden; }}
+    .score-bar-fill {{ height: 100%; border-radius: 999px; background: linear-gradient(90deg, #38bdf8, #2563eb); }}
     ul {{ margin: .5rem 0 0 1.1rem; }}
     code {{ background: #e2e8f0; padding: .1rem .3rem; border-radius: 4px; }}
     .empty {{ padding: 1rem; border: 1px dashed #cbd5e1; border-radius: 10px; color: #475569; background: #f8fafc; }}
@@ -342,6 +349,30 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
         : '<p class="muted">No supporting signals available.</p>';
     }}
 
+    function componentLabel(key) {{
+      return key
+        .replace(/_/g, ' ')
+        .replace(/\\b\\w/g, letter => letter.toUpperCase());
+    }}
+
+    function scoreBreakdown(exp) {{
+      const rows = Object.entries(exp.score_components || {{}}).map(([key, value]) => {{
+        const numeric = numberOrNull(value);
+        const width = numeric == null ? 0 : Math.max(0, Math.min(1, numeric)) * 100;
+        const valueText = numeric == null ? 'n/a' : numeric.toFixed(3);
+        return `
+          <div class="score-card">
+            <div class="score-card-header">
+              <span class="score-card-label">${{escapeHtml(componentLabel(key))}}</span>
+              <span class="score-card-value">${{escapeHtml(valueText)}}</span>
+            </div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: ${{width}}%"></div></div>
+          </div>
+        `;
+      }}).join('');
+      return rows || '<p class="muted">No score components available.</p>';
+    }}
+
     function peerComparisonRows(rows, selectedRow) {{
       return rows
         .filter(row => row.market_id !== selectedRow.market_id && row.category === selectedRow.category)
@@ -359,7 +390,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       const topicTags = (exp.topic_tags || []).map(tag => `<span class="pill">${{escapeHtml(tag)}}</span>`).join('');
       const caveats = (exp.caveats || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
       const signals = supportingSignalTable(exp);
-      const components = Object.entries(exp.score_components || {{}}).map(([key, value]) => `<li><strong>${{escapeHtml(key)}}</strong>: ${{escapeHtml(value)}}</li>`).join('');
+      const components = scoreBreakdown(exp);
       const peers = peerComparisonRows(rows, selectedRow);
       const peerTable = peers.length
         ? `<table class="peer-table"><thead><tr><th>Rank</th><th>Market</th><th>Score</th><th>Stale age</th></tr></thead><tbody>${{peers.map(peer => `<tr><td>${{escapeHtml(peer.rank)}}</td><td>${{escapeHtml(peer.title)}}</td><td>${{numberOrNull(peer.final_score)?.toFixed(3) ?? 'n/a'}}</td><td>${{numberOrNull(peer.time_since_update_hours)?.toFixed(1) ?? 'n/a'}}h</td></tr>`).join('')}}</tbody></table>`
@@ -377,7 +408,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
           <div class="grid" style="margin-top: 1rem;">
             <div><h4>Caveats</h4><ul>${{caveats}}</ul></div>
             <div><h4>Supporting signals</h4>${{signals}}</div>
-            <div><h4>Score components</h4><ul>${{components}}</ul></div>
+            <div><h4>Score components</h4><div class="score-breakdown">${{components}}</div></div>
           </div>
           <div style="margin-top: 1rem;">
             <h4>Same-category peers</h4>
