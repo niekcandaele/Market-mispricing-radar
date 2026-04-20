@@ -166,6 +166,9 @@ Responsibilities:
 - preserve refresh metadata and provenance
 - emit a stable handoff shape for the final app surface
 
+Preferred Zerve notebook block name:
+- `build_app_bundle`
+
 Likely outputs:
 - `app_bundle`
 - `refresh_metadata`
@@ -180,6 +183,9 @@ Responsibilities:
 - catch obviously bad outputs
 - provide sanity-check summaries
 
+Preferred Zerve notebook block name:
+- `build_qa_summary`
+
 Likely outputs:
 - `qa_summary`
 - `refresh_metadata`
@@ -193,6 +199,12 @@ Primary deployment target:
 - Streamlit app
 
 The app should read prepared variables from the development layer using Zerve variable references.
+The confirmed deployed-Zerve call pattern is:
+- `variable(block_name, variable_name)`
+
+Preferred notebook-to-app contract:
+- `variable("build_app_bundle", "app_bundle")`
+- `variable("build_qa_summary", "qa_summary")`
 
 Current local mirror:
 - `zerve/app/streamlit_app.py`
