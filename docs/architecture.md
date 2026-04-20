@@ -116,6 +116,9 @@ Responsibilities:
 Likely outputs:
 - `normalized_markets`
 
+Current local mirror:
+- `zerve/snippets/polymarket_normalization_block.py`
+
 #### D. Feature engineering
 
 Responsibilities:
