@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """First normalization block for Zerve-side Polymarket ingestion output.
 
+Preferred Zerve notebook block name:
+- `normalize_markets`
+
 This snippet expects the previous ingestion block to have emitted:
 - polymarket_raw_markets
 - ingestion_metadata

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """App-bundle assembly block for Zerve-side Polymarket outputs.
 
+Preferred Zerve notebook block name:
+- `build_app_bundle`
+
 This snippet expects the previous blocks to have emitted:
 - ranked_markets
 - market_explanations

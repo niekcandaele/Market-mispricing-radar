@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """First scoring block for Zerve-side Polymarket feature output.
 
+Preferred Zerve notebook block name:
+- `score_markets`
+
 This snippet expects the previous blocks to have emitted:
 - normalized_markets
 - market_features

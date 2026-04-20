@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """First feature-engineering block for Zerve-side normalized Polymarket markets.
 
+Preferred Zerve notebook block name:
+- `build_market_features`
+
 This snippet expects the previous normalization block to have emitted:
 - normalized_markets
 - normalization_metadata

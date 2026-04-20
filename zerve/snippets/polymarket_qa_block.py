@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """QA summary block for Zerve-side Polymarket app-bundle outputs.
 
+Preferred Zerve notebook block name:
+- `build_qa_summary`
+
 This snippet expects the previous block to have emitted:
 - app_bundle
 - bundle_metadata

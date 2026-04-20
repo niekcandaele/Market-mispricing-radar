@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Normalization-ready Polymarket ingestion snippet for a Zerve Python block.
 
+Preferred Zerve notebook block name:
+- `fetch_polymarket_data`
+
 This file is meant to be easy to paste into a Zerve development-layer block,
 but it can also be run locally for validation.
 

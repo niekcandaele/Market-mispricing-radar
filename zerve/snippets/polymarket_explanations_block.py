@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Explanation assembly block for Zerve-side ranked Polymarket markets.
 
+Preferred Zerve notebook block name:
+- `build_market_explanations`
+
 This snippet expects the previous scoring block to have emitted:
 - ranked_markets
 - scoring_metadata
