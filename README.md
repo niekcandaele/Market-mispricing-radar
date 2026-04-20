@@ -12,6 +12,7 @@ See `PROJECT_PLAN.md` for the initial project plan.
 Project workflow and repo conventions live in `docs/repo-workflow.md`.
 Judge-facing app flow notes live in `docs/app-flow.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
+Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.
 Local scoring prototype notes live in `docs/local-ranking-prototype.md`.
 Local demo-view notes live in `docs/local-demo-view.md`.
 The current local bridge artifacts also carry heuristic category/topic context for app shaping.
