@@ -159,7 +159,21 @@ Likely outputs:
 Current local mirror:
 - `zerve/snippets/polymarket_explanations_block.py`
 
-#### G. Validation and QA
+#### G. App bundle assembly
+
+Responsibilities:
+- combine ranked markets and explanation records into an app-facing bundle
+- preserve refresh metadata and provenance
+- emit a stable handoff shape for the final app surface
+
+Likely outputs:
+- `app_bundle`
+- `refresh_metadata`
+
+Current local mirror:
+- `zerve/snippets/polymarket_app_bundle_block.py`
+
+#### H. Validation and QA
 
 Responsibilities:
 - inspect top-ranked results
