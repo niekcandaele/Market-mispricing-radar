@@ -18,6 +18,8 @@ from typing import Any
 
 API_URL = "https://gamma-api.polymarket.com/markets?closed=false&limit={limit}"
 USER_AGENT = "Mozilla/5.0 (compatible; MarketMispricingRadar/0.1; +https://git.home.candaele.dev/jefkes-workspace/market-mispricing-radar)"
+PIPELINE_VERSION = "local-prototype-v0.4"
+SCORE_VERSION = "v1-prototype"
 
 
 def parse_args() -> argparse.Namespace:
@@ -25,6 +27,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=500, help="number of markets to fetch")
     parser.add_argument("--top", type=int, default=15, help="number of ranked rows to print")
     parser.add_argument("--json", action="store_true", help="emit ranked rows as JSON")
+    parser.add_argument("--app-json", action="store_true", help="emit an app-ready JSON bundle")
     return parser.parse_args()
 
 
@@ -395,6 +398,63 @@ def rank_markets(markets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return ranked
 
 
+def ranked_market_record(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "market_id": row["market_id"],
+        "source": row["source"],
+        "source_market_id": row["source_market_id"],
+        "source_url": row["source_url"],
+        "title": row["title"],
+        "status": row["status"],
+        "rank": row["rank"],
+        "final_score": row["final_score"],
+        "current_probability": row["yes_price"],
+        "headline_reason": row["headline_reason"],
+        "primary_reason_code": row["primary_reason_code"],
+        "time_since_update_hours": row["time_since_update_hours"],
+        "time_to_resolution_hours": row["time_to_resolution_hours"],
+        "confidence_band": row["confidence_band"],
+    }
+
+
+def market_explanation_record(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "market_id": row["market_id"],
+        "headline_reason": row["headline_reason"],
+        "short_explanation": row["short_explanation"],
+        "detailed_explanation": row["detailed_explanation"],
+        "primary_reason_code": row["primary_reason_code"],
+        "caveats": row["caveats"],
+        "supporting_signals": row["supporting_signals"],
+        "score_components": {
+            "staleness_component": row["staleness_component"],
+            "event_horizon_component": row["event_horizon_component"],
+            "extremeness_component": row["extremeness_component"],
+            "liquidity_component": row["liquidity_component"],
+            "volatility_component": row["volatility_component"],
+            "data_quality_penalty": row["data_quality_penalty"],
+            "heuristic_penalty": row["heuristic_penalty"],
+        },
+    }
+
+
+def app_bundle(rows: list[dict[str, Any]], raw_markets: list[dict[str, Any]], fetched_at: dt.datetime) -> dict[str, Any]:
+    return {
+        "ranked_markets": [ranked_market_record(row) for row in rows],
+        "market_explanations": [market_explanation_record(row) for row in rows],
+        "refresh_metadata": {
+            "refresh_id": fetched_at.strftime("refresh-%Y%m%dT%H%M%SZ"),
+            "source": "polymarket",
+            "fetched_at": fetched_at.isoformat().replace("+00:00", "Z"),
+            "market_count": len(raw_markets),
+            "open_market_count": sum(1 for row in rows if row["status"] == "open"),
+            "pipeline_version": PIPELINE_VERSION,
+            "score_version": SCORE_VERSION,
+            "notes": "Generated from the local prototype app-ready bundle mode.",
+        },
+    }
+
+
 def format_rows(rows: list[dict[str, Any]]) -> str:
     header = "rank  score  reason                     yes   hrs_to_end  hrs_stale  title"
     line = "-" * len(header)
@@ -426,7 +486,10 @@ def main() -> int:
         "top_count": len(top_rows),
     }
 
-    if args.json:
+    if args.app_json:
+        json.dump(app_bundle(ranked, raw_markets, fetched_at), sys.stdout, indent=2)
+        sys.stdout.write("\n")
+    elif args.json:
         json.dump({"summary": summary, "rows": top_rows}, sys.stdout, indent=2)
         sys.stdout.write("\n")
     else:

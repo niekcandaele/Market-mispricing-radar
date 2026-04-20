@@ -70,11 +70,19 @@ Current explanation-oriented fields include:
 - `caveats`
 - `supporting_signals`
 
+The prototype also supports an app-ready bundle mode via `--app-json`.
+That bundle currently emits:
+- `ranked_markets`
+- `market_explanations`
+- `refresh_metadata`
+
 These map directly onto the planned app flow:
-- `headline_reason` for the Radar screen one-line reason
-- `short_explanation` and `detailed_explanation` for the Market Detail explanation section
-- `caveats` for the detail-view caveat block
-- `supporting_signals` for the supporting-signals section and score explanation scaffolding
+- `ranked_markets` for the Radar screen list/table
+- `headline_reason` inside `ranked_markets` for the Radar screen one-line reason
+- `market_explanations` for the Market Detail explanation section
+- `caveats` inside `market_explanations` for the detail-view caveat block
+- `supporting_signals` and `score_components` inside `market_explanations` for the supporting-signals and score-breakdown sections
+- `refresh_metadata` for the shared refresh trust panel
 
 ## Practical quirks already surfaced
 
@@ -107,6 +115,7 @@ Useful options:
 ```bash
 python3 scripts/polymarket_ranker.py --top 10
 python3 scripts/polymarket_ranker.py --limit 300 --json
+python3 scripts/polymarket_ranker.py --app-json
 ```
 
 ## How this should feed back into Zerve
