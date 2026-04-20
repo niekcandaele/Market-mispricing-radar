@@ -280,6 +280,34 @@ def radar_card_rows(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
     ]
 
 
+def pipeline_ready() -> bool:
+    return bool(ranked_markets and market_explanations)
+
+
+def unavailable_context_lines() -> list[str]:
+    lines = ["The pipeline has not produced a complete app bundle yet."]
+    if refresh_metadata.get("refresh_id"):
+        lines.append(f"Last known refresh ID: {refresh_metadata.get('refresh_id')}")
+    if refresh_metadata.get("fetched_at"):
+        lines.append(f"Last known refresh time: {refresh_metadata.get('fetched_at')}")
+    return lines
+
+
+def missing_detail_notes(selected_row: dict[str, Any], explanation: dict[str, Any]) -> list[str]:
+    notes = []
+    if not selected_row.get("source_url"):
+        notes.append("Source link is unavailable for this market.")
+    if selected_row.get("time_to_resolution_hours") is None:
+        notes.append("Resolution timing is unavailable for this market.")
+    if selected_row.get("time_since_update_hours") is None:
+        notes.append("Update-age timing is unavailable for this market.")
+    if not (explanation.get("supporting_signal_values") or {}):
+        notes.append("Supporting signal values are unavailable for this market.")
+    if not (explanation.get("score_components") or {}):
+        notes.append("Score components are unavailable for this market.")
+    return notes
+
+
 def ensure_filter_defaults() -> None:
     if st is None:
         return
@@ -343,6 +371,11 @@ def render_app() -> None:
     st.title("Market Mispricing Radar")
     st.caption("Mirrored Zerve Streamlit scaffold")
 
+    if not pipeline_ready():
+        st.warning("Pipeline output is not fully ready yet. The app is showing an honest unavailable state.")
+        for line in unavailable_context_lines():
+            st.write(f"- {line}")
+
     with st.sidebar:
         st.header("Controls")
         st.selectbox("Source", source_options, key="source_filter")
@@ -391,7 +424,9 @@ def render_app() -> None:
             st.markdown("#### Category snapshot")
             st.dataframe(category_breakdown_rows(), use_container_width=True)
 
-        if not filtered:
+        if not pipeline_ready():
+            st.info("No ranked results are available yet. Refresh the pipeline and try again.")
+        elif not filtered:
             st.info("No results match the current filters.")
             if st.button("Reset filters from empty state", key="reset-empty-state"):
                 reset_filter_state()
@@ -424,7 +459,9 @@ def render_app() -> None:
     with detail_tab:
         st.subheader("Market Detail")
         selected_row = selected_market(filtered)
-        if selected_row is None:
+        if not pipeline_ready():
+            st.info("Market detail is unavailable until the pipeline produces ranked markets and explanations.")
+        elif selected_row is None:
             st.info("No market is available for the current filters.")
         else:
             explanation = explanation_lookup.get(selected_row.get("market_id"), {})
@@ -483,6 +520,14 @@ def render_app() -> None:
                     st.write(f"- {item}")
             else:
                 st.write("No caveats were emitted for this market.")
+
+            st.markdown("#### Missing or unavailable fields")
+            notes = missing_detail_notes(selected_row, explanation)
+            if notes:
+                for note in notes:
+                    st.write(f"- {note}")
+            else:
+                st.write("No important detail fields are currently missing for this market.")
 
     with methodology_tab:
         st.subheader("Methodology")
