@@ -184,6 +184,9 @@ Likely outputs:
 - `qa_summary`
 - `refresh_metadata`
 
+Current local mirror:
+- `zerve/snippets/polymarket_qa_block.py`
+
 ## 2. Deployment layer
 
 Primary deployment target:
