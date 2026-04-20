@@ -149,6 +149,8 @@ def normalize_market(raw: dict[str, Any], fetched_at: datetime, fetched_at_iso: 
     last_price = yes_price if yes_price is not None else coerce_float(raw.get("lastTradePrice"))
     liquidity = coerce_float(raw.get("liquidityNum")) or coerce_float(raw.get("liquidity"))
     volume = coerce_float(raw.get("volumeNum")) or coerce_float(raw.get("volume"))
+    volume_24hr = coerce_float(raw.get("volume24hr")) or coerce_float(raw.get("volume24hrClob"))
+    one_month_price_change_abs = abs(coerce_float(raw.get("oneMonthPriceChange")) or 0.0)
     category = inferred_category(raw, event)
     market_id = raw.get("id")
     source_market_id = str(market_id) if market_id is not None else None
@@ -175,12 +177,14 @@ def normalize_market(raw: dict[str, Any], fetched_at: datetime, fetched_at_iso: 
         "yes_price": yes_price,
         "no_price": no_price,
         "volume": volume,
+        "volume_24hr": volume_24hr,
         "liquidity": liquidity,
         "last_updated_at": updated_at.isoformat().replace("+00:00", "Z") if updated_at else None,
         "fetched_at": fetched_at_iso,
         "time_to_resolution_hours": time_to_resolution_hours,
         "time_since_update_hours": time_since_update_hours,
         "price_distance_from_mid": price_distance_from_mid,
+        "one_month_price_change_abs": one_month_price_change_abs,
         "topic_tags": topic_tags(raw, event, category),
         "source_priority": SOURCE_PRIORITY,
         "event_title": event.get("title") or None,
