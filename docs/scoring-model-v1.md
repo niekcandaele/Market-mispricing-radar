@@ -137,6 +137,10 @@ volatility = 0.15
 
 These are placeholders for experimentation, not sacred truths.
 
+Current bridge note:
+- the mirrored Zerve scoring snippet intentionally follows the tuned local-prototype weighting and interaction logic rather than this earlier placeholder sketch
+- that keeps the repo-side Zerve bridge aligned with the behavior already validated in the local ranking prototype
+
 ## Interaction rules
 
 Some components should amplify each other.
