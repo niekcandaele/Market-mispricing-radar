@@ -73,6 +73,8 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
     .market-link {{ color: #0f172a; font-weight: 600; text-decoration: none; }}
     .market-link:hover {{ text-decoration: underline; }}
     tr.is-selected {{ background: #eff6ff; }}
+    .peer-table {{ width: 100%; border-collapse: collapse; margin-top: .5rem; }}
+    .peer-table th, .peer-table td {{ padding: .5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }}
     ul {{ margin: .5rem 0 0 1.1rem; }}
     code {{ background: #e2e8f0; padding: .1rem .3rem; border-radius: 4px; }}
     .empty {{ padding: 1rem; border: 1px dashed #cbd5e1; border-radius: 10px; color: #475569; background: #f8fafc; }}
@@ -314,7 +316,13 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       return `<div class="detail-note">Available data is shown first. Missing fields for this record: ${{escapeHtml(notes.join(', '))}}.</div>`;
     }}
 
-    function renderDetails(selectedRow) {{
+    function peerComparisonRows(rows, selectedRow) {{
+      return rows
+        .filter(row => row.market_id !== selectedRow.market_id && row.category === selectedRow.category)
+        .slice(0, 5);
+    }}
+
+    function renderDetails(selectedRow, rows) {{
       if (!selectedRow) {{
         detailCards.innerHTML = '';
         detailEmpty.style.display = 'block';
@@ -326,6 +334,10 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
       const caveats = (exp.caveats || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
       const signals = (exp.supporting_signals || []).map(item => `<li>${{escapeHtml(item)}}</li>`).join('');
       const components = Object.entries(exp.score_components || {{}}).map(([key, value]) => `<li><strong>${{escapeHtml(key)}}</strong>: ${{escapeHtml(value)}}</li>`).join('');
+      const peers = peerComparisonRows(rows, selectedRow);
+      const peerTable = peers.length
+        ? `<table class="peer-table"><thead><tr><th>Rank</th><th>Market</th><th>Score</th><th>Stale age</th></tr></thead><tbody>${{peers.map(peer => `<tr><td>${{escapeHtml(peer.rank)}}</td><td>${{escapeHtml(peer.title)}}</td><td>${{numberOrNull(peer.final_score)?.toFixed(3) ?? 'n/a'}}</td><td>${{numberOrNull(peer.time_since_update_hours)?.toFixed(1) ?? 'n/a'}}h</td></tr>`).join('')}}</tbody></table>`
+        : '<p class="muted">No same-category peers are visible in the current filtered result set.</p>';
       detailCards.innerHTML = `
         <section class="detail-card" id="detail-${{escapeHtml(selectedRow.market_id)}}">
           <h3>${{escapeHtml(selectedRow.title)}}</h3>
@@ -341,6 +353,11 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
             <div><h4>Supporting signals</h4><ul>${{signals}}</ul></div>
             <div><h4>Score components</h4><ul>${{components}}</ul></div>
           </div>
+          <div style="margin-top: 1rem;">
+            <h4>Same-category peers</h4>
+            <p class="meta">A small comparison slice from the current filtered dataset.</p>
+            ${{peerTable}}
+          </div>
           ${{detailNote(selectedRow)}}
         </section>
       `;
@@ -354,7 +371,7 @@ def render_html(bundle: dict, top: int, detail_count: int) -> str:
         ? `Showing ${{rows.length}} result${{rows.length === 1 ? '' : 's'}}. Selected market: ${{selectedRow?.title ?? 'n/a'}}.`
         : 'Showing 0 results.';
       renderRadar(rows, selectedRow);
-      renderDetails(selectedRow);
+      renderDetails(selectedRow, rows);
     }}
 
     const sources = [...new Set(bundle.ranked_markets.map(row => row.source))].sort();
