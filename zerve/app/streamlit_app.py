@@ -152,6 +152,30 @@ def filtered_reason_breakdown(filtered: list[dict[str, Any]]) -> list[dict[str, 
 
 
 
+def methodology_live_context_rows() -> list[dict[str, Any]]:
+    return [
+        {"label": "Refresh ID", "value": refresh_metadata.get("refresh_id") or "unknown"},
+        {"label": "Fetched at", "value": refresh_metadata.get("fetched_at") or "unknown"},
+        {"label": "Source count", "value": source_count(ranked_markets)},
+        {"label": "QA warnings", "value": len(qa_summary.get("warnings") or [])},
+    ]
+
+
+
+def methodology_warning_rows() -> list[dict[str, Any]]:
+    rows = []
+    for warning in qa_summary.get("warnings", []):
+        rows.append(
+            {
+                "severity": (warning.get("severity") or "info").upper(),
+                "code": warning.get("code") or "unknown",
+                "message": warning.get("message") or "Unnamed warning",
+            }
+        )
+    return rows
+
+
+
 def methodology_sections() -> list[tuple[str, list[str]]]:
     return [
         (
@@ -663,6 +687,23 @@ def render_app() -> None:
 
     else:
         st.subheader("Methodology")
+        if pipeline_ready():
+            st.markdown("#### Current run context")
+            context_cols = st.columns(4)
+            for column, item in zip(context_cols, methodology_live_context_rows()):
+                column.metric(item["label"], item["value"])
+
+            warning_rows = methodology_warning_rows()
+            if warning_rows:
+                st.markdown("#### Current QA trust notes")
+                st.dataframe(warning_rows, use_container_width=True)
+            else:
+                st.write("No QA warnings are active for the current run.")
+        else:
+            st.info("Live run context is unavailable because the pipeline output is not fully ready yet.")
+            for line in unavailable_context_lines():
+                st.write(f"- {line}")
+
         for heading, lines in methodology_sections():
             st.markdown(f"#### {heading}")
             for line in lines:
