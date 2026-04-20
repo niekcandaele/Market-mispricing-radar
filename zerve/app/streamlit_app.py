@@ -141,6 +141,16 @@ def top_warning_messages() -> list[str]:
 
 
 
+def radar_warning_summary() -> str | None:
+    warnings = top_warning_messages()
+    if not warnings:
+        return None
+    warning_count = len(warnings)
+    noun = "warning" if warning_count == 1 else "warnings"
+    return f"This refresh has {warning_count} active QA {noun}. The landing slice is still visible, but it should be interpreted with those caveats in mind."
+
+
+
 def filtered_slice_summary(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
     focused_market_id = None if st is None else st.session_state.get("selected_market_id")
     visible_scores = [row.get("final_score") for row in filtered if isinstance(row.get("final_score"), (int, float))]
@@ -561,6 +571,16 @@ def render_app() -> None:
         trust_cols[1].metric("Processed", refresh_metadata.get("market_count") or 0)
         trust_cols[2].metric("Open markets", refresh_metadata.get("open_market_count") or 0)
         trust_cols[3].metric("Sources", source_count(ranked_markets))
+
+        radar_warning = radar_warning_summary()
+        warnings = top_warning_messages()
+        if radar_warning:
+            st.warning(radar_warning)
+            with st.expander("View active QA warnings", expanded=True):
+                for item in warnings[:5]:
+                    st.write(f"- {item}")
+                if len(warnings) > 5:
+                    st.caption(f"Plus {len(warnings) - 5} additional warning(s) in the full QA summary.")
 
         if category_breakdown_rows():
             st.markdown("#### Category snapshot")
