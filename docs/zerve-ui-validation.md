@@ -196,14 +196,36 @@ A deliberately rough browser-driven code edit triggered a preview error modal sh
 
 That result matters because it confirms the preview deployment path is real and that deployment-side Python errors are surfaced back through the Zerve UI.
 
+### Automation progress inside the deployment editor
+A later validation pass found a cleaner automation hook than raw Monaco typing.
+
+Observed from the live React tree around the Streamlit deploy editor:
+- component props included `fileName`, `code`, `scriptId`, `editorKey`, and `onChange`
+- the active deployment script id matched the Streamlit tab id: `ecda0778-025a-4d74-898a-31ee7c3f709d`
+- calling the component's own `onChange` handler replaced the in-memory deployment code more cleanly than browser keystroke injection
+
+Practical significance:
+- the deployment editor is not a total black box
+- we have a plausible automation path for code replacement that avoids most Monaco indentation mangling
+- this is materially better than the earlier notebook-cell editing situation
+
+### Preview deployment progress
+After replacing the broken code through the editor's own change handler:
+- the malformed indentation error was cleared from the preview path
+- the deployment UI returned to a `Start Preview Deployment` state instead of the earlier broken preview dialog
+- starting preview provisioning again produced a fresh preview URL and resumed deployment progress
+
+This does not yet prove the app rendered successfully, but it does show that the deployment code can be repaired and re-previewed without manual typing.
+
 ### Still not confirmed
-- the exact `from zerve import variable` access pattern in a live Streamlit deployment
-- whether deployment code edits can be patched more cleanly through automation than through the Monaco-style editor surface
-- whether deployment code lives behind a stable internal API that is easier to automate than the editor itself
+- the exact `from zerve import variable` access pattern in a fully running live Streamlit deployment
+- whether the editor `onChange` path also persists cleanly through the underlying deployment save API in every case
+- whether deployment code lives behind a stable internal API that is easier to automate directly than the React-layer hook
 
 ### Practical implication
 The Streamlit deployment path is more real than assumed earlier: it has its own code editor, preview URL, runtime, and error surface.
 
 The remaining gap is now narrower and more specific:
 - not "does Streamlit deployment exist"
-- but "what is the cleanest live variable wiring path from notebook outputs into deployment code"
+- not even primarily "can we patch code there"
+- but "can we cleanly prove live notebook-variable wiring in a successful deployed preview"
