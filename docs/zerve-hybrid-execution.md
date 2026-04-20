@@ -88,20 +88,19 @@ This unblocks two things:
 1. we now have a repeatable way to inspect real notebook execution even when the UI is awkward
 2. the first Polymarket ingestion step is viable inside Zerve, as long as the request uses browser-like headers
 
-## Next recommended step
+## Current ingestion follow-through
 
-Replace the probe block with a slightly more production-shaped ingestion block that:
-- fetches a larger active-market slice
-- keeps `polymarket_raw_markets` as the named output
-- prints a short refresh summary
-- prepares the handoff into normalization/scoring blocks
-
-That next-step block is now mirrored locally at:
+The earlier probe block has now been promoted into a cleaner mirrored ingestion snippet at:
 - `zerve/snippets/polymarket_ingestion_block.py`
 
-It is shaped to emit:
-- `source_config`
-- `polymarket_raw_markets`
-- `ingestion_metadata`
+Current behavior:
+- fetches a larger raw slice from Polymarket (`limit=350`)
+- filters that into a deterministic active-market output slice (`polymarket_raw_markets`, capped at 250)
+- keeps browser-like request headers to avoid the earlier Zerve-side `HTTP 403` failure
+- emits `ingestion_metadata` with `refresh_id`, fetch limits, fetched/output counts, and a first-market summary
+- prints a notebook-friendly refresh summary for quick debugging
 
-The snippet keeps the browser-like request headers that avoided the earlier Zerve-side `HTTP 403` failure.
+This means the handoff into normalization is now cleaner and more honest:
+- upstream fetch breadth is larger than the earlier proof-of-life block
+- the named output is still `polymarket_raw_markets`
+- downstream blocks receive an active slice that is closer to the real scoring input shape
