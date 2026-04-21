@@ -84,6 +84,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/demo-market-shortlist.md`
 - best for quickly choosing a strong drilldown example without improvising live
 
+### Submission form map
+- `docs/submission-form-map.md`
+- best for turning the repo copy into actual form answers without hunting across docs
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
