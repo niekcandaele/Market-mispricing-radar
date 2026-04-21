@@ -22,7 +22,7 @@ Use it to answer four questions quickly:
 - status: not created yet
 - repo source material: `docs/submission-deck-outline.md`
 - required next artifact: polished Google Slides deck
-- current blocker: Google login is not currently usable from the available managed browser path
+- current blocker: the logged-in `user` browser profile is not currently running, so there is no usable authenticated browser path for Google Slides creation
 
 ### Video / talking track
 - status: draft-ready
@@ -153,8 +153,8 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - final pass to verify all submission-facing links and artifacts open cleanly
 
 ### Current blocker snapshot
-- Google currently rejects sign-in in the available managed browser, so slide-deck creation is waiting on a browser session Google accepts
-- the latest live Zerve preview recheck is also waiting on a usable authenticated browser state instead of stale preview breadcrumbs
+- the logged-in `user` browser profile exists but is not currently running, so slide-deck creation is still waiting on a usable authenticated browser session
+- the latest live Zerve preview recheck is also waiting on that same usable authenticated browser state instead of stale preview breadcrumbs
 
 ### Not a blocker right now, but still needed before calling the project ready
 - collect the final deck, notes, and demo entrypoint in Google Workspace `Documents`

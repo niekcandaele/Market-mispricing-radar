@@ -8,10 +8,11 @@ Use it when the browser/auth path is finally available and the remaining work ne
 
 ## Current blocker context
 
-At the moment, the repo-side submission package is strong, but the remaining office-layer finish is blocked by browser/auth state:
-- Google Slides creation needs a browser session Google accepts for login
-- Google Doc or deck-speaker-note creation depends on the same office-layer browser path
-- the final live Zerve preview recheck also needs a usable authenticated browser state
+At the moment, the repo-side submission package is strong, but the remaining office-layer finish is blocked by current browser state:
+- the logged-in `user` browser profile exists but is not currently running
+- Google Slides creation needs that authenticated `user` browser session
+- Google Doc or deck-speaker-note creation depends on that same office-layer browser path
+- the final live Zerve preview recheck also needs that same usable authenticated browser state
 
 This doc assumes those blockers have just become solvable.
 

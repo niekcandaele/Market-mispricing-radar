@@ -13,7 +13,7 @@ Status: **near-ready, not submission-complete yet**
 Why:
 - the product and repo-side submission pack are strong
 - the remaining gaps are concentrated in the final office-layer build and final live verification
-- those last gaps are currently blocked by browser/auth state rather than by missing product work
+- those last gaps are currently blocked because the logged-in `user` browser profile is not currently running, not because major product work is still missing
 
 ## What is already done
 
@@ -47,10 +47,11 @@ Why:
 
 ## What is still blocked or missing
 
-### Blocked by browser/auth state
-- final Google Slides deck is not created yet
-- final Google Doc or deck-speaker-note artifact is not created yet
-- fresh authenticated live Zerve preview recheck is still pending
+### Blocked by current browser state
+- the logged-in `user` browser profile exists but is not currently running
+- final Google Slides deck is not created yet because there is no usable authenticated browser session for Google Workspace creation
+- final Google Doc or deck-speaker-note artifact is not created yet for the same reason
+- fresh authenticated live Zerve preview recheck is still pending for the same reason
 
 ### Still required even after browser access is available
 - record the final short demo video

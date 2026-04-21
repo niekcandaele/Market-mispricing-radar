@@ -10,9 +10,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 - repo-side narrative artifacts: present
 - local fallback demo path: verified end to end
-- live Zerve preview path: needs final pre-submission recheck and is currently auth-blocked in the available browser state
-- Google Slides deck: not created yet and currently blocked on a browser Google accepts for login
-- office-layer speaker notes doc: not created yet and currently blocked on the same office-layer browser/login constraint
+- live Zerve preview path: needs final pre-submission recheck and is currently blocked because the logged-in `user` browser profile is not running
+- Google Slides deck: not created yet and currently blocked because there is no usable authenticated `user` browser session for Google Workspace creation
+- office-layer speaker notes doc: not created yet and currently blocked on that same missing authenticated `user` browser session
 - final submission form paste/check: not done yet
 
 ## Demo checks

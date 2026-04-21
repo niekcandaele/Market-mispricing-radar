@@ -9,8 +9,8 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 ## Current blocker context
 
 Right now this office-layer finish is blocked because:
-- Google sign-in is not currently working in the available managed browser path
-- the live Zerve preview recheck also needs a usable authenticated browser state
+- the logged-in `user` browser profile exists but is not currently running, so there is no usable authenticated browser path for Google Workspace work
+- the live Zerve preview recheck also needs that same usable authenticated browser state
 
 This checklist is for the moment those blockers are gone.
 
