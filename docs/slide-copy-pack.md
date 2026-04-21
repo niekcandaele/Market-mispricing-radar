@@ -98,26 +98,62 @@ What is live now, and what comes next
 
 ## Tighter 6-slide deck version
 
-If the deck needs to be shorter, collapse to:
+If the deck needs to be shorter, use this fully specified fallback.
 
-### Slide 1
-- title / hook
+### Slide 1, Title / hook
+#### Title
+Market Mispricing Radar
 
-### Slide 2
-- problem
-- solution
+#### Subtitle
+An explainable radar for prediction markets that deserve a second look.
 
-### Slide 3
-- product flow
+#### Optional small text
+Built as a live Zerve notebook-to-app workflow.
 
-### Slide 4
-- explainable product proof
+### Slide 2, Problem + solution
+#### Title
+From raw odds to explainable triage
 
-### Slide 5
-- why Zerve matters
+#### Bullets
+- raw market lists make it hard to see what deserves inspection first
+- fragile, stale, or weakly supported pricing can hide in plain sight
+- Market Mispricing Radar ranks the markets most worth a second look and explains why
 
-### Slide 6
-- next steps / close
+### Slide 3, Product flow
+#### Title
+How the workflow turns analysis into a product
+
+#### Bullets
+- fetch live Polymarket market data
+- normalize and score fragility-oriented signals
+- generate explanation-rich outputs for a judge-facing app
+
+### Slide 4, Explainable product proof
+#### Title
+Explainable product, not just a score dump
+
+#### Bullets
+- Radar view ranks markets and surfaces headline reasons
+- Market Detail reveals score drivers, signals, and caveats
+- Methodology explains what the score does and does not claim
+
+### Slide 5, Why Zerve matters
+#### Title
+Why this fits ZerveHack
+
+#### Bullets
+- notebook pipeline and deployed app live in one environment
+- analysis becomes a usable product instead of staying trapped in a notebook
+- real deployment, not a static mockup
+
+### Slide 6, Close / next steps
+#### Title
+Live now, with honest room to grow
+
+#### Bullets
+- live now: Polymarket-first, explanation-rich MVP
+- next: cross-source comparison and stronger calibration
+- designed for inspectability, not fake certainty
 
 ## Good closing line for the last slide
 

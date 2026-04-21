@@ -128,10 +128,14 @@ Keep it short:
 If the deck should be tighter, use:
 1. title / hook with radar screenshot
 2. problem and solution
-3. product drilldown with detail screenshot
-4. methodology / honest scope with methodology screenshot
+3. product flow
+4. explainable product proof with detail screenshot
 5. why Zerve matters
 6. next steps / close
+
+Use these sources for the compact path:
+- on-slide copy: `docs/slide-copy-pack.md`
+- speaker notes: `docs/submission-deck-outline.md`
 
 ## Visual rules
 

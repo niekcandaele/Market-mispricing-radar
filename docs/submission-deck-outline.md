@@ -139,6 +139,34 @@ Next:
 ### Speaker notes
 The MVP is intentionally single-source and honest about that. The obvious next step is cross-source confirmation, but the current version already demonstrates a strong explainable workflow end to end.
 
+## Compact 6-slide fallback deck
+
+Use this if the deck needs to stay very short.
+
+### Slide 1, Title / hook
+Speaker notes:
+This is a live inspection radar for prediction markets. The key value is not another market list, it is helping an operator see which markets deserve a second look right now.
+
+### Slide 2, Problem + solution
+Speaker notes:
+Most market interfaces give you raw odds but not triage. We compress that into one workflow that ranks the markets most worth inspecting and explains why they surfaced.
+
+### Slide 3, Product flow
+Speaker notes:
+The workflow is real end to end. We fetch live Polymarket data, normalize it, score fragility-oriented signals, generate explanations, and feed a deployed judge-facing app.
+
+### Slide 4, Explainable product proof
+Speaker notes:
+This is the strongest demo slide. Show the Radar first, then a drilldown view, then reinforce that the methodology is honest about what the score means and what it does not mean.
+
+### Slide 5, Why Zerve matters
+Speaker notes:
+This is a good ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook demo and not a fake front-end shell.
+
+### Slide 6, Close / next steps
+Speaker notes:
+The MVP is intentionally Polymarket-first and explanation-first. The next step is multi-source comparison, but the current version already proves a credible notebook-to-product workflow.
+
 ## Short video flow
 
 Target: 60 to 90 seconds.
