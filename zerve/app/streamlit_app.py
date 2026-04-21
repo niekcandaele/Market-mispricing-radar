@@ -468,14 +468,36 @@ def methodology_warning_rows() -> list[dict[str, Any]]:
 def methodology_sections() -> list[tuple[str, list[str]]]:
     return [
         (
-            "What the product does",
+            "What the radar is doing",
             [
-                "Ranks markets that look stale, fragile, extreme, or weakly supported.",
-                "Surfaces interpretable reasons for inspection instead of opaque scores alone.",
+                "It ranks markets whose current price deserves a second look because the market appears stale, fragile, extreme, or weakly supported.",
+                "It is built to help an operator prioritize inspection, not to bury them under a flat list of odds.",
             ],
         ),
         (
-            "What the product does not claim",
+            "How to read the score",
+            [
+                "A higher score means more signals are pointing at a market that may be unstable, under-supported, or unusually exposed to stale pricing.",
+                "The score is a triage signal, not a claim that the market is objectively wrong or that free money exists.",
+            ],
+        ),
+        (
+            "Why a market appears near the top",
+            [
+                "The radar looks for combinations of stale updates, short time horizons, extreme pricing, thin liquidity support, and meaningful recent movement when that data exists.",
+                "Each row carries an explanation headline and reason code so the ranking stays inspectable instead of opaque.",
+            ],
+        ),
+        (
+            "Current MVP scope",
+            [
+                "Polymarket-first, with one live source wired end to end inside Zerve.",
+                "Explainable component-based scoring rather than a black-box prediction model.",
+                "Designed as a strong hackathon MVP, with room to add cross-source comparisons later.",
+            ],
+        ),
+        (
+            "What this product does not claim",
             [
                 "Not guaranteed arbitrage.",
                 "Not a perfect fair-value model.",
@@ -483,29 +505,11 @@ def methodology_sections() -> list[tuple[str, list[str]]]:
             ],
         ),
         (
-            "Current MVP scope",
-            [
-                "Polymarket-first.",
-                "Single-source anomaly scoring.",
-                "Explainable component-based ranking.",
-            ],
-        ),
-        (
-            "Score ingredients",
-            [
-                "Staleness.",
-                "Time to resolution.",
-                "Price extremeness.",
-                "Liquidity support.",
-                "Volatility or movement anomaly when available.",
-            ],
-        ),
-        (
             "Caveats",
             [
-                "Single-source MVP.",
-                "Some market structures may be simplified or excluded.",
-                "Quality depends on source freshness and available metadata.",
+                "Single-source MVP, so cross-market confirmation is still limited.",
+                "Some market structures are simplified or excluded to keep the first version reliable.",
+                "Output quality still depends on source freshness, liquidity visibility, and available metadata.",
             ],
         ),
     ]
@@ -1007,6 +1011,7 @@ def render_app() -> None:
 
     else:
         st.subheader("Methodology")
+        st.caption("How the radar decides which markets deserve scrutiny, and where the current MVP is intentionally conservative.")
         if pipeline_ready():
             st.markdown("#### Current run context")
             context_cols = st.columns(5)
