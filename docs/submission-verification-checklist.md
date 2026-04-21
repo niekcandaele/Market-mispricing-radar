@@ -47,6 +47,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-visual-assets.md`
 - [x] `docs/slide-build-kit.md`
 - [x] `docs/slide-copy-pack.md`
+- [x] `docs/office-layer-asset-checklist.md`
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
@@ -54,6 +55,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] Google Doc or deck speaker notes finalized
 - [ ] assets stored cleanly in Google Workspace `Documents`
 - [ ] browser path for Google Workspace creation is available and accepted by Google sign-in
+- [x] repo-side office-layer handoff checklist exists
 
 ## Submission-form checks
 
@@ -108,6 +110,7 @@ What is already verified or present:
 - submission visual asset map exists
 - slide build kit exists
 - slide copy pack exists
+- office-layer asset checklist exists
 - bundle index exists
 
 What still blocks a true done call:
