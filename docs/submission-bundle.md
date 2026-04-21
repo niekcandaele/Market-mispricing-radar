@@ -100,6 +100,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/submission-visual-assets.md`
 - best for using the current screenshot set in slides or submission materials without guessing
 
+### Slide build kit
+- `docs/slide-build-kit.md`
+- best for turning the outline plus screenshots into an actual deck quickly once slides can be built
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
