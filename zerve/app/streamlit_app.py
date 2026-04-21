@@ -413,16 +413,33 @@ def radar_warning_summary() -> str | None:
 
 
 
+def humanize_reason_code(reason_code: str | None) -> str:
+    mapping = {
+        "high_instability": "Instability and recent movement",
+        "stale_extreme_price": "Stale price at an extreme level",
+        "extreme_price_weak_support": "Extreme price with weak support",
+        "stale_market": "Stale market activity",
+        "near_resolution": "Approaching resolution",
+        "low_liquidity": "Thin liquidity support",
+        "unknown": "Unspecified signal mix",
+    }
+    normalized = (reason_code or "unknown").strip()
+    if normalized in mapping:
+        return mapping[normalized]
+    return normalized.replace("_", " ").strip().capitalize() or "Unspecified signal mix"
+
+
+
 def filtered_slice_summary(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
     focused_market_id = None if st is None else st.session_state.get("selected_market_id")
     visible_scores = [row.get("final_score") for row in filtered if isinstance(row.get("final_score"), (int, float))]
     visible_categories = {row.get("category") for row in filtered if row.get("category")}
     focused_visible = any(row.get("market_id") == focused_market_id for row in filtered)
     return [
-        {"label": "Visible results", "value": len(filtered)},
-        {"label": "Top visible score", "value": f"{max(visible_scores):.3f}" if visible_scores else "unknown"},
-        {"label": "Visible categories", "value": len(visible_categories)},
-        {"label": "Focused in slice", "value": "yes" if focused_visible else "no"},
+        {"label": "Visible markets", "value": len(filtered)},
+        {"label": "Highest score shown", "value": f"{max(visible_scores):.3f}" if visible_scores else "unknown"},
+        {"label": "Categories shown", "value": len(visible_categories)},
+        {"label": "Selected market visible", "value": "yes" if focused_visible else "no"},
     ]
 
 
@@ -433,7 +450,7 @@ def filtered_reason_breakdown(filtered: list[dict[str, Any]]) -> list[dict[str, 
         for row in filtered
     )
     return [
-        {"reason_code": reason_code, "count": count}
+        {"Why markets are rising": humanize_reason_code(reason_code), "Count": count}
         for reason_code, count in reason_counts.most_common(5)
     ]
 
@@ -610,7 +627,7 @@ def peer_comparison_rows(filtered: list[dict[str, Any]], selected_row: dict[str,
             "title": row.get("title"),
             "score": row.get("final_score"),
             "probability": row.get("current_probability"),
-            "reason": row.get("primary_reason_code"),
+            "reason": humanize_reason_code(row.get("primary_reason_code")),
         }
         for row in peers[:5]
     ]
@@ -880,25 +897,25 @@ def render_app() -> None:
         warnings = top_warning_messages()
         if radar_warning:
             st.warning(radar_warning)
-            with st.expander("View active QA warnings", expanded=True):
+            with st.expander("Show current QA warnings", expanded=True):
                 for item in warnings[:5]:
                     st.write(f"- {item}")
                 if len(warnings) > 5:
                     st.caption(f"Plus {len(warnings) - 5} additional warning(s) in the full QA summary.")
 
         if category_breakdown_rows():
-            st.markdown("#### Category snapshot")
+            st.markdown("#### Market mix in this view")
             st.dataframe(category_breakdown_rows(), use_container_width=True)
 
         if filtered:
-            st.markdown("#### Current filtered slice")
+            st.markdown("#### What you're looking at now")
             summary_cols = st.columns(4)
             for column, item in zip(summary_cols, filtered_slice_summary(filtered)):
                 column.metric(item["label"], item["value"])
 
             reason_rows = filtered_reason_breakdown(filtered)
             if reason_rows:
-                st.markdown("#### Dominant reason codes in current slice")
+                st.markdown("#### Most common reasons in this view")
                 st.dataframe(reason_rows, use_container_width=True)
 
         if not pipeline_ready():
