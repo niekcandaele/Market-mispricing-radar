@@ -26,6 +26,27 @@ from typing import Any
 
 SOURCE_NAME = "polymarket"
 SOURCE_PRIORITY = 1
+CATEGORY_RULES: list[tuple[str, list[str]]] = [
+    ("sports", ["nba", "nfl", "mlb", "nhl", "soccer", "football", "ufc", "fight", "tennis", "golf", "f1", "formula 1", "championship", "world cup", "playoff", "finals"]),
+    ("politics", ["election", "president", "senate", "house", "parliament", "prime minister", "trump", "biden", "democrat", "republican", "vote", "mayor", "governor"]),
+    ("crypto", ["bitcoin", "btc", "ethereum", "eth", "solana", "sol", "crypto", "token", "memecoin", "dogecoin", "airdrop"]),
+    ("finance-business", ["fed", "inflation", "recession", "gdp", "tariff", "ipo", "stock", "nasdaq", "s&p", "earnings", "economy", "interest rate"]),
+    ("technology", ["ai", "openai", "gpt", "anthropic", "google", "meta", "microsoft", "tesla", "apple", "iphone", "robot", "chip", "semiconductor"]),
+    ("science-health", ["covid", "vaccine", "fda", "clinical", "space", "spacex", "nasa", "drug", "trial", "mars", "rocket"]),
+    ("entertainment", ["movie", "album", "song", "music", "netflix", "oscar", "emmy", "grammy", "gta", "game", "trailer", "drake", "rihanna", "celebrity"]),
+    ("world", ["ukraine", "russia", "china", "israel", "gaza", "ceasefire", "earthquake", "pope", "india", "europe", "iran"]),
+]
+TOPIC_RULES: list[tuple[str, list[str]]] = [
+    ("ai", ["ai", "openai", "gpt", "anthropic"]),
+    ("crypto", ["bitcoin", "btc", "ethereum", "eth", "crypto", "token", "solana", "sol"]),
+    ("elections", ["election", "vote", "president", "senate", "parliament"]),
+    ("war-geopolitics", ["ukraine", "russia", "ceasefire", "israel", "gaza", "iran", "china"]),
+    ("music", ["album", "song", "music", "drake", "rihanna"]),
+    ("gaming", ["gta", "game", "xbox", "playstation", "nintendo"]),
+    ("movies-tv", ["movie", "netflix", "oscar", "emmy", "series"]),
+    ("sports", ["nba", "nfl", "mlb", "nhl", "soccer", "ufc", "tennis", "golf", "f1", "formula 1"]),
+    ("macro", ["fed", "inflation", "recession", "gdp", "tariff", "interest rate", "economy"]),
+]
 
 
 def parse_iso(value: Any) -> datetime | None:
@@ -113,11 +134,31 @@ def build_source_url(raw: dict[str, Any]) -> str | None:
     return None
 
 
+def inference_text(raw: dict[str, Any], event: dict[str, Any]) -> str:
+    return " ".join(
+        str(value)
+        for value in [
+            raw.get("question"),
+            raw.get("description"),
+            raw.get("slug"),
+            event.get("title"),
+            event.get("description"),
+            event.get("slug"),
+        ]
+        if value
+    ).lower()
+
+
 def inferred_category(raw: dict[str, Any], event: dict[str, Any]) -> str | None:
     for candidate in [event.get("category"), raw.get("category")]:
         if isinstance(candidate, str) and candidate.strip():
             return candidate.strip().lower()
-    return None
+
+    text = inference_text(raw, event)
+    for candidate, keywords in CATEGORY_RULES:
+        if any(keyword in text for keyword in keywords):
+            return candidate
+    return "general"
 
 
 def topic_tags(raw: dict[str, Any], event: dict[str, Any], category: str | None) -> list[str]:
@@ -125,6 +166,12 @@ def topic_tags(raw: dict[str, Any], event: dict[str, Any], category: str | None)
     for candidate in [event.get("tags"), raw.get("tags")]:
         if isinstance(candidate, list):
             tags.extend(str(item).strip().lower() for item in candidate if str(item).strip())
+
+    text = inference_text(raw, event)
+    for tag, keywords in TOPIC_RULES:
+        if any(keyword in text for keyword in keywords):
+            tags.append(tag)
+
     if category and category not in tags:
         tags.insert(0, category)
     seen: set[str] = set()
@@ -133,7 +180,7 @@ def topic_tags(raw: dict[str, Any], event: dict[str, Any], category: str | None)
         if tag not in seen:
             seen.add(tag)
             deduped.append(tag)
-    return deduped[:6]
+    return deduped[:6] if deduped else ([category] if category else ["general"])
 
 
 def hours_between(later: datetime | None, earlier: datetime | None) -> float | None:
