@@ -177,8 +177,12 @@ It has:
 - a polished judge-facing app
 - a judge/demo script
 - a deck outline with speaker notes
+- a slide build kit and slide copy pack
 - a one-take video run sheet
+- a literal voiceover script for recording
+- a recording preflight checklist
 - a demo-safe market shortlist
+- a final asset register and final readiness-status doc
 
 It does **not** yet have:
 - the final polished slides
