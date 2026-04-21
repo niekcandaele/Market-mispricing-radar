@@ -104,6 +104,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/slide-build-kit.md`
 - best for turning the outline plus screenshots into an actual deck quickly once slides can be built
 
+### Slide copy pack
+- `docs/slide-copy-pack.md`
+- best for paste-ready titles and bullets during the actual slide build
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
