@@ -88,6 +88,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/submission-form-map.md`
 - best for turning the repo copy into actual form answers without hunting across docs
 
+### Final submission sequence
+- `docs/final-submission-sequence.md`
+- best for the exact day-of-submission order once the browser/auth blocker is gone
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
