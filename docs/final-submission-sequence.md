@@ -78,6 +78,7 @@ Do:
 
 References:
 - `docs/judge-demo-script.md`
+- `docs/video-voiceover-script.md`
 - `docs/video-recording-run-sheet.md`
 
 ### 5. Record the demo video
@@ -87,11 +88,13 @@ Why after deck and notes:
 
 Do:
 - use the one-take run sheet
+- use the voiceover script if a literal spoken pass is helpful
 - keep the video to one strong story arc
 - use the verified chosen demo path
 - if the live path degrades, switch to the local fallback immediately without apology
 
 References:
+- `docs/video-voiceover-script.md`
 - `docs/video-recording-run-sheet.md`
 - `docs/demo-market-shortlist.md`
 
@@ -131,7 +134,7 @@ Reference:
 
 If time is collapsing:
 1. verify a working demo path, live or local fallback
-2. record the one-take demo using the run sheet
+2. record the one-take demo using the run sheet and voiceover script
 3. paste the safe default field set from the form map
 4. submit with honest scope and working assets
 
@@ -142,7 +145,7 @@ In a crunch, working and credible beats incomplete perfection.
 If another person has to finish the submission quickly, tell them:
 - use `docs/final-submission-sequence.md` for order of operations
 - use `docs/submission-form-map.md` for the form
-- use `docs/video-recording-run-sheet.md` for recording
+- use `docs/video-recording-run-sheet.md` and `docs/video-voiceover-script.md` for recording
 - use `docs/demo-market-shortlist.md` for the drilldown choice
 - use `docs/submission-verification-checklist.md` for the final sweep
 

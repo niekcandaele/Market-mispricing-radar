@@ -26,7 +26,7 @@ Use it to answer four questions quickly:
 
 ### Video / talking track
 - status: draft-ready
-- repo source material: `docs/judge-demo-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
+- repo source material: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
 - required next artifact: final recording outline in Google Docs or deck speaker notes
 - current blocker: office-layer note creation is tied to the same Google/browser constraint as the slide deck
 
@@ -155,7 +155,7 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 ## Recommended next steps
 
 1. create the Google Slides deck from `docs/submission-deck-outline.md`
-2. create the Google Doc with speaker notes / recording plan from `docs/judge-demo-script.md`
+2. create the Google Doc with speaker notes / recording plan from `docs/judge-demo-script.md` and `docs/video-voiceover-script.md`
 3. verify the latest live preview path right before recording
 4. do one final submission-quality sweep across demo, slides, notes, and links
 

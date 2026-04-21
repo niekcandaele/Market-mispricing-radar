@@ -6,6 +6,8 @@ This is the practical one-take recording plan for the hackathon demo video.
 
 Use it when the demo script is too broad and you need a crisp filming sequence with minimal improvisation.
 
+If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
+
 ## Target shape
 
 - target length: 60 to 90 seconds
@@ -123,3 +125,4 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - keep the story focused on inspection, explainability, and credibility
 - if the live path is flaky, switch to the verified local fallback without apology
 - better to sound honest and sharp than overclaiming
+- if needed, use `docs/video-voiceover-script.md` to keep the spoken pass tight and consistent
