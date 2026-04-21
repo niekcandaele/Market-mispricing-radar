@@ -41,6 +41,12 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-short-variants.md`
 - [x] `docs/video-recording-run-sheet.md`
 - [x] `docs/demo-market-shortlist.md`
+- [x] `docs/submission-form-map.md`
+- [x] `docs/final-submission-sequence.md`
+- [x] `docs/presenter-cheat-sheet.md`
+- [x] `docs/submission-visual-assets.md`
+- [x] `docs/slide-build-kit.md`
+- [x] `docs/slide-copy-pack.md`
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
@@ -96,6 +102,12 @@ What is already verified or present:
 - short submission variants exist
 - video recording run sheet exists
 - demo market shortlist exists
+- submission form map exists
+- final submission-day sequence exists
+- presenter cheat sheet exists
+- submission visual asset map exists
+- slide build kit exists
+- slide copy pack exists
 - bundle index exists
 
 What still blocks a true done call:
