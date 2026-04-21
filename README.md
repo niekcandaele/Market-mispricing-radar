@@ -28,6 +28,7 @@ Slide build kit lives in `docs/slide-build-kit.md`.
 Slide copy pack lives in `docs/slide-copy-pack.md`.
 Office-layer asset checklist lives in `docs/office-layer-asset-checklist.md`.
 Final asset register lives in `docs/final-asset-register.md`.
+Final readiness status lives in `docs/final-readiness-status.md`.
 Submission verification checklist lives in `docs/submission-verification-checklist.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.

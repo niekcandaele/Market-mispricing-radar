@@ -124,6 +124,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/final-asset-register.md`
 - best for recording the actual final demo, deck, notes, video, and submission links on submission day
 
+### Final readiness status
+- `docs/final-readiness-status.md`
+- best for the shortest honest readiness snapshot of what is done, blocked, and still needed
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
