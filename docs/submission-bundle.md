@@ -37,7 +37,7 @@ Use it to answer four questions quickly:
 
 ### Submission readiness
 - status: not submission-complete yet
-- reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked, and the current browser/auth state is still blocking that office-layer finish
+- reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked, and the logged-in `user` browser profile is still not running, which blocks that office-layer finish
 
 ## Demo entrypoints
 
@@ -154,7 +154,7 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 
 ### Current blocker snapshot
 - the logged-in `user` browser profile exists but is not currently running, so slide-deck creation is still waiting on a usable authenticated browser session
-- the latest live Zerve preview recheck is also waiting on that same usable authenticated browser state instead of stale preview breadcrumbs
+- the latest live Zerve preview recheck is also waiting on that same logged-in `user` browser session instead of stale preview breadcrumbs
 
 ### Not a blocker right now, but still needed before calling the project ready
 - collect the final deck, notes, and demo entrypoint in Google Workspace `Documents`

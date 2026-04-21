@@ -12,7 +12,7 @@ At the moment, the repo-side submission package is strong, but the remaining off
 - the logged-in `user` browser profile exists but is not currently running
 - Google Slides creation needs that authenticated `user` browser session
 - Google Doc or deck-speaker-note creation depends on that same office-layer browser path
-- the final live Zerve preview recheck also needs that same usable authenticated browser state
+- the final live Zerve preview recheck also needs that same logged-in `user` browser session
 
 This doc assumes those blockers have just become solvable.
 
