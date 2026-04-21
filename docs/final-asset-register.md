@@ -57,6 +57,7 @@ The repo-side source material is strong, but the actual final office-layer asset
 - version note: `TBD`
 - source docs:
   - `docs/judge-demo-script.md`
+  - `docs/video-voiceover-script.md`
   - `docs/video-recording-run-sheet.md`
   - `docs/presenter-cheat-sheet.md`
 

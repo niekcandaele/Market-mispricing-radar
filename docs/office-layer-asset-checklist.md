@@ -40,6 +40,7 @@ Create one of:
 
 Source materials:
 - `docs/judge-demo-script.md`
+- `docs/video-voiceover-script.md`
 - `docs/video-recording-run-sheet.md`
 - `docs/presenter-cheat-sheet.md`
 - `docs/demo-market-shortlist.md`

@@ -80,6 +80,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/video-recording-run-sheet.md`
 - best for the actual one-take recording order and beat-by-beat filming flow
 
+### Video voiceover script
+- `docs/video-voiceover-script.md`
+- best for the literal spoken recording pass when the beat sheet is too abstract
+
 ### Demo market shortlist
 - `docs/demo-market-shortlist.md`
 - best for quickly choosing a strong drilldown example without improvising live

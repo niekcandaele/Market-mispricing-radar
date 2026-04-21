@@ -40,6 +40,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-copy-draft.md`
 - [x] `docs/submission-short-variants.md`
 - [x] `docs/video-recording-run-sheet.md`
+- [x] `docs/video-voiceover-script.md`
 - [x] `docs/demo-market-shortlist.md`
 - [x] `docs/submission-form-map.md`
 - [x] `docs/final-submission-sequence.md`
@@ -70,6 +71,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Recording checks
 
 - [ ] use `docs/judge-demo-script.md` as the spoken baseline
+- [ ] use `docs/video-voiceover-script.md` if a more literal spoken script is helpful during recording
 - [ ] use `docs/video-recording-run-sheet.md` as the actual beat-by-beat recording order
 - [ ] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example
 - [ ] keep the recording to one coherent story arc
@@ -104,6 +106,7 @@ What is already verified or present:
 - submission copy exists
 - short submission variants exist
 - video recording run sheet exists
+- video voiceover script exists
 - demo market shortlist exists
 - submission form map exists
 - final submission-day sequence exists
