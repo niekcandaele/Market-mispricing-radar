@@ -441,6 +441,25 @@ def humanize_reason_code(reason_code: str | None) -> str:
 
 
 
+def humanize_caveat(item: str | None) -> str:
+    normalized = (item or "").strip()
+    if not normalized:
+        return "Unspecified caveat"
+    if normalized.startswith("confidence:"):
+        return f"Confidence band: {normalized.split(':', 1)[1]}"
+    mapping = {
+        "single-source MVP": "Single-source MVP",
+        "fresh-market caveat": "Recently opened market",
+        "long-horizon market": "Long-horizon market",
+        "heuristic penalty applied": "Heuristic penalty applied",
+        "past-resolution-open": "Past resolution but still marked open",
+    }
+    if normalized in mapping:
+        return mapping[normalized]
+    return normalized.replace("_", " ").replace("-", " ").strip().capitalize()
+
+
+
 def filtered_slice_summary(filtered: list[dict[str, Any]]) -> list[dict[str, Any]]:
     focused_market_id = None if st is None else st.session_state.get("selected_market_id")
     visible_scores = [row.get("final_score") for row in filtered if isinstance(row.get("final_score"), (int, float))]
@@ -1012,7 +1031,7 @@ def render_app() -> None:
                 st.metric("Radar score", selected_row.get("final_score") or 0.0)
                 st.metric("Market probability", selected_row.get("current_probability") or 0.0)
                 st.write(f"Confidence band: {selected_row.get('confidence_band') or 'unknown'}")
-                st.write(f"Primary reason code: {selected_row.get('primary_reason_code') or 'unknown'}")
+                st.write(f"Primary signal: {humanize_reason_code(selected_row.get('primary_reason_code'))}")
             with header_right:
                 st.write(f"Resolution horizon: {format_hours(selected_row.get('time_to_resolution_hours'))}")
                 st.write(f"Last update age: {format_hours(selected_row.get('time_since_update_hours'))}")
@@ -1051,7 +1070,7 @@ def render_app() -> None:
             caveats = explanation.get("caveats") or []
             if caveats:
                 for item in caveats:
-                    st.write(f"- {item}")
+                    st.write(f"- {humanize_caveat(item)}")
             else:
                 st.write("No caveats were emitted for this market.")
 
