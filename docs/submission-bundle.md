@@ -70,6 +70,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/submission-copy-draft.md`
 - best for the hackathon form fields, project summary, and one-minute written pitch
 
+### Submission verification checklist
+- `docs/submission-verification-checklist.md`
+- best for the final pre-recording and pre-submission sweep
+
 ### App flow doc
 - `docs/app-flow.md`
 - best for checking whether the product flow and screen logic still support the intended demo
