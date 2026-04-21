@@ -22,11 +22,13 @@ Use it to answer four questions quickly:
 - status: not created yet
 - repo source material: `docs/submission-deck-outline.md`
 - required next artifact: polished Google Slides deck
+- current blocker: Google login is not currently usable from the available managed browser path
 
 ### Video / talking track
 - status: draft-ready
 - repo source material: `docs/judge-demo-script.md`, `docs/submission-deck-outline.md`
 - required next artifact: final recording outline in Google Docs or deck speaker notes
+- current blocker: office-layer note creation is tied to the same Google/browser constraint as the slide deck
 
 ### Submission copy
 - status: draft-ready
@@ -35,7 +37,7 @@ Use it to answer four questions quickly:
 
 ### Submission readiness
 - status: not submission-complete yet
-- reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked
+- reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked, and the current browser/auth state is still blocking that office-layer finish
 
 ## Demo entrypoints
 
@@ -98,6 +100,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - one final checked demo link or presentation flow immediately before submission
 - final pass to verify all submission-facing links and artifacts open cleanly
 
+### Current blocker snapshot
+- Google currently rejects sign-in in the available managed browser, so slide-deck creation is waiting on a browser session Google accepts
+- the latest live Zerve preview recheck is also waiting on a usable authenticated browser state instead of stale preview breadcrumbs
+
 ### Not a blocker right now, but still needed before calling the project ready
 - collect the final deck, notes, and demo entrypoint in Google Workspace `Documents`
 - do a final presentation-quality verification pass instead of only a code/demo verification pass
@@ -124,5 +130,6 @@ It does **not** yet have:
 - the final polished slides
 - the final office-layer notes artifact
 - a final pre-submission verification pass across the full submission bundle
+- a browser/auth path that can complete the remaining office-layer and live-preview checks
 
 So this should be treated as **near-ready, but not submission-complete yet**.

@@ -10,9 +10,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 - repo-side narrative artifacts: present
 - local fallback demo path: verified end to end
-- live Zerve preview path: needs final pre-submission recheck
-- Google Slides deck: not created yet
-- office-layer speaker notes doc: not created yet
+- live Zerve preview path: needs final pre-submission recheck and is currently auth-blocked in the available browser state
+- Google Slides deck: not created yet and currently blocked on a browser Google accepts for login
+- office-layer speaker notes doc: not created yet and currently blocked on the same office-layer browser/login constraint
 - final submission form paste/check: not done yet
 
 ## Demo checks
@@ -38,12 +38,14 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-deck-outline.md`
 - [x] `docs/submission-bundle.md`
 - [x] `docs/submission-copy-draft.md`
+- [x] `docs/submission-short-variants.md`
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
 - [ ] Google Slides deck created
 - [ ] Google Doc or deck speaker notes finalized
 - [ ] assets stored cleanly in Google Workspace `Documents`
+- [ ] browser path for Google Workspace creation is available and accepted by Google sign-in
 
 ## Submission-form checks
 
@@ -93,4 +95,5 @@ What still blocks a true done call:
 - final live preview recheck right before submission
 - Google Slides deck creation
 - office-layer notes artifact creation
+- a browser session that can complete the needed Zerve and Google office-layer checks without auth failure
 - final link and form verification pass
