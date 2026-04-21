@@ -112,6 +112,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/office-layer-asset-checklist.md`
 - best for making sure the final Google Workspace handoff is clean once the browser/auth blocker is gone
 
+### Final asset register
+- `docs/final-asset-register.md`
+- best for recording the actual final demo, deck, notes, video, and submission links on submission day
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep

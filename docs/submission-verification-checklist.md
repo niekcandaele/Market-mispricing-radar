@@ -48,6 +48,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/slide-build-kit.md`
 - [x] `docs/slide-copy-pack.md`
 - [x] `docs/office-layer-asset-checklist.md`
+- [x] `docs/final-asset-register.md`
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
@@ -111,6 +112,7 @@ What is already verified or present:
 - slide build kit exists
 - slide copy pack exists
 - office-layer asset checklist exists
+- final asset register exists
 - bundle index exists
 
 What still blocks a true done call:

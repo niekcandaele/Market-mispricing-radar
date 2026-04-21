@@ -121,9 +121,11 @@ Do:
 - verify the video link or upload is correct
 - verify the submission form text matches the real MVP scope
 - verify no stale preview URL or placeholder artifact slipped in
+- update the final asset register with the real final links and file locations
 
 Reference:
 - `docs/submission-verification-checklist.md`
+- `docs/final-asset-register.md`
 
 ## Emergency fallback path
 
