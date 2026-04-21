@@ -45,7 +45,8 @@ Avoid:
 
 ### Slide 2, Problem
 Use:
-- either a cropped version of `local-radar-view.png` or a clean text slide with light visual support
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- or a clean text slide with light visual support if the screenshot makes the slide too repetitive
 
 On-slide emphasis:
 - too many markets
@@ -103,7 +104,8 @@ On-slide emphasis:
 
 ### Slide 7, Proof / accomplishments
 Use:
-- optional reuse of `local-radar-view.png` or `local-market-detail-view.png`
+- optional reuse of `local-radar-view-16x9.png` or `local-market-detail-view-16x9.png`
+- fall back to the uncropped proof captures only if a taller crop is genuinely more readable
 
 On-slide emphasis:
 - real notebook-to-app pipeline
@@ -141,7 +143,8 @@ Use these sources for the compact path:
 
 - do not put all three screenshots on one slide
 - prefer one large screenshot over multiple tiny ones
-- crop screenshots only if readability improves
+- prefer the 16:9 slide-ready screenshots as the default deck assets
+- keep the uncropped PNGs as backup proof captures, not the first-choice slide visuals
 - keep text short enough that the screenshot still matters
 - use screenshots to support the spoken story, not replace it
 

@@ -19,12 +19,16 @@ This checklist is for the moment those blockers are gone.
 ### 1. Google Slides deck
 Create:
 - one polished presentation deck for the hackathon submission
+- prefer the slide-ready 16:9 screenshots as the default visuals and keep the uncropped PNGs as backup proof captures
 
 Source materials:
 - `docs/submission-deck-outline.md`
 - `docs/slide-build-kit.md`
 - `docs/slide-copy-pack.md`
 - `docs/submission-visual-assets.md`
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+- `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 - `artifacts/submission/local-radar-view.png`
 - `artifacts/submission/local-market-detail-view.png`
 - `artifacts/submission/local-methodology-view.png`
