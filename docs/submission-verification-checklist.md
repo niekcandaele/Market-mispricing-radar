@@ -39,6 +39,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-bundle.md`
 - [x] `docs/submission-copy-draft.md`
 - [x] `docs/submission-short-variants.md`
+- [x] `docs/video-recording-run-sheet.md`
+- [x] `docs/demo-market-shortlist.md`
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
@@ -59,6 +61,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Recording checks
 
 - [ ] use `docs/judge-demo-script.md` as the spoken baseline
+- [ ] use `docs/video-recording-run-sheet.md` as the actual beat-by-beat recording order
+- [ ] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example
 - [ ] keep the recording to one coherent story arc
 - [ ] verify the chosen demo path before recording begins
 - [ ] avoid relying on an old rotated preview URL without rechecking it
@@ -89,6 +93,9 @@ What is already verified or present:
 - demo script exists
 - deck source exists
 - submission copy exists
+- short submission variants exist
+- video recording run sheet exists
+- demo market shortlist exists
 - bundle index exists
 
 What still blocks a true done call:

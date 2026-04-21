@@ -26,7 +26,7 @@ Use it to answer four questions quickly:
 
 ### Video / talking track
 - status: draft-ready
-- repo source material: `docs/judge-demo-script.md`, `docs/submission-deck-outline.md`
+- repo source material: `docs/judge-demo-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
 - required next artifact: final recording outline in Google Docs or deck speaker notes
 - current blocker: office-layer note creation is tied to the same Google/browser constraint as the slide deck
 
@@ -133,6 +133,8 @@ It has:
 - a polished judge-facing app
 - a judge/demo script
 - a deck outline with speaker notes
+- a one-take video run sheet
+- a demo-safe market shortlist
 
 It does **not** yet have:
 - the final polished slides
