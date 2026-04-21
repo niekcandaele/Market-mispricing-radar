@@ -11,6 +11,7 @@ See `PROJECT_PLAN.md` for the initial project plan.
 
 Project workflow and repo conventions live in `docs/repo-workflow.md`.
 Judge-facing app flow notes live in `docs/app-flow.md`.
+Judge-facing demo script lives in `docs/judge-demo-script.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.
 Zerve notebook block-mapping notes live in `docs/zerve-notebook-block-map.md`.
