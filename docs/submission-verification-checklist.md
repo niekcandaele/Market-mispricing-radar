@@ -97,6 +97,21 @@ Use it before recording, presenting, or submitting so the project is checked int
 - notable observed values: `refresh_id` `refresh-20260421T070414Z`, `market_count` `200`, `open_markets` `200`, `score_version` `v1-prototype`
 - status: passed
 
+### 2026-04-21 refreshed local fallback export check
+- command: `python3 scripts/export_streamlit_bundle.py --limit 200`
+- goal: reconfirm the local fallback bundle can still be refreshed late in packaging without regressions
+- observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T140836Z` and `ranked_market_count` `200`
+- status: passed
+
+### 2026-04-21 refreshed local fallback render check
+- commands:
+  - `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py --server.headless true --server.address 127.0.0.1 --server.port 8768`
+  - local Playwright verification against `http://127.0.0.1:8768`
+- goal: reconfirm the current local fallback still renders the full judge-facing flow during late-stage submission polish
+- observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, `Methodology`, and `Focus in detail`, then successfully navigated into Market Detail and Methodology
+- notable observed values: `refresh_id` `refresh-20260421T140836Z`, `ranked_market_count` `200`
+- status: passed
+
 ## Honest readiness call
 
 The project is in a strong near-ready state, but it is not submission-complete yet.
