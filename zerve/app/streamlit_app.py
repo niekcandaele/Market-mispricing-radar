@@ -352,7 +352,14 @@ def source_count(rows: list[dict[str, Any]]) -> int:
 
 
 def category_breakdown_rows() -> list[dict[str, Any]]:
-    return refresh_metadata.get("category_breakdown") or []
+    rows = refresh_metadata.get("category_breakdown") or []
+    return [
+        {
+            "Category": row.get("category") or "uncategorized",
+            "Markets": row.get("market_count") or 0,
+        }
+        for row in rows
+    ]
 
 
 def filter_rows(
@@ -418,9 +425,13 @@ def humanize_reason_code(reason_code: str | None) -> str:
         "high_instability": "Instability and recent movement",
         "stale_extreme_price": "Stale price at an extreme level",
         "extreme_price_weak_support": "Extreme price with weak support",
+        "extreme_price_low_support": "Extreme price with weak support",
+        "extreme_price": "Extreme price pressure",
         "stale_market": "Stale market activity",
         "near_resolution": "Approaching resolution",
         "low_liquidity": "Thin liquidity support",
+        "low_support": "Weak support behind the price",
+        "past_resolution_still_open": "Past resolution but still marked open",
         "unknown": "Unspecified signal mix",
     }
     normalized = (reason_code or "unknown").strip()
@@ -606,7 +617,7 @@ def supporting_signal_rows(explanation: dict[str, Any]) -> list[dict[str, Any]]:
     ]
     rows = []
     for key in ordered:
-        rows.append({"signal": signal_label(key), "value": format_value(values.get(key))})
+        rows.append({"Signal": signal_label(key), "Observed value": format_value(values.get(key))})
     return rows
 
 
@@ -623,11 +634,11 @@ def peer_comparison_rows(filtered: list[dict[str, Any]], selected_row: dict[str,
     peers.sort(key=lambda item: item.get("final_score") or 0.0, reverse=True)
     return [
         {
-            "rank": row.get("rank"),
-            "title": row.get("title"),
-            "score": row.get("final_score"),
-            "probability": row.get("current_probability"),
-            "reason": humanize_reason_code(row.get("primary_reason_code")),
+            "Rank": row.get("rank"),
+            "Market": row.get("title"),
+            "Radar score": row.get("final_score"),
+            "Probability": row.get("current_probability"),
+            "Why it is surfacing": humanize_reason_code(row.get("primary_reason_code")),
         }
         for row in peers[:5]
     ]
