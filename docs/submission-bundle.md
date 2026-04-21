@@ -96,6 +96,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/presenter-cheat-sheet.md`
 - best for the live verbal pitch and likely judge follow-up questions
 
+### Submission visual assets map
+- `docs/submission-visual-assets.md`
+- best for using the current screenshot set in slides or submission materials without guessing
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep

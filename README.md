@@ -21,6 +21,7 @@ Demo market shortlist lives in `docs/demo-market-shortlist.md`.
 Submission form map lives in `docs/submission-form-map.md`.
 Final submission sequence lives in `docs/final-submission-sequence.md`.
 Presenter cheat sheet lives in `docs/presenter-cheat-sheet.md`.
+Submission visual assets map lives in `docs/submission-visual-assets.md`.
 Submission verification checklist lives in `docs/submission-verification-checklist.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.
