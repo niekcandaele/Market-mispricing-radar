@@ -773,7 +773,8 @@ def render_app() -> None:
 
     st.set_page_config(page_title="Market Mispricing Radar", layout="wide")
     st.title("Market Mispricing Radar")
-    st.caption("Mirrored Zerve Streamlit scaffold")
+    st.caption("Find prediction markets whose pricing looks fragile, stale, or weakly supported.")
+    st.write("A live decision-support radar for markets that deserve a second look before you trust the current odds.")
 
     if not pipeline_ready():
         st.warning("Pipeline output is not fully ready yet. The app is showing an honest unavailable state.")
@@ -803,19 +804,21 @@ def render_app() -> None:
             reset_filter_state()
             st.rerun()
 
-        st.header("Refresh trust")
+        st.header("Run status")
         st.write(f"Refresh ID: {refresh_metadata.get('refresh_id') or 'unknown'}")
         st.write(f"Fetched at: {refresh_metadata.get('fetched_at') or 'unknown'}")
         st.write(f"Market count: {refresh_metadata.get('market_count') or 0}")
         st.write(f"Open markets: {refresh_metadata.get('open_market_count') or 0}")
         st.write(f"Source count: {source_count(ranked_markets)}")
         st.write(f"Score version: {refresh_metadata.get('score_version') or 'unknown'}")
-        st.write(f"Bundle origin: {bundle_input_origin.replace('-', ' ')}")
+
         block_context = zerve_block_context()
-        if block_context:
-            st.caption(f"Zerve blocks: {block_context}")
-        elif loaded_local_bundle_path is not None:
-            st.caption(str(loaded_local_bundle_path))
+        with st.expander("Operator context", expanded=False):
+            st.write(f"Bundle origin: {bundle_input_origin.replace('-', ' ')}")
+            if block_context:
+                st.caption(f"Zerve blocks: {block_context}")
+            elif loaded_local_bundle_path is not None:
+                st.caption(str(loaded_local_bundle_path))
 
         warnings = top_warning_messages()
         if warnings:
@@ -836,6 +839,7 @@ def render_app() -> None:
 
     if active_view == "Radar":
         st.subheader("Ranked Radar")
+        st.caption("Scan for markets where freshness, extremeness, liquidity, and recent movement point to a price that deserves scrutiny.")
         trust_cols = st.columns(4)
         trust_cols[0].metric("Refresh ID", refresh_metadata.get("refresh_id") or "unknown")
         trust_cols[1].metric("Processed", refresh_metadata.get("market_count") or 0)
@@ -1011,7 +1015,7 @@ def render_app() -> None:
 
             warning_rows = methodology_warning_rows()
             if warning_rows:
-                st.markdown("#### Current QA trust notes")
+                st.markdown("#### Current QA notes")
                 st.dataframe(warning_rows, use_container_width=True)
             else:
                 st.write("No QA warnings are active for the current run.")
