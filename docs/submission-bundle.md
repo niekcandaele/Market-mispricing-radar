@@ -108,6 +108,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/slide-copy-pack.md`
 - best for paste-ready titles and bullets during the actual slide build
 
+### Office-layer asset checklist
+- `docs/office-layer-asset-checklist.md`
+- best for making sure the final Google Workspace handoff is clean once the browser/auth blocker is gone
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
