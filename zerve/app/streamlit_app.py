@@ -40,6 +40,9 @@ FILTER_STATE_DEFAULTS = {
     "selected_market_id": None,
 }
 
+PENDING_ACTIVE_VIEW_KEY = "_pending_active_view"
+PENDING_SELECTED_MARKET_KEY = "_pending_selected_market_id"
+
 
 SOURCE_NAME = "polymarket"
 TOP_PREVIEW_COUNT = 5
@@ -689,6 +692,28 @@ def normalize_filter_choices(source_options: list[str], category_options: list[s
         st.session_state["active_view"] = "Radar"
 
 
+def queue_navigation(*, view: str | None = None, market_id: str | None = None) -> None:
+    if st is None:
+        return
+    if view is not None:
+        st.session_state[PENDING_ACTIVE_VIEW_KEY] = view
+    if market_id is not None:
+        st.session_state[PENDING_SELECTED_MARKET_KEY] = market_id
+
+
+
+def apply_pending_navigation() -> None:
+    if st is None:
+        return
+    pending_view = st.session_state.pop(PENDING_ACTIVE_VIEW_KEY, None)
+    pending_market_id = st.session_state.pop(PENDING_SELECTED_MARKET_KEY, None)
+    if pending_view is not None:
+        st.session_state["active_view"] = pending_view
+    if pending_market_id is not None:
+        st.session_state["selected_market_id"] = pending_market_id
+
+
+
 def focused_market_outside_filters(filtered: list[dict[str, Any]]) -> bool:
     if st is None:
         return False
@@ -770,6 +795,7 @@ def render_app() -> None:
         raise RuntimeError("streamlit is not installed. Use this file inside Zerve or install streamlit locally.")
 
     ensure_filter_defaults()
+    apply_pending_navigation()
 
     source_options = ["All"] + sorted({row.get("source") or "unknown" for row in ranked_markets})
     category_options = ["All"] + available_categories(ranked_markets)
@@ -902,14 +928,14 @@ def render_app() -> None:
                     with meta_cols[2]:
                         action_cols = st.columns(2)
                         if action_cols[0].button("Focus in detail", key=f"focus-{row.get('market_id')}", use_container_width=True):
-                            st.session_state["selected_market_id"] = row.get("market_id")
-                            st.session_state["active_view"] = "Market Detail"
+                            queue_navigation(view="Market Detail", market_id=row.get("market_id"))
                             st.rerun()
                         if row.get("source_url"):
                             action_cols[1].link_button("Open source", row["source_url"], use_container_width=True)
 
     elif active_view == "Market Detail":
         st.subheader("Market Detail")
+        st.caption("Drill into one market to see why the radar flagged it, what signals are supporting that view, and what caveats still apply.")
         selected_row = selected_market(filtered)
         if not pipeline_ready():
             st.info("Market detail is unavailable until the pipeline produces ranked markets and explanations.")
@@ -921,10 +947,10 @@ def render_app() -> None:
                 action_cols = st.columns(2)
                 if action_cols[0].button("Reset filters to recover focused market", use_container_width=True):
                     reset_filter_state()
-                    st.session_state["active_view"] = "Market Detail"
+                    queue_navigation(view="Market Detail")
                     st.rerun()
                 if action_cols[1].button("Return to Radar", use_container_width=True):
-                    st.session_state["active_view"] = "Radar"
+                    queue_navigation(view="Radar")
                     st.rerun()
 
             explanation = explanation_lookup.get(selected_row.get("market_id"), {})
@@ -935,13 +961,13 @@ def render_app() -> None:
                 st.caption(position_context)
                 nav_cols = st.columns(3)
                 if nav_cols[0].button("Previous result", disabled=previous_market_id is None, use_container_width=True):
-                    st.session_state["selected_market_id"] = previous_market_id
+                    queue_navigation(market_id=previous_market_id)
                     st.rerun()
                 if nav_cols[1].button("Back to Radar", use_container_width=True):
-                    st.session_state["active_view"] = "Radar"
+                    queue_navigation(view="Radar")
                     st.rerun()
                 if nav_cols[2].button("Next result", disabled=next_market_id is None, use_container_width=True):
-                    st.session_state["selected_market_id"] = next_market_id
+                    queue_navigation(market_id=next_market_id)
                     st.rerun()
             else:
                 st.caption("This market is being shown outside the current Radar slice.")
@@ -955,10 +981,10 @@ def render_app() -> None:
                 if selected_row.get("source_url"):
                     st.link_button("Open source market", selected_row["source_url"])
             with header_mid:
-                st.metric("Final score", selected_row.get("final_score") or 0.0)
-                st.metric("Current probability", selected_row.get("current_probability") or 0.0)
-                st.write(f"Confidence: {selected_row.get('confidence_band') or 'unknown'}")
-                st.write(f"Reason code: {selected_row.get('primary_reason_code') or 'unknown'}")
+                st.metric("Radar score", selected_row.get("final_score") or 0.0)
+                st.metric("Market probability", selected_row.get("current_probability") or 0.0)
+                st.write(f"Confidence band: {selected_row.get('confidence_band') or 'unknown'}")
+                st.write(f"Primary reason code: {selected_row.get('primary_reason_code') or 'unknown'}")
             with header_right:
                 st.write(f"Resolution horizon: {format_hours(selected_row.get('time_to_resolution_hours'))}")
                 st.write(f"Last update age: {format_hours(selected_row.get('time_since_update_hours'))}")
@@ -966,12 +992,12 @@ def render_app() -> None:
                 topics = selected_row.get("topic_tags") or []
                 st.write(f"Topics: {', '.join(topics) if topics else 'none'}")
 
-            st.markdown("#### Explanation")
+            st.markdown("#### Why this market is flagged")
             st.write(explanation.get("headline_reason") or selected_row.get("headline_reason"))
             st.write(explanation.get("short_explanation") or "No short explanation available.")
             st.write(explanation.get("detailed_explanation") or "No detailed explanation available.")
 
-            st.markdown("#### Score breakdown")
+            st.markdown("#### What is driving the score")
             component_rows = score_component_rows(explanation)
             if component_rows:
                 metric_cols = st.columns(min(4, len(component_rows)))
@@ -983,15 +1009,15 @@ def render_app() -> None:
             else:
                 st.write("No score components are available for this market.")
 
-            st.markdown("#### Supporting signals")
+            st.markdown("#### Observed market signals")
             st.dataframe(supporting_signal_rows(explanation), use_container_width=True)
 
-            st.markdown("#### Same-category peers")
+            st.markdown("#### Comparable markets in the current view")
             peer_rows = peer_comparison_rows(filtered, selected_row)
             if peer_rows:
                 st.dataframe(peer_rows, use_container_width=True)
             else:
-                st.write("No same-category peers are visible in the current filtered result set.")
+                st.write("No comparable same-category markets are visible in the current filtered result set.")
 
             st.markdown("#### Caveats")
             caveats = explanation.get("caveats") or []
@@ -1001,7 +1027,7 @@ def render_app() -> None:
             else:
                 st.write("No caveats were emitted for this market.")
 
-            st.markdown("#### Missing or unavailable fields")
+            st.markdown("#### Data quality notes")
             notes = missing_detail_notes(selected_row, explanation)
             if notes:
                 for note in notes:
