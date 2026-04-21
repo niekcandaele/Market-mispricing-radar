@@ -19,9 +19,19 @@ Screenshots:
 - `artifacts/submission/local-market-detail-view.png`
 - `artifacts/submission/local-methodology-view.png`
 
+Slide-ready 16:9 crops:
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+- `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
+
 ## Recommended use by asset
 
 ### `artifacts/submission/local-radar-view.png`
+Best for:
+- raw proof capture
+- backup visual if a taller crop is acceptable
+
+### `artifacts/submission/slide-ready/local-radar-view-16x9.png`
 Best for:
 - title-adjacent product screenshot
 - problem/solution slide
@@ -34,6 +44,11 @@ Why:
 
 ### `artifacts/submission/local-market-detail-view.png`
 Best for:
+- raw proof capture
+- backup visual if a taller crop is acceptable
+
+### `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+Best for:
 - explainability slide
 - credibility / why this is trustworthy slide
 - product drilldown section
@@ -45,6 +60,11 @@ Why:
 
 ### `artifacts/submission/local-methodology-view.png`
 Best for:
+- raw proof capture
+- backup visual if a taller crop is acceptable
+
+### `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
+Best for:
 - methodology / scope honesty slide
 - caveats / MVP scope slide
 - supporting screenshot for judging clarity
@@ -55,13 +75,14 @@ Why:
 
 ## Suggested slide mapping
 
-- Slide 1 or 2: `local-radar-view.png`
-- credibility / explainability slide: `local-market-detail-view.png`
-- methodology / MVP honesty slide: `local-methodology-view.png`
+- Slide 1 or 2: `local-radar-view-16x9.png`
+- credibility / explainability slide: `local-market-detail-view-16x9.png`
+- methodology / MVP honesty slide: `local-methodology-view-16x9.png`
 
 ## Notes
 
 - these are local fallback screenshots, not live Zerve preview captures
+- the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
 - they are still useful because the local fallback path is verified and presentation-safe
 - if the live browser/auth blocker clears later, a live preview screenshot pass can replace or complement these assets
 

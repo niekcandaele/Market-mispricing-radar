@@ -14,6 +14,9 @@ Narrative sources:
 - `docs/presenter-cheat-sheet.md`
 
 Visual sources:
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+- `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 - `artifacts/submission/local-radar-view.png`
 - `artifacts/submission/local-market-detail-view.png`
 - `artifacts/submission/local-methodology-view.png`
@@ -29,7 +32,7 @@ Use a clean, visual deck. Prefer one strong screenshot plus a few bullets over d
 
 ### Slide 1, Title / hook
 Use:
-- `artifacts/submission/local-radar-view.png`
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
 
 On-slide emphasis:
 - product name
@@ -54,7 +57,7 @@ Speaker note reminder:
 
 ### Slide 3, Solution
 Use:
-- `artifacts/submission/local-radar-view.png`
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
 
 On-slide emphasis:
 - ranks markets that deserve scrutiny
@@ -66,7 +69,7 @@ Best visual reason:
 
 ### Slide 4, Product drilldown / explainability
 Use:
-- `artifacts/submission/local-market-detail-view.png`
+- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
 
 On-slide emphasis:
 - score drivers
@@ -79,7 +82,7 @@ Speaker note reminder:
 
 ### Slide 5, Methodology / honest scope
 Use:
-- `artifacts/submission/local-methodology-view.png`
+- `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 
 On-slide emphasis:
 - Polymarket-first MVP
@@ -140,9 +143,9 @@ If the deck should be tighter, use:
 
 ## Best current screenshot-to-slide matches
 
-- strongest product hero: `local-radar-view.png`
-- strongest explainability proof: `local-market-detail-view.png`
-- strongest credibility / scope proof: `local-methodology-view.png`
+- strongest product hero: `local-radar-view-16x9.png`
+- strongest explainability proof: `local-market-detail-view-16x9.png`
+- strongest credibility / scope proof: `local-methodology-view-16x9.png`
 
 ## Final build reminder
 
