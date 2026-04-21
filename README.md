@@ -15,6 +15,7 @@ Judge-facing demo script lives in `docs/judge-demo-script.md`.
 Submission deck outline and speaker notes live in `docs/submission-deck-outline.md`.
 Submission bundle index lives in `docs/submission-bundle.md`.
 Submission copy draft lives in `docs/submission-copy-draft.md`.
+Submission short variants live in `docs/submission-short-variants.md`.
 Submission verification checklist lives in `docs/submission-verification-checklist.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.
