@@ -877,7 +877,7 @@ def render_app() -> None:
             }.get(item, item),
             key="sort_mode",
         )
-        if st.button("Reset filters", use_container_width=True):
+        if st.button("Reset filters", width="stretch"):
             reset_filter_state()
             st.rerun()
 
@@ -935,7 +935,7 @@ def render_app() -> None:
 
         if category_breakdown_rows():
             st.markdown("#### Market mix in this view")
-            st.dataframe(category_breakdown_rows(), use_container_width=True)
+            st.dataframe(category_breakdown_rows(), width="stretch")
 
         if filtered:
             st.markdown("#### What you're looking at now")
@@ -946,7 +946,7 @@ def render_app() -> None:
             reason_rows = filtered_reason_breakdown(filtered)
             if reason_rows:
                 st.markdown("#### Most common reasons in this view")
-                st.dataframe(reason_rows, use_container_width=True)
+                st.dataframe(reason_rows, width="stretch")
 
         if not pipeline_ready():
             st.info("No ranked results are available yet. Refresh the pipeline and try again.")
@@ -974,11 +974,11 @@ def render_app() -> None:
                     meta_cols[1].write(f"Focused: {'yes' if row.get('market_id') == st.session_state.get('selected_market_id') else 'no'}")
                     with meta_cols[2]:
                         action_cols = st.columns(2)
-                        if action_cols[0].button("Focus in detail", key=f"focus-{row.get('market_id')}", use_container_width=True):
+                        if action_cols[0].button("Focus in detail", key=f"focus-{row.get('market_id')}", width="stretch"):
                             queue_navigation(view="Market Detail", market_id=row.get("market_id"))
                             st.rerun()
                         if row.get("source_url"):
-                            action_cols[1].link_button("Open source", row["source_url"], use_container_width=True)
+                            action_cols[1].link_button("Open source", row["source_url"], width="stretch")
 
     elif active_view == "Market Detail":
         st.subheader("Market Detail")
@@ -992,11 +992,11 @@ def render_app() -> None:
             if focused_market_outside_filters(filtered):
                 st.warning("The focused market is outside the current Radar filters. The detail view is preserving that selection instead of silently swapping to a different market.")
                 action_cols = st.columns(2)
-                if action_cols[0].button("Reset filters to recover focused market", use_container_width=True):
+                if action_cols[0].button("Reset filters to recover focused market", width="stretch"):
                     reset_filter_state()
                     queue_navigation(view="Market Detail")
                     st.rerun()
-                if action_cols[1].button("Return to Radar", use_container_width=True):
+                if action_cols[1].button("Return to Radar", width="stretch"):
                     queue_navigation(view="Radar")
                     st.rerun()
 
@@ -1007,13 +1007,13 @@ def render_app() -> None:
             if position_context:
                 st.caption(position_context)
                 nav_cols = st.columns(3)
-                if nav_cols[0].button("Previous result", disabled=previous_market_id is None, use_container_width=True):
+                if nav_cols[0].button("Previous result", disabled=previous_market_id is None, width="stretch"):
                     queue_navigation(market_id=previous_market_id)
                     st.rerun()
-                if nav_cols[1].button("Back to Radar", use_container_width=True):
+                if nav_cols[1].button("Back to Radar", width="stretch"):
                     queue_navigation(view="Radar")
                     st.rerun()
-                if nav_cols[2].button("Next result", disabled=next_market_id is None, use_container_width=True):
+                if nav_cols[2].button("Next result", disabled=next_market_id is None, width="stretch"):
                     queue_navigation(market_id=next_market_id)
                     st.rerun()
             else:
@@ -1057,12 +1057,12 @@ def render_app() -> None:
                 st.write("No score components are available for this market.")
 
             st.markdown("#### Observed market signals")
-            st.dataframe(supporting_signal_rows(explanation), use_container_width=True)
+            st.dataframe(supporting_signal_rows(explanation), width="stretch")
 
             st.markdown("#### Comparable markets in the current view")
             peer_rows = peer_comparison_rows(filtered, selected_row)
             if peer_rows:
-                st.dataframe(peer_rows, use_container_width=True)
+                st.dataframe(peer_rows, width="stretch")
             else:
                 st.write("No comparable same-category markets are visible in the current filtered result set.")
 
@@ -1094,7 +1094,7 @@ def render_app() -> None:
             warning_rows = methodology_warning_rows()
             if warning_rows:
                 st.markdown("#### Current QA notes")
-                st.dataframe(warning_rows, use_container_width=True)
+                st.dataframe(warning_rows, width="stretch")
             else:
                 st.write("No QA warnings are active for the current run.")
         else:
