@@ -28,6 +28,11 @@ Use it to answer four questions quickly:
 - repo source material: `docs/judge-demo-script.md`, `docs/submission-deck-outline.md`
 - required next artifact: final recording outline in Google Docs or deck speaker notes
 
+### Submission copy
+- status: draft-ready
+- repo source material: `docs/submission-copy-draft.md`
+- required next artifact: paste/adapt into the actual hackathon submission form
+
 ### Submission readiness
 - status: not submission-complete yet
 - reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked
@@ -60,6 +65,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 ### Submission deck outline and speaker notes
 - `docs/submission-deck-outline.md`
 - best for turning the repo story into slides and presenter notes
+
+### Submission copy draft
+- `docs/submission-copy-draft.md`
+- best for the hackathon form fields, project summary, and one-minute written pitch
 
 ### App flow doc
 - `docs/app-flow.md`

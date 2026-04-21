@@ -14,6 +14,7 @@ Judge-facing app flow notes live in `docs/app-flow.md`.
 Judge-facing demo script lives in `docs/judge-demo-script.md`.
 Submission deck outline and speaker notes live in `docs/submission-deck-outline.md`.
 Submission bundle index lives in `docs/submission-bundle.md`.
+Submission copy draft lives in `docs/submission-copy-draft.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.
 Zerve notebook block-mapping notes live in `docs/zerve-notebook-block-map.md`.
