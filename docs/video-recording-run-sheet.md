@@ -8,6 +8,8 @@ Use it when the demo script is too broad and you need a crisp filming sequence w
 
 If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
 
+Right before the real take, run `docs/recording-preflight-checklist.md`.
+
 ## Target shape
 
 - target length: 60 to 90 seconds

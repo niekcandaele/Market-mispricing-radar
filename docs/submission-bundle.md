@@ -84,6 +84,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/video-voiceover-script.md`
 - best for the literal spoken recording pass when the beat sheet is too abstract
 
+### Recording preflight checklist
+- `docs/recording-preflight-checklist.md`
+- best for the final go/no-go setup pass right before recording
+
 ### Demo market shortlist
 - `docs/demo-market-shortlist.md`
 - best for quickly choosing a strong drilldown example without improvising live
