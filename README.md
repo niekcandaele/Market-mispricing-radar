@@ -16,6 +16,7 @@ Submission deck outline and speaker notes live in `docs/submission-deck-outline.
 Submission bundle index lives in `docs/submission-bundle.md`.
 Submission copy draft lives in `docs/submission-copy-draft.md`.
 Submission short variants live in `docs/submission-short-variants.md`.
+Video recording run sheet lives in `docs/video-recording-run-sheet.md`.
 Submission verification checklist lives in `docs/submission-verification-checklist.md`.
 MVP source validation notes live in `docs/mvp-source-validation.md`.
 Zerve hybrid execution/debug notes live in `docs/zerve-hybrid-execution.md`.

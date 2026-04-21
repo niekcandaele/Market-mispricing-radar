@@ -76,6 +76,10 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - `docs/submission-short-variants.md`
 - best for cramped form fields, taglines, and short summaries under length pressure
 
+### Video recording run sheet
+- `docs/video-recording-run-sheet.md`
+- best for the actual one-take recording order and beat-by-beat filming flow
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
