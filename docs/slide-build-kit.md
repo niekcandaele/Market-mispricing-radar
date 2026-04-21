@@ -128,16 +128,46 @@ Keep it short:
 ## Simplified 6-slide version
 
 If the deck should be tighter, use:
-1. title / hook with radar screenshot
-2. problem and solution
-3. product flow
-4. explainable product proof with detail screenshot
-5. why Zerve matters
-6. next steps / close
+1. title / hook with `local-radar-view-16x9.png`
+2. problem and solution with either light radar reuse or a text-first slide
+3. product flow as a text-first slide
+4. explainable product proof with `local-market-detail-view-16x9.png`
+5. why Zerve matters as a text-first slide or very light radar reuse
+6. next steps / close with `local-methodology-view-16x9.png` only if the slide needs visual support
 
 Use these sources for the compact path:
 - on-slide copy: `docs/slide-copy-pack.md`
 - speaker notes: `docs/submission-deck-outline.md`
+
+### Compact path visual mapping
+
+#### Compact slide 1
+Use:
+- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+
+#### Compact slide 2
+Use one of:
+- a light reuse of `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- or no screenshot if the problem/solution slide reads cleaner as text
+
+#### Compact slide 3
+Use:
+- no screenshot by default
+- keep this as a clean workflow slide unless the final deck feels too text-heavy
+
+#### Compact slide 4
+Use:
+- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+
+#### Compact slide 5
+Use one of:
+- no screenshot by default
+- or a very light reuse of `artifacts/submission/slide-ready/local-radar-view-16x9.png` if the slide needs visual continuity
+
+#### Compact slide 6
+Use one of:
+- no screenshot by default
+- or `artifacts/submission/slide-ready/local-methodology-view-16x9.png` if the close benefits from visible MVP honesty and scope framing
 
 ## Visual rules
 

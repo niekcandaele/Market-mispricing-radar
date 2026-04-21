@@ -42,6 +42,7 @@ The repo-side source material is strong, but the actual final office-layer asset
 ### Google Slides deck
 - status: not created yet
 - final title: `Market Mispricing Radar - Submission Deck`
+- deck shape used: `TBD` (`full 8-slide` or `compact 6-slide`)
 - location: `TBD`
 - version note: `TBD`
 - source docs:
