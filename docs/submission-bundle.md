@@ -16,7 +16,7 @@ Use it to answer four questions quickly:
 - status: usable
 - primary live entrypoint: current Zerve Streamlit preview from the deploy tab
 - repo docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- local fallback: verified locally
+- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle
 
 ### Slides
 - status: not created yet
@@ -162,10 +162,16 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 
 ## Recommended next steps
 
-1. create the Google Slides deck from `docs/submission-deck-outline.md`
-2. create the Google Doc with speaker notes / recording plan from `docs/judge-demo-script.md` and `docs/video-voiceover-script.md`
-3. verify the latest live preview path right before recording
+If the logged-in `user` browser session becomes available:
+1. verify the latest live preview path right before recording
+2. create the Google Slides deck from `docs/submission-deck-outline.md`
+3. create the Google Doc with speaker notes / recording plan from `docs/judge-demo-script.md` and `docs/video-voiceover-script.md`
 4. do one final submission-quality sweep across demo, slides, notes, and links
+
+Until then:
+1. keep the repo-side submission pack as the source of truth
+2. treat the verified local fallback as the presentation-safe backup path
+3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity instead of pretending the office-layer work is unblocked
 
 ## Honest readiness call
 
