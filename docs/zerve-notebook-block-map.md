@@ -25,8 +25,8 @@ It exists to reduce guesswork when copying the pipeline into the live Zerve note
 | `build_market_features` | `zerve/snippets/polymarket_feature_block.py` | `market_features`, `feature_metadata` | present |
 | `score_markets` | `zerve/snippets/polymarket_scoring_block.py` | `ranked_markets`, `scoring_metadata` | present |
 | `build_market_explanations` | `zerve/snippets/polymarket_explanations_block.py` | `market_explanations`, `explanation_metadata` | present |
-| `build_app_bundle` | `zerve/snippets/polymarket_app_bundle_block.py` | `app_bundle`, `refresh_metadata` | not yet created |
-| `build_qa_summary` | `zerve/snippets/polymarket_qa_block.py` | `qa_summary` | not yet created |
+| `build_app_bundle` | `zerve/snippets/polymarket_app_bundle_block.py` | `app_bundle`, `refresh_metadata` | present |
+| `build_qa_summary` | `zerve/snippets/polymarket_qa_block.py` | `qa_summary` | present |
 
 ## Confirmed deployed Streamlit handoff
 
@@ -46,7 +46,7 @@ Current mirrored app support:
 ## Practical notes
 
 - A canvas-layout inspection on 2026-04-21 confirmed the live notebook initially contained only `fetch_polymarket_data` plus the Streamlit deployment surface.
-- A follow-up live notebook pass on 2026-04-21 upgraded `fetch_polymarket_data` to the hardened ingestion code and then added working `normalize_markets`, `build_market_features`, `score_markets`, and `build_market_explanations` blocks.
+- A follow-up live notebook pass on 2026-04-21 upgraded `fetch_polymarket_data` to the hardened ingestion code and then added working `normalize_markets`, `build_market_features`, `score_markets`, `build_market_explanations`, `build_app_bundle`, and `build_qa_summary` blocks.
 - The live Zerve deploy proof used the internal notebook block name `fetch_polymarket_data` for `polymarket_raw_markets`.
 - The ingestion block keeps browser-like request headers because the Zerve runtime returned `HTTP 403` without them.
 - The current ingestion mirror fetches a wider upstream slice and emits a deterministic active-market output for downstream blocks.
