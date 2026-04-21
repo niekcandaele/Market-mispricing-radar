@@ -9,7 +9,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Current verification status
 
 - repo-side narrative artifacts: present
-- local fallback demo path: smoke-checked
+- local fallback demo path: verified end to end
 - live Zerve preview path: needs final pre-submission recheck
 - Google Slides deck: not created yet
 - office-layer speaker notes doc: not created yet
@@ -27,8 +27,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ### Local fallback demo
 - [x] run `python3 scripts/export_streamlit_bundle.py --limit 200`
-- [ ] run `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py`
-- [ ] confirm the local app opens and renders the expected radar flow
+- [x] run `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py`
+- [x] confirm the local app opens and renders the expected radar flow
+- [x] confirm one market drilldown opens cleanly in Market Detail
 
 ## Artifact checks
 
@@ -69,13 +70,20 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T070336Z` and `ranked_market_count` `200`
 - status: passed
 
+### 2026-04-21 local fallback app render check
+- command: `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py --server.headless true --server.address 127.0.0.1 --server.port 8765`
+- goal: verify the documented local fallback app actually opens and presents the expected product flow
+- observed result: passed, the local app rendered the Radar view with live product framing, run status, QA warning summary, and ranked markets, then successfully opened a Market Detail drilldown for the top-ranked result
+- notable observed values: `refresh_id` `refresh-20260421T070414Z`, `market_count` `200`, `open_markets` `200`, `score_version` `v1-prototype`
+- status: passed
+
 ## Honest readiness call
 
 The project is in a strong near-ready state, but it is not submission-complete yet.
 
 What is already verified or present:
 - deployed-product path exists
-- local fallback path exists
+- local fallback path exists and now renders cleanly
 - demo script exists
 - deck source exists
 - submission copy exists
@@ -83,7 +91,6 @@ What is already verified or present:
 
 What still blocks a true done call:
 - final live preview recheck right before submission
-- final local Streamlit open-check if the fallback path will be used live
 - Google Slides deck creation
 - office-layer notes artifact creation
 - final link and form verification pass

@@ -16,7 +16,7 @@ Use it to answer four questions quickly:
 - status: usable
 - primary live entrypoint: current Zerve Streamlit preview from the deploy tab
 - repo docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- local fallback: available
+- local fallback: verified locally
 
 ### Slides
 - status: not created yet
@@ -111,6 +111,7 @@ Right now the project looks much stronger than a code-only prototype.
 
 It has:
 - a live deployed demo path
+- a verified local fallback demo path
 - a polished judge-facing app
 - a judge/demo script
 - a deck outline with speaker notes
