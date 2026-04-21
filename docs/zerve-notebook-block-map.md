@@ -37,6 +37,10 @@ Preferred app-side lookups:
 - `variable("build_app_bundle", "app_bundle")`
 - `variable("build_qa_summary", "qa_summary")`
 
+Observed deploy-runtime caveat from live validation:
+- deployed Streamlit could load `build_app_bundle`, but a direct `variable("build_qa_summary", "qa_summary")` probe failed with `Block 'build_qa_summary' not found in DAG metadata`
+- the mirrored app therefore still needs to tolerate missing direct `qa_summary` access in deployed Zerve and derive QA from `app_bundle` when necessary
+
 Current mirrored app support:
 - defaults to those block names when `zerve.variable(...)` is available
 - allows overrides with `MMR_ZERVE_APP_BUNDLE_BLOCK`

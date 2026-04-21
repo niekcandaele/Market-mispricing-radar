@@ -232,17 +232,25 @@ Confirmed working deployed preview behavior:
 - the app displayed the first market's question, slug, id, and sample keys from `polymarket_raw_markets`
 - this proves the Streamlit deploy path can consume notebook outputs end to end when the real DAG block name is used
 
+A later end-to-end app validation pass added one more important deploy-runtime detail:
+- the deployed Streamlit preview successfully loaded the real `build_app_bundle` output from the live notebook
+- a deploy-side probe showed `variable("build_qa_summary", "qa_summary")` failed with `VariableLoadingError: Block 'build_qa_summary' not found in DAG metadata`
+- the preview still rendered correctly because `zerve/app/streamlit_app.py` can derive `qa_summary` locally from `app_bundle` when the direct Zerve variable lookup fails
+- after patching `build_app_bundle` to merge explanation headlines into the ranked rows, the refreshed preview stopped showing `No headline reason available.` in the radar cards
+
 ### Still worth watching
 - whether the editor `onChange` path also persists cleanly through the underlying deployment save API in every case
 - whether deployment code lives behind a stable internal API that is easier to automate directly than the React-layer hook
 - whether Zerve exposes a friendlier documented way to discover the required internal block name for deployed variable access
 
 ### Practical implication
-The Streamlit deployment path is now fully validated for notebook-variable handoff, with one important caveat:
+The Streamlit deployment path is now fully validated for notebook-variable handoff, with two important caveats:
 - deployed app code must call `variable(block_name, variable_name)`
 - the `block_name` must be the internal DAG/block identifier, not necessarily the human-visible notebook block title
+- not every notebook block that exists in the live canvas is necessarily exposed in deployed DAG metadata, so the app should keep a graceful fallback path when a secondary variable like `qa_summary` is unavailable even though the notebook block exists
 
-That moves the remaining work from deployment feasibility to productization:
+That moves the remaining work from deployment feasibility to productization and deploy-surface hardening:
 - wire the real app to the confirmed call pattern
 - keep local artifact/snippet fallbacks for offline iteration
+- keep bundle-derived fallbacks for secondary outputs that the deploy runtime may not expose directly
 - improve the ingestion block so the deployed app can consume a stronger upstream payload
