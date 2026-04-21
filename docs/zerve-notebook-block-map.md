@@ -21,7 +21,7 @@ It exists to reduce guesswork when copying the pipeline into the live Zerve note
 | --- | --- | --- | --- |
 | `configure_source` | inline notebook config or constants block | `source_config` | not yet created |
 | `fetch_polymarket_data` | `zerve/snippets/polymarket_ingestion_block.py` | `source_config`, `polymarket_raw_markets`, `ingestion_metadata` | present |
-| `normalize_markets` | `zerve/snippets/polymarket_normalization_block.py` | `normalized_markets`, `normalization_metadata` | not yet created |
+| `normalize_markets` | `zerve/snippets/polymarket_normalization_block.py` | `normalized_markets`, `normalization_metadata` | present |
 | `build_market_features` | `zerve/snippets/polymarket_feature_block.py` | `market_features`, `feature_metadata` | not yet created |
 | `score_markets` | `zerve/snippets/polymarket_scoring_block.py` | `ranked_markets`, `scoring_metadata` | not yet created |
 | `build_market_explanations` | `zerve/snippets/polymarket_explanations_block.py` | `market_explanations`, `explanation_metadata` | not yet created |
@@ -45,7 +45,8 @@ Current mirrored app support:
 
 ## Practical notes
 
-- A canvas-layout inspection on 2026-04-21 confirmed the live notebook currently contains `fetch_polymarket_data` and the Streamlit deployment surface, but not the rest of the mirrored analysis pipeline yet.
+- A canvas-layout inspection on 2026-04-21 confirmed the live notebook initially contained only `fetch_polymarket_data` plus the Streamlit deployment surface.
+- A follow-up live notebook pass on 2026-04-21 upgraded `fetch_polymarket_data` to the hardened ingestion code and added a working `normalize_markets` block.
 - The live Zerve deploy proof used the internal notebook block name `fetch_polymarket_data` for `polymarket_raw_markets`.
 - The ingestion block keeps browser-like request headers because the Zerve runtime returned `HTTP 403` without them.
 - The current ingestion mirror fetches a wider upstream slice and emits a deterministic active-market output for downstream blocks.
