@@ -71,6 +71,11 @@ category_counts = Counter(
     row.get("category") or "uncategorized"
     for row in ranked_markets
 )
+explanation_lookup = {
+    row.get("market_id"): row
+    for row in market_explanations
+    if row.get("market_id") is not None
+}
 
 fetched_at = None
 if isinstance(explanation_metadata, dict):
@@ -93,7 +98,8 @@ app_bundle = {
             "rank": row.get("rank"),
             "final_score": row.get("final_score"),
             "current_probability": row.get("yes_price"),
-            "headline_reason": row.get("headline_reason"),
+            "headline_reason": (explanation_lookup.get(row.get("market_id")) or {}).get("headline_reason") or row.get("headline_reason"),
+            "short_explanation": (explanation_lookup.get(row.get("market_id")) or {}).get("short_explanation"),
             "primary_reason_code": row.get("primary_reason_code"),
             "time_since_update_hours": row.get("time_since_update_hours"),
             "time_to_resolution_hours": row.get("time_to_resolution_hours"),
