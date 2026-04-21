@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -149,6 +150,11 @@ def inference_text(raw: dict[str, Any], event: dict[str, Any]) -> str:
     ).lower()
 
 
+def keyword_matches(text: str, keyword: str) -> bool:
+    pattern = rf"(?<![a-z0-9]){re.escape(keyword.lower())}(?![a-z0-9])"
+    return re.search(pattern, text) is not None
+
+
 def inferred_category(raw: dict[str, Any], event: dict[str, Any]) -> str | None:
     for candidate in [event.get("category"), raw.get("category")]:
         if isinstance(candidate, str) and candidate.strip():
@@ -156,7 +162,7 @@ def inferred_category(raw: dict[str, Any], event: dict[str, Any]) -> str | None:
 
     text = inference_text(raw, event)
     for candidate, keywords in CATEGORY_RULES:
-        if any(keyword in text for keyword in keywords):
+        if any(keyword_matches(text, keyword) for keyword in keywords):
             return candidate
     return "general"
 
@@ -169,7 +175,7 @@ def topic_tags(raw: dict[str, Any], event: dict[str, Any], category: str | None)
 
     text = inference_text(raw, event)
     for tag, keywords in TOPIC_RULES:
-        if any(keyword in text for keyword in keywords):
+        if any(keyword_matches(text, keyword) for keyword in keywords):
             tags.append(tag)
 
     if category and category not in tags:

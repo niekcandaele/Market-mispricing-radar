@@ -13,6 +13,7 @@ from collections import Counter
 import datetime as dt
 import json
 import math
+import re
 import sys
 import urllib.request
 from typing import Any
@@ -164,6 +165,11 @@ def first_event(raw: dict[str, Any]) -> dict[str, Any]:
     return {}
 
 
+def keyword_matches(text: str, keyword: str) -> bool:
+    pattern = rf"(?<![a-z0-9]){re.escape(keyword.lower())}(?![a-z0-9])"
+    return re.search(pattern, text) is not None
+
+
 def infer_category_and_topics(raw: dict[str, Any]) -> tuple[str, list[str], str | None]:
     event = first_event(raw)
     text = " ".join(
@@ -181,13 +187,13 @@ def infer_category_and_topics(raw: dict[str, Any]) -> tuple[str, list[str], str 
 
     category = "general"
     for candidate, keywords in CATEGORY_RULES:
-        if any(keyword in text for keyword in keywords):
+        if any(keyword_matches(text, keyword) for keyword in keywords):
             category = candidate
             break
 
     topic_tags: list[str] = []
     for tag, keywords in TOPIC_RULES:
-        if any(keyword in text for keyword in keywords):
+        if any(keyword_matches(text, keyword) for keyword in keywords):
             topic_tags.append(tag)
 
     if category != "general" and category not in topic_tags:
