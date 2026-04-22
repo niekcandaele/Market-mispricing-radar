@@ -54,8 +54,7 @@ Zerve app scaffold mirror:
 - `python3 -m py_compile zerve/app/streamlit_app.py`
 
 Local Streamlit mirror run:
-- `python3 scripts/export_streamlit_bundle.py --limit 200`
-- `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py`
+- `./scripts/run_local_demo.sh`
 
 Deployed Zerve Streamlit contract:
 - confirmed runtime call shape is `variable(block_name, variable_name)`

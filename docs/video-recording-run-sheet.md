@@ -114,12 +114,18 @@ Avoid a market that:
 - requires too much world knowledge to explain fast
 - looks empty or visually weak in the detail view
 
-## Fallback entrypoint commands
+## Fallback entrypoint command
 
 ```bash
-python3 scripts/export_streamlit_bundle.py --limit 200
-MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
+./scripts/run_local_demo.sh
 ```
+
+Defaults:
+- refresh limit: `200`
+- address: `127.0.0.1`
+- port: `8768`
+
+Override with env vars if needed, for example `MMR_SERVER_PORT=8765 ./scripts/run_local_demo.sh`.
 
 ## Final reminders
 

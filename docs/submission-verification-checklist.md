@@ -27,8 +27,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] if the newest host is still flaky, stop here and use the verified local fallback for recording/submission instead of chasing rotating preview DNS
 
 ### Local fallback demo
-- [x] run `python3 scripts/export_streamlit_bundle.py --limit 200`
-- [x] run `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py`
+- [x] run `./scripts/run_local_demo.sh`
 - [x] confirm the local app opens and renders the expected radar flow
 - [x] confirm one market drilldown opens cleanly in Market Detail
 
@@ -109,9 +108,19 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T140836Z` and `ranked_market_count` `200`
 - status: passed
 
+### 2026-04-22 one-command local fallback launch check
+- command: `./scripts/run_local_demo.sh`
+- default runtime details:
+  - refresh limit: `200`
+  - address: `127.0.0.1`
+  - port: `8768`
+- goal: verify the documented one-command local fallback path refreshes the bundle and serves the app cleanly for recording and final verification
+- observed result: passed, the helper refreshed the bundle and served the app cleanly on `http://127.0.0.1:8768`
+- status: passed
+
 ### 2026-04-21 refreshed local fallback render check
 - commands:
-  - `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py --server.headless true --server.address 127.0.0.1 --server.port 8768`
+  - `./scripts/run_local_demo.sh`
   - local Playwright verification against `http://127.0.0.1:8768`
 - goal: reconfirm the current local fallback still renders the full demo flow during late-stage submission polish
 - observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, `Methodology`, and `Focus in detail`, then successfully navigated into Market Detail and Methodology

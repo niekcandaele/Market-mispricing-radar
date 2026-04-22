@@ -19,8 +19,7 @@ It is designed so Niek or Cata can present the project quickly without having to
 
 ### Safe default demo
 ```bash
-python3 scripts/export_streamlit_bundle.py --limit 200
-MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
+./scripts/run_local_demo.sh
 ```
 
 ### Optional live upgrade

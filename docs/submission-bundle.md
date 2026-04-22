@@ -57,9 +57,13 @@ These should be treated as useful breadcrumbs, not permanent URLs.
 This is now the submission-safe default path unless a fresh live preview opens cleanly at the final check.
 
 ```bash
-python3 scripts/export_streamlit_bundle.py --limit 200
-MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
+./scripts/run_local_demo.sh
 ```
+
+Defaults:
+- refresh limit: `200`
+- address: `127.0.0.1`
+- port: `8768`
 
 ## Story / talking-track sources
 

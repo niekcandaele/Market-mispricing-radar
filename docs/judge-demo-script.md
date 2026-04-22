@@ -109,11 +109,12 @@ Use this compressed version:
 - only switch to the live preview if the freshest deploy-tab preview opens cleanly right before use
 - keep the story focused on inspection, explainability, and live proof, not on claiming perfect mispricing detection
 
-## Local fallback commands
+## Local fallback command
 
 This is now the safe default demo path.
 
 ```bash
-python3 scripts/export_streamlit_bundle.py --limit 200
-MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
+./scripts/run_local_demo.sh
 ```
+
+If needed, override the default port with `MMR_SERVER_PORT=<port> ./scripts/run_local_demo.sh`.

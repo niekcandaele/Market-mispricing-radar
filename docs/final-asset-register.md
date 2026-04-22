@@ -18,8 +18,11 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - status: ready, and currently the locked safe default
 - chosen path: local fallback
 - URL or launch source:
-  - `python3 scripts/export_streamlit_bundle.py --limit 200`
-  - `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py`
+  - `./scripts/run_local_demo.sh`
+- default runtime details:
+  - refresh limit: `200`
+  - address: `127.0.0.1`
+  - port: `8768`
 - verified on: `2026-04-21`
 - verified by: `Jefke`
 - notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; use this for recording and submission unless a final live preview check opens cleanly enough to justify switching
