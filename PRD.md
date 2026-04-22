@@ -97,7 +97,7 @@ Implication:
 Zerve supports deploying Streamlit apps directly from notebook outputs and lets app code reference notebook variables using `from zerve import variable`.
 
 Implication:
-- Streamlit should be the primary judge-facing artifact
+- Streamlit should be the primary submission-facing artifact
 - the app should consume prepared ranking tables and explanation structures from the pipeline
 
 #### FastAPI deployment
@@ -140,7 +140,7 @@ Zerve supports input/output UI blocks and hosted apps, but the docs make Streaml
 
 Implication:
 - for MVP, Streamlit is the clearest path
-- UI blocks are interesting but probably not the shortest path to a polished judge demo
+- UI blocks are interesting but probably not the shortest path to a polished product demo
 
 ### 8.2 Important constraints
 
@@ -344,7 +344,7 @@ Important rule:
 - compute ranked outputs
 - validate that results are interesting
 
-### Phase 3: deploy judge-facing app
+### Phase 3: deploy submission-facing app
 - build Streamlit app in Zerve
 - connect upstream variables
 - test the happy path and edge cases
