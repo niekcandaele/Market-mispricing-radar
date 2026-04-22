@@ -193,7 +193,7 @@ It has:
 - a live deployed demo path
 - a verified local fallback demo path
 - a polished deployed app
-- a judge/demo script
+- a demo script
 - a deck outline with speaker notes
 - a slide build kit and slide copy pack
 - a one-take video run sheet

@@ -25,7 +25,7 @@ Why:
 - product and demo polish are done
 
 ### Narrative / presentation sources
-- judge demo script exists
+- demo script exists
 - submission deck outline exists
 - slide build kit exists
 - slide copy pack exists
