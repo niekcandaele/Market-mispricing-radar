@@ -100,26 +100,26 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 ## Final video asset
 
 - status: not recorded yet
-- title or filename: `TBD`
-- location or upload URL: `TBD`
-- recorded on: `TBD`
+- title or filename: pending final recording output
+- location or upload URL: pending video upload
+- recorded on: pending recording session
 - notes: use `docs/video-recording-run-sheet.md`
 
 ## Final submission form
 
 - status: not submitted yet
-- Devpost submission URL: `TBD`
-- final project URL used in form: `TBD`
-- video URL used in form: `TBD`
-- screenshot/image URL used in form: `TBD`
-- submitted on: `TBD`
+- Devpost submission URL: pending real submission
+- final project URL used in form: pending final form fill
+- video URL used in form: pending final video upload
+- screenshot/image URL used in form: pending final form fill
+- submitted on: pending submission event
 
 ## Last verification snapshot
 
 - final demo link checked: local fallback path re-verified on 2026-04-22 through `./scripts/check_safe_local_demo.sh` with corrected GTA detail-drilldown evidence at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T093053Z.json`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)
 - deck link checked: yes, Slides API readback confirmed compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
-- video link checked: `TBD`
+- video link checked: pending final recording and upload
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - verified on: `2026-04-22`
 - verified by: `Jefke`
