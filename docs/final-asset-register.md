@@ -23,9 +23,9 @@ The repo-side source material is strong, the Google Workspace office artifacts a
   - refresh limit: `200`
   - address: `127.0.0.1`
   - port: `8768`
-- verified on: `2026-04-21`
+- verified on: `2026-04-22`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; use this for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-22, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
 - status: pending final check
@@ -49,7 +49,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
-- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, and updated with soft coordinated slide backgrounds the same day
+- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, updated with soft coordinated slide backgrounds, and synced again on 2026-04-22 so the product-proof speaker notes point at the current safe local GTA drilldown and cleaner deployed-product wording
 - source docs:
   - `docs/submission-deck-outline.md`
   - `docs/slide-build-kit.md`
@@ -59,7 +59,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - status: created, structured presenter notes populated, now includes default visual pairings for the compact deck, safe demo-path guidance, and corrected alignment to the actual compact slide order, and is ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, and corrected to match the compact deck slide order
+- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, corrected to match the compact deck slide order, and updated on 2026-04-22 to use the GTA drilldown as the current safe local default
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
@@ -76,7 +76,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - status: created
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- version note: created in `Documents` on 2026-04-21 with preferred live path, verified local fallback, drilldown defaults, and explicit default visual pairings
+- version note: created in `Documents` on 2026-04-21 with preferred live path, verified local fallback, drilldown defaults, and explicit default visual pairings, then updated on 2026-04-22 to use `./scripts/run_local_demo.sh` and the GTA drilldown as the current safe local default
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`
@@ -116,12 +116,12 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 
 ## Last verification snapshot
 
-- final demo link checked: local fallback path verified; live preview still `TBD` (fresh repaired preview metadata exists again, but the newest host still needs one clean stable open before it should be recorded here)
-- deck link checked: yes, Slides API readback confirmed compact 6-slide structure
-- notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes
+- final demo link checked: local fallback path verified through `./scripts/run_local_demo.sh`; live preview still `TBD` (fresh repaired preview metadata exists again, but the newest host still needs one clean stable open before it should be recorded here)
+- deck link checked: yes, Slides API readback confirmed compact 6-slide structure and updated speaker notes
+- notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
 - video link checked: `TBD`
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
-- verified on: `2026-04-21`
+- verified on: `2026-04-22`
 - verified by: `Jefke`
 
 ## References
