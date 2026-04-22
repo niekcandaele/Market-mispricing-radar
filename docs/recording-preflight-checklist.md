@@ -11,7 +11,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 - [ ] default to the verified local fallback as the primary recording path
 - [ ] only switch to the live Zerve preview if the freshest preview opens cleanly right before recording
 - [ ] if trying the live path, reopen the freshest preview from the Zerve deploy tab instead of trusting an old rotated URL
-- [ ] if the live path is flaky, stay on the local fallback before recording starts
+- [ ] if the live path never clears its initial warm-up `503` window, stay on the local fallback before recording starts
 - [ ] confirm the chosen demo path opens cleanly
 - [ ] confirm Radar, Market Detail, and Methodology all load on the chosen path
 

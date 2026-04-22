@@ -16,7 +16,7 @@ Use it to answer four questions quickly:
 - status: usable
 - preferred last-minute upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - repo docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle, and should now be treated as the locked safe recording/submission path while live preview DNS remains flaky
+- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle, and should still be treated as the locked safe recording/submission path because it is one-command and presentation-safe even though a fresh 2026-04-22 live preview check did recover a real working preview after warm-up
 
 ### Slides
 - status: compact 6-slide deck now populated, tightened, styled, given embedded speaker notes, pushed through a visually coherent first background pass in Google Workspace `Documents`, given a final copy-tightening readability pass, upgraded with stronger section-hierarchy kickers on the body slides, and given right-side visual proof cards on the core workflow/product/zerve/next slides
@@ -42,11 +42,13 @@ Use it to answer four questions quickly:
 ## Demo entrypoints
 
 ### Preferred live demo
-- open the current deployed Streamlit preview from the Zerve deploy tab
-- preview URLs rotate, so the deploy tab is the reliable source of the latest live demo link
-- if the latest host is still flaky, do not spend more submission time on it, use the verified local fallback instead
+- open the current deployed Streamlit preview from the Zerve deploy tab, or recover it directly with bearer-auth `POST /script/<deployment_script_id>/deploy_preview`
+- preview URLs rotate, so the deploy tab or direct script trigger is the reliable source of the latest live demo link
+- expect brief warm-up behavior on a fresh host: the current observed pattern is ELB `503`, sometimes one timeout, then `200` and a real Streamlit render within about 45 seconds
+- if the latest host never clears that warm-up phase, do not spend more submission time on it, use the verified local fallback instead
 
 ### Known recent working previews
+- `https://1237c1f1-ee724b30.hub.zerve.cloud` (2026-04-22 fresh recovery, observed `503` warm-up before stable `200`)
 - `https://0bd71592-a1a1481b.hub.zerve.cloud`
 - `https://b1f7cd6e-7de84c75.hub.zerve.cloud`
 - `https://f25e450d-8a72464f.hub.zerve.cloud`
@@ -161,8 +163,9 @@ Defaults:
 
 ### Current blocker snapshot
 - Google Workspace office artifacts now exist and are no longer blocked on auth
-- the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and fresh preview metadata reappeared
-- the remaining blocker is narrower now: the latest repaired preview host is still too inconsistent at the DNS / reachability layer to count as the final checked live demo link
+- the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and a fresh 2026-04-22 bearer-auth preview trigger produced a new working preview again
+- the current concrete live-preview behavior is now understood: a fresh host can resolve immediately, serve ELB `503` during warm-up, then turn into a healthy rendered Streamlit app about 45 seconds later
+- the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the local fallback is already one-command and fully presentation-safe
 
 ### Not a blocker right now, but still needed before calling the project ready
 - keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents`
@@ -170,16 +173,17 @@ Defaults:
 
 ## Recommended next steps
 
-While the live-preview check is still unresolved:
+While the live-preview path remains an optional upgrade:
 1. keep polishing the compact deck and presenter notes
 2. treat the verified local fallback as the presentation-safe default path
 3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
-4. treat the repaired direct deploy-script path as the current recovery seam if the deploy tab stays flaky again
+4. use the repaired direct deploy-script path if a fresh live host needs to be regenerated right before recording
 
-Once the live preview path is directly verified:
-1. verify the latest repaired live preview path right before recording
-2. lock the final demo choice and drilldown example
-3. do one final submission-quality sweep across demo, slides, notes, and links
+If choosing to use the live preview:
+1. trigger a fresh preview right before recording
+2. allow one short warm-up window if the host first returns `503`
+3. lock the final demo choice and drilldown example once the app renders cleanly
+4. do one final submission-quality sweep across demo, slides, notes, and links
 
 ## Honest readiness call
 

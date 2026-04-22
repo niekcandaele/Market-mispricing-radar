@@ -28,12 +28,12 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-22, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
-- status: pending final check
+- status: verified, but not chosen as the safe default
 - path: fresh live Zerve Streamlit preview reopened from the deploy tab
-- URL or launch source: dynamic preview from Zerve deploy tab
-- verified on: `TBD`
-- verified by: `TBD`
-- notes: the live deploy seam has been recovered further than before because the valid deployed script was directly re-synced to the repo app and a fresh preview record was emitted again, but the latest host is still too inconsistent to record as the final checked URL
+- URL or launch source: `https://1237c1f1-ee724b30.hub.zerve.cloud/` (fresh 2026-04-22 recovery) or a fresh equivalent reopened from the deploy tab
+- verified on: `2026-04-22`
+- verified by: `Jefke`
+- notes: the latest concrete diagnosis is no longer a vague "flaky preview" label. Direct bearer-auth `POST /script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`, emitted fresh preview metadata, the new host resolved immediately, then served ELB `503` during warm-up before converging to `200` and rendering the real Market Mispricing Radar app. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
 
 ## Final drilldown example
 

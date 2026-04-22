@@ -97,4 +97,4 @@ Why:
 Prefer replacing assets only when the live captures are:
 - visually cleaner than the local ones
 - clearly current
-- not blocked by flaky preview or unresolved live-host verification
+- not blocked by the live preview, because the current known preview behavior is now understood as short warm-up `503` lag rather than an unknown blocker

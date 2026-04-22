@@ -10,7 +10,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 - repo-side narrative artifacts: present
 - local fallback demo path: verified end to end
-- live Zerve preview path: the new Browserless + Playwright path can sign into Zerve and reopen the project again, the real preview trigger has been re-confirmed, the valid deployed Streamlit script was directly recovered and patched back to the repo app, and the remaining live-check blocker is one clean verification pass on the newest repaired preview host once its DNS / reachability stabilizes
+- live Zerve preview path: the new Browserless + Playwright path can sign into Zerve and reopen the project again, the real preview trigger has been re-confirmed, the valid deployed Streamlit script was directly recovered and patched back to the repo app, and a fresh 2026-04-22 recheck now shows the concrete behavior clearly: direct bearer-auth `POST /script/<deployment_script_id>/deploy_preview` returns `200`, emits fresh preview metadata, the new host resolves immediately, briefly serves ELB `503` during warm-up, then turns into a real rendered Streamlit app
 - Google Slides deck: compact deck now exists in Google Workspace `Documents`, and the latest pass tightened slide copy, improved hierarchy, added proof-structure elements, and synced embedded speaker notes to the safe demo-path plan; the remaining deck gap is mainly screenshot/layout polish
 - office-layer speaker notes doc: presenter notes and deck speaker notes now both reflect the safe local-fallback default and align cleanly with the current compact deck order
 - final submission form paste/check: not done yet
@@ -18,13 +18,14 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Demo checks
 
 ### Preferred live demo
-- [ ] open the current Zerve Streamlit preview from the deploy tab, using the in-editor preview control rather than the global header `Deploy` button if the UI bounces back to the generic chooser, or recover the same preview via the repaired direct script path if the tab UI is flaky again
+- [ ] open the current Zerve Streamlit preview from the deploy tab, using the in-editor preview control rather than the global header `Deploy` button if the UI bounces back to the generic chooser, or recover the same preview via direct bearer-auth `POST /script/<deployment_script_id>/deploy_preview`
 - [ ] confirm the app loads without runtime error
 - [ ] confirm sidebar shows live Zerve bundle context
 - [ ] confirm Radar view renders ranked markets
 - [ ] confirm one top market opens cleanly in Market Detail
 - [ ] confirm Methodology view still matches current product framing
-- [ ] if the newest host is still flaky, stop here and use the verified local fallback for recording/submission instead of chasing rotating preview DNS
+- [ ] if the newest host first returns ELB `503`, wait roughly 45 to 60 seconds and retry once before abandoning it
+- [ ] if the newest host never emits preview metadata, never resolves, or never clears warm-up `503`, stop here and use the verified local fallback for recording/submission instead of chasing rotating preview URLs
 
 ### Local fallback demo
 - [x] run `./scripts/run_local_demo.sh`
@@ -174,5 +175,13 @@ What still blocks a true done call:
 - browser/auth path: passed, Browserless + Playwright reopened the Zerve notebook successfully
 - deploy repair seam: passed, recovered valid deployed Streamlit script `ecda0778-025a-4d74-898a-31ee7c3f709d` from canvas metadata and verified direct `PATCH /script/<deployment_script_id>` repair by replacing the stale probe content with the repo app
 - preview trigger: passed, direct `POST /script/<deployment_script_id>/deploy_preview` returned success and emitted fresh preview metadata (`current_preview_id` `98be1ead-9c6b-45d3-8800-1c46e4b344a0`, `preview_deployment_id` `bdeef4a2-827c-4190-96e7-5dce68958d18`, DNS label `dc772abb-6f3a4e5a`)
-- live host check: not yet final, because the fresh `dc772abb-6f3a4e5a.hub.zerve.cloud` host still showed inconsistent DNS / reachability during verification and should not be treated as the locked submission-day URL yet
-- operator call: stop burning late-stage time on preview DNS roulette; use the verified local fallback as the safe default unless a final live check turns clean
+- live host check: incomplete at that moment, because the fresh `dc772abb-6f3a4e5a.hub.zerve.cloud` host still looked inconsistent during that pass
+
+### 2026-04-22 recovered live preview warm-up check
+- trigger path: passed, direct bearer-auth `POST https://canvas.api.zerve.ai/script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`
+- preview metadata: passed, fresh metadata appeared in `canvas_layout` for the same recovered script (`current_preview_id` `b0966b53-de68-43a2-9c8e-759bead27ab1`, `preview_deployment_id` `114fe023-2dfe-41ce-97c8-408d9a949602`, DNS label `1237c1f1-ee724b30`)
+- DNS check: passed, `1237c1f1-ee724b30.hub.zerve.cloud` resolved immediately to `54.154.86.15` and `54.217.140.40`
+- warm-up behavior: observed ELB `503`, then one timeout, then `200` within about 45 seconds
+- rendered-app check: passed, the fresh preview rendered the real Market Mispricing Radar app, including sidebar views `Radar`, `Market Detail`, and `Methodology`, plus live app content such as `Ranked Radar` and `Processed 250`
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
+- operator call: the live preview is recoverable and real, but it still should be treated as an optional upgrade because the local fallback remains simpler and safer for recording/submission

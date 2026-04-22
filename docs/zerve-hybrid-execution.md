@@ -36,6 +36,26 @@ Authentication note:
 - the browser session stores a bearer token in local storage under the Logto auth keys
 - using that bearer token makes the block-state reads work cleanly
 
+## Concrete preview diagnosis path
+
+The preview problem also became debuggable once the browser session token was used directly instead of treating the deploy UI as a black box.
+
+Observed 2026-04-22 behavior on the recovered deploy script `ecda0778-025a-4d74-898a-31ee7c3f709d`:
+
+- `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview` with bearer auth from the live browser session returned `200` and body `null`
+- the same call with plain browser `credentials: include` but without the explicit bearer header returned `500`, which is why raw page-level pokes were misleading
+- after the successful bearer-auth trigger, `canvas_layout` showed fresh preview metadata:
+  - `current_preview_id = b0966b53-de68-43a2-9c8e-759bead27ab1`
+  - `preview_deployment_id = 114fe023-2dfe-41ce-97c8-408d9a949602`
+  - `preview_deployment_dns_name = 1237c1f1-ee724b30`
+- the fresh host `https://1237c1f1-ee724b30.hub.zerve.cloud/` resolved immediately
+- the first concrete failure was not missing DNS, it was preview warm-up: ELB `503`, then one timeout, then `200` about 45 seconds later
+- after warm-up, the preview rendered the real Market Mispricing Radar Streamlit app instead of a placeholder or error shell
+
+Practical implication:
+- the right model is not "Zerve preview is flaky"
+- the right model is "preview creation works through the direct script API, fresh hosts can need a short warm-up window, and verification should allow one retry after an initial `503` before falling back"
+
 ## Important execution result
 
 The Zerve block can successfully fetch Polymarket markets when the request looks browser-like.
