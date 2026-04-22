@@ -82,6 +82,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] use draft wording from `docs/share-post-pack.md`
 - [ ] confirm the exact Zerve tag on the chosen platform
 - [ ] attach one clean screenshot and the final public project link
+- [ ] if the final public Zerve project/share URL is still unresolved, stop here and verify it before posting
 - [ ] verify the post is actually published before treating the requirement as done
 
 ## Recording checks

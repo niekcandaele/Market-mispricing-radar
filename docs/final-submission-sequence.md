@@ -129,6 +129,7 @@ Do:
 - default to one simple LinkedIn post unless there is a better human preference
 - use the prepared draft pack instead of improvising under time pressure
 - attach one clean screenshot and the final public project link
+- if the public Zerve project/share URL is still unresolved, stop and verify that link before posting
 - confirm the exact Zerve tag on the chosen platform before posting
 
 Reference:
