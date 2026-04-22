@@ -220,7 +220,7 @@ Show:
 
 ## Recommended happy-path demo
 
-This is the judge demo flow.
+This is the recommended demo flow.
 
 ### Step 1
 Open the app on the Ranked Radar screen.

@@ -113,7 +113,7 @@ Reference:
 
 ## App implications
 
-Because the source scope is narrow, the judge-facing app should be honest about it.
+Because the source scope is narrow, the product should be honest about it.
 
 The app should say, directly or indirectly:
 - this is a Polymarket-first MVP

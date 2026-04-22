@@ -113,7 +113,7 @@ On-slide emphasis:
 - real notebook-to-app pipeline
 - deployed Streamlit product
 - explanation-rich ranking
-- judge-facing polish completed against live deployment
+- product-facing polish completed against live deployment
 
 ### Slide 8, Next steps
 Use:

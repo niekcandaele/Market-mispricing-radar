@@ -74,7 +74,7 @@ The app includes:
 - Polymarket ingestion inside Zerve initially hit request-shape and header issues
 - Zerve notebook and deploy automation was brittle through raw UI interaction, so the workflow had to be hardened into a more reliable execution and validation path
 - live deployment previews could fall into misleading or stale UI states, which required verification against actual preview output rather than trusting the interface
-- turning the project into something judge-friendly took multiple rounds of product-copy and app-flow polish beyond the initial technical proof
+- turning the project into something presentation-ready took multiple rounds of product-copy and app-flow polish beyond the initial technical proof
 
 ## Accomplishments we are proud of
 

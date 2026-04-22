@@ -4,7 +4,7 @@
 
 This document explains the lightweight local demo view for issue #19.
 
-It exists to validate how the current app bundle actually reads in a judge-facing layout before the same structure is ported into Zerve Streamlit.
+It exists to validate how the current app bundle actually reads in a presentation-ready layout before the same structure is ported into Zerve Streamlit.
 
 ## Entry point
 
@@ -24,7 +24,7 @@ It renders four core sections from the app bundle:
 3. an interactive Radar table from `ranked_markets`
 4. Market Detail cards from `market_explanations`
 
-It also includes a short methodology section so the page loosely matches the planned judge-facing app flow.
+It also includes a short methodology section so the page loosely matches the planned Radar/Detail/Methodology app flow.
 
 The current local demo now mirrors these planned Radar widgets and interactions:
 - source filter
@@ -73,7 +73,7 @@ That makes it useful for checking:
 - whether same-category comparison helps the selected market feel more interpretable
 - whether raw supporting-signal values make the score easier to trust
 - whether the score breakdown reads like a real app section instead of a debug dump
-- whether the explanation fields feel judge-friendly
+- whether the explanation fields feel presentation-ready
 - whether the refresh metadata is sufficient for trust cues
 - whether the current bundle shape is awkward anywhere before Zerve work resumes
 
@@ -101,7 +101,7 @@ python3 scripts/export_streamlit_bundle.py --limit 200
 MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
 ```
 
-That path is useful because it keeps the app focused on the deployment-layer handoff: loading the bundle shape, surfacing QA trust notes, and rendering the judge-facing Radar/Detail/Methodology flow.
+That path is useful because it keeps the app focused on the deployment-layer handoff: loading the bundle shape, surfacing QA trust notes, and rendering the Radar/Detail/Methodology flow.
 
 ## Constraint
 
