@@ -111,7 +111,7 @@ Defaults:
 
 ### Presenter cheat sheet
 - `docs/presenter-cheat-sheet.md`
-- best for the live verbal pitch and likely judge follow-up questions
+- best for the live verbal pitch and likely follow-up questions
 
 ### Submission visual assets map
 - `docs/submission-visual-assets.md`

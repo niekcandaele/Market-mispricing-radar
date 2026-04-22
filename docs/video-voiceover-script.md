@@ -4,7 +4,7 @@
 
 This is the spoken-script layer for the final hackathon demo video.
 
-Use it when the recording run sheet is too structural and the judge demo script is too broad. This doc is meant to reduce improvisation during the actual take.
+Use it when the recording run sheet is too structural and the demo script is too broad. This doc is meant to reduce improvisation during the actual take.
 
 ## Primary script, about 75 seconds
 
