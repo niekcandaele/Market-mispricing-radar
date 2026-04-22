@@ -61,7 +61,7 @@ Why before recording:
 
 Do:
 - treat the compact deck as the default
-- refine only the remaining screenshot/layout and readability details that clearly improve it
+- only do another screenshot/layout or readability pass if there is a clearly beneficial, low-risk improvement
 - keep it concise and visually clean
 - include problem, solution, product flow, proof/demo, why Zerve matters, and next steps
 - do not overpack it with implementation trivia
