@@ -119,13 +119,13 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, the helper refreshed the bundle and served the app cleanly on `http://127.0.0.1:8768`
 - status: passed
 
-### 2026-04-22 repeated safe local final sweep
+### 2026-04-22 corrected safe local final sweep
 - commands:
   - `./scripts/check_safe_local_demo.sh`
 - goal: reconfirm shortly before submission work that the locked safe local default still passes the exact intended story arc without manual repair steps
-- observed result: passed, the one-command sweep launched the app, verified Radar, confirmed the Methodology honesty beat, and drilled cleanly into `GTA VI released before June 2026?` in Market Detail
-- notable observed values: `refresh_id` `refresh-20260422T074809Z`
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T074809Z.json`
+- observed result: passed, the one-command sweep launched the app, verified Radar, confirmed the Methodology honesty beat, clicked the real `Focus in detail` control on the GTA card, and then verified true detail-only markers including `Primary signal`, `Why this market is flagged`, and `Observed market signals`
+- notable observed values: `refresh_id` `refresh-20260422T092842Z`
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T093053Z.json`
 - status: passed
 
 ### 2026-04-22 safe local recording-flow check

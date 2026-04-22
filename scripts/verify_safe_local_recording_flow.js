@@ -55,14 +55,34 @@ function assertCheck(name, value) {
 
     await page.goto(APP_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForTimeout(3000);
-    await page.getByText(TARGET_TITLE).first().click();
+    const openedDetail = await page.evaluate((targetTitle) => {
+      const blocks = [...document.querySelectorAll('div[data-testid="stVerticalBlock"]')]
+        .filter((el) => {
+          const text = el.innerText || '';
+          return text.includes(targetTitle) && text.includes('Focus in detail');
+        })
+        .sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
+      const targetBlock = blocks[0];
+      if (!targetBlock) {
+        return false;
+      }
+      const button = [...targetBlock.querySelectorAll('button')].find((el) => (el.innerText || '').includes('Focus in detail'));
+      if (!button) {
+        return false;
+      }
+      button.click();
+      return true;
+    }, TARGET_TITLE);
     await page.waitForTimeout(2500);
     const detailText = await page.locator('body').innerText();
     result.detail = {
-      hasMarketDetail: detailText.includes('Market Detail'),
+      openedDetail,
+      hasDetailIntro: detailText.includes('Drill into one market to see why the radar flagged it'),
       hasTargetTitle: detailText.includes(TARGET_TITLE),
       hasHeadlineReason: detailText.includes(TARGET_HEADLINE),
       hasPrimarySignal: detailText.includes('Primary signal:'),
+      hasWhyFlagged: detailText.includes('Why this market is flagged'),
+      hasObservedSignals: detailText.includes('Observed market signals'),
     };
 
     assertCheck('radar title', result.radar.hasTitle);
@@ -71,9 +91,13 @@ function assertCheck(name, value) {
     assertCheck('target radar card', result.radar.hasTargetCard);
     assertCheck('methodology page', result.methodology.hasMethodologyPage);
     assertCheck('methodology honest scope', result.methodology.hasHonestScope);
-    assertCheck('market detail', result.detail.hasMarketDetail);
+    assertCheck('detail open action', result.detail.openedDetail);
+    assertCheck('market detail intro', result.detail.hasDetailIntro);
     assertCheck('detail target title', result.detail.hasTargetTitle);
     assertCheck('detail headline reason', result.detail.hasHeadlineReason);
+    assertCheck('detail primary signal', result.detail.hasPrimarySignal);
+    assertCheck('detail why flagged', result.detail.hasWhyFlagged);
+    assertCheck('detail observed signals', result.detail.hasObservedSignals);
 
     console.log(JSON.stringify(result, null, 2));
   } finally {
