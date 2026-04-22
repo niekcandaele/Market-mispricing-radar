@@ -9,32 +9,33 @@ Use it to pick a strong drilldown market quickly instead of improvising during a
 ## Current shortlist basis
 
 - source bundle: `artifacts/streamlit/app_bundle.json`
-- refresh id: `refresh-20260421T083645Z`
+- refresh id: `refresh-20260422T022427Z`
 - ranked market count: `200`
 
 These picks are based on the current local fallback bundle, so they should be treated as practical candidates, not permanent canon.
 
 ## Best current demo-safe picks
 
-### 1. Putin out as President of Russia by December 31, 2026?
-- category: `politics`
-- headline: `Recent movement or instability is doing meaningful work in the score.`
-- why it works:
-  - very high score and easy to find near the top
-  - globally understandable topic
-  - strong example of the radar surfacing instability rather than just stale pricing
-- best use:
-  - primary drilldown candidate when the current bundle still ranks it near the top
-
-### 2. GTA VI released before June 2026?
+### 1. GTA VI released before June 2026?
 - category: `entertainment`
 - headline: `Extreme pricing is being carried with relatively weak support.`
 - why it works:
+  - currently rank `3` in the verified local fallback bundle
+  - clearly visible in the default Radar slice, so it supports a cleaner one-take recording flow
   - highly recognizable market for a broad audience
-  - clean explanation headline
-  - good contrast with the more geopolitical example above
+  - clean explanation headline and a readable detail view
 - best use:
-  - safest mainstream drilldown if you want a quick, low-explanation example
+  - current safe default drilldown for the local fallback path
+
+### 2. Putin out as President of Russia by December 31, 2026?
+- category: `politics`
+- headline: `Extreme pricing is being carried with relatively weak support.`
+- why it works:
+  - still broadly understandable and a strong fit for the product story
+  - remains high enough to be credible, but is no longer in the default top Radar slice on the current local bundle
+  - still useful if you deliberately switch to it through Market Detail selection or a broader slice
+- best use:
+  - strong alternate drilldown when you want a geopolitics example and do not mind one extra selection step
 
 ### 3. Xi Jinping out before 2027?
 - category: `world`
@@ -92,8 +93,8 @@ If the live bundle has drifted by recording time, prefer a market that:
 ## Recommended recording default
 
 If no better live option appears, use this order of preference:
-1. `Putin out as President of Russia by December 31, 2026?`
-2. `GTA VI released before June 2026?`
+1. `GTA VI released before June 2026?`
+2. `Putin out as President of Russia by December 31, 2026?`
 3. `Xi Jinping out before 2027?`
 
-That gives a strong default path with understandable topics and readable explanation framing.
+That gives a strong default path with understandable topics and readable explanation framing while keeping the primary drilldown visible in the current safe local Radar slice.

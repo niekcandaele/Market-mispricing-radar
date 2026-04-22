@@ -80,7 +80,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] use `docs/video-voiceover-script.md` if a more literal spoken script is helpful during recording
 - [ ] use `docs/video-recording-run-sheet.md` as the actual beat-by-beat recording order
 - [ ] run `docs/recording-preflight-checklist.md` before the real take
-- [x] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example (`Putin out as President of Russia by December 31, 2026?` locked as the current default unless the final live run clearly surfaces a cleaner option)
+- [x] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example (`GTA VI released before June 2026?` locked as the current default for the safe local path unless the final live run clearly surfaces a cleaner option)
 - [ ] keep the recording to one coherent story arc
 - [ ] verify the chosen demo path before recording begins
 - [ ] avoid relying on an old rotated preview URL without rechecking it

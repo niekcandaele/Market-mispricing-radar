@@ -37,10 +37,10 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 
 ## Final drilldown example
 
-- chosen market: `Putin out as President of Russia by December 31, 2026?`
-- why this one: high-scoring, broadly understandable, and a strong fit for the product story because it demonstrates instability-driven scrutiny without requiring niche context
+- chosen market: `GTA VI released before June 2026?`
+- why this one: currently rank `3` in the verified local fallback bundle, visible in the default Radar slice, broadly understandable, and easier to demo cleanly in one take from Radar into Market Detail
 - source doc reference: `docs/demo-market-shortlist.md`
-- locked on: `2026-04-21` (default choice unless the final live run clearly surfaces a cleaner example)
+- locked on: `2026-04-22` (updated to match the current safe local bundle unless the final live run clearly surfaces a cleaner example)
 
 ## Final presentation assets
 
