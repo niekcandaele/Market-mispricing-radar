@@ -121,7 +121,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- project link to use: pending final public project/share URL choice
+- project link to use: unresolved blocker, needs a clean verified public Zerve project/share URL before posting
 - posted on: pending share action
 
 ## Last verification snapshot

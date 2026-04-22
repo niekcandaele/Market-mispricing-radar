@@ -30,6 +30,11 @@ Default link choice:
 - use the final public Zerve project/share link if that is the expected hackathon proof link
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
+Current blocker:
+- the exact final public Zerve project/share URL is still unresolved
+- do not guess it from notebook ids, preview hosts, or repo notes
+- this pack needs either a clean authenticated browser session to verify the public project URL or a human-confirmed final public link
+
 ## Tagging note
 
 The live Devpost page says to tag:
@@ -80,6 +85,7 @@ Before posting:
 - confirm which platform to use
 - confirm exact tag on that platform
 - confirm the public project link to include
+- if the public project/share URL is still unresolved, stop and get a clean verified link before posting
 - use one clean screenshot only
 - keep the tone product-facing, not repo-facing
 - do not mention local fallback commands in the public post
