@@ -15,7 +15,7 @@ cleanup() {
     kill "$LAUNCH_PID" 2>/dev/null || true
     wait "$LAUNCH_PID" 2>/dev/null || true
   fi
-  fuser -k -n tcp "$SERVER_PORT" 2>/dev/null || true
+  fuser -k -n tcp "$SERVER_PORT" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 
