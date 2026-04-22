@@ -203,9 +203,8 @@ It has:
 - a final asset register and final readiness-status doc
 
 It does **not** yet have:
-- the final screenshot/layout-polished slides
 - a final pre-submission verification pass across the full submission bundle
-- one clean final live preview URL check on the repaired deploy path
+- one clean final live preview URL check on the repaired deploy path, if choosing to use the live path at all
 - the actual recorded video and final submission links
 
 So this should be treated as **near-ready, but not submission-complete yet**.
