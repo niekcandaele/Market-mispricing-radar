@@ -126,7 +126,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 
 ## Last verification snapshot
 
-- final demo link checked: local fallback path re-verified on 2026-04-22 through `./scripts/check_safe_local_demo.sh` with corrected GTA detail-drilldown evidence at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T093053Z.json`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)
+- final demo link checked: local fallback path re-verified on 2026-04-22 through `./scripts/check_safe_local_demo.sh` with refreshed GTA detail-drilldown evidence at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T164751Z.json`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)
 - deck link checked: yes, Slides API readback confirmed compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
 - video link checked: pending final recording and upload
