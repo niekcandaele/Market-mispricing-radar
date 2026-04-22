@@ -61,8 +61,9 @@ Why:
 - only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path
 - record the final short demo video
 - paste the final wording into the actual submission form
+- publish the required public share post with human-approved wording and platform choice
 - run the last verification pass with real final links and artifacts
-- fill in the final asset register with the actual chosen demo, deck, notes, video, and submission links
+- fill in the final asset register with the actual chosen demo, deck, notes, video, submission, and share-post links
 
 ## What would flip this to submission-complete
 
@@ -72,6 +73,7 @@ All of these need to be true:
 - the final notes artifact exists
 - the final video exists or is uploaded
 - the actual submission form is filled with final wording
+- the required public share post is published
 - the final verification pass is complete
 - the final asset register is filled with real values instead of placeholders
 
@@ -82,14 +84,15 @@ If the current final-mile blocker clears:
 2. finish the remaining deck polish
 3. run the recording preflight and record the video against the locked safe demo path
 4. fill the submission form
-5. run the final verification pass
-6. update the final asset register
+5. publish the required public share post using the prepared draft pack and human approval
+6. run the final verification pass
+7. update the final asset register
 
 If the blocker does not clear in time:
 - keep the repo-side package as the source of truth
 - use the verified local fallback for demo and recording
 - treat the live Zerve preview as optional only if it opens cleanly right before submission
-- stay honest that the unfinished pieces are the live-preview verification plus the remaining recording, form-fill, and final-link execution steps
+- stay honest that the unfinished pieces are the live-preview verification plus the remaining recording, form-fill, required share-post, and final-link execution steps
 
 ## References
 

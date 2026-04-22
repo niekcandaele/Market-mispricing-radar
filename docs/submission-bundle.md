@@ -206,5 +206,6 @@ It does **not** yet have:
 - a final pre-submission verification pass across the full submission bundle
 - one clean final live preview URL check on the repaired deploy path, if choosing to use the live path at all
 - the actual recorded video and final submission links
+- the required public share post and its final public URL
 
 So this should be treated as **near-ready, but not submission-complete yet**.
