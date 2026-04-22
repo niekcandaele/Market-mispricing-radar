@@ -8,9 +8,10 @@ Use it to avoid wasting a take on preventable setup mistakes.
 
 ## Demo path check
 
-- [ ] decide whether the primary recording path is the live Zerve preview or the verified local fallback
-- [ ] if using the live path, reopen the freshest preview from the Zerve deploy tab instead of trusting an old rotated URL
-- [ ] if the live path is flaky, switch to the local fallback before recording starts
+- [ ] default to the verified local fallback as the primary recording path
+- [ ] only switch to the live Zerve preview if the freshest preview opens cleanly right before recording
+- [ ] if trying the live path, reopen the freshest preview from the Zerve deploy tab instead of trusting an old rotated URL
+- [ ] if the live path is flaky, stay on the local fallback before recording starts
 - [ ] confirm the chosen demo path opens cleanly
 - [ ] confirm Radar, Market Detail, and Methodology all load on the chosen path
 
@@ -26,7 +27,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 
 - [ ] close unrelated tabs or windows
 - [ ] make sure the app opens on the intended starting view
-- [ ] keep the visible screen clean and judge-facing
+- [ ] keep the visible screen clean and presentation-safe
 - [ ] confirm the main screenshot-worthy sections are readable at the chosen window size
 - [ ] avoid leaving debug clutter, terminal noise, or irrelevant browser chrome in view
 
@@ -50,6 +51,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 
 Record only if:
 - [ ] the chosen demo path is healthy enough for one clean take
+- [ ] the chosen path is already locked before the real take starts
 - [ ] the drilldown market is already chosen
 - [ ] the spoken script choice is decided
 - [ ] the screen is clean

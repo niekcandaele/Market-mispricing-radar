@@ -24,6 +24,11 @@ Slide-ready 16:9 crops:
 - `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
 - `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 
+Google Workspace `Documents` copies:
+- `Market Mispricing Radar - local-radar-view-16x9.png` — file id `1cJwxEV_aAVBadI1ZEbLNg1r7s38YISVl`
+- `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
+- `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
+
 ## Recommended use by asset
 
 ### `artifacts/submission/local-radar-view.png`
@@ -83,12 +88,13 @@ Why:
 
 - these are local fallback screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
+- matching Google Workspace copies now exist in `Documents`, so the office layer has the same default visuals as the repo
 - they are still useful because the local fallback path is verified and presentation-safe
-- if the live browser/auth blocker clears later, a live preview screenshot pass can replace or complement these assets
+- if a clean live preview screenshot pass becomes available later, it can replace or complement these assets
 
 ## If adding live screenshots later
 
 Prefer replacing assets only when the live captures are:
 - visually cleaner than the local ones
 - clearly current
-- not blocked by flaky preview or browser/auth behavior
+- not blocked by flaky preview or unresolved live-host verification

@@ -4,36 +4,37 @@
 
 This is the last-mile runbook for the day of submission.
 
-Use it when the browser/auth path is finally available and the remaining work needs to happen in the right order without thrashing.
+Use it when the remaining work needs to happen in the right order without thrashing.
 
 ## Current blocker context
 
-At the moment, the repo-side submission package is strong, but the remaining office-layer finish is blocked by current browser state:
-- the logged-in `user` browser profile exists but is not currently running
-- Google Slides creation needs that authenticated `user` browser session
-- Google Doc or deck-speaker-note creation depends on that same office-layer browser path
-- the final live Zerve preview recheck also needs that same logged-in `user` browser session
+At the moment, the repo-side submission package is strong, and the blocker is no longer Google Workspace artifact creation itself.
 
-This doc assumes those blockers have just become solvable.
+Current state:
+- Google Slides and Google Docs can be created through the authenticated `gws` CLI path
+- the final live Zerve preview recheck still needs a healthy browser path plus a directly resolvable fresh preview host
+- the verified local fallback is now the safe default demo path for recording and submission unless a fresh live preview opens cleanly at the final moment
+
+This doc can now be used for the office-layer creation steps immediately, while the live demo recheck remains a separate browser-side check.
 
 ## Submission-day order of operations
 
-### 1. Re-open the current live demo path first
+### 1. Lock the demo path first
 
 Why first:
 - everything else depends on knowing which demo entrypoint is truly healthy right now
 
 Do:
-- open the current Zerve deploy tab
-- launch or re-open the freshest preview
-- confirm the app actually loads
-- confirm Radar, Market Detail, and Methodology still behave as expected
+- treat the verified local fallback as the default path
+- if there is still time and attention for one final upgrade attempt, open the current Zerve deploy tab and re-open the freshest preview
+- only switch away from the local fallback if the live preview opens cleanly and behaves correctly
+- confirm the chosen path actually loads and that Radar, Market Detail, and Methodology behave as expected
 
 If healthy:
-- treat the live preview as the primary demo link
+- use the chosen path consistently through recording and submission
 
 If flaky:
-- switch immediately to the verified local fallback path instead of burning time
+- keep the verified local fallback and move on immediately instead of burning time
 
 References:
 - `docs/submission-verification-checklist.md`
@@ -42,7 +43,7 @@ References:
 ### 2. Lock the demo example market
 
 Why now:
-- once the live path is known, pick the exact drilldown example before making slides or recording
+- once the demo path is locked, pick the exact drilldown example before making slides or recording
 
 Do:
 - choose the strongest current drilldown candidate
@@ -53,13 +54,14 @@ References:
 - `docs/demo-market-shortlist.md`
 - `docs/video-recording-run-sheet.md`
 
-### 3. Create the Google Slides deck
+### 3. Refine the Google Slides deck
 
 Why before recording:
 - the deck clarifies the story and can double as backup structure for the video
 
 Do:
-- build the slide deck from the outline doc
+- treat the compact deck as the default
+- refine only the remaining screenshot/layout and readability details that clearly improve it
 - keep it concise and visually clean
 - include problem, solution, product flow, proof/demo, why Zerve matters, and next steps
 - do not overpack it with implementation trivia
@@ -67,15 +69,15 @@ Do:
 Reference:
 - `docs/submission-deck-outline.md`
 
-### 4. Create the office-layer notes artifact
+### 4. Keep the office-layer notes artifact aligned
 
 Why now:
 - the speaker notes or recording notes should match the actual deck and chosen demo path
 
 Do:
-- create a Google Doc or put speaker notes directly in the deck
+- keep the Google Doc and deck speaker notes aligned with the chosen demo path
 - use the demo script as the base
-- fold in the one-take run sheet so the recording flow is operational, not just conceptual
+- keep the one-take run sheet folded into the notes so the recording flow stays operational, not just conceptual
 
 References:
 - `docs/judge-demo-script.md`
@@ -94,6 +96,7 @@ Do:
 - keep the video to one strong story arc
 - use the verified chosen demo path
 - if the live path degrades, switch to the local fallback immediately without apology
+- do not re-decide the demo path mid-take unless the current one is clearly broken
 
 References:
 - `docs/recording-preflight-checklist.md`
@@ -122,8 +125,8 @@ Why last:
 - this is the checkpoint before pressing submit
 
 Do:
-- verify the final demo link opens
-- verify the final deck and notes artifact open
+- verify the final chosen demo path opens
+- verify the final deck and presenter notes open
 - verify the video link or upload is correct
 - verify the submission form text matches the real MVP scope
 - verify no stale preview URL or placeholder artifact slipped in
@@ -157,7 +160,7 @@ If another person has to finish the submission quickly, tell them:
 The submission is actually ready when all of these are true:
 - one healthy demo path is confirmed
 - the deck exists
-- the notes artifact exists
+- the presenter notes exist
 - the video exists or is ready to upload
 - the submission form is filled with final wording
 - the final verification pass is complete

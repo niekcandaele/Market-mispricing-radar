@@ -20,8 +20,8 @@ Right before the real take, run `docs/recording-preflight-checklist.md`.
 ## Before recording
 
 - confirm the chosen demo entrypoint actually opens
-- prefer the current live Zerve preview if it is healthy
-- if the live preview is flaky, switch to the verified local fallback path before recording starts
+- default to the verified local fallback path
+- only switch to the live Zerve preview if it is clearly healthy right before recording
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section
 
@@ -125,6 +125,6 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 
 - do one clean take instead of over-explaining
 - keep the story focused on inspection, explainability, and credibility
-- if the live path is flaky, switch to the verified local fallback without apology
+- treat the verified local fallback as the safe default and only upgrade to live if it is clearly healthy
 - better to sound honest and sharp than overclaiming
 - if needed, use `docs/video-voiceover-script.md` to keep the spoken pass tight and consistent

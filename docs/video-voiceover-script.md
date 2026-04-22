@@ -30,7 +30,7 @@ When I click into one market, I can see the score drivers, supporting signals, a
 
 The Methodology page makes the scope explicit. The MVP is deliberately Polymarket-first, explanation-first, and honest about what the score does and does not claim.
 
-Finally, this is a strong ZerveHack fit because the workflow is real end to end. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed Streamlit app judges can actually use." 
+Finally, this is a strong ZerveHack fit because the workflow is real end to end. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed Streamlit app can actually be inspected and used." 
 
 ## Tight fallback script, about 45 seconds
 
@@ -46,9 +46,11 @@ And this is not a mockup. The app is deployed from a real Zerve notebook pipelin
 - pause briefly after the hook and before the Zerve close
 - do not say "arbitrage" unless a shorter fallback really needs the word
 - avoid over-explaining implementation details during the recording
-- if the live demo path is flaky, switch to the local fallback and keep the same script
+- use the verified local fallback as the default recording path and keep the same script if a live upgrade is not clearly healthy
 
 ## Screen sync reminders
+
+These sync points should work cleanly on the verified local fallback path and do not require a live-preview-only setup.
 
 ### Radar section
 Use while saying:

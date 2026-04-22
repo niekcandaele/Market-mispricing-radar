@@ -21,7 +21,7 @@ Prediction markets are information-dense, but raw market lists do not tell you w
 ## Strongest proof points
 
 - real Zerve notebook pipeline is live end to end
-- deployed Streamlit app reads notebook outputs through Zerve variable loading
+- the demo app flow is verified and presentation-safe through the local fallback path
 - the product is explainable, not a black-box score dump
 - the app exposes caveats and QA context instead of pretending certainty
 - the MVP is narrow on purpose and honest about single-source scope
@@ -51,7 +51,7 @@ Browsing raw markets gives you data, but not triage. This product ranks what is 
 
 ### Why does Zerve matter here?
 Suggested answer:
-Because this is not just a notebook or just a front-end mockup. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed app judges can actually use.
+Because this is not just a notebook or just a front-end mockup. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.
 
 ### What is the current MVP scope?
 Suggested answer:
@@ -75,6 +75,10 @@ The current pipeline fetches live Polymarket data, normalizes and categorizes ma
 Use this:
 The value is not just finding odd-looking markets. It is giving an operator a usable, explainable triage surface instead of an endless list of raw odds.
 
+## Demo-path note
+
+For the final presentation, treat the verified local fallback as the safe default. Only switch to a live Zerve preview if it opens cleanly right before use.
+
 ## Good closing line
 
-We built something judges can actually inspect and understand, not just a flashy score or a notebook screenshot.
+We built something people can actually inspect and understand, not just a flashy score or a notebook screenshot.

@@ -78,7 +78,7 @@ Say:
 - deployed Streamlit app reads notebook outputs through Zerve variable loading
 - markets are ranked with explanations, not just scores
 - category inference was improved and validated in live deployment
-- judge-facing app copy, drilldowns, and tables were polished directly against the deployed preview
+- presentation copy, drilldowns, and tables were polished directly against the deployed preview
 
 ## What the score means
 
@@ -105,11 +105,13 @@ Use this compressed version:
 
 ## Demo safety notes
 
-- if the deployed preview URL has rotated, reopen the current preview from the Zerve deploy tab
-- if the preview is temporarily flaky, use the local Streamlit mirror as fallback
+- default to the verified local Streamlit mirror for recording or presentation if there is any uncertainty
+- only switch to the live preview if the freshest deploy-tab preview opens cleanly right before use
 - keep the story focused on inspection, explainability, and live proof, not on claiming perfect mispricing detection
 
 ## Local fallback commands
+
+This is now the safe default demo path.
 
 ```bash
 python3 scripts/export_streamlit_bundle.py --limit 200

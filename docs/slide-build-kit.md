@@ -24,11 +24,13 @@ Visual sources:
 
 ## Recommended deck shape
 
-Target: 6 to 8 slides.
+Default: compact 6-slide deck.
+
+Only expand beyond that if a fuller version becomes clearly stronger.
 
 Use a clean, visual deck. Prefer one strong screenshot plus a few bullets over dense text blocks.
 
-## Slide-by-slide build notes
+## Expanded 8-slide build notes
 
 ### Slide 1, Title / hook
 Use:
@@ -125,15 +127,16 @@ On-slide emphasis:
 Keep it short:
 - this is a close, not a roadmap lecture
 
-## Simplified 6-slide version
+## Default compact 6-slide version
 
-If the deck should be tighter, use:
+This is the current default deck path.
+
 1. title / hook with `local-radar-view-16x9.png`
 2. problem and solution with either light radar reuse or a text-first slide
 3. product flow as a text-first slide
 4. explainable product proof with `local-market-detail-view-16x9.png`
 5. why Zerve matters as a text-first slide or very light radar reuse
-6. next steps / close with `local-methodology-view-16x9.png` only if the slide needs visual support
+6. live now / honest room to grow with `local-methodology-view-16x9.png` only if the slide needs visual support
 
 Use these sources for the compact path:
 - on-slide copy: `docs/slide-copy-pack.md`
@@ -186,7 +189,8 @@ Use one of:
 
 ## Final build reminder
 
-Once the Google/browser blocker is gone, use this order:
-1. build the deck from this kit
-2. copy speaker notes from `docs/submission-deck-outline.md` and `docs/judge-demo-script.md`
-3. do one readability pass before recording or submitting
+Use this order:
+1. keep the compact 6-slide deck as the default unless a fuller version clearly improves the story
+2. use this kit for screenshot/layout refinement
+3. copy speaker notes from `docs/submission-deck-outline.md` and `docs/judge-demo-script.md`
+4. do one final readability and alignment pass before recording or submitting

@@ -68,7 +68,7 @@ The current MVP is Polymarket-first and intentionally honest about that scope.
 This project turns live notebook analysis into a deployed product inside Zerve, instead of stopping at a notebook or a static mockup.
 
 ### Slightly longer version
-Market Mispricing Radar is a strong ZerveHack fit because the same environment handles live ingestion, scoring, explanation generation, and the deployed Streamlit app judges can actually use.
+Market Mispricing Radar is a strong ZerveHack fit because the same environment handles live ingestion, scoring, explanation generation, and the deployed Streamlit app can actually be inspected and used.
 
 ## Built-with variants
 
@@ -80,7 +80,7 @@ Zerve notebooks, Streamlit deployment, Python, and live Polymarket market data
 
 ## Challenge snippet
 
-Turning the project into a credible judge-facing product required solving both technical and presentation problems: live ingestion quirks, brittle deploy workflows, and multiple rounds of explainability polish.
+Turning the project into a credible product required solving both technical and presentation problems: live ingestion quirks, brittle deploy workflows, and multiple rounds of explainability polish.
 
 ## Accomplishment snippet
 

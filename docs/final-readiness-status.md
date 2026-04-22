@@ -12,8 +12,9 @@ Status: **near-ready, not submission-complete yet**
 
 Why:
 - the product and repo-side submission pack are strong
-- the remaining gaps are concentrated in the final office-layer build and final live verification
-- those last gaps are currently blocked because the logged-in `user` browser profile is not currently running, not because major product work is still missing
+- the remaining gaps are concentrated in final screenshot/layout polish, final demo/video/submission execution, and final live verification
+- the browser-side blocker is now mostly about final live Zerve preview verification, not Google Workspace artifact access, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work
+- the verified local fallback should now be treated as the locked safe demo path unless a fresh live Zerve preview opens cleanly at the final moment
 
 ## What is already done
 
@@ -21,7 +22,7 @@ Why:
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
 - verified local fallback demo exists
-- judge-facing product polish is done
+- product and demo polish are done
 
 ### Narrative / presentation sources
 - judge demo script exists
@@ -48,12 +49,15 @@ Why:
 ## What is still blocked or missing
 
 ### Blocked by current browser state
-- the logged-in `user` browser profile exists but is not currently running
-- final Google Slides deck is not created yet because there is no usable authenticated browser session for Google Workspace creation
-- final Google Doc or deck-speaker-note artifact is not created yet for the same reason
-- fresh authenticated live Zerve preview recheck is still pending for the same reason
+- the new Browserless + Playwright skill path is healthy and can open fresh isolated Chromium sessions
+- that new path is strong enough to sign into Zerve again and reopen the live Market Mispricing Radar notebook, so the Zerve-side browser blocker is materially reduced
+- the live deploy editor was recovered, and the working preview trigger was re-confirmed as the in-editor `Start Preview Deployment` path / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`
+- the valid deployed Streamlit script was recovered directly from Zerve canvas metadata, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` repair was verified by replacing a stale probe deploy with the real repo app
+- fresh authenticated live Zerve preview recheck is still not fully green because the newest `*.hub.zerve.cloud` preview host now appears again after repair, but DNS / reachability is still inconsistent enough that the final live link should not be treated as locked yet
+- Google Workspace artifact creation is available through the authenticated `gws` CLI path, so Slides and Docs are no longer blocked on browser sign-in
 
 ### Still required even after browser access is available
+- finish the remaining screenshot/layout polish on the Slides deck if a clean improvement path exists
 - record the final short demo video
 - paste the final wording into the actual submission form
 - run the last verification pass with real final links and artifacts
@@ -72,19 +76,19 @@ All of these need to be true:
 
 ## Best current operator guidance
 
-If the browser/auth blocker clears:
-1. verify the live demo or switch to local fallback
-2. build the deck
-3. create the notes artifact
-4. run the recording preflight and record the video
-5. fill the submission form
-6. run the final verification pass
-7. update the final asset register
+If the current final-mile blocker clears:
+1. verify the freshly repaired live preview host, or keep the already verified local demo as the chosen path
+2. finish the remaining deck polish
+3. run the recording preflight and record the video against the locked safe demo path
+4. fill the submission form
+5. run the final verification pass
+6. update the final asset register
 
 If the blocker does not clear in time:
 - keep the repo-side package as the source of truth
-- use the verified local fallback for demo/recording if needed
-- stay honest that the office-layer finish is what remains
+- use the verified local fallback for demo and recording
+- treat the live Zerve preview as optional only if it opens cleanly right before submission
+- stay honest that the unfinished pieces are the live-preview verification plus the remaining recording, form-fill, and final-link execution steps
 
 ## References
 

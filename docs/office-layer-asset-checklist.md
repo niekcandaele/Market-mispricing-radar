@@ -2,17 +2,19 @@
 
 ## Purpose
 
-This is the practical checklist for what should exist in Google Workspace `Documents` when the browser/auth blocker clears.
+This is the practical checklist for what should exist in Google Workspace `Documents` during the final office-layer finish.
 
 Use it to make the final office-layer finish clean, complete, and easy to inspect.
 
 ## Current blocker context
 
-Right now this office-layer finish is blocked because:
-- the logged-in `user` browser profile exists but is not currently running, so there is no usable authenticated browser path for Google Workspace work
-- the live Zerve preview recheck also needs that same logged-in `user` browser session
+Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
-This checklist is for the moment those blockers are gone.
+The remaining browser-side blocker is narrower:
+- the live Zerve preview recheck still needs a healthy browser path and a directly resolvable fresh preview host
+- the verified local fallback should now be treated as the safe default path for recording and submission unless a final live check turns clean
+
+This checklist can be executed now for the Workspace artifact portion.
 
 ## Required Google Workspace artifacts
 
@@ -20,6 +22,7 @@ This checklist is for the moment those blockers are gone.
 Create:
 - one polished presentation deck for the hackathon submission
 - prefer the slide-ready 16:9 screenshots as the default visuals and keep the uncropped PNGs as backup proof captures
+- current state: compact 6-slide deck exists, has gone through multiple polish passes, and now has default visual assets plus stronger internal hierarchy for final layout refinement
 
 Source materials:
 - `docs/submission-deck-outline.md`
@@ -37,6 +40,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or deck speaker notes embedded slide by slide if that is cleaner
+- current state: both now exist in useful form, with a structured presenter-notes doc plus embedded slide speaker notes in the deck, and they now align cleanly with the compact deck order and safe demo-path plan
 
 Source materials:
 - `docs/judge-demo-script.md`
@@ -48,7 +52,8 @@ Source materials:
 ### 3. Final demo link reference
 Create or store:
 - one clean note in the office layer with the final chosen demo path
-- include whether the primary path is the live Zerve preview or the local fallback
+- default that note to the verified local fallback unless a last-minute live check actually opens cleanly
+- current state: demo-link notes doc exists and now also includes explicit default visual pairings for the recording flow
 
 Source materials:
 - `docs/submission-verification-checklist.md`
@@ -71,7 +76,10 @@ Recommended set:
 - `Market Mispricing Radar - Submission Deck`
 - `Market Mispricing Radar - Presenter Notes`
 - `Market Mispricing Radar - Final Submission Copy`
-- optional: `Market Mispricing Radar - Demo Link Notes`
+- `Market Mispricing Radar - Demo Link Notes`
+- `Market Mispricing Radar - local-radar-view-16x9.png`
+- `Market Mispricing Radar - local-market-detail-view-16x9.png`
+- `Market Mispricing Radar - local-methodology-view-16x9.png`
 
 ## What should not be left messy
 
@@ -83,10 +91,10 @@ Avoid:
 
 ## Order of office-layer creation
 
-When browser/auth is available, do this in order:
-1. verify the live demo path or switch to the local fallback
-2. create the Slides deck
-3. create the notes artifact
+Do this in order:
+1. lock the local fallback as the default demo path, or switch to live only if the final check is clean
+2. refine the Slides deck only where a clear polish gain still exists
+3. keep the notes artifact aligned with the chosen demo path and current deck
 4. record or finalize the video plan
 5. store the final submission text reference
 6. run the final verification pass

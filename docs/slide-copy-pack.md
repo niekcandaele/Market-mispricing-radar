@@ -53,7 +53,7 @@ How the product works
 - fetch live Polymarket market data
 - normalize and categorize markets
 - score fragility signals and generate explanations
-- deploy the results into a judge-facing app
+- deploy the results into a usable app
 
 ## Slide 5, Live product proof
 
@@ -96,9 +96,9 @@ What is live now, and what comes next
 - next: cross-source comparison and stronger calibration
 - keep expanding context only where it improves explainability
 
-## Tighter 6-slide deck version
+## Default compact 6-slide deck version
 
-If the deck needs to be shorter, use this fully specified fallback.
+This is the current default deck path.
 
 ### Slide 1, Title / hook
 #### Title
@@ -115,18 +115,18 @@ Built as a live Zerve notebook-to-app workflow.
 From raw odds to explainable triage
 
 #### Bullets
-- raw market lists make it hard to see what deserves inspection first
+- raw market lists do not tell you what to inspect first
 - fragile, stale, or weakly supported pricing can hide in plain sight
-- Market Mispricing Radar ranks the markets most worth a second look and explains why
+- ranks the markets most worth a second look and explains why
 
 ### Slide 3, Product flow
 #### Title
-How the workflow turns analysis into a product
+How analysis becomes a usable product
 
 #### Bullets
 - fetch live Polymarket market data
-- normalize and score fragility-oriented signals
-- generate explanation-rich outputs for a judge-facing app
+- normalize markets and score fragility signals
+- generate explanation-rich outputs for a usable app
 
 ### Slide 4, Explainable product proof
 #### Title
@@ -135,25 +135,25 @@ Explainable product, not just a score dump
 #### Bullets
 - Radar view ranks markets and surfaces headline reasons
 - Market Detail reveals score drivers, signals, and caveats
-- Methodology explains what the score does and does not claim
+- Methodology shows what the score does and does not claim
 
 ### Slide 5, Why Zerve matters
 #### Title
-Why this fits ZerveHack
+Why Zerve matters
 
 #### Bullets
 - notebook pipeline and deployed app live in one environment
-- analysis becomes a usable product instead of staying trapped in a notebook
+- analysis becomes a usable product
 - real deployment, not a static mockup
 
-### Slide 6, Close / next steps
+### Slide 6, Live now / honest room to grow
 #### Title
 Live now, with honest room to grow
 
 #### Bullets
 - live now: Polymarket-first, explanation-rich MVP
 - next: cross-source comparison and stronger calibration
-- designed for inspectability, not fake certainty
+- built for inspectability, not fake certainty
 
 ## Good closing line for the last slide
 

@@ -14,21 +14,21 @@ Use it to answer four questions quickly:
 
 ### Demo
 - status: usable
-- primary live entrypoint: current Zerve Streamlit preview from the deploy tab
+- preferred last-minute upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - repo docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle
+- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle, and should now be treated as the locked safe recording/submission path while live preview DNS remains flaky
 
 ### Slides
-- status: not created yet
+- status: compact 6-slide deck now populated, tightened, styled, given embedded speaker notes, pushed through a visually coherent first background pass in Google Workspace `Documents`, given a final copy-tightening readability pass, upgraded with stronger section-hierarchy kickers on the body slides, and given right-side visual proof cards on the core workflow/product/zerve/next slides
 - repo source material: `docs/submission-deck-outline.md`
-- required next artifact: polished Google Slides deck
-- current blocker: the logged-in `user` browser profile is not currently running, so there is no usable authenticated browser path for Google Slides creation
+- required next artifact: screenshot/layout refinement, not deck-shape, speaker-support triage, or basic hierarchy cleanup
+- remaining work: screenshot/layout polish
 
 ### Video / talking track
-- status: draft-ready
+- status: structured presenter-notes doc exists in Google Workspace `Documents`, aligns with the compact deck order, and the deck speaker notes reflect the same safe demo-path plan
 - repo source material: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
-- required next artifact: final recording outline in Google Docs or deck speaker notes
-- current blocker: office-layer note creation is tied to the same Google/browser constraint as the slide deck
+- required next artifact: actual recording execution, not another structural notes pass
+- remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
 - status: draft-ready
@@ -37,13 +37,14 @@ Use it to answer four questions quickly:
 
 ### Submission readiness
 - status: not submission-complete yet
-- reason: the project now has a strong app and strong narrative source docs, but the final office-style artifacts still need to be created and checked, and the logged-in `user` browser profile is still not running, which blocks that office-layer finish
+- reason: the project now has a strong app, real office-layer artifacts, and strong narrative source docs, but it still needs the last screenshot/layout polish plus final demo/video/submission execution before it should be called submission-complete
 
 ## Demo entrypoints
 
 ### Preferred live demo
 - open the current deployed Streamlit preview from the Zerve deploy tab
 - preview URLs rotate, so the deploy tab is the reliable source of the latest live demo link
+- if the latest host is still flaky, do not spend more submission time on it, use the verified local fallback instead
 
 ### Known recent working previews
 - `https://0bd71592-a1a1481b.hub.zerve.cloud`
@@ -53,6 +54,8 @@ Use it to answer four questions quickly:
 These should be treated as useful breadcrumbs, not permanent URLs.
 
 ### Local fallback demo
+This is now the submission-safe default path unless a fresh live preview opens cleanly at the final check.
+
 ```bash
 python3 scripts/export_streamlit_bundle.py --limit 200
 MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
@@ -98,7 +101,7 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 
 ### Final submission sequence
 - `docs/final-submission-sequence.md`
-- best for the exact day-of-submission order once the browser/auth blocker is gone
+- best for the exact day-of-submission order while the remaining live-preview verification is still the main blocker
 
 ### Presenter cheat sheet
 - `docs/presenter-cheat-sheet.md`
@@ -118,7 +121,7 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 
 ### Office-layer asset checklist
 - `docs/office-layer-asset-checklist.md`
-- best for making sure the final Google Workspace handoff is clean once the browser/auth blocker is gone
+- best for making sure the final Google Workspace handoff is clean while the remaining live-preview blocker is being worked around
 
 ### Final asset register
 - `docs/final-asset-register.md`
@@ -141,37 +144,38 @@ MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit 
 - real Zerve notebook pipeline is live end to end
 - deployed Streamlit app reads notebook outputs through Zerve variable loading
 - the product ranks markets with explanation-rich drilldowns, not just opaque scores
-- category quality and judge-facing copy were validated directly in the live deployed preview
+- category quality and presentation copy were validated directly in the live deployed preview
 - the MVP is intentionally honest about scope, caveats, and what the score does not claim
 
 ## Remaining submission-critical gaps
 
 ### Still missing
-- polished Google Slides deck
-- final Google Doc or equivalent office-layer speaker notes / recording plan
+- final visual polish on the compact Google Slides deck
+- actual recording execution against the aligned presenter notes / recording plan
 - one final checked demo link or presentation flow immediately before submission
 - final pass to verify all submission-facing links and artifacts open cleanly
 
 ### Current blocker snapshot
-- the logged-in `user` browser profile exists but is not currently running, so slide-deck creation is still waiting on a usable authenticated browser session
-- the latest live Zerve preview recheck is also waiting on that same logged-in `user` browser session instead of stale preview breadcrumbs
+- Google Workspace office artifacts now exist and are no longer blocked on auth
+- the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and fresh preview metadata reappeared
+- the remaining blocker is narrower now: the latest repaired preview host is still too inconsistent at the DNS / reachability layer to count as the final checked live demo link
 
 ### Not a blocker right now, but still needed before calling the project ready
-- collect the final deck, notes, and demo entrypoint in Google Workspace `Documents`
+- keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents`
 - do a final presentation-quality verification pass instead of only a code/demo verification pass
 
 ## Recommended next steps
 
-If the logged-in `user` browser session becomes available:
-1. verify the latest live preview path right before recording
-2. create the Google Slides deck from `docs/submission-deck-outline.md`
-3. create the Google Doc with speaker notes / recording plan from `docs/judge-demo-script.md` and `docs/video-voiceover-script.md`
-4. do one final submission-quality sweep across demo, slides, notes, and links
+While the live-preview check is still unresolved:
+1. keep polishing the compact deck and presenter notes
+2. treat the verified local fallback as the presentation-safe default path
+3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
+4. treat the repaired direct deploy-script path as the current recovery seam if the deploy tab stays flaky again
 
-Until then:
-1. keep the repo-side submission pack as the source of truth
-2. treat the verified local fallback as the presentation-safe backup path
-3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity instead of pretending the office-layer work is unblocked
+Once the live preview path is directly verified:
+1. verify the latest repaired live preview path right before recording
+2. lock the final demo choice and drilldown example
+3. do one final submission-quality sweep across demo, slides, notes, and links
 
 ## Honest readiness call
 
@@ -180,7 +184,7 @@ Right now the project looks much stronger than a code-only prototype.
 It has:
 - a live deployed demo path
 - a verified local fallback demo path
-- a polished judge-facing app
+- a polished deployed app
 - a judge/demo script
 - a deck outline with speaker notes
 - a slide build kit and slide copy pack
@@ -191,9 +195,9 @@ It has:
 - a final asset register and final readiness-status doc
 
 It does **not** yet have:
-- the final polished slides
-- the final office-layer notes artifact
+- the final screenshot/layout-polished slides
 - a final pre-submission verification pass across the full submission bundle
-- a browser/auth path that can complete the remaining office-layer and live-preview checks
+- one clean final live preview URL check on the repaired deploy path
+- the actual recorded video and final submission links
 
 So this should be treated as **near-ready, but not submission-complete yet**.

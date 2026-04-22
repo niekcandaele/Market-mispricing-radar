@@ -8,7 +8,7 @@ It is designed so Niek or Cata can present the project quickly without having to
 
 ## Submission-ready checklist
 
-- [ ] deployed demo entrypoint confirmed before recording or presenting
+- [ ] chosen demo entrypoint confirmed before recording or presenting
 - [ ] local fallback demo entrypoint confirmed
 - [ ] slide deck created from this outline
 - [ ] speaker notes copied into the final deck or companion doc
@@ -17,15 +17,16 @@ It is designed so Niek or Cata can present the project quickly without having to
 
 ## Demo entrypoints
 
-### Preferred live demo
-- active Zerve Streamlit preview from the deploy tab
-- current working preview URLs can rotate, so reopen from Zerve if needed
-
-### Local fallback demo
+### Safe default demo
 ```bash
 python3 scripts/export_streamlit_bundle.py --limit 200
 MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py
 ```
+
+### Optional live upgrade
+- active Zerve Streamlit preview from the deploy tab
+- current working preview URLs can rotate, so reopen from Zerve if needed
+- only switch to this path if it opens cleanly at the final check
 
 ## Slide 1, Title / Hook
 
@@ -75,7 +76,7 @@ How the product works
 1. ingest live Polymarket markets
 2. normalize and categorize markets
 3. build market features and score fragility signals
-4. generate explanations and a judge-facing radar app
+4. generate explanations and a deployed radar app
 
 ### Speaker notes
 This is a real end-to-end flow. The notebook ingests live market data, normalizes it, builds features, scores markets, generates explanations, and feeds the deployed Streamlit app.
@@ -139,9 +140,9 @@ Next:
 ### Speaker notes
 The MVP is intentionally single-source and honest about that. The obvious next step is cross-source confirmation, but the current version already demonstrates a strong explainable workflow end to end.
 
-## Compact 6-slide fallback deck
+## Default compact 6-slide deck
 
-Use this if the deck needs to stay very short.
+This is the current default deck path.
 
 ### Slide 1, Title / hook
 Speaker notes:
@@ -149,23 +150,23 @@ This is a live inspection radar for prediction markets. The key value is not ano
 
 ### Slide 2, Problem + solution
 Speaker notes:
-Most market interfaces give you raw odds but not triage. We compress that into one workflow that ranks the markets most worth inspecting and explains why they surfaced.
+Most market interfaces give you raw odds but not triage. We turn that into one workflow that ranks the markets most worth inspecting and explains why they surfaced.
 
 ### Slide 3, Product flow
 Speaker notes:
-The workflow is real end to end. We fetch live Polymarket data, normalize it, score fragility-oriented signals, generate explanations, and feed a deployed judge-facing app.
+The workflow is real end to end. We fetch live Polymarket data, normalize it, score fragility signals, generate explanations, and feed a deployed app.
 
 ### Slide 4, Explainable product proof
 Speaker notes:
-This is the strongest demo slide. Show the Radar first, then a drilldown view, then reinforce that the methodology is honest about what the score means and what it does not mean.
+This is the strongest demo slide. Start on the Radar, then drill into one market, then briefly reinforce that the Methodology view stays honest about what the score does and does not claim.
 
 ### Slide 5, Why Zerve matters
 Speaker notes:
-This is a good ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook demo and not a fake front-end shell.
+This is a strong ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook and not a static mockup.
 
-### Slide 6, Close / next steps
+### Slide 6, Live now / honest room to grow
 Speaker notes:
-The MVP is intentionally Polymarket-first and explanation-first. The next step is multi-source comparison, but the current version already proves a credible notebook-to-product workflow.
+The MVP is intentionally Polymarket-first and explanation-rich. The score is a triage signal, not a profit promise. Next comes cross-source comparison and stronger calibration, but the current version already proves a credible notebook-to-product workflow.
 
 ## Short video flow
 

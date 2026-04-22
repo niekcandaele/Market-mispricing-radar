@@ -51,11 +51,11 @@ Use this:
 
 ### How does it work?
 Use this:
-`The current MVP fetches live Polymarket data, normalizes and categorizes markets, builds market features, scores fragility signals like staleness, weak support, extremeness, and instability, generates market-level explanations, and deploys the result into a judge-facing Streamlit app inside Zerve.`
+`The current MVP fetches live Polymarket data, normalizes and categorizes markets, builds market features, scores fragility signals like staleness, weak support, extremeness, and instability, generates market-level explanations, and deploys the result into a Streamlit app inside Zerve.`
 
 ### Why is this a strong ZerveHack project?
 Use this:
-`This project turns live notebook analysis into a deployed product inside Zerve instead of stopping at a notebook or a static mockup. The same environment handles ingestion, scoring, explanation generation, and the deployed app judges can actually use.`
+`This project turns live notebook analysis into a deployed product inside Zerve instead of stopping at a notebook or a static mockup. The same environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.`
 
 ### Built with
 Short version:
@@ -66,7 +66,7 @@ Fuller version:
 
 ### Challenges
 Use this:
-`Turning the project into a credible judge-facing product required solving both technical and presentation problems: live ingestion quirks, brittle deploy workflows, and multiple rounds of explainability polish.`
+`Turning the project into a credible product required solving both technical and presentation problems: live ingestion quirks, brittle deploy workflows, and multiple rounds of explainability polish.`
 
 ### Accomplishments
 Use this:
@@ -78,18 +78,18 @@ Use this:
 
 ### Future work
 Use this:
-`The next steps are cross-source comparison with other prediction platforms, stronger confidence calibration, richer context inputs where they genuinely improve explainability, and finishing the office-layer presentation artifacts for submission.`
+`The next steps are cross-source comparison with other prediction platforms, stronger confidence calibration, and richer context inputs where they genuinely improve explainability.`
 
 ### Honest caveat / scope note
 Use this:
 `This MVP is Polymarket-first and intentionally honest about that scope. The score is a triage signal, not a promise of profit.`
 
 ## Demo link field
-Preferred:
-- current live Zerve preview opened fresh from the deploy tab right before submission
-
-Fallback if the live preview is flaky:
+Safe default:
 - use the verified local fallback path from `docs/submission-verification-checklist.md`
+
+Optional last-minute upgrade only if it opens cleanly:
+- current live Zerve preview opened fresh from the deploy tab right before submission
 
 ## Video field
 Use:

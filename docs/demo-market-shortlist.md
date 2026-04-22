@@ -74,7 +74,7 @@ These picks are based on the current local fallback bundle, so they should be tr
 ### Repetitive clustered Stanley Cup markets
 - why to avoid:
   - several rank highly, but they can make the demo feel repetitive
-  - weaker as a judge-facing example than one strong sports market plus category variety
+  - weaker as a short demo example than one strong sports market plus category variety
 
 ### Domain-heavy or jargon-heavy crypto markets
 - why to avoid:
