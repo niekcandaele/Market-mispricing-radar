@@ -47,7 +47,7 @@ Why now:
 
 Do:
 - choose the strongest current drilldown candidate
-- prefer the shortlist order from the repo unless the live run clearly suggests a better example
+- for the verified safe local path, default to `GTA VI released before June 2026?` unless the live run clearly suggests a better example
 - avoid awkward or overly niche examples if a cleaner one is available
 
 References:

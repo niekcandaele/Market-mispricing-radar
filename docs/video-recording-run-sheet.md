@@ -23,7 +23,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`.
 - default to the verified local fallback path
 - only switch to the live Zerve preview if it is clearly healthy right before recording
 - close unrelated tabs and distractions
-- pre-select a strong top-ranked market for the drilldown section
+- pre-select a strong top-ranked market for the drilldown section, defaulting to `GTA VI released before June 2026?` on the current safe local path
 
 ## Recording order
 

@@ -18,7 +18,8 @@ Use it to avoid wasting a take on preventable setup mistakes.
 ## Content check
 
 - [ ] lock the exact drilldown market before recording
-- [ ] keep `docs/demo-market-shortlist.md` open or nearby
+- [ ] safe local default: `GTA VI released before June 2026?`
+- [ ] keep `docs/demo-market-shortlist.md` open or nearby in case the live run clearly suggests a better option
 - [ ] decide whether to use the primary voiceover, fuller voiceover, or tight fallback from `docs/video-voiceover-script.md`
 - [ ] keep `docs/video-recording-run-sheet.md` open for beat order
 - [ ] keep `docs/judge-demo-script.md` nearby for backup phrasing if needed
@@ -52,7 +53,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 Record only if:
 - [ ] the chosen demo path is healthy enough for one clean take
 - [ ] the chosen path is already locked before the real take starts
-- [ ] the drilldown market is already chosen
+- [ ] the drilldown market is already chosen (default safe local choice: `GTA VI released before June 2026?`)
 - [ ] the spoken script choice is decided
 - [ ] the screen is clean
 - [ ] the story fits in about 60 to 90 seconds
