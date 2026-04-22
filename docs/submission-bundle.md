@@ -204,8 +204,10 @@ It has:
 
 It does **not** yet have:
 - a final pre-submission verification pass across the full submission bundle
-- one clean final live preview URL check on the repaired deploy path, if choosing to use the live path at all
 - the actual recorded video and final submission links
 - the required public share post and its final public URL
+
+Current sharp blocker:
+- the exact final public Zerve project/share URL is still unresolved, so the share-post step is prepared but intentionally blocked until that link is verified
 
 So this should be treated as **near-ready, but not submission-complete yet**.
