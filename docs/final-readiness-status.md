@@ -12,7 +12,7 @@ Status: **near-ready, not submission-complete yet**
 
 Why:
 - the product and repo-side submission pack are strong
-- the remaining gaps are concentrated in final screenshot/layout polish, final demo/video/submission execution, and final live verification
+- the remaining gaps are concentrated in final demo/video/submission execution and final live verification, with only optional low-risk deck polish left if a clearly better layout pass appears
 - the browser-side blocker is now mostly about final live Zerve preview verification, not Google Workspace artifact access, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work
 - the verified local fallback should now be treated as the locked safe demo path unless a fresh live Zerve preview opens cleanly at the final moment
 
@@ -58,7 +58,7 @@ Why:
 - Google Workspace artifact creation is available through the authenticated `gws` CLI path, so Slides and Docs are no longer blocked on browser sign-in
 
 ### Still required even after browser access is available
-- finish the remaining screenshot/layout polish on the Slides deck if a clean improvement path exists
+- only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path
 - record the final short demo video
 - paste the final wording into the actual submission form
 - run the last verification pass with real final links and artifacts

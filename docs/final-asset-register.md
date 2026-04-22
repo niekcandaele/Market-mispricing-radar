@@ -10,7 +10,7 @@ Use it when the real last-mile artifacts start to exist, so the submission does 
 
 This is no longer just a blank template.
 
-The repo-side source material is strong, the Google Workspace office artifacts are real and aligned, and the remaining unknowns are the final live checked links plus the last round of screenshot/layout polish.
+The repo-side source material is strong, the Google Workspace office artifacts are real and aligned, and the remaining unknowns are the final live checked links plus the actual submission-day execution items.
 
 ## Final demo path
 
@@ -45,7 +45,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 ## Final presentation assets
 
 ### Google Slides deck
-- status: created, compact 6-slide structure tightened to the repo copy pack with embedded speaker notes, a visually coherent first styling pass, a readability-tightening pass, small section-hierarchy kickers on the body slides, right-side visual proof cards on the core body slides, and an embedded safe demo-path note in the product-proof speaker notes, still needs final screenshot/layout polish
+- status: created, compact 6-slide structure tightened to the repo copy pack with embedded speaker notes, a visually coherent styling pass, a readability-tightening pass, small section-hierarchy kickers on the body slides, right-side visual proof cards on the core body slides, and an embedded safe demo-path note in the product-proof speaker notes; acceptable for submission with only optional low-risk layout polish left
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`

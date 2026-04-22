@@ -11,7 +11,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - repo-side narrative artifacts: present
 - local fallback demo path: verified end to end
 - live Zerve preview path: the new Browserless + Playwright path can sign into Zerve and reopen the project again, the real preview trigger has been re-confirmed, the valid deployed Streamlit script was directly recovered and patched back to the repo app, and a fresh 2026-04-22 recheck now shows the concrete behavior clearly: direct bearer-auth `POST /script/<deployment_script_id>/deploy_preview` returns `200`, emits fresh preview metadata, the new host resolves immediately, briefly serves ELB `503` during warm-up, then turns into a real rendered Streamlit app
-- Google Slides deck: compact deck now exists in Google Workspace `Documents`, and the latest pass tightened slide copy, improved hierarchy, added proof-structure elements, and synced embedded speaker notes to the safe demo-path plan; the remaining deck gap is mainly screenshot/layout polish
+- Google Slides deck: compact deck now exists in Google Workspace `Documents`, and the latest pass tightened slide copy, improved hierarchy, added proof-structure elements, synced embedded speaker notes to the safe demo-path plan, and cleared the compact submission-deck bar; only optional low-risk layout polish remains if a clearly stronger pass appears
 - office-layer speaker notes doc: presenter notes and deck speaker notes now both reflect the safe local-fallback default and align cleanly with the current compact deck order
 - final submission form paste/check: not done yet
 

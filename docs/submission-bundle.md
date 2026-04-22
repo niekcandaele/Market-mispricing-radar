@@ -21,8 +21,8 @@ Use it to answer four questions quickly:
 ### Slides
 - status: compact 6-slide deck now populated, tightened, styled, given embedded speaker notes, pushed through a visually coherent first background pass in Google Workspace `Documents`, given a final copy-tightening readability pass, upgraded with stronger section-hierarchy kickers on the body slides, and given right-side visual proof cards on the core workflow/product/zerve/next slides
 - repo source material: `docs/submission-deck-outline.md`
-- required next artifact: screenshot/layout refinement, not deck-shape, speaker-support triage, or basic hierarchy cleanup
-- remaining work: screenshot/layout polish
+- required next artifact: none on the deck structure itself; only optional low-risk layout polish if a clearly better visual pass appears
+- remaining work: optional final layout polish only if it is clearly worth the risk
 
 ### Video / talking track
 - status: structured presenter-notes doc exists in Google Workspace `Documents`, aligns with the compact deck order, and the deck speaker notes reflect the same safe demo-path plan
@@ -37,7 +37,7 @@ Use it to answer four questions quickly:
 
 ### Submission readiness
 - status: not submission-complete yet
-- reason: the project now has a strong app, real office-layer artifacts, and strong narrative source docs, but it still needs the last screenshot/layout polish plus final demo/video/submission execution before it should be called submission-complete
+- reason: the project now has a strong app, real office-layer artifacts, and strong narrative source docs, but it still needs final demo/video/submission execution before it should be called submission-complete; deck work is now optional polish, not a core missing artifact
 
 ## Demo entrypoints
 
