@@ -12,8 +12,8 @@ At the moment, the repo-side submission package is strong, and the blocker is no
 
 Current state:
 - Google Slides and Google Docs can be created through the authenticated `gws` CLI path
-- the final live Zerve preview recheck still needs a healthy browser path plus a directly resolvable fresh preview host
-- the verified local fallback is now the safe default demo path for recording and submission unless a fresh live preview opens cleanly at the final moment
+- the final live Zerve preview recheck now has a concrete behavior model: a fresh preview host can resolve immediately, return ELB `503` during warm-up, then turn healthy about 45 seconds later
+- the verified local fallback is still the safe default demo path for recording and submission unless a fresh live preview opens cleanly enough to justify switching at the final moment
 
 This doc can now be used for the office-layer creation steps immediately, while the live demo recheck remains a separate browser-side check.
 
@@ -33,7 +33,7 @@ Do:
 If healthy:
 - use the chosen path consistently through recording and submission
 
-If flaky:
+If the live host never clears warm-up:
 - keep the verified local fallback and move on immediately instead of burning time
 
 References:

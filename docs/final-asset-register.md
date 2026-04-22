@@ -116,7 +116,7 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 
 ## Last verification snapshot
 
-- final demo link checked: local fallback path verified through `./scripts/run_local_demo.sh`; live preview still `TBD` (fresh repaired preview metadata exists again, but the newest host still needs one clean stable open before it should be recorded here)
+- final demo link checked: local fallback path verified through `./scripts/run_local_demo.sh`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)
 - deck link checked: yes, Slides API readback confirmed compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
 - video link checked: `TBD`

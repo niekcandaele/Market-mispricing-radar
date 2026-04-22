@@ -224,7 +224,7 @@ The actual preview trigger was also re-derived from the authenticated network tr
 - the earlier relative-page attempt against `app.zerve.ai` was wrong and produced misleading `405 Method Not Allowed` results
 - the active deployment script id again matched the deployment tab/editor id during the recovered session
 
-This does not yet prove the app rendered successfully, but it does show that the deployment code can be repaired and re-previewed without manual typing, and that the preview trigger can be driven from the real canvas API instead of the flaky page chrome.
+This did not yet prove the app rendered successfully at that moment, but it did show that the deployment code could be repaired and re-previewed without manual typing, and that the preview trigger could be driven from the real canvas API instead of depending on fragile page chrome behavior.
 
 ### Live notebook-variable wiring proof
 A later live validation pass confirmed the deployed Streamlit preview can read notebook outputs successfully.
@@ -249,7 +249,7 @@ A later end-to-end app validation pass added one more important deploy-runtime d
 
 ### Still worth watching
 - whether the editor `onChange` path also persists cleanly through the underlying deployment save API in every case, or whether a second explicit save/update action is still needed for full persistence
-- whether preview DNS propagation can lag enough that a freshly issued `*.hub.zerve.cloud` hostname stays unresolved for a while even after the editor leaves the `Deploying Preview` state
+- whether fresh preview hosts consistently follow the now-observed pattern of immediate DNS resolution plus a short ELB `503` warm-up window before app readiness
 - whether Zerve exposes a friendlier documented way to discover the required internal block name for deployed variable access
 
 ### Practical implication

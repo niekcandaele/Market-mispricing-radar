@@ -11,8 +11,8 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 The remaining browser-side blocker is narrower:
-- the live Zerve preview recheck still needs a healthy browser path and a directly resolvable fresh preview host
-- the verified local fallback should now be treated as the safe default path for recording and submission unless a final live check turns clean
+- the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app
+- the verified local fallback should still be treated as the safe default path for recording and submission unless a final live check turns clean enough to justify switching
 
 This checklist can be executed now for the Workspace artifact portion.
 
