@@ -97,6 +97,8 @@ The repo-side source material is strong, the Google Workspace office artifacts a
   - `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
   - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
 
+Remaining `pending` values below are intentional submission-time fields, not packaging gaps.
+
 ## Final video asset
 
 - status: not recorded yet
