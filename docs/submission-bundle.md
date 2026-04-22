@@ -107,7 +107,7 @@ Defaults:
 
 ### Final submission sequence
 - `docs/final-submission-sequence.md`
-- best for the exact day-of-submission order while the remaining live-preview verification is still the main blocker
+- best for the exact day-of-submission order while the remaining work is concentrated in recording, form fill, share-post execution, and final link capture
 
 ### Presenter cheat sheet
 - `docs/presenter-cheat-sheet.md`
