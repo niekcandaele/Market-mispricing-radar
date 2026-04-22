@@ -103,6 +103,9 @@ The live Devpost page currently lists a public share post tagging Zerve as requi
 Use:
 - `docs/share-post-pack.md`
 
+Blocking note:
+- if the public Zerve project/share URL is still unresolved, stop and verify that link before trying to satisfy the share-post requirement
+
 Default recommendation:
 - one simple LinkedIn post, unless the human explicitly prefers X or another platform
 
