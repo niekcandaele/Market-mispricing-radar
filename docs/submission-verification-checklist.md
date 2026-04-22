@@ -118,6 +118,15 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, the helper refreshed the bundle and served the app cleanly on `http://127.0.0.1:8768`
 - status: passed
 
+### 2026-04-22 safe local recording-flow check
+- commands:
+  - `./scripts/run_local_demo.sh`
+  - local Playwright verification against `http://127.0.0.1:8768`
+- goal: verify the current one-command local recording path still supports the exact intended story arc: Radar, Methodology honesty beat, and a clean GTA VI drilldown from the default Radar slice into Market Detail
+- observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, and `Methodology`, confirmed the honest-scope beat on Methodology, and then reopened the Radar to drill cleanly into `GTA VI released before June 2026?` in Market Detail
+- notable observed values: `refresh_id` `refresh-20260422T030359Z`, `ranked_market_count` `200`
+- status: passed
+
 ### 2026-04-21 refreshed local fallback render check
 - commands:
   - `./scripts/run_local_demo.sh`
