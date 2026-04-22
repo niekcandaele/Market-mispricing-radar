@@ -96,6 +96,16 @@ Use:
 - the recording flow from `docs/video-recording-run-sheet.md`
 - the drilldown market order from `docs/demo-market-shortlist.md`
 
+## Required public share-post note
+
+The live Devpost page currently lists a public share post tagging Zerve as required.
+
+Use:
+- `docs/share-post-pack.md`
+
+Default recommendation:
+- one simple LinkedIn post, unless the human explicitly prefers X or another platform
+
 ## Safe default paste set
 
 If the form is awkward and time is short, use this compact set:

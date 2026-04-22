@@ -114,6 +114,16 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - screenshot/image URL used in form: pending final form fill
 - submitted on: pending submission event
 
+## Required public share post
+
+- status: pending human platform choice and approval
+- recommended platform: LinkedIn
+- fallback platform: X
+- draft pack: `docs/share-post-pack.md`
+- screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- project link to use: pending final public project/share URL choice
+- posted on: pending share action
+
 ## Last verification snapshot
 
 - final demo link checked: local fallback path re-verified on 2026-04-22 through `./scripts/check_safe_local_demo.sh` with corrected GTA detail-drilldown evidence at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T093053Z.json`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)

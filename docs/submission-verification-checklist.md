@@ -75,6 +75,15 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] built-with / stack section matches the real implementation
 - [ ] links pasted into the submission form actually open
 
+## Public share-post checks
+
+- [ ] confirm the hackathon still lists a public share post as required on the live Devpost page
+- [ ] choose the posting platform explicitly, default LinkedIn unless the human prefers otherwise
+- [ ] use draft wording from `docs/share-post-pack.md`
+- [ ] confirm the exact Zerve tag on the chosen platform
+- [ ] attach one clean screenshot and the final public project link
+- [ ] verify the post is actually published before treating the requirement as done
+
 ## Recording checks
 
 - [ ] use `docs/judge-demo-script.md` as the spoken baseline

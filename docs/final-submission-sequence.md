@@ -119,7 +119,22 @@ References:
 - `docs/submission-copy-draft.md`
 - `docs/submission-short-variants.md`
 
-### 7. Run the final verification pass
+### 7. Handle the required public share post
+
+Why before the final submit click:
+- the live Devpost page currently lists a public share post tagging Zerve as a required submission item
+- this crosses the normal no-external-posting boundary, so the human should choose the platform and approve the final wording
+
+Do:
+- default to one simple LinkedIn post unless there is a better human preference
+- use the prepared draft pack instead of improvising under time pressure
+- attach one clean screenshot and the final public project link
+- confirm the exact Zerve tag on the chosen platform before posting
+
+Reference:
+- `docs/share-post-pack.md`
+
+### 8. Run the final verification pass
 
 Why last:
 - this is the checkpoint before pressing submit
