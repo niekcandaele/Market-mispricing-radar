@@ -156,8 +156,8 @@ Explain what the score means and what it does not mean.
 
 #### Current MVP scope
 - Polymarket-first
-- single-source anomaly scoring
-- explainable component-based ranking
+- single-source fragility scoring
+- explainable ranking
 
 #### Score ingredients
 - staleness

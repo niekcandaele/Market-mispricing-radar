@@ -22,7 +22,7 @@ This is stronger and more honest than pretending we can fully price every market
 
 ## V1 framing
 
-V1 is a **single-source Polymarket-first anomaly and fragility score**.
+V1 is a **single-source Polymarket-first fragility score**.
 
 It is not yet:
 - a full fair-value estimator
@@ -139,7 +139,7 @@ These are placeholders for experimentation, not sacred truths.
 
 Current bridge note:
 - the mirrored Zerve scoring snippet intentionally follows the tuned local-prototype weighting and interaction logic rather than this earlier placeholder sketch
-- that keeps the repo-side Zerve bridge aligned with the behavior already validated in the local ranking prototype
+- that keeps the Zerve bridge aligned with the behavior already validated in the local ranking prototype
 
 ## Interaction rules
 

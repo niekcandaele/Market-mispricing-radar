@@ -16,7 +16,7 @@ For the MVP, use:
 
 Do not add a second source until the first end-to-end Zerve pipeline works.
 
-This means the first shipped product is a **single-source anomaly and fragility radar**, not a cross-market disagreement engine.
+This means the first shipped product is a **single-source fragility radar**, not a cross-market disagreement engine.
 
 ## Why Polymarket first
 
