@@ -1,20 +1,95 @@
 #!/usr/bin/env python3
 import argparse
+import base64
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
+from pathlib import Path
 
 CANVAS_ID = "1b13702d-5502-47d1-b1e0-6ba476250dc4"
 CANVAS_API = "https://canvas.api.zerve.ai"
 NOTEBOOK_URL = f"https://app.zerve.ai/notebook/{CANVAS_ID}"
 DEFAULT_TIMEOUT = 20
+LOGTO_CLIENT_ID = "oqry5w7u269xm5iyxtq0z"
+CHROMIUM_LEVELDB_DIR = Path.home() / ".config/chromium/Default/Local Storage/leveldb"
+JWT_RE = re.compile(rb"eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+")
 
 
 def now_iso():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def decode_jwt_payload(token):
+    try:
+        parts = token.split(".")
+        if len(parts) != 3:
+            return None
+        payload = parts[1] + "=" * (-len(parts[1]) % 4)
+        return json.loads(base64.urlsafe_b64decode(payload.encode("ascii")))
+    except Exception:
+        return None
+
+
+def extract_candidate_bearers_from_leveldb(leveldb_dir=CHROMIUM_LEVELDB_DIR):
+    candidates = []
+    if not leveldb_dir.exists():
+        return candidates
+    seen = set()
+    for path in sorted(leveldb_dir.iterdir()):
+        if path.is_dir():
+            continue
+        try:
+            data = path.read_bytes()
+        except Exception:
+            continue
+        for match in JWT_RE.finditer(data):
+            token = match.group().decode("ascii", "ignore")
+            if token in seen:
+                continue
+            seen.add(token)
+            payload = decode_jwt_payload(token)
+            if not isinstance(payload, dict):
+                continue
+            aud = payload.get("aud")
+            iss = payload.get("iss")
+            exp = payload.get("exp")
+            if aud != LOGTO_CLIENT_ID or iss != "https://auth.zerve.io/oidc" or not isinstance(exp, int):
+                continue
+            candidates.append(
+                {
+                    "token": token,
+                    "exp": exp,
+                    "iat": payload.get("iat"),
+                    "sub": payload.get("sub"),
+                    "source_file": path.name,
+                }
+            )
+    candidates.sort(key=lambda item: item.get("exp", 0), reverse=True)
+    return candidates
+
+
+def resolve_bearer(explicit_bearer=None):
+    if explicit_bearer:
+        return explicit_bearer, {"source": "arg_or_env"}
+
+    candidates = extract_candidate_bearers_from_leveldb()
+    if not candidates:
+        return None, {"source": "chromium_leveldb", "found": False}
+
+    chosen = candidates[0]
+    metadata = {
+        "source": "chromium_leveldb",
+        "found": True,
+        "selected_source_file": chosen["source_file"],
+        "selected_exp": chosen.get("exp"),
+        "selected_iat": chosen.get("iat"),
+        "candidate_count": len(candidates),
+    }
+    return chosen["token"], metadata
 
 
 def http_json(url, headers=None, timeout=DEFAULT_TIMEOUT):
@@ -126,7 +201,7 @@ def derive_summary(result):
     if ready_for_share_post_link:
         next_action = "Public project page looks verified and authenticated status confirms public visibility."
     elif not auth_checked:
-        next_action = "Route checked, but authenticated public-status confirmation is still missing. Re-run with ZERVE_BEARER if available."
+        next_action = "Route checked, but authenticated public-status confirmation is still missing. Re-run with a fresh bearer if available."
     elif not auth_public_confirmed:
         next_action = "Authenticated status still does not confirm public visibility. Make the notebook public in Zerve, then re-run."
     elif not route_verified:
@@ -146,17 +221,19 @@ def derive_summary(result):
 def main():
     parser = argparse.ArgumentParser(description="Check Zerve public-share readiness for Market Mispricing Radar.")
     parser.add_argument("--output", help="Write JSON result to this path.")
-    parser.add_argument("--bearer", help="Bearer token for authenticated canvas checks. Defaults to ZERVE_BEARER env var.")
+    parser.add_argument("--bearer", help="Bearer token for authenticated canvas checks. Defaults to ZERVE_BEARER env var, then best-effort Chromium extraction.")
     args = parser.parse_args()
 
-    bearer = args.bearer or os.environ.get("ZERVE_BEARER")
+    explicit_bearer = args.bearer or os.environ.get("ZERVE_BEARER")
+    bearer, bearer_meta = resolve_bearer(explicit_bearer)
 
     result = {
         "checked_at": now_iso(),
         "canvas_id": CANVAS_ID,
         "notebook_share_url": NOTEBOOK_URL,
         "public_route_check": try_public_route(NOTEBOOK_URL),
-        "auth_check": {"used_bearer": False, "note": "Set ZERVE_BEARER or pass --bearer to check canvas.is_public directly."},
+        "auth_check": {"used_bearer": False, "note": "Pass --bearer, set ZERVE_BEARER, or rely on best-effort Chromium token extraction."},
+        "bearer_resolution": bearer_meta,
     }
 
     if bearer:
