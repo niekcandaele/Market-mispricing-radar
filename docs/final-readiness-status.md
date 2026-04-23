@@ -14,7 +14,7 @@ Why:
 - the product and repo-side submission pack are strong
 - the remaining gaps are concentrated in final demo/video/submission execution, with only optional low-risk deck polish left if a clearly better layout pass appears
 - the verified local fallback should now be treated as the locked safe demo path unless a fresh live Zerve preview opens cleanly at the final moment
-- the sharpest remaining blocker is the unresolved final public Zerve project/share URL needed for the required public share post
+- the sharpest remaining blocker is the required public share-post link path, which is still blocked because the authenticated Zerve canvas currently reports `is_public: false`
 
 ## What is already done
 
@@ -49,9 +49,11 @@ Why:
 ## What is still blocked or missing
 
 ### Current blocker
-- the exact final public Zerve project/share URL is still unresolved
+- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check currently reports `canvas.is_public: false`
+- that means there is no verified public project/share URL to use yet, not just a missing copied link
 - that link is needed for the required public share post and should not be guessed from notebook ids, preview hosts, or repo notes
-- this needs either a clean authenticated browser session to verify the final public project/share URL or a human-confirmed final public link
+- this now needs either the project to be made public in Zerve and then rechecked, or a human-confirmed final public link
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 ### Verified but still optional
 - the new Browserless + Playwright skill path is healthy and can open fresh isolated Chromium sessions
@@ -87,15 +89,16 @@ If the public project/share URL blocker clears:
 1. keep the already verified local demo as the chosen safe path unless a fresh live preview opens cleanly enough to justify switching
 2. record the video against the locked safe demo path
 3. fill the submission form
-4. publish the required public share post using the prepared draft pack and human approval
-5. run the final verification pass
-6. update the final asset register
+4. make the project public in Zerve if it is not already, then verify the resulting public project/share URL
+5. publish the required public share post using the prepared draft pack and human approval
+6. run the final verification pass
+7. update the final asset register
 
 If the blocker does not clear in time:
 - keep the repo-side package as the source of truth
 - use the verified local fallback for demo and recording
 - treat the live Zerve preview as optional only if it opens cleanly right before submission
-- stay honest that the unfinished pieces are the remaining recording, form-fill, required share-post, and final-link execution steps, with the share-post specifically blocked on a verified public project URL
+- stay honest that the unfinished pieces are the remaining recording, form-fill, required share-post, and final-link execution steps, with the share-post specifically blocked on the project still not being publicly reachable in Zerve
 
 ## References
 

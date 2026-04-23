@@ -31,9 +31,10 @@ Default link choice:
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
-- the exact final public Zerve project/share URL is still unresolved
+- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
 - do not guess it from notebook ids, preview hosts, or repo notes
-- this pack needs either a clean authenticated browser session to verify the public project URL or a human-confirmed final public link
+- this pack needs the project to be made public in Zerve and then rechecked, or a human-confirmed final public link
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 ## Tagging note
 
@@ -85,7 +86,7 @@ Before posting:
 - confirm which platform to use
 - confirm exact tag on that platform
 - confirm the public project link to include
-- if the public project/share URL is still unresolved, stop and get a clean verified link before posting
+- if the project is still not public in Zerve or the public project/share URL is still unresolved, stop and get a clean verified link before posting
 - use one clean screenshot only
 - keep the tone product-facing, not repo-facing
 - do not mention local fallback commands in the public post
