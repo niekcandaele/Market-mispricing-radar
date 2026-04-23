@@ -49,7 +49,7 @@ Market Mispricing Radar is a live inspection tool for prediction markets. Instea
 Prediction markets are useful, but most interfaces still force you to do the triage manually. Market Mispricing Radar turns that into an explainable workflow by ranking the markets that deserve scrutiny and showing the evidence behind the ranking.
 
 ### 3 sentences
-Prediction markets are information-dense, but raw market lists do not tell you what to inspect first. Market Mispricing Radar ingests live market data, scores fragility signals like staleness and weak support, and surfaces the markets that deserve a second look. The result is an explanation-rich deployed product, not just a notebook output.
+Prediction markets are information-dense, but raw market lists do not tell you what to inspect first. Market Mispricing Radar ingests live market data, scores fragility signals like staleness and weak support, and surfaces the markets that deserve a second look. The result is an explanation-rich deployed product with a usable app.
 
 ## Honest positioning variants
 

@@ -84,7 +84,7 @@ Why this fits ZerveHack
 ### Bullets
 - notebook pipeline and deployed app live in one environment
 - analysis becomes a usable product
-- real deployment, not just notebook output
+- real deployment with a usable app
 
 ## Slide 8, Next steps
 
@@ -144,7 +144,7 @@ Why Zerve matters
 #### Bullets
 - notebook pipeline and deployed app live in one environment
 - analysis becomes a usable product
-- real deployment, not just notebook output
+- real deployment with a usable app
 
 ### Slide 6, Live now / honest room to grow
 #### Title
