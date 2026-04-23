@@ -84,8 +84,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] attach one clean screenshot and the final public project link
 - [ ] if the latest public-status check still says the project is not public in Zerve, first use the Zerve share/privacy control to make it public
 - [ ] after the privacy change, first verify the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- [ ] use `python3 scripts/check_zerve_public_share.py` if a fast recheck helper is useful
-- [ ] if authenticated confirmation is available, run that checker with `ZERVE_BEARER` or `--bearer` instead of relying on route-only output
+- [ ] use `python3 scripts/check_zerve_public_share.py` as the canonical fast recheck helper
+- [ ] let the checker auto-attempt its best-effort Chromium token extraction path if needed, but prefer a fresh `ZERVE_BEARER` or `--bearer` when available instead of relying on route-only output
 - [ ] if you use the checker, require `summary.ready_for_share_post_link: true` instead of manually eyeballing a bare `200`
 - [ ] do not treat a bare `200` on that route as success if it only returns the generic Zerve shell instead of the actual public project page
 - [ ] if a different public route is used, confirm it was chosen deliberately and verified, not silently swapped in from the gallery/community path
