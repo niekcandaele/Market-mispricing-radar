@@ -45,11 +45,11 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final presentation assets
 
 ### Google Slides deck
-- status: created, compact 6-slide structure tightened to the repo copy pack with embedded speaker notes, a visually coherent styling pass, a readability-tightening pass, small section-hierarchy kickers on the body slides, right-side visual proof cards on the core body slides, and a 2026-04-23 resync of both slide copy and speaker notes with readback verification; acceptable for submission with only optional low-risk layout polish left
+- status: created, compact 6-slide structure tightened to the repo copy pack with embedded speaker notes, a visually coherent styling pass, a readability-tightening pass, small section-hierarchy kickers on the body slides, right-side visual proof cards on the core body slides, a 2026-04-23 resync of both slide copy and speaker notes with readback verification, and a final 2026-04-23 slide-5 wording resync after later speaking-copy cleanup; acceptable for submission with only optional low-risk layout polish left
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
-- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, updated with soft coordinated slide backgrounds, synced again on 2026-04-22 so the product-proof speaker notes point at the current safe local GTA drilldown and cleaner deployed-product wording, and resynced on 2026-04-23 so all 6 slide speaker notes plus the compact deck body copy on slides 2 to 5 match the latest cleaned-up repo wording
+- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, updated with soft coordinated slide backgrounds, synced again on 2026-04-22 so the product-proof speaker notes point at the current safe local GTA drilldown and cleaner deployed-product wording, resynced on 2026-04-23 so all 6 slide speaker notes plus the compact deck body copy on slides 2 to 5 match the latest cleaned-up repo wording, and resynced once more on 2026-04-23 after the final Zerve-fit wording cleanup so slide 5 notes and on-slide copy match repo truth again
 - source docs:
   - `docs/submission-deck-outline.md`
   - `docs/slide-build-kit.md`
