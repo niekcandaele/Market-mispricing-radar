@@ -132,6 +132,7 @@ Do:
 - if the latest check still says the project is not public in Zerve, first use the Zerve share/privacy control to make it public
 - after the privacy change, first recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - use `python3 scripts/check_zerve_public_share.py` if you want a quick route-plus-auth sanity check
+- if authenticated confirmation is available, run it with `ZERVE_BEARER` or `--bearer` so the gate can confirm both route health and `is_public`
 - treat the share-post link as unblocked only when that checker reports `summary.ready_for_share_post_link: true`
 - do not treat a bare `200` there as success if it only serves the generic Zerve shell instead of the actual public project page
 - only use a different public route if it has been consciously chosen and verified, because the gallery/community path is separate
