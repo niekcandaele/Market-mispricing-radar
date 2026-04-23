@@ -71,10 +71,10 @@ The app includes:
 
 ## Challenges we ran into
 
-- Polymarket ingestion inside Zerve initially hit request-shape and header issues
-- Zerve notebook and deploy automation was brittle through raw UI interaction, so the workflow had to be hardened into a more reliable execution and validation path
-- live deployment previews could fall into misleading or stale UI states, which required verification against actual preview output rather than trusting the interface
-- turning the project into something presentation-ready took multiple rounds of product-copy and app-flow polish beyond the initial technical proof
+- Polymarket ingestion inside Zerve needed browser-like request headers and request-shape fixes before live fetching was stable
+- notebook editing and deployment flow needed a stronger hybrid execution and validation path than raw UI interaction alone
+- live deployment previews could look healthy in the interface before the real app output was actually ready, so we had to verify rendered output directly
+- getting from technical proof to submission-ready product quality took multiple rounds of app-flow, copy, and presentation polish
 
 ## Accomplishments we are proud of
 
