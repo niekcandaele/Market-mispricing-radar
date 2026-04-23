@@ -70,7 +70,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - status: created, tightened into a cleaner paste-ready baseline, resynced to the latest repo wording on 2026-04-23 with readback verification, and reformatted back into plain office-layer text after a raw-markdown drift
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
-- version note: initial CLI-created submission-copy reference doc placed in `Documents` on 2026-04-21, then tightened to remove repo-facing packaging language and sharpen the submission wording, then resynced on 2026-04-23 after the latest outward-facing wording pass, then cleaned again on 2026-04-23 so the office-layer doc is paste-ready plain text rather than raw markdown-style content, then resynced once more on 2026-04-23 after the final fragility-scoring wording cleanup to keep the live doc aligned with repo truth
+- version note: initial CLI-created submission-copy reference doc placed in `Documents` on 2026-04-21, then tightened to remove internal packaging language and sharpen the submission wording, then resynced on 2026-04-23 after the latest outward-facing wording pass, then cleaned again on 2026-04-23 so the office-layer doc is paste-ready plain text rather than raw markdown-style content, then resynced once more on 2026-04-23 after the final fragility-scoring wording cleanup to keep the live doc aligned with repo truth
 
 ### Demo link reference
 - status: created and resynced on 2026-04-23 with readback verification

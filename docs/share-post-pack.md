@@ -105,7 +105,7 @@ Before posting:
 - if the project is public but the URL is still unresolved, stop and reverify the exact final link before posting
 - do not silently swap in the gallery/community route unless that exact route has been consciously chosen and verified
 - use one clean screenshot only
-- keep the tone product-facing, not implementation-heavy
+- keep the tone product-facing, not overly technical
 - do not mention local fallback commands in the public post
 
 ## Approval boundary

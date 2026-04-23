@@ -114,7 +114,7 @@ Why this fits ZerveHack
 
 ### On-slide content
 - notebook pipeline and deployed app are connected in one environment
-- analysis becomes a usable product, not just notebook output
+- analysis becomes a usable product with a real app surface
 - real deployment with a usable app, not static screenshots
 
 ### Speaker notes
