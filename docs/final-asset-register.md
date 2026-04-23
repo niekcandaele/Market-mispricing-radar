@@ -49,7 +49,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
-- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, updated with soft coordinated slide backgrounds, synced again on 2026-04-22 so the product-proof speaker notes point at the current safe local GTA drilldown and cleaner deployed-product wording, resynced on 2026-04-23 so all 6 slide speaker notes plus the compact deck body copy on slides 2 to 5 match the latest cleaned-up repo wording, and resynced once more on 2026-04-23 after the final Zerve-fit wording cleanup so slide 5 notes and on-slide copy match repo truth again
+- version note: initial CLI-created deck shell placed in `Documents` on 2026-04-21, then populated, tightened, styled, given embedded slide speaker notes, updated with soft coordinated slide backgrounds, synced again on 2026-04-22 so the product-proof speaker notes point at the current safe local GTA drilldown and cleaner deployed-product wording, resynced on 2026-04-23 so all 6 slide speaker notes plus the compact deck body copy on slides 2 to 5 match the latest cleaned-up repo wording, resynced once more on 2026-04-23 after the final Zerve-fit wording cleanup so slide 5 notes and on-slide copy match repo truth again, and resynced again after the final usable-deployed-product wording cleanup in slide 5 speaker notes
 - source docs:
   - `docs/submission-deck-outline.md`
   - `docs/slide-build-kit.md`
@@ -59,7 +59,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - status: created, structured presenter notes populated, resynced on 2026-04-23 with readback verification, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, corrected to match the compact deck slide order, updated on 2026-04-22 to use the GTA drilldown as the current safe local default, resynced on 2026-04-23 after the latest speaking-pack wording cleanup, resynced again after the final Zerve-fit wording cleanup, and resynced once more after the final notebook-output wording cleanup
+- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, corrected to match the compact deck slide order, updated on 2026-04-22 to use the GTA drilldown as the current safe local default, resynced on 2026-04-23 after the latest speaking-pack wording cleanup, resynced again after the final Zerve-fit wording cleanup, resynced once more after the final notebook-output wording cleanup, and resynced again after the final usable-deployed-product wording cleanup
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
