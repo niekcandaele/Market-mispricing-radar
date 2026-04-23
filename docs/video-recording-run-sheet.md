@@ -8,7 +8,7 @@ Use it when the demo script is too broad and you need a crisp filming sequence w
 
 If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
 
-Right before the real take, run `docs/recording-preflight-checklist.md`.
+Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep.
 
 ## Target shape
 
@@ -19,6 +19,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`.
 
 ## Before recording
 
+- if using the safe local default, run `./scripts/check_safe_local_demo.sh`
 - confirm the chosen demo entrypoint actually opens
 - default to the verified local fallback path
 - only switch to the live Zerve preview if it is clearly healthy right before recording
@@ -134,3 +135,4 @@ Override with env vars if needed, for example `MMR_SERVER_PORT=8765 ./scripts/ru
 - treat the verified local fallback as the safe default and only upgrade to live if it is clearly healthy
 - better to sound honest and sharp than overclaiming
 - if needed, use `docs/video-voiceover-script.md` to keep the spoken pass tight and consistent
+- if the safe local sweep fails, stop and fix that before recording instead of improvising around it

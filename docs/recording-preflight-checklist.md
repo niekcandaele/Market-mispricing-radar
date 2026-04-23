@@ -8,6 +8,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 
 ## Demo path check
 
+- [ ] run `./scripts/check_safe_local_demo.sh` before the real take if using the safe local default path
 - [ ] default to the verified local fallback as the primary recording path
 - [ ] only switch to the live Zerve preview if the freshest preview opens cleanly right before recording
 - [ ] if trying the live path, reopen the freshest preview from the Zerve deploy tab instead of trusting an old rotated URL
@@ -62,6 +63,7 @@ If any of those fail, stop and reset before taking the real recording.
 
 ## References
 
+- `./scripts/check_safe_local_demo.sh`
 - `docs/video-recording-run-sheet.md`
 - `docs/video-voiceover-script.md`
 - `docs/judge-demo-script.md`
