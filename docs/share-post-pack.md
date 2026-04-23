@@ -37,7 +37,7 @@ Current blocker:
 - there is still no verified public Zerve project/share URL to use for the required share post
 - the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the latest public-share gate still remains red
 - do not guess the link from notebook ids, preview hosts, or repo notes
-- the next operator action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
+- the next action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
 - the first recheck target after the toggle is the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - the gallery/community path is separate and should not be assumed to be the required project link

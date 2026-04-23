@@ -63,7 +63,7 @@ Why:
 - the live deploy editor was recovered, and the working preview trigger was re-confirmed as the in-editor `Start Preview Deployment` path / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`
 - the valid deployed Streamlit script was recovered directly from Zerve canvas metadata, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` repair was verified by replacing a stale probe deploy with the real repo app
 - fresh authenticated live Zerve preview recheck on 2026-04-22 produced a concrete diagnosis instead of a vague "flaky preview" note: direct bearer-auth `POST https://canvas.api.zerve.ai/script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`, emitted preview metadata (`current_preview_id` `b0966b53-de68-43a2-9c8e-759bead27ab1`, `preview_deployment_id` `114fe023-2dfe-41ce-97c8-408d9a949602`, DNS label `1237c1f1-ee724b30`), the new host resolved immediately, then served ELB `503` / one timeout for roughly 45 seconds before converging to `200` and rendering the real app UI
-- operator conclusion: the live preview problem is best described as preview warm-up lag plus rotating hostnames, not an amorphous permanent blocker, but the verified local fallback still remains the safer default because it is scripted and presentation-safe
+- current conclusion: the live preview problem is best described as preview warm-up lag plus rotating hostnames, not an amorphous permanent blocker, but the verified local fallback still remains the safer default because it is scripted and presentation-safe
 - Google Workspace artifact creation is available through the authenticated `gws` CLI path, so Slides and Docs are no longer blocked on browser sign-in
 
 ### Still required even after blocker resolution
@@ -86,7 +86,7 @@ All of these need to be true:
 - the final verification pass is complete
 - the final asset register is filled with real values instead of placeholders
 
-## Best current operator guidance
+## Best current guidance
 
 If the public project/share URL blocker clears:
 1. keep the already verified local demo as the chosen safe path unless a fresh live preview opens cleanly enough to justify switching
@@ -99,7 +99,7 @@ If the public project/share URL blocker clears:
 8. update the final asset register
 
 If the blocker does not clear in time:
-- keep the repo docs as the source of truth
+- keep the docs as the source of truth
 - use the verified local fallback for demo and recording
 - treat the live Zerve preview as optional only if it opens cleanly right before submission
 - stay honest that the unfinished pieces are the remaining recording, form-fill, required share-post, and final-link execution steps, with the share-post specifically blocked on the project still not being publicly reachable in Zerve

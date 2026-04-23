@@ -14,7 +14,7 @@ Current project-level sharp blocker:
 - there is still no verified public Zerve project/share URL
 - authenticated canvas metadata previously confirmed `canvas.is_public: false`, and the latest public-share gate still remains red
 - that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
-- the operator action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
+- the next action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`

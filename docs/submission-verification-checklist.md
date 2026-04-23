@@ -212,4 +212,4 @@ What still blocks a true done call:
 - warm-up behavior: observed ELB `503`, then one timeout, then `200` within about 45 seconds
 - rendered-app check: passed, the fresh preview rendered the real Market Mispricing Radar app, including sidebar views `Radar`, `Market Detail`, and `Methodology`, plus live app content such as `Ranked Radar` and `Processed 250`
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
-- operator call: the live preview is recoverable and real, but it still should be treated as an optional upgrade because the local fallback remains simpler and safer for recording/submission
+- current call: the live preview is recoverable and real, but it still should be treated as an optional upgrade because the local fallback remains simpler and safer for recording/submission
