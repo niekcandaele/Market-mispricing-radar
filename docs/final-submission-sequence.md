@@ -131,6 +131,7 @@ Do:
 - attach one clean screenshot and the final public project link
 - if the latest check still says the project is not public in Zerve, first use the Zerve share/privacy control to make it public
 - after the privacy change, first recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- do not treat a bare `200` there as success if it only serves the generic Zerve shell instead of the actual public project page
 - only use a different public route if it has been consciously chosen and verified, because the gallery/community path is separate
 - latest authenticated evidence currently says `canvas.is_public: false`, so treat the share-post path as blocked until that changes or a human provides the final public link
 - confirm the exact Zerve tag on the chosen platform before posting

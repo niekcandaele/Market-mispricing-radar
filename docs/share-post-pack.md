@@ -29,6 +29,7 @@ Default screenshot:
 Default link choice:
 - use the final public Zerve project/share link if that is the expected hackathon proof link
 - after the notebook is made public, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- treat a bare `200` as insufficient if the route only serves the generic Zerve shell instead of the actual public project page
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
@@ -39,6 +40,7 @@ Current blocker:
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
 - the first recheck target after the toggle is the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - the gallery/community path is separate and should not be assumed to be the required project link
+- current baseline check confirms that this route can return the generic Zerve shell with `200`, so success must mean the actual public project page renders, not just that the route responds
 - if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
@@ -93,6 +95,7 @@ Before posting:
 - confirm exact tag on that platform
 - confirm the public project link to include
 - if the project is still not public in Zerve, first flip the Zerve share/privacy toggle and then check the notebook share route for this project
+- if the notebook route only returns the generic Zerve shell, do not treat that as a valid public-link success
 - if the project is public but the URL is still unresolved, stop and reverify the exact final link before posting
 - do not silently swap in the gallery/community route unless that exact route has been consciously chosen and verified
 - use one clean screenshot only
