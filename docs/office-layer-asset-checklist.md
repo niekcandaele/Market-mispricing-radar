@@ -11,10 +11,14 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 Current project-level sharp blocker:
-- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
+- there is still no verified public Zerve project/share URL
+- authenticated canvas metadata previously confirmed `canvas.is_public: false`, and the latest repo-side gate still remains red
 - that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
-- the operator action is now explicit: use the Zerve share/privacy control to make the notebook public, then recheck the final public URL
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- the operator action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
+- only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
+- evidence:
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T111000Z.json`
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app
@@ -59,6 +63,7 @@ Source materials:
 Create or store:
 - one clean note in the office layer with the final chosen demo path
 - default that note to the verified local fallback unless a last-minute live check actually opens cleanly
+- right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - current state: demo-link notes doc exists and now also includes explicit default visual pairings for the recording flow
 
 Source materials:
@@ -99,11 +104,12 @@ Avoid:
 
 Do this in order:
 1. lock the local fallback as the default demo path, or switch to live only if the final check is clean
-2. refine the Slides deck only where a clear polish gain still exists
-3. keep the notes artifact aligned with the chosen demo path and current deck
-4. record or finalize the video plan
-5. store the final submission text reference
-6. run the final verification pass
+2. on the safe local path, run `./scripts/check_safe_local_demo.sh` right before the real take
+3. refine the Slides deck only where a clear polish gain still exists
+4. keep the notes artifact aligned with the chosen demo path and current deck
+5. record or finalize the video plan
+6. store the final submission text reference
+7. run the final verification pass
 
 ## Done check for the office layer
 
