@@ -110,6 +110,39 @@ def try_canvas_status(bearer):
     return result
 
 
+def derive_summary(result):
+    route_check = result.get("public_route_check", {})
+    interpretation = route_check.get("interpretation", {})
+    route_verified = bool(interpretation.get("route_looks_verified"))
+
+    auth_check = result.get("auth_check", {})
+    canvas_public = auth_check.get("canvas", {}).get("is_public")
+    layout_public = auth_check.get("canvas_layout", {}).get("canvas_is_public")
+    auth_public_confirmed = bool(canvas_public is True or layout_public is True)
+    auth_checked = bool(auth_check.get("used_bearer"))
+
+    ready_for_share_post_link = route_verified and auth_public_confirmed
+
+    if ready_for_share_post_link:
+        next_action = "Public project page looks verified and authenticated status confirms public visibility."
+    elif not auth_checked:
+        next_action = "Route checked, but authenticated public-status confirmation is still missing. Re-run with ZERVE_BEARER if available."
+    elif not auth_public_confirmed:
+        next_action = "Authenticated status still does not confirm public visibility. Make the notebook public in Zerve, then re-run."
+    elif not route_verified:
+        next_action = "Notebook route still does not look like a verified public project page. Do not use it for the share post yet."
+    else:
+        next_action = "Share-post link is not ready yet."
+
+    return {
+        "route_verified": route_verified,
+        "auth_checked": auth_checked,
+        "auth_public_confirmed": auth_public_confirmed,
+        "ready_for_share_post_link": ready_for_share_post_link,
+        "next_action": next_action,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Check Zerve public-share readiness for Market Mispricing Radar.")
     parser.add_argument("--output", help="Write JSON result to this path.")
@@ -129,11 +162,14 @@ def main():
     if bearer:
         result["auth_check"] = try_canvas_status(bearer)
 
+    result["summary"] = derive_summary(result)
+
     text = json.dumps(result, indent=2, sort_keys=True)
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             f.write(text + "\n")
     print(text)
+    return 0 if result["summary"]["ready_for_share_post_link"] else 1
 
 
 if __name__ == "__main__":
