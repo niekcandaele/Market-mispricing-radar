@@ -27,7 +27,7 @@ A Zerve-native market inspection radar that turns live notebook analysis into a 
 Market Mispricing Radar ranks prediction markets that look fragile, stale, extreme, or weakly supported, then explains why they surfaced.
 
 ### Slightly more product-focused
-Market Mispricing Radar helps an operator find prediction markets that deserve scrutiny instead of forcing them to scan raw odds one market at a time.
+Market Mispricing Radar helps people spot prediction markets that deserve scrutiny instead of forcing them to scan raw odds one market at a time.
 
 ### Slightly more technical
 Market Mispricing Radar ingests live market data, scores fragility signals, and deploys an explanation-rich inspection app through a real Zerve notebook pipeline.

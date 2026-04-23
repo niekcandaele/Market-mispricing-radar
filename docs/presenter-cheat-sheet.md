@@ -16,7 +16,7 @@ Prediction markets are useful, but most interfaces still make you scan raw odds 
 
 ## 60-second pitch
 
-Prediction markets are information-dense, but raw market lists do not tell you what to inspect first. Market Mispricing Radar ingests live market data, scores fragility signals like staleness, weak support, extremeness, and instability, then surfaces the markets that deserve scrutiny in a deployed app with explanation headlines, drilldown detail, and methodology notes. The key design choice is honesty: this is not pretending to know the perfect fair value of every market, it is helping an operator prioritize where to look next.
+Prediction markets are information-dense, but raw market lists do not tell you what to inspect first. Market Mispricing Radar ingests live market data, scores fragility signals like staleness, weak support, extremeness, and instability, then surfaces the markets that deserve scrutiny in a deployed app with explanation headlines, drilldown detail, and methodology notes. The key design choice is honesty: this is not pretending to know the perfect fair value of every market, it is helping someone prioritize where to look next.
 
 ## Strongest proof points
 
@@ -47,7 +47,7 @@ It measures how much evidence there is that a market deserves extra scrutiny, us
 
 ### Why is this better than just browsing Polymarket directly?
 Suggested answer:
-Browsing raw markets gives you data, but not triage. This product ranks what is most worth inspecting first and explains why, which is a much better operator workflow.
+Browsing raw markets gives you data, but not triage. This product ranks what is most worth inspecting first and explains why, which is a much better inspection workflow.
 
 ### Why does Zerve matter here?
 Suggested answer:
@@ -68,12 +68,12 @@ Because we are honest about that. The app exposes score drivers, caveats, and QA
 ## If you need to sound more technical
 
 Use this:
-The current pipeline fetches live Polymarket data, normalizes and categorizes markets, builds feature signals, scores fragility-oriented heuristics, generates explanation rows, and feeds a deployed Streamlit app through Zerve variable loading.
+The current pipeline fetches live Polymarket data, normalizes and categorizes markets, builds feature signals, scores fragility-oriented heuristics, generates explanation rows, and feeds those outputs into a deployed Streamlit app inside Zerve.
 
 ## If you need to sound more product-focused
 
 Use this:
-The value is not just finding odd-looking markets. It is giving an operator a usable, explainable triage surface instead of an endless list of raw odds.
+The value is not just finding odd-looking markets. It is giving someone a usable, explainable triage surface instead of an endless list of raw odds.
 
 ## Demo-path note
 

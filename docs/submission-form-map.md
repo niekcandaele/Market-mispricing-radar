@@ -32,7 +32,7 @@ Default:
 `Market Mispricing Radar ranks prediction markets that look fragile, stale, extreme, or weakly supported, then explains why they surfaced.`
 
 Alternate:
-`Market Mispricing Radar helps an operator find prediction markets that deserve scrutiny instead of forcing them to scan raw odds one market at a time.`
+`Market Mispricing Radar helps people spot prediction markets that deserve scrutiny instead of forcing them to scan raw odds one market at a time.`
 
 ### Short description
 Recommended:
@@ -47,7 +47,7 @@ Use this:
 
 ### What problem does it solve?
 Use this:
-`Prediction markets can be useful signals, but raw market lists do not tell an operator what to inspect first. Suspicious or fragile pricing can hide in plain sight, and browsing one market at a time is a weak inspection workflow. Market Mispricing Radar solves that by ranking the markets that deserve scrutiny and explaining why they surfaced.`
+`Prediction markets can be useful signals, but raw market lists do not tell you what to inspect first. Suspicious or fragile pricing can hide in plain sight, and browsing one market at a time is a weak inspection workflow. Market Mispricing Radar solves that by ranking the markets that deserve scrutiny and explaining why they surfaced.`
 
 ### How does it work?
 Use this:

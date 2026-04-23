@@ -10,7 +10,7 @@ A live prediction-market radar that surfaces markets whose prices look fragile, 
 
 ## Short description
 
-Market Mispricing Radar helps an operator find prediction markets that deserve a second look. Instead of scanning raw odds market by market, the app ranks fragile, stale, extreme, or weakly supported markets and explains why each one surfaced.
+Market Mispricing Radar helps people spot prediction markets that deserve a second look. Instead of scanning raw odds market by market, the app ranks fragile, stale, extreme, or weakly supported markets and explains why each one surfaced.
 
 ## Longer project summary
 
@@ -20,7 +20,7 @@ The key design choice is honesty. This project does not pretend to know the perf
 
 ## The problem
 
-Prediction markets can be useful signals, but the operator experience is weak when the goal is inspection rather than casual browsing.
+Prediction markets can be useful signals, but the experience is still weak when the goal is inspection rather than casual browsing.
 
 Current interfaces tend to show raw market lists and prices, which creates three problems:
 - there are too many markets to inspect manually
@@ -115,4 +115,4 @@ It is:
 
 ## One-minute spoken version
 
-We built Market Mispricing Radar, a live inspection tool for prediction markets. Instead of forcing someone to scan raw odds market by market, it ranks the markets whose pricing looks fragile, stale, extreme, or weakly supported and explains why they surfaced. The whole workflow is live inside Zerve, from notebook ingestion and scoring to the deployed Streamlit app. The key idea is honesty: this is not pretending to know perfect fair value, it is helping an operator prioritize which markets deserve a second look right now.
+We built Market Mispricing Radar, a live inspection tool for prediction markets. Instead of forcing someone to scan raw odds market by market, it ranks the markets whose pricing looks fragile, stale, extreme, or weakly supported and explains why they surfaced. The whole workflow is live inside Zerve, from notebook ingestion and scoring to the deployed Streamlit app. The key idea is honesty: this is not pretending to know perfect fair value, it is helping someone prioritize which markets deserve a second look right now.
