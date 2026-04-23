@@ -114,8 +114,8 @@ Why this fits ZerveHack
 
 ### On-slide content
 - notebook pipeline and deployed app are connected in one environment
-- analysis becomes a usable product, not just a notebook output
-- real deployment, not static screenshots or a fake mockup
+- analysis becomes a usable product, not just notebook output
+- real deployment with a usable app, not static screenshots
 
 ### Speaker notes
 The Zerve story matters here. This project goes beyond notebook output alone. The same environment handles ingestion, scoring, explanation generation, and deployment.
@@ -179,7 +179,7 @@ Target: 60 to 90 seconds.
 
 ## Strongest one-line talking points
 
-- This is a live inspection radar for prediction markets, not a static dashboard.
+- This is a live inspection radar for prediction markets built for active inspection.
 - The score is designed to prioritize scrutiny, not pretend we know true fair value.
 - Every surfaced market comes with an explanation path, not just a rank.
 - The deployed app is wired to the real Zerve notebook pipeline end to end.

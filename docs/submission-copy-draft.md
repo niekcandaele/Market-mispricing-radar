@@ -38,7 +38,7 @@ It:
 - explains why each market surfaced
 - exposes caveats instead of hiding them
 
-The result is a live decision-support radar, not just a notebook or a static dashboard.
+The result is a live decision-support radar, not just notebook output.
 
 ## How it works
 

@@ -31,7 +31,7 @@ This is the landing view and the most important screen.
 
 ### Goal
 
-Show the top suspicious or fragile markets immediately.
+Show the top fragile or weakly supported markets immediately.
 
 ### Main content
 
