@@ -4,13 +4,13 @@
 
 Market Mispricing Radar is a live inspection tool for prediction markets that look stale, fragile, extreme, or weakly supported.
 
-It does not claim certain arbitrage or perfect fair value. It helps an operator find the markets most worth a second look.
+It does not claim certain arbitrage or perfect fair value. It helps people find the markets most worth a second look.
 
 ## What to say in the first 20 seconds
 
 Prediction markets are useful, but most interfaces still force you to scan raw odds market by market.
 
-This project turns that into a ranked radar. It pulls live market data, scores markets whose prices look suspicious or fragile, and explains why each one surfaced.
+This project turns that into a ranked radar. It pulls live market data, scores markets whose pricing looks fragile, stale, extreme, or weakly supported, and explains why each one surfaced.
 
 ## Demo goal
 
@@ -62,7 +62,7 @@ Say:
 
 Point out:
 - Polymarket-first MVP scope
-- explainable component-based scoring
+- explainable fragility scoring
 - single-source caveat
 - no fake promise of perfect pricing
 

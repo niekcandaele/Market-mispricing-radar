@@ -99,7 +99,7 @@ This is the strongest demo section. Start on the Radar view, click into a top ma
 Why the output is worth trusting
 
 ### On-slide content
-- explainable component-based scoring
+- explainable fragility scoring
 - visible QA warnings and caveats
 - product surfaces evidence, not just a rank
 - deployed app connected to the live notebook pipeline
@@ -118,7 +118,7 @@ Why this fits ZerveHack
 - real deployment, not static screenshots or a fake mockup
 
 ### Speaker notes
-The Zerve story matters here. This project is not just a data notebook and not just a front-end mockup. The same environment handles ingestion, scoring, explanation generation, and deployment.
+The Zerve story matters here. This project is not just a data notebook or a UI mockup. The same environment handles ingestion, scoring, explanation generation, and deployment.
 
 ## Slide 8, MVP honesty and next steps
 
@@ -145,7 +145,7 @@ This is the current default deck path.
 
 ### Slide 1, Title / hook
 Speaker notes:
-This is a live inspection radar for prediction markets. The key value is not another market list, it is helping an operator see which markets deserve a second look right now.
+This is a live inspection radar for prediction markets. The key value is not another market list, it is helping people see which markets deserve a second look right now.
 
 ### Slide 2, Problem + solution
 Speaker notes:
@@ -161,7 +161,7 @@ This is the strongest demo slide. Start on the Radar, then drill into one market
 
 ### Slide 5, Why Zerve matters
 Speaker notes:
-This is a strong ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook and not a static mockup.
+This is a strong ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook or a static mockup.
 
 ### Slide 6, Live now / honest room to grow
 Speaker notes:

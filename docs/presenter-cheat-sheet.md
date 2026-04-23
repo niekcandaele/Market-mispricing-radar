@@ -51,7 +51,7 @@ Browsing raw markets gives you data, but not triage. This product ranks what is 
 
 ### Why does Zerve matter here?
 Suggested answer:
-Because this is not just a notebook or just a front-end mockup. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.
+Because this is not just a notebook or a UI mockup. The same Zerve environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.
 
 ### What is the current MVP scope?
 Suggested answer:
