@@ -50,7 +50,7 @@ Why:
 
 ### Current blocker
 - there is still no verified public Zerve project/share URL to use for the required share post
-- the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the public-share gate still remains red
+- the latest authenticated canvas metadata evidence still says `canvas.is_public: false`, and the public-share gate is still red
 - that link should not be guessed from notebook ids, preview hosts, or repo notes
 - the blocker is now operationally clear: first make the notebook public in Zerve, then recheck the resulting public project/share URL
 - the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem

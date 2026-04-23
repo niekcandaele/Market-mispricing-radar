@@ -217,7 +217,7 @@ It does **not** yet have:
 
 Current sharp blocker:
 - there is still no verified public Zerve project/share URL
-- the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the public-share gate still remains red
+- the latest authenticated canvas metadata evidence still says `canvas.is_public: false`, and the public-share gate is still red
 - the share-post step is therefore prepared but intentionally blocked until the notebook is made public in Zerve and the resulting public link is verified
 - the next action is explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only clear the blocker when the checker reports `summary.ready_for_share_post_link: true`

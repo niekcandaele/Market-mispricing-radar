@@ -12,7 +12,7 @@ Google Workspace artifact creation itself is no longer blocked, because the auth
 
 Current project-level sharp blocker:
 - there is still no verified public Zerve project/share URL
-- authenticated canvas metadata previously confirmed `canvas.is_public: false`, and the latest public-share gate still remains red
+- authenticated canvas metadata evidence still says `canvas.is_public: false`, and the latest public-share gate is still red
 - that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
 - the next action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
