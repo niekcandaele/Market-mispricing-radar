@@ -68,7 +68,7 @@ Because we are honest about that. The app exposes score drivers, caveats, and QA
 ## If you need to sound more technical
 
 Use this:
-The current pipeline fetches live Polymarket data, normalizes and categorizes markets, builds feature signals, scores fragility-oriented heuristics, generates explanation rows, and feeds those outputs into a deployed Streamlit app inside Zerve.
+The current pipeline fetches live Polymarket data, normalizes and categorizes markets, builds feature signals, scores fragility heuristics, generates explanation rows, and feeds those outputs into a deployed Streamlit app inside Zerve.
 
 ## If you need to sound more product-focused
 

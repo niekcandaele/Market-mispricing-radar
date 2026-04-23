@@ -26,7 +26,7 @@ And the Zerve story matters here too. This is not a static mockup. The deployed 
 
 On the Radar view, the app surfaces markets whose pricing looks stale, fragile, extreme, or weakly supported. Instead of a raw odds list, I get ranked results with explanation headlines, category context, and warning signals that help me decide what deserves attention first.
 
-When I click into one market, I can see the score drivers, supporting signals, and caveats behind the ranking. That is an important design choice. This project does not pretend to know perfect fair value or guaranteed arbitrage. It is built to help an operator prioritize scrutiny in a more explainable way.
+When I click into one market, I can see the score drivers, supporting signals, and caveats behind the ranking. That is an important design choice. This project does not pretend to know perfect fair value or guaranteed arbitrage. It is built to help people prioritize scrutiny in a more explainable way.
 
 The Methodology page makes the scope explicit. The MVP is deliberately Polymarket-first, explanation-first, and honest about what the score does and does not claim.
 
