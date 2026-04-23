@@ -73,10 +73,10 @@ The repo-side source material is strong, the Google Workspace office artifacts a
 - version note: initial CLI-created submission-copy reference doc placed in `Documents` on 2026-04-21, then tightened to remove repo-facing packaging language and sharpen the submission wording, then resynced on 2026-04-23 after the latest outward-facing wording pass
 
 ### Demo link reference
-- status: created
+- status: created and resynced on 2026-04-23 with readback verification
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- version note: created in `Documents` on 2026-04-21 with preferred live path, verified local fallback, drilldown defaults, and explicit default visual pairings, then updated on 2026-04-22 to use `./scripts/run_local_demo.sh` and the GTA drilldown as the current safe local default
+- version note: created in `Documents` on 2026-04-21 with preferred live path, verified local fallback, drilldown defaults, and explicit default visual pairings, then updated on 2026-04-22 to use `./scripts/run_local_demo.sh` and the GTA drilldown as the current safe local default, then resynced on 2026-04-23 so it now also records the one-command `./scripts/check_safe_local_demo.sh` pre-take sweep and the freshest safe-local verification evidence
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`
