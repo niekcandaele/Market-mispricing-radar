@@ -123,7 +123,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- project link to use: unresolved blocker, because the latest authenticated canvas metadata check reports `canvas.is_public: false`; the project needs to be made public in Zerve and then rechecked before posting
+- project link to use: unresolved blocker, because the latest authenticated canvas metadata check reports `canvas.is_public: false`; first use the Zerve share/privacy control to make the notebook public, then recheck the final public project/share URL before posting
 - posted on: pending share action
 
 ## Last verification snapshot
@@ -134,7 +134,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
 - video link checked: pending final recording and upload
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
-- public project status checked: yes, authenticated Zerve canvas metadata recheck on 2026-04-23 reported `canvas.is_public: false`, so there is still no verified public project/share URL to use for the required share post; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- public project status checked: yes, authenticated Zerve canvas metadata recheck on 2026-04-23 reported `canvas.is_public: false`, so there is still no verified public project/share URL to use for the required share post; next action is to use the Zerve share/privacy control to make the notebook public, then reverify the final link; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - verified on: `2026-04-23`
 - verified by: `Jefke`
 
