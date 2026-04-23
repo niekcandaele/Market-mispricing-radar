@@ -47,7 +47,7 @@ The problem with raw market interfaces
 
 ### On-slide content
 - too many markets, too little prioritization
-- suspicious or fragile pricing can hide in plain sight
+- fragile or weakly supported pricing can hide in plain sight
 - raw odds alone do not explain which markets deserve inspection first
 
 ### Speaker notes
@@ -118,7 +118,7 @@ Why this fits ZerveHack
 - real deployment, not static screenshots or a fake mockup
 
 ### Speaker notes
-The Zerve story matters here. This project is not just a data notebook or a UI mockup. The same environment handles ingestion, scoring, explanation generation, and deployment.
+The Zerve story matters here. This project goes beyond notebook output alone. The same environment handles ingestion, scoring, explanation generation, and deployment.
 
 ## Slide 8, MVP honesty and next steps
 
@@ -161,7 +161,7 @@ This is the strongest demo slide. Start on the Radar, then drill into one market
 
 ### Slide 5, Why Zerve matters
 Speaker notes:
-This is a strong ZerveHack fit because the notebook pipeline and deployed product live in one environment. It is not a disconnected notebook or a static mockup.
+This is a strong ZerveHack fit because the notebook pipeline and deployed product live in one environment. It turns live notebook analysis into a usable deployed product.
 
 ### Slide 6, Live now / honest room to grow
 Speaker notes:

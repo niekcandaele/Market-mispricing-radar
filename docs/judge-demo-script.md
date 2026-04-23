@@ -70,7 +70,7 @@ Point out:
 
 Say:
 
-"This is not a static mockup. The deployed Streamlit app is reading live notebook outputs from the real Zerve pipeline end to end."
+"This is a real deployed workflow. The deployed Streamlit app is reading live notebook outputs from the real Zerve pipeline end to end."
 
 ## Strongest proof points to mention
 

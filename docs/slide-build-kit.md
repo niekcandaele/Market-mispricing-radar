@@ -102,7 +102,7 @@ Use:
 On-slide emphasis:
 - notebook pipeline and deployed app live in one environment
 - analysis becomes a usable product
-- not a notebook-only project or a fake mockup
+- turns live notebook analysis into a usable deployed product
 
 ### Slide 7, Proof / accomplishments
 Use:
