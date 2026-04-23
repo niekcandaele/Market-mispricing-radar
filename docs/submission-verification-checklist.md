@@ -142,8 +142,8 @@ Use it before recording, presenting, or submitting so the project is checked int
   - `./scripts/check_safe_local_demo.sh`
 - goal: reconfirm shortly before submission work that the locked safe local default still passes the exact intended story arc without manual repair steps
 - observed result: passed, the one-command sweep launched the app, verified Radar, confirmed the Methodology honesty beat, clicked the real `Focus in detail` control on the GTA card, and then verified true detail-only markers including `Primary signal`, `Why this market is flagged`, and `Observed market signals`
-- notable observed values: `refresh_id` `refresh-20260422T231924Z`
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260422T231924Z.json`
+- notable observed values: `refresh_id` `refresh-20260423T125009Z`
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260423T124916Z.json`
 - note: the `refresh_id` and evidence filename are UTC-stamped, while this verification entry is dated in local Europe/Brussels time
 - status: passed
 
