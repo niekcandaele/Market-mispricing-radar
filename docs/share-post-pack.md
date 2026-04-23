@@ -42,7 +42,7 @@ Current blocker:
 - the gallery/community path is separate and should not be assumed to be the required project link
 - current baseline check confirms that this route can return the generic Zerve shell with `200`, so success must mean the actual public project page renders, not just that the route responds
 - reusable recheck helper: `python3 scripts/check_zerve_public_share.py`
-- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T083743Z.json`
+- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T091856Z.json`
 - if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
