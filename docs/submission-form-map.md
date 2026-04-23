@@ -104,7 +104,8 @@ Use:
 - `docs/share-post-pack.md`
 
 Blocking note:
-- if the project is still not public in Zerve or the public Zerve project/share URL is still unresolved, stop and verify that link before trying to satisfy the share-post requirement
+- if the project is still not public in Zerve, first use the Zerve share/privacy control to make it public
+- after that, verify the exact public Zerve project/share URL before trying to satisfy the share-post requirement
 - latest authenticated evidence: `canvas.is_public: false` in `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 Default recommendation:

@@ -13,6 +13,7 @@ Google Workspace artifact creation itself is no longer blocked, because the auth
 Current project-level sharp blocker:
 - the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
 - that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
+- the operator action is now explicit: use the Zerve share/privacy control to make the notebook public, then recheck the final public URL
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 Relevant demo-path note:

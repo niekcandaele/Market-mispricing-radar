@@ -33,7 +33,9 @@ Default link choice:
 Current blocker:
 - the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
 - do not guess it from notebook ids, preview hosts, or repo notes
-- this pack needs the project to be made public in Zerve and then rechecked, or a human-confirmed final public link
+- the next operator action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
+- the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
+- if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 ## Tagging note
@@ -86,7 +88,8 @@ Before posting:
 - confirm which platform to use
 - confirm exact tag on that platform
 - confirm the public project link to include
-- if the project is still not public in Zerve or the public project/share URL is still unresolved, stop and get a clean verified link before posting
+- if the project is still not public in Zerve, first flip the Zerve share/privacy toggle and then get a clean verified project/share link before posting
+- if the project is public but the URL is still unresolved, stop and reverify the exact final link before posting
 - use one clean screenshot only
 - keep the tone product-facing, not repo-facing
 - do not mention local fallback commands in the public post

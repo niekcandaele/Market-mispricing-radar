@@ -52,7 +52,9 @@ Why:
 - the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check currently reports `canvas.is_public: false`
 - that means there is no verified public project/share URL to use yet, not just a missing copied link
 - that link is needed for the required public share post and should not be guessed from notebook ids, preview hosts, or repo notes
-- this now needs either the project to be made public in Zerve and then rechecked, or a human-confirmed final public link
+- the blocker is now operationally clear: first make the notebook public in Zerve, then recheck the resulting public project/share URL
+- the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem
+- if the UI path is unavailable, the alternative is a human-confirmed final public link after the project has been made public
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 ### Verified but still optional
@@ -89,7 +91,7 @@ If the public project/share URL blocker clears:
 1. keep the already verified local demo as the chosen safe path unless a fresh live preview opens cleanly enough to justify switching
 2. record the video against the locked safe demo path
 3. fill the submission form
-4. make the project public in Zerve if it is not already, then verify the resulting public project/share URL
+4. use the Zerve share/privacy control to make the project public if it is not already, then verify the resulting public project/share URL
 5. publish the required public share post using the prepared draft pack and human approval
 6. run the final verification pass
 7. update the final asset register
