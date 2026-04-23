@@ -11,7 +11,9 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 Current project-level sharp blocker:
-- the exact final public Zerve project/share URL is still unresolved, which blocks the required public share post until that link is verified
+- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
+- that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app

@@ -208,6 +208,8 @@ It does **not** yet have:
 - the required public share post and its final public URL
 
 Current sharp blocker:
-- the exact final public Zerve project/share URL is still unresolved, so the share-post step is prepared but intentionally blocked until that link is verified
+- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
+- the share-post step is therefore prepared but intentionally blocked until the project is made public in Zerve and the resulting public link is verified
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

@@ -129,7 +129,8 @@ Do:
 - default to one simple LinkedIn post unless there is a better human preference
 - use the prepared draft pack instead of improvising under time pressure
 - attach one clean screenshot and the final public project link
-- if the public Zerve project/share URL is still unresolved, stop and verify that link before posting
+- if the project is still not public in Zerve or the public Zerve project/share URL is still unresolved, stop and verify that link before posting
+- latest authenticated evidence currently says `canvas.is_public: false`, so treat the share-post path as blocked until that changes or a human provides the final public link
 - confirm the exact Zerve tag on the chosen platform before posting
 
 Reference:
