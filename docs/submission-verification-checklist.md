@@ -83,7 +83,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] confirm the exact Zerve tag on the chosen platform
 - [ ] attach one clean screenshot and the final public project link
 - [ ] if the latest public-status check still says the project is not public in Zerve, first use the Zerve share/privacy control to make it public
-- [ ] after the privacy change, verify the exact final public Zerve project/share URL before posting
+- [ ] after the privacy change, first verify the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- [ ] if a different public route is used, confirm it was chosen deliberately and verified, not silently swapped in from the gallery/community path
 - [ ] confirm the latest public-status check is no longer `canvas.is_public: false` before treating the share-post path as unblocked
 - [ ] verify the post is actually published before treating the requirement as done
 

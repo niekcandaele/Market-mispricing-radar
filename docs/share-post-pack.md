@@ -28,6 +28,8 @@ Default screenshot:
 
 Default link choice:
 - use the final public Zerve project/share link if that is the expected hackathon proof link
+- after the notebook is made public, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
@@ -35,6 +37,8 @@ Current blocker:
 - do not guess it from notebook ids, preview hosts, or repo notes
 - the next operator action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
+- the first recheck target after the toggle is the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- the gallery/community path is separate and should not be assumed to be the required project link
 - if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
@@ -88,8 +92,9 @@ Before posting:
 - confirm which platform to use
 - confirm exact tag on that platform
 - confirm the public project link to include
-- if the project is still not public in Zerve, first flip the Zerve share/privacy toggle and then get a clean verified project/share link before posting
+- if the project is still not public in Zerve, first flip the Zerve share/privacy toggle and then check the notebook share route for this project
 - if the project is public but the URL is still unresolved, stop and reverify the exact final link before posting
+- do not silently swap in the gallery/community route unless that exact route has been consciously chosen and verified
 - use one clean screenshot only
 - keep the tone product-facing, not repo-facing
 - do not mention local fallback commands in the public post
