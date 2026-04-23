@@ -18,7 +18,7 @@ Now I can drill into one market and see why it was flagged, what signals are dri
 
 The Methodology view keeps the MVP honest. This version is intentionally Polymarket-first and explanation-rich, with clear notes about scope and limitations.
 
-And the Zerve story matters here too. This is not a static mockup. The deployed Streamlit app is reading outputs from a real Zerve notebook pipeline end to end, turning live analysis into a usable product." 
+And the Zerve story matters here too. This is a real deployed workflow. The deployed Streamlit app is reading outputs from a real Zerve notebook pipeline end to end, turning live analysis into a usable product." 
 
 ## Slightly fuller script, about 90 seconds
 

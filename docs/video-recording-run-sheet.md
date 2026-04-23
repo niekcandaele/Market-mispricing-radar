@@ -88,7 +88,7 @@ Screen:
 - keep the close simple
 
 Say:
-The whole workflow runs through a real Zerve notebook-to-app pipeline, so this is not a static mockup. It is live analysis turned into a usable product.
+The whole workflow runs through a real Zerve notebook-to-app pipeline, so this is a real deployed workflow. It is live analysis turned into a usable product.
 
 ## Fast fallback version, under 60 seconds
 

@@ -89,7 +89,7 @@ Use:
 
 On-slide emphasis:
 - Polymarket-first MVP
-- explainable component-based scoring
+- explainable fragility scoring
 - honest scope and limitations
 
 Best reason to include:

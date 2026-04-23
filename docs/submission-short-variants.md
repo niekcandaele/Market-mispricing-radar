@@ -65,7 +65,7 @@ The current MVP is Polymarket-first and intentionally honest about that scope.
 ## Why this fits ZerveHack
 
 ### Short version
-This project turns live notebook analysis into a deployed product inside Zerve, instead of stopping at a notebook or a static mockup.
+This project turns live notebook analysis into a deployed product inside Zerve, instead of stopping at notebook output alone.
 
 ### Slightly longer version
 Market Mispricing Radar is a strong ZerveHack fit because the same environment handles live ingestion, scoring, explanation generation, and the deployed Streamlit app can actually be inspected and used.

@@ -71,7 +71,7 @@ Explainable product, not just a score dump
 Why the output is worth trusting
 
 ### Bullets
-- explainable component-based scoring
+- explainable fragility scoring
 - visible QA context and caveats
 - evidence-first product framing
 - real deployed app connected to notebook outputs
@@ -84,7 +84,7 @@ Why this fits ZerveHack
 ### Bullets
 - notebook pipeline and deployed app live in one environment
 - analysis becomes a usable product
-- real deployment, not a static mockup
+- real deployment, not just notebook output
 
 ## Slide 8, Next steps
 
@@ -144,7 +144,7 @@ Why Zerve matters
 #### Bullets
 - notebook pipeline and deployed app live in one environment
 - analysis becomes a usable product
-- real deployment, not a static mockup
+- real deployment, not just notebook output
 
 ### Slide 6, Live now / honest room to grow
 #### Title
