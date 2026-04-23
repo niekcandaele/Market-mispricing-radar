@@ -34,8 +34,9 @@ Default link choice:
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
-- the exact final public Zerve project/share URL is still unresolved because the latest authenticated canvas metadata check reports `canvas.is_public: false`
-- do not guess it from notebook ids, preview hosts, or repo notes
+- there is still no verified public Zerve project/share URL to use for the required share post
+- the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the latest repo-side gate still remains red
+- do not guess the link from notebook ids, preview hosts, or repo notes
 - the next operator action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
 - the first recheck target after the toggle is the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
@@ -43,6 +44,7 @@ Current blocker:
 - current baseline check confirms that this route can return the generic Zerve shell with `200`, so success must mean the actual public project page renders, not just that the route responds
 - reusable recheck helper: `python3 scripts/check_zerve_public_share.py`
 - it can use `--bearer`, `ZERVE_BEARER`, or a best-effort Chromium token extraction path for the authenticated check
+- only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - the checker now emits a `summary` block and exits non-zero until the share-post link is actually ready
 - latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T111000Z.json`
 - if the project is already public by the time this is used, still reverify the exact final link before posting
