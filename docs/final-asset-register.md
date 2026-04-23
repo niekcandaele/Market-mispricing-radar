@@ -135,7 +135,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - video link checked: pending final recording and upload
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - public project status checked: yes, authenticated Zerve canvas metadata recheck on 2026-04-23 reported `canvas.is_public: false`, so there is still no verified public project/share URL to use for the required share post; next action is to use the Zerve share/privacy control to make the notebook public, then reverify the final link; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-- notebook public-route baseline checked: yes, `python3 scripts/check_zerve_public_share.py` refreshed `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T111000Z.json`; the checker still reported `summary.ready_for_share_post_link: false`, the notebook URL still returned the generic Zerve shell with `200`, and the best-effort Chromium token extraction path only reached `403`, so authenticated public visibility is still not confirmed
+- notebook public-route baseline checked: yes, `python3 scripts/check_zerve_public_share.py` refreshed `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T215030Z.json`; the checker still reported `summary.ready_for_share_post_link: false`, the notebook URL still returned the generic Zerve shell with `200`, and the best-effort Chromium token extraction path only reached `403`, so authenticated public visibility is still not confirmed
 - verified on: `2026-04-23`
 - verified by: `Jefke`
 
