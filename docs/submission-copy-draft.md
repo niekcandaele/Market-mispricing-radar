@@ -33,7 +33,7 @@ Market Mispricing Radar is an explainable triage surface for prediction markets.
 
 It:
 - ingests live market data
-- computes an anomaly or fragility-oriented score
+- computes a fragility-oriented score
 - ranks the markets that deserve the most scrutiny
 - explains why each market surfaced
 - exposes caveats instead of hiding them
@@ -93,8 +93,8 @@ The app includes:
 ## Current MVP scope
 
 - Polymarket-first
-- single-source anomaly or fragility scoring
-- explainable component-based ranking
+- single-source fragility scoring
+- explainable ranking
 - deployed app inside Zerve
 
 ## What is next
