@@ -8,7 +8,7 @@ Use it when the remaining work needs to happen in the right order without thrash
 
 ## Current blocker context
 
-At the moment, the repo-side submission package is strong, and the blocker is no longer Google Workspace artifact creation itself.
+At the moment, the submission package is strong, and the blocker is no longer Google Workspace artifact creation itself.
 
 Current state:
 - Google Slides and Google Docs can be created through the authenticated `gws` CLI path

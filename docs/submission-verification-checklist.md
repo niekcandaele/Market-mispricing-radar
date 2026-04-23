@@ -8,7 +8,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ## Current verification status
 
-- repo-side narrative artifacts: present
+- narrative artifacts: present
 - local fallback demo path: verified end to end
 - live Zerve preview path: the new Browserless + Playwright path can sign into Zerve and reopen the project again, the real preview trigger has been re-confirmed, the valid deployed Streamlit script was directly recovered and patched back to the repo app, and a fresh 2026-04-22 recheck now shows the concrete behavior clearly: direct bearer-auth `POST /script/<deployment_script_id>/deploy_preview` returns `200`, emits fresh preview metadata, the new host resolves immediately, briefly serves ELB `503` during warm-up, then turns into a real rendered Streamlit app
 - Google Slides deck: compact deck now exists in Google Workspace `Documents`, and the latest pass tightened slide copy, improved hierarchy, added proof-structure elements, synced embedded speaker notes to the safe demo-path plan, and cleared the compact submission-deck bar; only optional low-risk layout polish remains if a clearly stronger pass appears
@@ -63,7 +63,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] demo link reference created in Google Workspace `Documents`
 - [x] assets stored cleanly in Google Workspace `Documents`
 - [x] authenticated `gws` CLI path for Google Workspace creation is available
-- [x] repo-side office-layer handoff checklist exists
+- [x] office-layer handoff checklist exists
 - [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs
 
 ## Submission-form checks
