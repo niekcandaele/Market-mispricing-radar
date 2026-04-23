@@ -123,7 +123,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- project link to use: unresolved blocker, because the latest authenticated canvas metadata check reports `canvas.is_public: false`; first use the Zerve share/privacy control to make the notebook public, then recheck the final public project/share URL before posting
+- project link to use: there is still no verified public Zerve project/share URL to use here; first use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py` and only clear this when it reports `summary.ready_for_share_post_link: true`
 - posted on: pending share action
 
 ## Last verification snapshot
