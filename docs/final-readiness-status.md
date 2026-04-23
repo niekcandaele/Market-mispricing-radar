@@ -11,7 +11,7 @@ Use it when someone needs the shortest honest answer to: is this ready, what is 
 Status: **near-ready, not submission-complete yet**
 
 Why:
-- the product and repo-side submission pack are strong
+- the product and submission pack are strong
 - the remaining gaps are concentrated in final demo/video/submission execution, with only optional low-risk deck polish left if a clearly better layout pass appears
 - the verified local fallback should now be treated as the locked safe demo path unless a fresh live Zerve preview opens cleanly at the final moment
 - the sharpest remaining blocker is the required public share-post link path, which is still blocked because the authenticated Zerve canvas currently reports `is_public: false`
@@ -50,7 +50,7 @@ Why:
 
 ### Current blocker
 - there is still no verified public Zerve project/share URL to use for the required share post
-- the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the repo-side public-share gate still remains red
+- the latest authenticated canvas metadata previously reported `canvas.is_public: false`, and the public-share gate still remains red
 - that link should not be guessed from notebook ids, preview hosts, or repo notes
 - the blocker is now operationally clear: first make the notebook public in Zerve, then recheck the resulting public project/share URL
 - the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem
@@ -99,7 +99,7 @@ If the public project/share URL blocker clears:
 8. update the final asset register
 
 If the blocker does not clear in time:
-- keep the repo-side package as the source of truth
+- keep the repo docs as the source of truth
 - use the verified local fallback for demo and recording
 - treat the live Zerve preview as optional only if it opens cleanly right before submission
 - stay honest that the unfinished pieces are the remaining recording, form-fill, required share-post, and final-link execution steps, with the share-post specifically blocked on the project still not being publicly reachable in Zerve
