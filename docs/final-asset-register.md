@@ -56,10 +56,10 @@ The repo-side source material is strong, the Google Workspace office artifacts a
   - `docs/slide-copy-pack.md`
 
 ### Speaker notes / presenter notes
-- status: created, structured presenter notes populated, now includes default visual pairings for the compact deck, safe demo-path guidance, and corrected alignment to the actual compact slide order, and is ready for recording use
+- status: created, structured presenter notes populated, resynced on 2026-04-23 with readback verification, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, corrected to match the compact deck slide order, and updated on 2026-04-22 to use the GTA drilldown as the current safe local default
+- version note: initial CLI-created notes doc with starter content placed in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes, extended with default office-layer visual cues, aligned to the safe local-fallback demo plan, corrected to match the compact deck slide order, updated on 2026-04-22 to use the GTA drilldown as the current safe local default, and resynced on 2026-04-23 after the latest speaking-pack wording cleanup
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
