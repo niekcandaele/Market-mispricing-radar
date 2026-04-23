@@ -90,12 +90,13 @@ All of these need to be true:
 
 If the public project/share URL blocker clears:
 1. keep the already verified local demo as the chosen safe path unless a fresh live preview opens cleanly enough to justify switching
-2. record the video against the locked safe demo path
-3. fill the submission form
-4. use the Zerve share/privacy control to make the project public if it is not already, then run `python3 scripts/check_zerve_public_share.py` and only proceed if it reports `summary.ready_for_share_post_link: true`
-5. publish the required public share post using the prepared draft pack and human approval
-6. run the final verification pass
-7. update the final asset register
+2. right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh`
+3. record the video against the locked safe demo path
+4. fill the submission form
+5. use the Zerve share/privacy control to make the project public if it is not already, then run `python3 scripts/check_zerve_public_share.py` and only proceed if it reports `summary.ready_for_share_post_link: true`
+6. publish the required public share post using the prepared draft pack and human approval
+7. run the final verification pass
+8. update the final asset register
 
 If the blocker does not clear in time:
 - keep the repo-side package as the source of truth

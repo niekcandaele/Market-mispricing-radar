@@ -58,6 +58,14 @@ These should be treated as useful breadcrumbs, not permanent URLs.
 ### Local fallback demo
 This is now the submission-safe default path unless a fresh live preview opens cleanly at the final check.
 
+Right before the real recording take on this path, run the one-command final sweep:
+
+```bash
+./scripts/check_safe_local_demo.sh
+```
+
+Then launch the demo with:
+
 ```bash
 ./scripts/run_local_demo.sh
 ```
