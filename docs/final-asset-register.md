@@ -118,13 +118,13 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 ## Required public share post
 
-- status: blocked pending human platform choice and approval plus a verified public Zerve link
+- status: blocked until a verified public Zerve link exists and the human chooses and approves the final platform/post
 - recommended platform: LinkedIn
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
 - project link to use: pending until the notebook is made public in Zerve and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
-- posted on: pending approved share action
+- posted on: pending verified public link plus human platform choice and approval
 
 ## Last verification snapshot
 
@@ -136,7 +136,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - public project status checked: yes, latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in generic shell + auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`
-- verified on: `2026-04-23`
+- verified on: `2026-04-24`
 - verified by: `Jefke`
 
 ## References
