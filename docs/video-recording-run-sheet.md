@@ -21,7 +21,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 
 - if using the safe local default, run `./scripts/check_safe_local_demo.sh`
 - confirm the chosen demo entrypoint actually opens
-- default to the verified local fallback path
+- default to the locked safe local default path
 - only switch to the live Zerve preview if it is clearly healthy right before recording
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section, defaulting to `GTA VI released before June 2026?` on the current safe local path
@@ -132,7 +132,7 @@ Override with env vars if needed, for example `MMR_SERVER_PORT=8765 ./scripts/ru
 
 - do one clean take instead of over-explaining
 - keep the story focused on inspection, explainability, and credibility
-- treat the verified local fallback as the safe default and only upgrade to live if it is clearly healthy
+- treat the locked safe local default as the safe default and only upgrade to live if it is clearly healthy
 - better to sound honest and sharp than overclaiming
 - if needed, use `docs/video-voiceover-script.md` to keep the spoken pass tight and consistent
 - if the safe local sweep fails, stop and fix that before recording instead of improvising around it

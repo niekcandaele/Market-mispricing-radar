@@ -46,11 +46,11 @@ And this is not a mockup. The app is deployed from a real Zerve notebook pipelin
 - pause briefly after the hook and before the Zerve close
 - do not say "arbitrage" unless a shorter fallback really needs the word
 - avoid over-explaining implementation details during the recording
-- use the verified local fallback as the default recording path and keep the same script if a live upgrade is not clearly healthy
+- use the locked safe local default as the default recording path and keep the same script if a live upgrade is not clearly healthy
 
 ## Screen sync reminders
 
-These sync points should work cleanly on the verified local fallback path and do not require a live-preview-only setup.
+These sync points should work cleanly on the locked safe local default path and do not require a live-preview-only setup.
 
 ### Radar section
 Use while saying:
