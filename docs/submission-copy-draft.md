@@ -74,7 +74,7 @@ The app includes:
 - live Polymarket ingestion inside Zerve needed more realistic fetch behavior before it became stable
 - notebook editing and deployment needed a more reliable validation path than trusting the interface alone
 - live deployment previews could look healthy before the actual app output was ready, so we had to verify the rendered app directly
-- turning a technical proof into a submission-ready product took multiple rounds of app-flow, copy, and presentation polish
+- turning a working prototype into a submission-ready product took multiple rounds of app-flow, copy, and presentation polish
 
 ## Accomplishments we are proud of
 
@@ -88,7 +88,7 @@ The app includes:
 
 - the most credible MVP was not “predict fair value perfectly,” it was “rank what deserves scrutiny and explain why”
 - deployment validation has to check the rendered app, not just the surrounding interface state
-- for hackathons, product clarity and narrative polish matter almost as much as the underlying technical proof
+- for hackathons, product clarity and narrative polish matter almost as much as the underlying analysis and implementation
 
 ## Current MVP scope
 
