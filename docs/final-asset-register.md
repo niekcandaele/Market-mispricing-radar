@@ -135,10 +135,10 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
-- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, final submission-copy doc, slide speaker notes, and visible slide body copy still match the current repo wording after the latest safe-local proof-flow updates, so no further office resync was needed
+- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the current repo wording, and the final submission-copy doc was refreshed and read back again later the same day after the latest outward-facing wording polish
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
-- submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
+- submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest outward-facing wording cleanup
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
 - verified on: `2026-04-24`
