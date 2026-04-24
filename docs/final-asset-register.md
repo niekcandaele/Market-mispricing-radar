@@ -101,16 +101,16 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 ## Final video asset
 
-- status: not recorded yet
+- status: pending recording session
 - title or filename: pending final recording output
-- location or upload URL: pending video upload
+- location or upload URL: pending final video upload
 - recorded on: pending recording session
 - notes: use `docs/video-recording-run-sheet.md`
 
 ## Final submission form
 
-- status: not submitted yet
-- Devpost submission URL: pending real submission
+- status: pending final submission pass
+- Devpost submission URL: pending live submission URL capture
 - final project URL used in form: pending final form fill
 - video URL used in form: pending final video upload
 - screenshot/image URL used in form: pending final form fill
@@ -118,13 +118,13 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 ## Required public share post
 
-- status: pending human platform choice and approval
+- status: blocked pending human platform choice and approval plus a verified public Zerve link
 - recommended platform: LinkedIn
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
 - project link to use: pending until the notebook is made public in Zerve and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
-- posted on: pending share action
+- posted on: pending approved share action
 
 ## Last verification snapshot
 
