@@ -20,15 +20,13 @@ Use it to answer four questions quickly:
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the safe-default local choice
 
 ### Slides
-- status: compact 6-slide deck now populated, tightened, styled, given embedded speaker notes, pushed through a visually coherent first background pass in Google Workspace `Documents`, given a final copy-tightening readability pass, upgraded with stronger section-hierarchy kickers on the body slides, and given right-side visual proof cards on the core workflow/product/zerve/next slides
+- status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents`, with embedded speaker notes and proof visuals already in place
 - repo source material: `docs/submission-deck-outline.md`
-- required next artifact: none on the deck structure itself; only optional low-risk layout polish if a clearly better visual pass appears
-- remaining work: optional final layout polish only if it is clearly worth the risk
+- remaining work: optional low-risk layout polish only if it is clearly worth it
 
 ### Video / talking track
-- status: structured presenter-notes doc exists in Google Workspace `Documents`, aligns with the compact deck order, and the deck speaker notes reflect the same safe demo-path plan
+- status: presenter notes exist in Google Workspace `Documents`, align with the compact deck order, and match the deck speaker notes
 - repo source material: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
-- required next artifact: actual recording execution, not another structural notes pass
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
