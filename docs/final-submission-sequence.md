@@ -12,7 +12,7 @@ The submission package is strong, and Google Workspace artifact creation is no l
 
 Current state:
 - Google Slides and Google Docs are available through the authenticated `gws` CLI path
-- the locked safe local default was reverified on 2026-04-24 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T133334Z.json` (`refreshId`: `refresh-20260424T133232Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- the locked safe local default was reverified on 2026-04-24 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T140336Z.json` (`refreshId`: `refresh-20260424T140336Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
 This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.
@@ -92,6 +92,7 @@ Why after deck and notes:
 Do:
 - run the recording preflight checklist first
 - on the safe local default path, run `./scripts/check_safe_local_demo.sh` right before the real take
+- use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current proof, and let the script archive the previously active safe-local baseline automatically
 - use the one-take run sheet
 - use the voiceover script if a literal spoken pass is helpful
 - keep the video to one strong story arc

@@ -9,6 +9,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 ## Demo path check
 
 - [ ] run `./scripts/check_safe_local_demo.sh` before the real take if using the safe local default path
+- [ ] keep the fresh retained JSON that script writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current proof for the take
 - [ ] default to the locked safe local default as the primary recording path
 - [ ] only switch to the live Zerve preview if the freshest preview opens cleanly right before recording
 - [ ] if trying the live path, reopen the freshest preview from the Zerve deploy tab instead of trusting an old rotated URL

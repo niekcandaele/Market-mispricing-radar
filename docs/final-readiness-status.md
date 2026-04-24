@@ -21,7 +21,7 @@ Why:
 ### Product / demo
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
-- locked safe local default demo exists and was reverified on 2026-04-24 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T133334Z.json` (`refreshId`: `refresh-20260424T133232Z`)
+- locked safe local default demo exists and was reverified on 2026-04-24 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T140336Z.json` (`refreshId`: `refresh-20260424T140336Z`)
 - product and demo polish are done
 
 ### Narrative / presentation sources
