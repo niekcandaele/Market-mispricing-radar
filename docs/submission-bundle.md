@@ -17,6 +17,7 @@ Use it to answer four questions quickly:
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
+- office note: the live Google Demo Link Notes doc was refreshed and read back again after the latest safe-local recheck, so the office-layer demo reference now matches the current retained proof too
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the locked safe local default choice
 
 ### Slides
