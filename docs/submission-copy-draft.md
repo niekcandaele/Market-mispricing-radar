@@ -71,23 +71,23 @@ The app includes:
 
 ## Challenges we ran into
 
-- Polymarket ingestion inside Zerve needed browser-like request headers and request-shape fixes before live fetching was stable
-- notebook editing and deployment flow needed a stronger hybrid execution and validation path than raw UI interaction alone
-- live deployment previews could look healthy in the interface before the real app output was actually ready, so we had to verify rendered output directly
-- getting from technical proof to submission-ready product quality took multiple rounds of app-flow, copy, and presentation polish
+- live Polymarket ingestion inside Zerve needed more realistic fetch behavior before it became stable
+- notebook editing and deployment needed a more reliable validation path than trusting the interface alone
+- live deployment previews could look healthy before the actual app output was ready, so we had to verify the rendered app directly
+- turning a technical proof into a submission-ready product took multiple rounds of app-flow, copy, and presentation polish
 
 ## Accomplishments we are proud of
 
 - proving a real end-to-end Zerve pipeline from notebook blocks to deployed Streamlit app
 - building an explainable ranking flow rather than an opaque score dump
 - shipping a polished Radar / Detail / Methodology product flow
-- improving live category quality and fixing false-positive labeling in the deployed app
-- turning the project into something judges can inspect and understand instead of stopping at code completion
+- improving live category quality and reducing misleading labels in the deployed app
+- turning the project into something judges can inspect and understand instead of leaving it as a technical prototype
 
 ## What we learned
 
 - the most credible MVP was not “predict fair value perfectly,” it was “rank what deserves scrutiny and explain why”
-- deployment validation has to check real rendered output, not just click logs or editor state
+- deployment validation has to check the rendered app, not just the surrounding interface state
 - for hackathons, product clarity and narrative polish matter almost as much as the underlying technical proof
 
 ## Current MVP scope
