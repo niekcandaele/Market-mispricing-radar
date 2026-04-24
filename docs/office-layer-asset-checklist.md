@@ -11,8 +11,7 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 Current project-level sharp blocker:
-- there is still no verified public Zerve project/share URL
-- authenticated canvas metadata evidence still says `canvas.is_public: false`, and the latest public-share gate is still red
+- there is still no verified public Zerve project/share URL. Authenticated canvas metadata evidence still says `canvas.is_public: false`, and the latest public-share gate is still red.
 - that blocks the required public share post until the project is made public in Zerve and the resulting public link is verified
 - the next action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`

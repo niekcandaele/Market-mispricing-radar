@@ -34,8 +34,7 @@ Default link choice:
 - if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
-- there is still no verified public Zerve project/share URL to use for the required share post
-- the latest authenticated canvas metadata evidence still says `canvas.is_public: false`, and the latest public-share gate is still red
+- there is still no verified public Zerve project/share URL for the required share post. The latest authenticated evidence still says `canvas.is_public: false`, and the public-share gate is still red.
 - do not guess the link from notebook ids, preview hosts, or repo notes
 - the next action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
