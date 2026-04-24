@@ -8,14 +8,14 @@ Use it when the remaining work needs to happen in the right order without thrash
 
 ## Current blocker context
 
-At the moment, the submission package is strong, and the blocker is no longer Google Workspace artifact creation itself.
+The submission package is strong, and Google Workspace artifact creation is no longer the blocker.
 
 Current state:
-- Google Slides and Google Docs can be created through the authenticated `gws` CLI path
-- the final live Zerve preview recheck now has a concrete behavior model: a fresh preview host can resolve immediately, return ELB `503` during warm-up, then turn healthy about 45 seconds later
-- the verified local fallback is still the safe default demo path for recording and submission unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- Google Slides and Google Docs are available through the authenticated `gws` CLI path
+- the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
+- the verified local fallback remains the safe default demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 
-This doc can now be used for the office-layer creation steps immediately, while the live demo recheck remains a separate browser-side check.
+This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.
 
 ## Submission-day order of operations
 
