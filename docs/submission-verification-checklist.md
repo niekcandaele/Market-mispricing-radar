@@ -25,7 +25,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] confirm one top market opens cleanly in Market Detail
 - [ ] confirm Methodology view still matches current product framing
 - [ ] if the newest host first returns ELB `503`, wait roughly 45 to 60 seconds and retry once before abandoning it
-- [ ] if the newest host never emits preview metadata, never resolves, or never clears warm-up `503`, stop here and use the verified local fallback for recording/submission instead of chasing rotating preview URLs
+- [ ] if the newest host never emits preview metadata, never resolves, or never clears warm-up `503`, stop here and use the locked safe local default for recording/submission instead of chasing rotating preview URLs
 
 ### Local fallback demo
 - [x] run `./scripts/run_local_demo.sh`
@@ -103,7 +103,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] keep the recording to one coherent story arc
 - [ ] verify the chosen demo path before recording begins
 - [ ] avoid relying on an old rotated preview URL without rechecking it
-- [ ] if live preview is still unstable, explicitly choose the verified local fallback and record against that path
+- [ ] if live preview is still unstable, explicitly choose the locked safe local default and record against that path
 
 ## Lightweight smoke-check notes
 

@@ -21,7 +21,7 @@ Current project-level sharp blocker:
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app
-- the verified local fallback should still be treated as the safe default path for recording and submission unless a final live check turns clean enough to justify switching
+- the locked safe local default should still be treated as the safe default path for recording and submission unless a final live check turns clean enough to justify switching
 
 This checklist can still be executed now for the Workspace artifact portion.
 
@@ -61,7 +61,7 @@ Source materials:
 ### 3. Final demo link reference
 Create or store:
 - one clean note in the office layer with the final chosen demo path
-- default that note to the verified local fallback unless a last-minute live check actually opens cleanly
+- default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - status: demo-link notes doc exists and already captures the safe default path plus the default visual pairings for recording
 

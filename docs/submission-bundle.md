@@ -14,7 +14,7 @@ Use it to answer four questions quickly:
 
 ### Demo
 - status: usable
-- default path: verified local fallback, which remains the locked safe recording/submission path because it is one-command and presentation-safe
+- default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the safe-default local choice
@@ -44,7 +44,7 @@ Use it to answer four questions quickly:
 - open the current deployed Streamlit preview from the Zerve deploy tab, or recover it directly with bearer-auth `POST /script/<deployment_script_id>/deploy_preview`
 - preview URLs rotate, so the deploy tab or direct script trigger is the reliable source of the latest live demo link
 - expect brief warm-up behavior on a fresh host: the current observed pattern is ELB `503`, sometimes one timeout, then `200` and a real Streamlit render within about 45 seconds
-- if the latest host never clears that warm-up phase, do not spend more submission time on it, use the verified local fallback instead
+- if the latest host never clears that warm-up phase, do not spend more submission time on it, use the locked safe local default instead
 
 ### Known recent working previews
 - `https://1237c1f1-ee724b30.hub.zerve.cloud` (2026-04-22 fresh recovery, observed `503` warm-up before stable `200`)
@@ -182,7 +182,7 @@ Defaults:
 
 While the live-preview path remains an optional upgrade:
 1. keep polishing the compact deck and presenter notes
-2. treat the verified local fallback as the presentation-safe default path
+2. treat the locked safe local default as the presentation-safe default path
 3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
 4. use the repaired direct deploy-script path if a fresh live host needs to be regenerated right before recording
 
@@ -198,7 +198,7 @@ Right now the project looks much stronger than a code-only prototype.
 
 It has:
 - a live deployed demo path
-- a verified local fallback demo path
+- a locked safe local default demo path
 - a polished deployed app
 - a demo script
 - a deck outline with speaker notes

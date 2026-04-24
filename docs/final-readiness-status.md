@@ -13,7 +13,7 @@ Status: **near-ready, not submission-complete yet**
 Why:
 - the product and submission pack are strong
 - the remaining gaps are concentrated in final demo/video/submission execution, with only optional low-risk deck polish left if a clearly better layout pass appears
-- the verified local fallback should now be treated as the locked safe demo path unless a fresh live Zerve preview opens cleanly at the final moment
+- the locked safe local default should remain the demo path unless a fresh live Zerve preview opens cleanly at the final moment
 - the sharpest remaining blocker is the required public share-post link path, which is still blocked because the authenticated Zerve canvas currently reports `is_public: false`
 
 ## What is already done
@@ -21,7 +21,7 @@ Why:
 ### Product / demo
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
-- verified local fallback demo exists
+- locked safe local default demo exists
 - product and demo polish are done
 
 ### Narrative / presentation sources
@@ -61,7 +61,7 @@ Why:
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
 - the live deploy repair path is verified: use the in-editor `Start Preview Deployment` action / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` remains the clean repair seam when needed
 - a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
-- current conclusion: the live preview is a usable optional upgrade, but the verified local fallback remains the safer default because it is scripted and presentation-safe
+- current conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the safer default because it is scripted and presentation-safe
 - Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path
 
 ### Still required even after blocker resolution
@@ -87,7 +87,7 @@ All of these need to be true:
 ## Best current guidance
 
 If the public project/share URL blocker clears:
-1. keep the already verified local demo as the chosen safe path unless a fresh live preview opens cleanly enough to justify switching
+1. keep the locked safe local default as the chosen path unless a fresh live preview opens cleanly enough to justify switching
 2. right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh`
 3. record the video against the locked safe demo path
 4. fill the submission form
@@ -98,7 +98,7 @@ If the public project/share URL blocker clears:
 
 If the blocker does not clear in time:
 - keep the docs as the source of truth
-- use the verified local fallback for demo and recording
+- use the locked safe local default for demo and recording
 - treat the live Zerve preview as optional only if it opens cleanly right before submission
 - stay honest that the unfinished pieces are the remaining recording, form-fill, required share-post, and final-link execution steps, with the share-post specifically blocked on the project still not being publicly reachable in Zerve
 
