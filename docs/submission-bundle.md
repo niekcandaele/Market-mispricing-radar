@@ -40,7 +40,7 @@ Use it to answer four questions quickly:
 
 ## Demo entrypoints
 
-### Preferred live demo
+### Optional live demo upgrade
 - open the current deployed Streamlit preview from the Zerve deploy tab, or recover it directly with bearer-auth `POST /script/<deployment_script_id>/deploy_preview`
 - preview URLs rotate, so the deploy tab or direct script trigger is the reliable source of the latest live demo link
 - expect brief warm-up behavior on a fresh host: the current observed pattern is ELB `503`, sometimes one timeout, then `200` and a real Streamlit render within about 45 seconds

@@ -73,10 +73,10 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - version note: created in `Documents` on 2026-04-21, then tightened into a paste-ready submission doc, repaired after a raw-markdown drift, and resynced to the latest repo wording on 2026-04-23, including the final fragility, usable-app, and weakly-supported problem-statement cleanups.
 
 ### Demo link reference
-- status: created and resynced on 2026-04-23 with readback verification
+- status: created, aligned to the locked safe local default, and resynced on 2026-04-23 with readback verification
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- version note: created in `Documents` on 2026-04-21 with the preferred live path, verified local fallback, drilldown defaults, and default visual pairings, then updated on 2026-04-22 and 2026-04-23 to lock the safe local default and record the one-command pre-take sweep plus the freshest safe-local verification evidence.
+- version note: created in `Documents` on 2026-04-21, then updated on 2026-04-22 and 2026-04-23 to lock the safe local default and record the one-command pre-take sweep plus the freshest safe-local verification evidence.
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`

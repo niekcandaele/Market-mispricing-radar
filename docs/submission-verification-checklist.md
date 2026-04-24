@@ -17,7 +17,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ## Demo checks
 
-### Preferred live demo
+### Optional live demo upgrade
 - [ ] open the current Zerve Streamlit preview from the deploy tab, using the in-editor preview control rather than the global header `Deploy` button if the UI bounces back to the generic chooser, or recover the same preview via direct bearer-auth `POST /script/<deployment_script_id>/deploy_preview`
 - [ ] confirm the app loads without runtime error
 - [ ] confirm sidebar shows live Zerve bundle context
