@@ -128,14 +128,14 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 ## Last verification snapshot
 
-- final demo link checked: local fallback path re-verified again on 2026-04-23 through `./scripts/check_safe_local_demo.sh` with refreshed GTA detail-drilldown evidence at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260423T124916Z.json`; optional live preview also verified on 2026-04-22 at `https://1237c1f1-ee724b30.hub.zerve.cloud/` after the expected warm-up window (`503` then `200`)
-- note: the latest evidence file is UTC-stamped and the captured `refreshId` inside it is `refresh-20260423T125009Z`
-- deck link checked: yes, Slides API readback confirmed compact 6-slide structure and updated speaker notes
-- notes link checked: yes, Docs API readback confirmed the rewritten slide-by-slide presenter notes and updated demo-link notes
+- final demo link checked: yes, the safe local path was re-verified on 2026-04-23, and the live preview remains a separately verified optional upgrade
+- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260423T124916Z.json` (`refreshId`: `refresh-20260423T125009Z`)
+- deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
+- notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
 - video link checked: pending final recording and upload
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
-- public project status checked: yes, the latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-- notebook public-route baseline checked: yes, `python3 scripts/check_zerve_public_share.py` refreshed `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`; the result is still generic shell + auth `403`, so `summary.ready_for_share_post_link: false`
+- public project status checked: yes, latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- notebook public-route baseline checked: yes, latest retained route-check evidence still ends in generic shell + auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`
 - verified on: `2026-04-23`
 - verified by: `Jefke`
 
