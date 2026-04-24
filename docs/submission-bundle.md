@@ -30,7 +30,7 @@ Use it to answer four questions quickly:
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
-- status: paste-ready submission copy exists, and the live Google submission-copy doc was refreshed and read back again to match the latest submission copy
+- status: paste-ready submission copy exists, and the live Google submission-copy doc was refreshed and reverified against the latest submission copy
 - source doc: `docs/submission-copy-draft.md`
 - remaining work: paste or adapt it into the actual hackathon submission form
 

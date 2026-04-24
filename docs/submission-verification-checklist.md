@@ -64,7 +64,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] assets stored cleanly in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] authenticated `gws` CLI path for Google Workspace creation is available
 - [x] office-layer handoff checklist exists
-- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs, and the submission-copy doc was refreshed and read back again to match the latest submission copy
+- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs, and the submission-copy doc was refreshed and reverified against the latest submission copy
 
 ## Submission-form checks
 

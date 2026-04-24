@@ -67,10 +67,10 @@ The main demo path, office artifacts, and submission materials are in place. The
   - `docs/presenter-cheat-sheet.md`
 
 ### Final submission copy reference
-- status: created, paste-ready submission copy is in place in Google Workspace and readback-verified against the latest repo submission copy
+- status: created, paste-ready submission copy is in place in Google Workspace and reverified against the latest submission copy
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
-- alignment note: readback-verified against the latest repo submission copy and kept aligned with the paste-ready submission baseline.
+- alignment note: reverified against the latest submission copy and kept aligned with the paste-ready submission baseline.
 
 ### Demo link reference
 - status: created, aligned to the locked safe local default, and readback-verified again after the 2026-04-24 demo-link refresh
