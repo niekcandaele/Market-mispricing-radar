@@ -67,10 +67,10 @@ The main demo path, office artifacts, and submission materials are in place. The
   - `docs/presenter-cheat-sheet.md`
 
 ### Final submission copy reference
-- status: created, paste-ready submission copy is in place in Google Workspace and readback-verified against the current repo wording
+- status: created, paste-ready submission copy is in place in Google Workspace and readback-verified against the latest repo submission copy
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
-- alignment note: readback-verified against the current repo wording and kept aligned with the paste-ready submission baseline.
+- alignment note: readback-verified against the latest repo submission copy and kept aligned with the paste-ready submission baseline.
 
 ### Demo link reference
 - status: created, aligned to the locked safe local default, and readback-verified again after the 2026-04-24 demo-link refresh
@@ -135,10 +135,10 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
-- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the current repo wording, and the final submission-copy doc was refreshed and read back again later the same day to match the current submission wording
+- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the latest repo wording, and the final submission-copy doc was refreshed and read back again later the same day to match the latest submission copy
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
-- submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy wording refresh
+- submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
 - verified on: `2026-04-24`

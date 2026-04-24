@@ -73,7 +73,7 @@ Source materials:
 ### 4. Final submission text reference
 Create or store:
 - one clean reference doc or note with the exact final wording used in the submission form
-- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the current submission wording, and was read back successfully again on 2026-04-24
+- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully again on 2026-04-24
 
 Source materials:
 - `docs/submission-form-map.md`

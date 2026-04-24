@@ -64,7 +64,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] assets stored cleanly in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] authenticated `gws` CLI path for Google Workspace creation is available
 - [x] office-layer handoff checklist exists
-- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs, and the submission-copy doc was refreshed and read back again to match the current submission wording
+- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs, and the submission-copy doc was refreshed and read back again to match the latest submission copy
 
 ## Submission-form checks
 
@@ -175,7 +175,7 @@ What is already verified or present:
 - demo script exists
 - compact Google Slides deck exists and has been read back successfully through the Workspace APIs
 - presenter-notes doc exists and has been read back successfully through the Workspace APIs
-- final submission-copy doc exists, was refreshed to match the current submission wording, and has been read back successfully through the Workspace APIs
+- final submission-copy doc exists, was refreshed to match the latest submission copy, and has been read back successfully through the Workspace APIs
 - demo-link reference doc exists and has been read back successfully through the Workspace APIs
 - short submission variants exist
 - video recording run sheet exists
