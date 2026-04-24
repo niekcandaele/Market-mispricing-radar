@@ -45,7 +45,7 @@ Current blocker:
 - it can use `--bearer`, `ZERVE_BEARER`, or a best-effort Chromium token extraction path for the authenticated check
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - the checker now emits a `summary` block and exits non-zero until the share-post link is actually ready
-- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
+- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T194951Z.json`
 - if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
