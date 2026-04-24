@@ -31,7 +31,7 @@ Raw market interfaces are weak inspection tools
 
 ### Bullets
 - too many markets, too little prioritization
-- suspicious pricing can hide in plain sight
+- fragile or weakly supported pricing can hide in plain sight
 - raw odds do not tell you what to inspect first
 
 ## Slide 3, Solution
