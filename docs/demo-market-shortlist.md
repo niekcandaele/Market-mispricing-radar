@@ -25,7 +25,7 @@ These picks are based on the current safe local default bundle, so they should b
   - highly recognizable market for a broad audience
   - clean explanation headline and a readable detail view
 - best use:
-  - current safe default drilldown for the locked safe local default path
+  - current default drilldown for the locked safe local default path
 
 ### 2. Putin out as President of Russia by December 31, 2026?
 - category: `politics`

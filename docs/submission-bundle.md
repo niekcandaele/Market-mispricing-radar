@@ -17,7 +17,7 @@ Use it to answer four questions quickly:
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the safe-default local choice
+- note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the locked safe local default choice
 
 ### Slides
 - status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents/Hackathons/ZerveHack`, with embedded speaker notes and proof visuals already in place
