@@ -135,6 +135,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
+- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, final submission-copy doc, and slide speaker notes still match the current repo wording after the latest safe-local proof-flow updates, so no further office resync was needed
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
 - video link checked: pending until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
