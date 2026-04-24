@@ -45,7 +45,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final presentation assets
 
 ### Google Slides deck
-- status: created, compact 6-slide deck is fully built in Google Workspace with styling, embedded speaker notes, proof visuals, and readback-verified 2026-04-23 copy/notes resyncs; acceptable for submission with only optional low-risk layout polish left
+- status: created, compact 6-slide deck is fully built in Google Workspace with styling, embedded speaker notes, proof visuals, and current-state readback verification; acceptable for submission with only optional low-risk layout polish left
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
@@ -56,7 +56,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `docs/slide-copy-pack.md`
 
 ### Speaker notes / presenter notes
-- status: created, structured presenter notes are aligned to the locked safe local default, readback-verified after the 2026-04-23 resync, and ready for recording use
+- status: created, structured presenter notes are aligned to the locked safe local default, readback-verified against the current recording path, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
 - alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, and the compact deck order.
@@ -67,7 +67,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `docs/presenter-cheat-sheet.md`
 
 ### Final submission copy reference
-- status: created, paste-ready submission copy is in place in Google Workspace, and readback-verified after the 2026-04-23 wording resync
+- status: created, paste-ready submission copy is in place in Google Workspace and readback-verified against the current repo wording
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
 - alignment note: readback-verified against the current repo wording and kept aligned with the paste-ready submission baseline.
