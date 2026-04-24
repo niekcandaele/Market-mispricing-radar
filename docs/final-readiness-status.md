@@ -40,6 +40,7 @@ Why:
 - final asset register exists
 - submission verification checklist exists
 - office-layer asset checklist exists
+- the live Google submission-copy doc was refreshed and read back again on 2026-04-24 after the latest outward-facing wording polish
 
 ### Visual assets
 - raw local screenshots exist
