@@ -86,7 +86,7 @@ Why:
 
 ## Notes
 
-- these are local fallback screenshots, not live Zerve preview captures
+- these are safe local default screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
 - matching Google Workspace copies now exist in `Documents`, so the office layer has the same default visuals as the repo
 - they are still useful because the safe local default path is verified and presentation-safe

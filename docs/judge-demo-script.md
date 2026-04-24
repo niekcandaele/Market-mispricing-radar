@@ -105,13 +105,13 @@ Use this compressed version:
 
 ## Demo safety notes
 
-- default to the verified local Streamlit mirror for recording or presentation if there is any uncertainty
+- default to the locked safe local default Streamlit mirror for recording or presentation if there is any uncertainty
 - only switch to the live preview if the freshest deploy-tab preview opens cleanly right before use
 - keep the story focused on inspection, explainability, and live proof, not on claiming perfect mispricing detection
 
-## Local fallback command
+## Safe local default command
 
-This is now the safe default demo path.
+This is now the locked safe local default demo path.
 
 ```bash
 ./scripts/run_local_demo.sh

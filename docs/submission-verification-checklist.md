@@ -9,7 +9,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Current verification status
 
 - narrative artifacts: present
-- local fallback demo path: verified end to end
+- safe local default demo path: verified end to end
 - live Zerve preview path: verified as an optional upgrade path, with the latest 2026-04-22 recheck showing the known warm-up pattern before the real app renders
 - Google Slides deck: compact deck exists in Google Workspace `Documents`, is aligned to the safe demo-path plan, and only has optional low-risk polish left
 - office-layer speaker notes doc: presenter notes and deck speaker notes reflect the safe local default and align with the compact deck order
@@ -114,14 +114,14 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T070336Z` and `ranked_market_count` `200`
 - status: passed
 
-### 2026-04-21 local fallback app render check
+### 2026-04-21 safe local default app render check
 - command: `MMR_APP_BUNDLE_PATH=artifacts/streamlit/app_bundle.json uv run --with streamlit streamlit run zerve/app/streamlit_app.py --server.headless true --server.address 127.0.0.1 --server.port 8765`
-- goal: verify the documented local fallback app actually opens and presents the expected product flow
+- goal: verify the documented safe local default app actually opens and presents the expected product flow
 - observed result: passed, the local app rendered the Radar view with live product framing, run status, QA warning summary, and ranked markets, then successfully opened a Market Detail drilldown for the top-ranked result
 - notable observed values: `refresh_id` `refresh-20260421T070414Z`, `market_count` `200`, `open_markets` `200`, `score_version` `v1-prototype`
 - status: passed
 
-### 2026-04-21 refreshed local fallback export check
+### 2026-04-21 refreshed safe local default export check
 - command: `python3 scripts/export_streamlit_bundle.py --limit 200`
 - goal: reconfirm the safe local default bundle can still be refreshed late in packaging without regressions
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T140836Z` and `ranked_market_count` `200`
@@ -156,11 +156,11 @@ Use it before recording, presenting, or submitting so the project is checked int
 - notable observed values: `refresh_id` `refresh-20260422T030359Z`, `ranked_market_count` `200`
 - status: passed
 
-### 2026-04-21 refreshed local fallback render check
+### 2026-04-21 refreshed safe local default render check
 - commands:
   - `./scripts/run_local_demo.sh`
   - local Playwright verification against `http://127.0.0.1:8768`
-- goal: reconfirm the current local fallback still renders the full demo flow during late-stage submission polish
+- goal: reconfirm the current safe local default still renders the full demo flow during late-stage submission polish
 - observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, `Methodology`, and `Focus in detail`, then successfully navigated into Market Detail and Methodology
 - notable observed values: `refresh_id` `refresh-20260421T140836Z`, `ranked_market_count` `200`
 - status: passed
