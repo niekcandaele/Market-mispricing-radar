@@ -101,20 +101,20 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 ## Final video asset
 
-- status: pending recording session
-- title or filename: pending final recording output
-- location or upload URL: pending final video upload
-- recorded on: pending recording session
+- status: pending until the final demo is recorded and a real file path or upload URL exists
+- title or filename: pending real recording output
+- location or upload URL: pending recorded file path or final upload URL
+- recorded on: pending completed recording session
 - notes: use `docs/video-recording-run-sheet.md`
 
 ## Final submission form
 
-- status: pending final submission pass
-- Devpost submission URL: pending live submission URL capture
-- final project URL used in form: pending final form fill
-- video URL used in form: pending final video upload
-- screenshot/image URL used in form: pending final form fill
-- submitted on: pending submission event
+- status: pending until the actual Devpost form is filled with final links and submitted
+- Devpost submission URL: pending live submission URL capture after the real form pass
+- final project URL used in form: pending the final chosen project/demo URL at form-fill time
+- video URL used in form: pending final video file or upload URL
+- screenshot/image URL used in form: pending the final screenshot choice used during form fill
+- submitted on: pending the actual submission event
 
 ## Required public share post
 
@@ -132,7 +132,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T091814Z.json` (`refreshId`: `refresh-20260424T091747Z`)
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
-- video link checked: pending final recording and upload
+- video link checked: pending until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - public project status checked: yes, latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in generic shell + auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`
