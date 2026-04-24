@@ -8,9 +8,9 @@ Use it when the real last-mile artifacts start to exist, so the submission does 
 
 ## Current status
 
-This is no longer just a blank template.
+This is now a real working register, not a blank template.
 
-The repo source material is strong, the Google Workspace office artifacts are real and aligned, and the remaining unknowns are the final live checked links plus the actual submission-day execution items.
+The main demo path, office artifacts, and submission materials are in place. The remaining unknowns are the final live checked links plus the actual submission-day execution items.
 
 ## Final demo path
 

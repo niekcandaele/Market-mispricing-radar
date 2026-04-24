@@ -30,13 +30,13 @@ Use it to answer four questions quickly:
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
-- status: paste-ready source material exists in both the repo and Google Workspace
+- status: paste-ready submission copy exists and is ready to use
 - source doc: `docs/submission-copy-draft.md`
 - remaining work: paste or adapt it into the actual hackathon submission form
 
 ### Submission readiness
 - status: not submission-complete yet
-- reason: the project now has a strong app, real office-layer artifacts, and strong narrative source docs, but it still needs final demo/video/submission execution before it should be called submission-complete; deck work is now optional polish, not a core missing artifact
+- reason: the project has a strong app, polished presentation artifacts, and ready submission copy, but it still needs final demo/video/submission execution before it should be called submission-complete; deck work is now optional polish, not a core missing artifact
 
 ## Demo entrypoints
 
