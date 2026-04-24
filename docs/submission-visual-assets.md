@@ -12,7 +12,8 @@ Captured from the locked safe local default app using the refreshed local bundle
 
 Bundle basis:
 - `artifacts/streamlit/app_bundle.json`
-- refresh id: `refresh-20260421T094752Z`
+- refresh id: `refresh-20260424T120713Z`
+- refreshed screenshot pass: `2026-04-24`
 
 Screenshots:
 - `artifacts/submission/local-radar-view.png`
@@ -88,7 +89,7 @@ Why:
 
 - these are safe local default screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
-- matching Google Workspace copies now exist in `Documents`, so the office layer has the same default visuals as the repo
+- matching Google Workspace copies already exist in `Documents`, but they predate this 2026-04-24 screenshot refresh and should be replaced only if these exact refreshed repo assets are chosen as the final office-layer visuals
 - they are still useful because the safe local default path is verified and presentation-safe
 - if a clean live preview screenshot pass becomes available later, it can replace or complement these assets
 

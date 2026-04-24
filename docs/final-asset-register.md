@@ -92,10 +92,12 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `artifacts/submission/slide-ready/local-radar-view-16x9.png`
   - `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
   - `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
+- repo screenshot basis: refreshed on `2026-04-24` against local bundle `refresh-20260424T120713Z`
 - Google Workspace `Documents` copies:
   - `Market Mispricing Radar - local-radar-view-16x9.png` — file id `1cJwxEV_aAVBadI1ZEbLNg1r7s38YISVl`
   - `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
   - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
+- office-layer note: these Drive copies existed before the 2026-04-24 repo refresh, so replace them only if this refreshed screenshot set is the final one chosen for Slides or the submission form
 
 Remaining `pending` values below are intentional submission-time fields, not packaging gaps.
 
@@ -130,6 +132,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-24, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T091814Z.json` (`refreshId`: `refresh-20260424T091747Z`)
+- screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, and the repo-side crops now read cleanly without the earlier top-clipping
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
 - video link checked: pending until a real video file or upload URL exists
