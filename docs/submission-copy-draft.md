@@ -61,7 +61,7 @@ The app includes:
 - it turns analysis into a usable deployed product
 - it keeps the scope honest and explainable
 - it is built around a real notebook-to-app workflow inside Zerve
-- it balances technical depth with a clear product surface
+- it balances analytical depth with a clear product surface
 
 ## Built with
 
@@ -74,7 +74,7 @@ The app includes:
 - live Polymarket ingestion inside Zerve needed more realistic fetch behavior before it became stable
 - notebook editing and deployment needed a more reliable validation path than trusting the interface alone
 - live deployment previews could look healthy before the actual app output was ready, so we had to verify the rendered app directly
-- turning a working prototype into a submission-ready product took multiple rounds of app-flow, copy, and presentation polish
+- turning a working prototype into a submission-ready product took multiple rounds of product-flow, copy, and presentation polish
 
 ## Accomplishments we are proud of
 
@@ -82,7 +82,7 @@ The app includes:
 - building an explainable ranking flow rather than an opaque score dump
 - shipping a polished Radar / Detail / Methodology product flow
 - improving live category quality and reducing misleading labels in the deployed app
-- turning the project into something judges can inspect and understand instead of leaving it as a rough prototype
+- turning the project into something judges can inspect and understand instead of leaving it as an early prototype
 
 ## What we learned
 
