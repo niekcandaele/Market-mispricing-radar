@@ -55,7 +55,7 @@ Use this:
 
 ### Why is this a strong ZerveHack project?
 Use this:
-`This project turns live notebook analysis into a deployed product inside Zerve instead of stopping at notebook output alone. The same environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.`
+`This project turns live notebook analysis into a usable deployed product inside Zerve. The same environment handles ingestion, scoring, explanation generation, and the deployed app can actually be inspected and used.`
 
 ### Built with
 Short version:
@@ -118,7 +118,7 @@ If the form is awkward and time is short, use this compact set:
 - name: `Market Mispricing Radar`
 - tagline: `An explainable radar for prediction markets that deserve a second look.`
 - short summary: `Market Mispricing Radar ranks prediction markets that look fragile, stale, extreme, or weakly supported, then explains why they surfaced.`
-- Zerve fit line: `This project turns live notebook analysis into a deployed product inside Zerve instead of stopping at notebook output alone.`
+- Zerve fit line: `This project turns live notebook analysis into a usable deployed product inside Zerve.`
 - scope caveat: `The score is a triage signal, not a promise of profit.`
 
 ## Before final paste

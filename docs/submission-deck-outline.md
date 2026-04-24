@@ -118,7 +118,7 @@ Why this fits ZerveHack
 - real deployment with a usable app, not static screenshots
 
 ### Speaker notes
-The Zerve story matters here. This project goes beyond notebook output alone. The same environment handles ingestion, scoring, explanation generation, and deployment.
+The Zerve story matters here. This project turns live notebook analysis into a usable deployed product. The same environment handles ingestion, scoring, explanation generation, and deployment.
 
 ## Slide 8, MVP honesty and next steps
 

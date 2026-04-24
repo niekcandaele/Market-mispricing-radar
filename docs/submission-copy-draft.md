@@ -24,7 +24,7 @@ Prediction markets can be useful signals, but the experience is still weak when 
 
 Current interfaces tend to show raw market lists and prices, which creates three problems:
 - there are too many markets to inspect manually
-- fragile or suspicious pricing can hide in plain sight
+- fragile or weakly supported pricing can hide in plain sight
 - raw odds alone do not explain which markets deserve attention first
 
 ## The solution

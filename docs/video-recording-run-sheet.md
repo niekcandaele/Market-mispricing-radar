@@ -100,7 +100,7 @@ Use this if time is tight:
 4. one sentence on Zerve-native deployment proof
 
 Suggested words:
-We built a live radar for prediction markets that deserve a second look. It ranks fragile or suspicious markets, explains why they surfaced, and lets you drill into the score drivers and caveats. The MVP is intentionally honest about scope, and the whole flow is deployed from a real Zerve notebook pipeline.
+We built a live radar for prediction markets that deserve a second look. It ranks fragile or weakly supported markets, explains why they surfaced, and lets you drill into the score drivers and caveats. The MVP is intentionally honest about scope, and the whole flow is deployed from a real Zerve notebook pipeline.
 
 ## Demo-safe market choice guidance
 

@@ -99,7 +99,7 @@ Use this wording if needed:
 Use this compressed version:
 
 1. "We built a live radar for prediction markets that deserve a second look."
-2. "It ranks fragile or suspicious markets and explains why they surfaced."
+2. "It ranks fragile or weakly supported markets and explains why they surfaced."
 3. "This detail view shows the score drivers and caveats for one market."
 4. "It is running through a real Zerve notebook-to-Streamlit deployment, not a mockup."
 
