@@ -80,7 +80,7 @@ Zerve notebooks, Streamlit deployment, Python, and live Polymarket market data
 
 ## Challenge snippet
 
-Turning the project into a credible product required solving both technical and presentation problems: stabilizing live ingestion, strengthening the notebook-to-app execution path, and iterating through multiple rounds of explainability polish.
+Turning the project into a credible product required more than getting the pipeline to run: we had to stabilize live ingestion, strengthen the notebook-to-app execution path, and iterate through multiple rounds of explainability polish.
 
 ## Accomplishment snippet
 

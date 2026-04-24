@@ -74,7 +74,7 @@ Use this:
 
 ### What did you learn?
 Use this:
-`The most credible MVP was not to claim perfect fair value, but to rank what deserves scrutiny and explain why. We also learned that for hackathons, product clarity and narrative polish matter almost as much as the underlying analysis and implementation.`
+`The most credible MVP was not to claim perfect fair value, but to rank what deserves scrutiny and explain why. We also learned that for hackathons, product clarity and narrative polish matter almost as much as the underlying product and analysis.`
 
 ### Future work
 Use this:

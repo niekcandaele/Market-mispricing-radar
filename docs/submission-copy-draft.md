@@ -82,13 +82,13 @@ The app includes:
 - building an explainable ranking flow rather than an opaque score dump
 - shipping a polished Radar / Detail / Methodology product flow
 - improving live category quality and reducing misleading labels in the deployed app
-- turning the project into something judges can inspect and understand instead of leaving it as a technical prototype
+- turning the project into something judges can inspect and understand instead of leaving it as a rough prototype
 
 ## What we learned
 
 - the most credible MVP was not “predict fair value perfectly,” it was “rank what deserves scrutiny and explain why”
 - deployment validation has to check the rendered app, not just the surrounding interface state
-- for hackathons, product clarity and narrative polish matter almost as much as the underlying analysis and implementation
+- for hackathons, product clarity and narrative polish matter almost as much as the underlying product and analysis
 
 ## Current MVP scope
 
