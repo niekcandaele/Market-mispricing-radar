@@ -13,7 +13,7 @@ Use it to answer four questions quickly:
 ## Current status snapshot
 
 ### Demo
-- status: usable, with the locked safe local default reverified on 2026-04-24 through the one-command safe-local sweep
+- status: usable, with the locked safe local default reverified on 2026-04-24 through the one-command safe-local sweep; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T133334Z.json` (`refreshId`: `refresh-20260424T133232Z`)
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
