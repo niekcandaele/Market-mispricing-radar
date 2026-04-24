@@ -135,6 +135,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
+- office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
 - video link checked: pending until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - public project status checked: yes, latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`

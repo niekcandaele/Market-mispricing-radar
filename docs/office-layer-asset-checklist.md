@@ -96,6 +96,10 @@ Recommended set:
 - `Market Mispricing Radar - local-market-detail-view-16x9.png`
 - `Market Mispricing Radar - local-methodology-view-16x9.png`
 
+Current verified state on `2026-04-24`:
+- the `Documents/Hackathons/ZerveHack` folder contains exactly these seven expected Market Mispricing Radar artifacts
+- no extra duplicate deck/doc/image artifacts were present in that folder during the verification pass
+
 ## What should not be left messy
 
 Avoid:
