@@ -25,16 +25,16 @@ Why first:
 - everything else depends on knowing which demo entrypoint is truly healthy right now
 
 Do:
-- treat the verified local fallback as the default path
+- treat the locked safe local default as the default path
 - if there is still time and attention for one final upgrade attempt, open the current Zerve deploy tab and re-open the freshest preview
-- only switch away from the local fallback if the live preview opens cleanly and behaves correctly
+- only switch away from the safe local default if the live preview opens cleanly and behaves correctly
 - confirm the chosen path actually loads and that Radar, Market Detail, and Methodology behave as expected
 
 If healthy:
 - use the chosen path consistently through recording and submission
 
 If the live host never clears warm-up:
-- keep the verified local fallback and move on immediately instead of burning time
+- keep the locked safe local default and move on immediately instead of burning time
 
 References:
 - `docs/submission-verification-checklist.md`
@@ -96,7 +96,7 @@ Do:
 - use the voiceover script if a literal spoken pass is helpful
 - keep the video to one strong story arc
 - use the verified chosen demo path
-- if the live path degrades, switch to the local fallback immediately without apology
+- if the live path degrades, switch to the safe local default immediately without apology
 - do not re-decide the demo path mid-take unless the current one is clearly broken
 
 References:
@@ -163,7 +163,7 @@ Reference:
 ## Emergency fallback path
 
 If time is collapsing:
-1. verify a working demo path, live or local fallback
+1. verify a working demo path, live or safe local default
 2. run the recording preflight checklist, and on the safe local path run `./scripts/check_safe_local_demo.sh`, then record the one-take demo using the run sheet and voiceover script
 3. paste the safe default field set from the form map
 4. submit with honest scope and working assets
