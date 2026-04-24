@@ -31,7 +31,7 @@ This checklist can still be executed now for the Workspace artifact portion.
 Create:
 - one polished presentation deck for the hackathon submission
 - prefer the slide-ready 16:9 screenshots as the default visuals and keep the uncropped PNGs as backup proof captures
-- current state: compact 6-slide deck exists, has gone through multiple polish passes, and now has default visual assets plus stronger internal hierarchy for final layout refinement
+- current state: compact 6-slide deck exists, is already polished around the default visual set, and only has optional low-risk layout refinement left
 
 Source materials:
 - `docs/submission-deck-outline.md`
@@ -49,7 +49,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or deck speaker notes embedded slide by slide if that is cleaner
-- current state: both now exist in useful form, with a structured presenter-notes doc plus embedded slide speaker notes in the deck, and they now align cleanly with the compact deck order and safe demo-path plan
+- current state: both artifacts exist, and the presenter-notes doc plus embedded deck speaker notes are aligned to the compact deck order and safe demo-path plan
 
 Source materials:
 - `docs/judge-demo-script.md`
@@ -63,7 +63,7 @@ Create or store:
 - one clean note in the office layer with the final chosen demo path
 - default that note to the verified local fallback unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
-- current state: demo-link notes doc exists and now also includes explicit default visual pairings for the recording flow
+- current state: demo-link notes doc exists and already captures the safe default path plus the default visual pairings for recording
 
 Source materials:
 - `docs/submission-verification-checklist.md`
