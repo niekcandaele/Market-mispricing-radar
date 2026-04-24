@@ -138,7 +138,7 @@ Do:
 - treat the share-post link as unblocked only when that checker reports `summary.ready_for_share_post_link: true`
 - do not treat a bare `200` there as success if it only serves the generic Zerve shell instead of the actual public project page
 - only use a different public route if it has been consciously chosen and verified, because the gallery/community path is separate
-- latest authenticated evidence currently says `canvas.is_public: false`, so treat the share-post path as blocked until that changes or a human provides the final public link
+- the latest retained authenticated metadata baseline currently says `canvas.is_public: false`, so treat the share-post path as blocked until that changes or a human provides the final public link
 - confirm the exact Zerve tag on the chosen platform before posting
 
 Reference:

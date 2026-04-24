@@ -139,7 +139,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
 - video link checked: pending until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
-- public project status checked: yes, latest authenticated evidence still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
 - verified on: `2026-04-24`
 - verified by: `Jefke`
