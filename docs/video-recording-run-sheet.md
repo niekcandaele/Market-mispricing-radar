@@ -8,7 +8,7 @@ Use it when the demo script is too broad and you need a crisp filming sequence w
 
 If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
 
-Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep.
+Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep. That script now writes the current retained proof JSON automatically under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` and archives the previously active safe-local baseline.
 
 ## Target shape
 
@@ -20,6 +20,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 ## Before recording
 
 - if using the safe local default, run `./scripts/check_safe_local_demo.sh`
+- keep the fresh retained JSON it writes as the current proof for the take
 - confirm the chosen demo entrypoint actually opens
 - default to the locked safe local default path
 - only switch to the live Zerve preview if it is clearly healthy right before recording

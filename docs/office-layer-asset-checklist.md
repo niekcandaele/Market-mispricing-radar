@@ -63,6 +63,7 @@ Create or store:
 - one clean note in the office layer with the final chosen demo path
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
+- use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
 - status: demo-link notes doc exists and already captures the locked safe local default plus the chosen visual pairings for recording
 
 Source materials:
@@ -112,7 +113,7 @@ Avoid:
 
 Do this in order:
 1. keep the locked safe local default as the default demo path, or switch to live only if the final check is clean
-2. on the safe local path, run `./scripts/check_safe_local_demo.sh` right before the real take
+2. on the safe local path, run `./scripts/check_safe_local_demo.sh` right before the real take and keep the fresh retained JSON it writes as the current proof
 3. refine the Slides deck only where a clear polish gain still exists
 4. keep the notes artifact aligned with the chosen demo path and current deck
 5. record or finalize the video plan
