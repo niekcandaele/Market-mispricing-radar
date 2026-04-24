@@ -58,12 +58,11 @@ Why:
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
 ### Verified but still optional
-- the new Browserless + Playwright skill path is healthy and can open fresh isolated Chromium sessions
-- the live deploy editor was recovered, and the working preview trigger was re-confirmed as the in-editor `Start Preview Deployment` path / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`
-- the valid deployed Streamlit script was recovered directly from Zerve canvas metadata, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` repair was verified by replacing a stale probe deploy with the real repo app
-- fresh authenticated live Zerve preview recheck on 2026-04-22 produced a concrete diagnosis instead of a vague "flaky preview" note: direct bearer-auth `POST https://canvas.api.zerve.ai/script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`, emitted preview metadata (`current_preview_id` `b0966b53-de68-43a2-9c8e-759bead27ab1`, `preview_deployment_id` `114fe023-2dfe-41ce-97c8-408d9a949602`, DNS label `1237c1f1-ee724b30`), the new host resolved immediately, then served ELB `503` / one timeout for roughly 45 seconds before converging to `200` and rendering the real app UI
-- current conclusion: the live preview problem is best described as preview warm-up lag plus rotating hostnames, not an amorphous permanent blocker, but the verified local fallback still remains the safer default because it is scripted and presentation-safe
-- Google Workspace artifact creation is available through the authenticated `gws` CLI path, so Slides and Docs are no longer blocked on browser sign-in
+- the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
+- the live deploy repair path is verified: use the in-editor `Start Preview Deployment` action / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` remains the clean repair seam when needed
+- a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
+- current conclusion: the live preview is a usable optional upgrade, but the verified local fallback remains the safer default because it is scripted and presentation-safe
+- Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path
 
 ### Still required even after blocker resolution
 - only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path
