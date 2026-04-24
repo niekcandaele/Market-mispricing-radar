@@ -97,7 +97,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `Market Mispricing Radar - local-radar-view-16x9.png` — file id `1cJwxEV_aAVBadI1ZEbLNg1r7s38YISVl`
   - `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
   - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
-- office-layer note: the `Documents` screenshot copies were refreshed on `2026-04-24` from the current repo assets, and Drive md5 checks matched the local slide-ready PNGs after upload
+- office-layer note: the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on `2026-04-24` from the current repo assets, and Drive md5 checks matched the local slide-ready PNGs after upload
 
 Remaining `pending` values below are intentional submission-time fields, not packaging gaps.
 
@@ -132,7 +132,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-24, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T091814Z.json` (`refreshId`: `refresh-20260424T091747Z`)
-- screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents` screenshot copies were refreshed to match
+- screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
