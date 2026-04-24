@@ -64,7 +64,7 @@ Create or store:
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
-- status: demo-link notes doc exists, was refreshed and read back on 2026-04-24, and now captures the locked safe local default, the current retained proof flow, and the chosen visual pairings for recording
+- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-24 after the latest safe-local recheck, and now captures the locked safe local default, the current retained proof flow, and the chosen visual pairings for recording
 
 Source materials:
 - `docs/submission-verification-checklist.md`

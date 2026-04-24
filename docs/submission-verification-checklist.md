@@ -176,7 +176,7 @@ What is already verified or present:
 - compact Google Slides deck exists and has been read back successfully through the Workspace APIs
 - presenter-notes doc exists and has been read back successfully through the Workspace APIs
 - final submission-copy doc exists, was refreshed to match the latest submission copy, and has been read back successfully through the Workspace APIs
-- demo-link reference doc exists and has been read back successfully through the Workspace APIs
+- demo-link reference doc exists, was refreshed after the latest safe-local recheck, and has been read back successfully through the Workspace APIs
 - short submission variants exist
 - video recording run sheet exists
 - video voiceover script exists
