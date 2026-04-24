@@ -45,7 +45,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final presentation assets
 
 ### Google Slides deck
-- status: created, compact 6-slide structure tightened to the repo copy pack with embedded speaker notes, a visually coherent styling pass, a readability-tightening pass, small section-hierarchy kickers on the body slides, right-side visual proof cards on the core body slides, a 2026-04-23 resync of both slide copy and speaker notes with readback verification, and a final 2026-04-23 slide-5 wording resync after later speaking-copy cleanup; acceptable for submission with only optional low-risk layout polish left
+- status: created, compact 6-slide deck is fully built in Google Workspace with styling, embedded speaker notes, proof visuals, and readback-verified 2026-04-23 copy/notes resyncs; acceptable for submission with only optional low-risk layout polish left
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
@@ -56,7 +56,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `docs/slide-copy-pack.md`
 
 ### Speaker notes / presenter notes
-- status: created, structured presenter notes populated, resynced on 2026-04-23 with readback verification, and ready for recording use
+- status: created, structured presenter notes are aligned to the safe local demo path, readback-verified after the 2026-04-23 resync, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
 - version note: created in `Documents` on 2026-04-21, then rewritten into slide-by-slide presenter notes aligned to the safe local fallback, the GTA drilldown default, the compact deck order, and the latest repo speaking copy. Readback-verified again after the final 2026-04-23 wording resyncs.
@@ -67,7 +67,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `docs/presenter-cheat-sheet.md`
 
 ### Final submission copy reference
-- status: created, tightened into a cleaner paste-ready baseline, resynced to the latest repo wording on 2026-04-23 with readback verification, and reformatted back into plain office-layer text after a raw-markdown drift
+- status: created, paste-ready submission copy is in place in Google Workspace, repaired after the raw-markdown drift, and readback-verified after the 2026-04-23 wording resync
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
 - version note: created in `Documents` on 2026-04-21, then tightened into a paste-ready submission doc, repaired after a raw-markdown drift, and resynced to the latest repo wording on 2026-04-23, including the final fragility, usable-app, and weakly-supported problem-statement cleanups.
