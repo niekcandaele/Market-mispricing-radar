@@ -12,8 +12,8 @@ The submission package is strong, and Google Workspace artifact creation is no l
 
 Current state:
 - Google Slides and Google Docs are available through the authenticated `gws` CLI path
+- the locked safe local default was reverified on 2026-04-24 through the one-command safe-local sweep and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
-- the locked safe local default remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 
 This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.
 

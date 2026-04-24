@@ -21,7 +21,7 @@ Why:
 ### Product / demo
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
-- locked safe local default demo exists
+- locked safe local default demo exists and was reverified on 2026-04-24 through the one-command safe-local sweep
 - product and demo polish are done
 
 ### Narrative / presentation sources
