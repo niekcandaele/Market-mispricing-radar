@@ -21,18 +21,18 @@ Use it to answer four questions quickly:
 
 ### Slides
 - status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents`, with embedded speaker notes and proof visuals already in place
-- repo source material: `docs/submission-deck-outline.md`
+- source doc: `docs/submission-deck-outline.md`
 - remaining work: optional low-risk layout polish only if it is clearly worth it
 
 ### Video / talking track
 - status: presenter notes exist in Google Workspace `Documents`, align with the compact deck order, and match the deck speaker notes
-- repo source material: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
+- source docs: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
 - status: paste-ready source material exists in both the repo and Google Workspace
-- repo source material: `docs/submission-copy-draft.md`
-- required next artifact: paste/adapt into the actual hackathon submission form
+- source doc: `docs/submission-copy-draft.md`
+- remaining work: paste or adapt it into the actual hackathon submission form
 
 ### Submission readiness
 - status: not submission-complete yet
