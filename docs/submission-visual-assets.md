@@ -89,7 +89,7 @@ Why:
 
 - these are safe local default screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
-- matching Google Workspace copies already exist in `Documents`, but they predate this 2026-04-24 screenshot refresh and should be replaced only if these exact refreshed repo assets are chosen as the final office-layer visuals
+- matching Google Workspace copies in `Documents` were refreshed on 2026-04-24 to match this repo screenshot set, so the default office-layer visual store is back in sync with the current safe-local assets
 - they are still useful because the safe local default path is verified and presentation-safe
 - if a clean live preview screenshot pass becomes available later, it can replace or complement these assets
 
