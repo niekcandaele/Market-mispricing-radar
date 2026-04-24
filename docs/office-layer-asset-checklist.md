@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is the practical checklist for what should exist in Google Workspace `Documents` during the final office-layer finish.
+This is the practical checklist for what should exist in the Google Workspace office path `Documents/Hackathons/ZerveHack` during the final office-layer finish.
 
 Use it to make the final office-layer finish clean, complete, and easy to inspect.
 
@@ -78,9 +78,14 @@ Source materials:
 - `docs/submission-copy-draft.md`
 - `docs/submission-short-variants.md`
 
-## Recommended folder contents in Google Workspace `Documents`
+## Recommended folder contents in Google Workspace `Documents/Hackathons/ZerveHack`
 
 Keep the final office layer tidy.
+
+Current folder path:
+- `Documents` folder id: `1iLofzjfBHLy-EMgC2XJm2yB1K4dF7Oa0`
+- `Hackathons` folder id: `1ozJ3D_35aTPa5ORiVOBJne4vCrv8xHOJ`
+- `ZerveHack` folder id: `18O-ZVgNpN0-vxbuQHxZjjChnQw82psk8`
 
 Recommended set:
 - `Market Mispricing Radar - Submission Deck`
@@ -117,4 +122,4 @@ The office layer is in good shape when:
 - the notes artifact exists
 - the final submission wording is captured in one obvious place
 - the chosen demo path is documented
-- the `Documents` folder is clean and not full of throwaway artifacts
+- the `Documents/Hackathons/ZerveHack` folder is clean and not full of throwaway artifacts

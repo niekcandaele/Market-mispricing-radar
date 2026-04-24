@@ -25,7 +25,7 @@ Slide-ready 16:9 crops:
 - `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
 - `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 
-Google Workspace `Documents` copies:
+Google Workspace `Documents/Hackathons/ZerveHack` copies:
 - `Market Mispricing Radar - local-radar-view-16x9.png` — file id `1cJwxEV_aAVBadI1ZEbLNg1r7s38YISVl`
 - `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
 - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
@@ -89,7 +89,7 @@ Why:
 
 - these are safe local default screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
-- matching Google Workspace copies in `Documents` were refreshed on 2026-04-24 to match this repo screenshot set, so the default office-layer visual store is back in sync with the current safe-local assets
+- matching Google Workspace copies in `Documents/Hackathons/ZerveHack` were refreshed on 2026-04-24 to match this repo screenshot set, so the default office-layer visual store is back in sync with the current safe-local assets
 - they are still useful because the safe local default path is verified and presentation-safe
 - if a clean live preview screenshot pass becomes available later, it can replace or complement these assets
 

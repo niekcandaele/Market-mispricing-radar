@@ -25,7 +25,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - port: `8768`
 - verified on: `2026-04-24`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
 - status: verified, but not chosen as the default path
@@ -93,7 +93,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
   - `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
 - repo screenshot basis: refreshed on `2026-04-24` against local bundle `refresh-20260424T120713Z`
-- Google Workspace `Documents` copies:
+- Google Workspace `Documents/Hackathons/ZerveHack` copies:
   - `Market Mispricing Radar - local-radar-view-16x9.png` — file id `1cJwxEV_aAVBadI1ZEbLNg1r7s38YISVl`
   - `Market Mispricing Radar - local-market-detail-view-16x9.png` — file id `1heVTGPL-OH4q4IFHOIZbckXHssnkUZDv`
   - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`

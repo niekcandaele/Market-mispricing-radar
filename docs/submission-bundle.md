@@ -20,12 +20,12 @@ Use it to answer four questions quickly:
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the safe-default local choice
 
 ### Slides
-- status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents`, with embedded speaker notes and proof visuals already in place
+- status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents/Hackathons/ZerveHack`, with embedded speaker notes and proof visuals already in place
 - source doc: `docs/submission-deck-outline.md`
 - remaining work: optional low-risk layout polish only if it is clearly worth it
 
 ### Video / talking track
-- status: presenter notes exist in Google Workspace `Documents`, align with the compact deck order, and match the deck speaker notes
+- status: presenter notes exist in Google Workspace `Documents/Hackathons/ZerveHack`, align with the compact deck order, and match the deck speaker notes
 - source docs: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
 - remaining work: record the demo cleanly on the chosen path
 
@@ -175,7 +175,7 @@ Defaults:
 - the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the locked safe local default is already one-command and fully presentation-safe
 
 ### Not a blocker right now, but still needed before calling the project ready
-- keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents`
+- keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents/Hackathons/ZerveHack`
 - do a final presentation-quality verification pass instead of only a code/demo verification pass
 
 ## Recommended next steps

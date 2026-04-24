@@ -11,7 +11,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - narrative artifacts: present
 - safe local default demo path: verified end to end
 - live Zerve preview path: verified as an optional upgrade path, with the latest 2026-04-22 recheck showing the known warm-up pattern before the real app renders
-- Google Slides deck: compact deck exists in Google Workspace `Documents`, is aligned to the safe local default plan, and only has optional low-risk polish left
+- Google Slides deck: compact deck exists in Google Workspace `Documents/Hackathons/ZerveHack`, is aligned to the safe local default plan, and only has optional low-risk polish left
 - office-layer speaker notes doc: presenter notes and deck speaker notes reflect the safe local default and align with the compact deck order
 - final submission form paste/check: pending the final form-fill pass
 
@@ -59,9 +59,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] Google Slides deck created
 - [x] deck speaker notes updated and aligned with the safe local default plan
 - [x] Google Doc presenter notes finalized
-- [x] final submission copy reference created in Google Workspace `Documents`
-- [x] demo link reference created in Google Workspace `Documents`
-- [x] assets stored cleanly in Google Workspace `Documents`
+- [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
+- [x] demo link reference created in Google Workspace `Documents/Hackathons/ZerveHack`
+- [x] assets stored cleanly in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] authenticated `gws` CLI path for Google Workspace creation is available
 - [x] office-layer handoff checklist exists
 - [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs
