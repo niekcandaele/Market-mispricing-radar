@@ -13,7 +13,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - live Zerve preview path: verified as an optional upgrade path, with the latest 2026-04-22 recheck showing the known warm-up pattern before the real app renders
 - Google Slides deck: compact deck exists in Google Workspace `Documents`, is aligned to the safe demo-path plan, and only has optional low-risk polish left
 - office-layer speaker notes doc: presenter notes and deck speaker notes reflect the safe local default and align with the compact deck order
-- final submission form paste/check: still pending the real form-fill pass
+- final submission form paste/check: pending the final form-fill pass
 
 ## Demo checks
 
