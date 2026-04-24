@@ -219,6 +219,9 @@ Current sharp blocker:
 - the required share post stays blocked until the notebook is made public in Zerve and the resulting public link is verified
 - the next action is explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only clear the blocker when the checker reports `summary.ready_for_share_post_link: true`
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- the latest retained notebook-route baseline still ends in the generic Zerve shell plus auth `403`, so the gate is still failing the actual public-route check
+- evidence:
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

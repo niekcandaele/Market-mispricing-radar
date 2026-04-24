@@ -107,6 +107,7 @@ Blocking note:
 - if the project is still not public in Zerve, first use the Zerve share/privacy control to make it public
 - after that, rerun `python3 scripts/check_zerve_public_share.py` and only treat the share-post link as ready when it reports `summary.ready_for_share_post_link: true`
 - latest authenticated evidence: `canvas.is_public: false` in `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- latest retained route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`, which still ends in the generic Zerve shell plus auth `403`
 
 Default recommendation:
 - one simple LinkedIn post, unless the human explicitly prefers X or another platform
