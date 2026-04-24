@@ -73,10 +73,10 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - alignment note: readback-verified against the current repo wording and kept aligned with the paste-ready submission baseline.
 
 ### Demo link reference
-- status: created, aligned to the locked safe local default, and readback-verified after the 2026-04-23 resync
+- status: created, aligned to the locked safe local default, and readback-verified again after the 2026-04-24 demo-link refresh
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- alignment note: kept aligned to the locked safe local default, the one-command pre-take sweep, and current safe-local verification evidence.
+- alignment note: kept aligned to the locked safe local default, the one-command pre-take sweep, the auto-written retained proof flow, and current safe-local verification evidence.
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`
