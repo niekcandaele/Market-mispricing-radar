@@ -45,6 +45,8 @@ Why:
 - raw local screenshots exist
 - slide-ready 16:9 screenshot crops exist
 - visual asset map exists
+- the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on 2026-04-24 to match the current repo assets
+- the `Documents/Hackathons/ZerveHack` office folder was inspected directly on 2026-04-24 and contained exactly the expected seven MMR artifacts without stray duplicates
 
 ## What is still blocked or missing
 
@@ -65,7 +67,7 @@ Why:
 - the live deploy repair path is verified: use the in-editor `Start Preview Deployment` action / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` remains the clean repair seam when needed
 - a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
 - conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the chosen default because it is scripted and presentation-safe
-- Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path
+- Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path, and the current `Documents/Hackathons/ZerveHack` office folder state has been verified directly rather than assumed
 
 ### Still required even after blocker resolution
 - only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path
