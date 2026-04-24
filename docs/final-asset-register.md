@@ -49,7 +49,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - final title: `Market Mispricing Radar - Submission Deck`
 - deck shape used: `compact 6-slide`
 - location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
-- version note: created in `Documents` on 2026-04-21 and later tightened into the compact 6-slide default deck, with 2026-04-22 and 2026-04-23 readback-verified resyncs to body copy and embedded notes for the safe local GTA drilldown path.
+- version note: created in `Documents` on 2026-04-21, then resynced with readback verification so the body copy and embedded notes match the current compact deck and safe local GTA drilldown path.
 - source docs:
   - `docs/submission-deck-outline.md`
   - `docs/slide-build-kit.md`
@@ -59,7 +59,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - status: created, structured presenter notes are aligned to the safe local demo path, readback-verified after the 2026-04-23 resync, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- version note: created in `Documents` on 2026-04-21 and later tightened into slide-by-slide presenter notes aligned to the safe local fallback, the GTA drilldown default, and the compact deck order, then readback-verified again after the 2026-04-23 wording resyncs.
+- version note: created in `Documents` on 2026-04-21, then resynced with readback verification so the presenter notes match the safe local fallback, the GTA drilldown default, and the compact deck order.
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
@@ -70,13 +70,13 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - status: created, paste-ready submission copy is in place in Google Workspace, and readback-verified after the 2026-04-23 wording resync
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
-- version note: created in `Documents` on 2026-04-21, later tightened into a paste-ready submission doc, and readback-verified after the 2026-04-23 wording resync.
+- version note: created in `Documents` on 2026-04-21, later tightened into the paste-ready submission baseline, and readback-verified against the current repo wording.
 
 ### Demo link reference
 - status: created, aligned to the locked safe local default, and readback-verified after the 2026-04-23 resync
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- version note: created in `Documents` on 2026-04-21 and later updated to lock the safe local default and capture the one-command pre-take sweep plus the freshest safe-local verification evidence.
+- version note: created in `Documents` on 2026-04-21, then updated so the doc reflects the locked safe local default, the one-command pre-take sweep, and current safe-local verification evidence.
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`
