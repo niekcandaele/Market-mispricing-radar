@@ -67,10 +67,10 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `docs/presenter-cheat-sheet.md`
 
 ### Final submission copy reference
-- status: created, paste-ready submission copy is in place in Google Workspace, repaired after the raw-markdown drift, and readback-verified after the 2026-04-23 wording resync
+- status: created, paste-ready submission copy is in place in Google Workspace, and readback-verified after the 2026-04-23 wording resync
 - final title: `Market Mispricing Radar - Final Submission Copy`
 - location: `https://docs.google.com/document/d/1Y6xAXczjmsoWiRsbQ_0HmR3EzNTBYxRkgFjK9-525sM`
-- version note: created in `Documents` on 2026-04-21, later tightened into a paste-ready submission doc, repaired after the raw-markdown drift, and readback-verified after the 2026-04-23 wording resync.
+- version note: created in `Documents` on 2026-04-21, later tightened into a paste-ready submission doc, and readback-verified after the 2026-04-23 wording resync.
 
 ### Demo link reference
 - status: created, aligned to the locked safe local default, and readback-verified after the 2026-04-23 resync
