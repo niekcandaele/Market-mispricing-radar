@@ -16,7 +16,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 
 ### Primary demo path
 - status: ready and locked as the safe default
-- chosen path: local fallback
+- chosen path: locked safe local default
 - URL or launch source:
   - `./scripts/run_local_demo.sh`
 - default runtime details:
@@ -33,7 +33,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - URL or launch source: `https://1237c1f1-ee724b30.hub.zerve.cloud/` (fresh 2026-04-22 recovery) or a fresh equivalent reopened from the deploy tab
 - verified on: `2026-04-22`
 - verified by: `Jefke`
-- notes: the latest concrete diagnosis is no longer a vague "flaky preview" label. Direct bearer-auth `POST /script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`, emitted fresh preview metadata, the new host resolved immediately, then served ELB `503` during warm-up before converging to `200` and rendering the real Market Mispricing Radar app. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
+- notes: the latest concrete diagnosis is specific, not vague. Direct bearer-auth `POST /script/ecda0778-025a-4d74-898a-31ee7c3f709d/deploy_preview` returned `200`, emitted fresh preview metadata, the new host resolved immediately, then served ELB `503` during warm-up before converging to `200` and rendering the real Market Mispricing Radar app. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
 
 ## Final drilldown example
 

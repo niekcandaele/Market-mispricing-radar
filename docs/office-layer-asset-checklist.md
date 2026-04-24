@@ -49,7 +49,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or deck speaker notes embedded slide by slide if that is cleaner
-- status: both artifacts exist, and the presenter-notes doc plus embedded deck speaker notes are aligned to the compact deck order and safe demo-path plan
+- status: both artifacts exist, and the presenter-notes doc plus embedded deck speaker notes are aligned to the compact deck order and safe local default plan
 
 Source materials:
 - `docs/judge-demo-script.md`
@@ -102,7 +102,7 @@ Avoid:
 ## Order of office-layer creation
 
 Do this in order:
-1. lock the local fallback as the default demo path, or switch to live only if the final check is clean
+1. keep the locked safe local default as the default demo path, or switch to live only if the final check is clean
 2. on the safe local path, run `./scripts/check_safe_local_demo.sh` right before the real take
 3. refine the Slides deck only where a clear polish gain still exists
 4. keep the notes artifact aligned with the chosen demo path and current deck

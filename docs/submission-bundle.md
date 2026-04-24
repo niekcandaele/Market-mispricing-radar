@@ -54,7 +54,7 @@ Use it to answer four questions quickly:
 
 These should be treated as useful breadcrumbs, not permanent URLs.
 
-### Local fallback demo
+### Safe local default demo
 This is now the submission-safe default path unless a fresh live preview opens cleanly at the final check.
 
 Right before the real recording take on this path, run the one-command final sweep:

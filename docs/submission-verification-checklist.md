@@ -11,7 +11,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - narrative artifacts: present
 - safe local default demo path: verified end to end
 - live Zerve preview path: verified as an optional upgrade path, with the latest 2026-04-22 recheck showing the known warm-up pattern before the real app renders
-- Google Slides deck: compact deck exists in Google Workspace `Documents`, is aligned to the safe demo-path plan, and only has optional low-risk polish left
+- Google Slides deck: compact deck exists in Google Workspace `Documents`, is aligned to the safe local default plan, and only has optional low-risk polish left
 - office-layer speaker notes doc: presenter notes and deck speaker notes reflect the safe local default and align with the compact deck order
 - final submission form paste/check: pending the final form-fill pass
 
@@ -27,7 +27,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] if the newest host first returns ELB `503`, wait roughly 45 to 60 seconds and retry once before abandoning it
 - [ ] if the newest host never emits preview metadata, never resolves, or never clears warm-up `503`, stop here and use the locked safe local default for recording/submission instead of chasing rotating preview URLs
 
-### Local fallback demo
+### Safe local default demo
 - [x] run `./scripts/run_local_demo.sh`
 - [x] confirm the local app opens and renders the expected radar flow
 - [x] confirm one market drilldown opens cleanly in Market Detail
@@ -57,7 +57,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ### Office-layer artifacts
 - [x] Google Slides deck created
-- [x] deck speaker notes updated and aligned with the safe demo-path plan
+- [x] deck speaker notes updated and aligned with the safe local default plan
 - [x] Google Doc presenter notes finalized
 - [x] final submission copy reference created in Google Workspace `Documents`
 - [x] demo link reference created in Google Workspace `Documents`
@@ -107,7 +107,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ## Lightweight smoke-check notes
 
-### 2026-04-21 local fallback export check
+### 2026-04-21 safe local default export check
 - command: `python3 scripts/export_streamlit_bundle.py --limit 200`
 - goal: verify the repo can still generate the saved app bundle artifact used by the locked safe local default path
 - expected result: refreshed `artifacts/streamlit/app_bundle.json` without failure
@@ -127,7 +127,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T140836Z` and `ranked_market_count` `200`
 - status: passed
 
-### 2026-04-22 one-command local fallback launch check
+### 2026-04-22 one-command safe local default launch check
 - command: `./scripts/run_local_demo.sh`
 - default runtime details:
   - refresh limit: `200`
@@ -212,4 +212,4 @@ What still blocks a true done call:
 - warm-up behavior: observed ELB `503`, then one timeout, then `200` within about 45 seconds
 - rendered-app check: passed, the fresh preview rendered the real Market Mispricing Radar app, including sidebar views `Radar`, `Market Detail`, and `Methodology`, plus live app content such as `Ranked Radar` and `Processed 250`
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-preview-20260422T0534Z.json`
-- current call: the live preview is recoverable and real, but it still should be treated as an optional upgrade because the local fallback remains simpler and safer for recording/submission
+- current call: the live preview is recoverable and real, but it still should be treated as an optional upgrade because the safe local default remains simpler and safer for recording/submission

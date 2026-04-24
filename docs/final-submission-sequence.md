@@ -96,7 +96,7 @@ Do:
 - use the voiceover script if a literal spoken pass is helpful
 - keep the video to one strong story arc
 - use the verified chosen demo path
-- if the live path degrades, switch to the safe local default immediately without apology
+- if the live path degrades, switch to the safe local default immediately
 - do not re-decide the demo path mid-take unless the current one is clearly broken
 
 References:
