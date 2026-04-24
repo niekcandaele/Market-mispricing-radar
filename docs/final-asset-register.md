@@ -15,7 +15,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final demo path
 
 ### Primary demo path
-- status: ready, and currently the locked safe default
+- status: ready and locked as the safe default
 - chosen path: local fallback
 - URL or launch source:
   - `./scripts/run_local_demo.sh`
@@ -73,10 +73,10 @@ The repo source material is strong, the Google Workspace office artifacts are re
 - version note: created in `Documents` on 2026-04-21, later tightened into a paste-ready submission doc, repaired after the raw-markdown drift, and readback-verified after the 2026-04-23 wording resync.
 
 ### Demo link reference
-- status: created, aligned to the locked safe local default, and resynced on 2026-04-23 with readback verification
+- status: created, aligned to the locked safe local default, and readback-verified after the 2026-04-23 resync
 - final title: `Market Mispricing Radar - Demo Link Notes`
 - location: `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`
-- version note: created in `Documents` on 2026-04-21, then updated on 2026-04-22 and 2026-04-23 to lock the safe local default and record the one-command pre-take sweep plus the freshest safe-local verification evidence.
+- version note: created in `Documents` on 2026-04-21 and later updated to lock the safe local default and capture the one-command pre-take sweep plus the freshest safe-local verification evidence.
 - source docs:
   - `docs/submission-verification-checklist.md`
   - `docs/final-submission-sequence.md`
