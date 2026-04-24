@@ -38,7 +38,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final drilldown example
 
 - chosen market: `GTA VI released before June 2026?`
-- why this one: currently rank `3` in the verified local fallback bundle, visible in the default Radar slice, broadly understandable, and easier to demo cleanly in one take from Radar into Market Detail
+- why this one: currently rank `3` in the locked safe local default bundle, visible in the default Radar slice, broadly understandable, and easier to demo cleanly in one take from Radar into Market Detail
 - source doc reference: `docs/demo-market-shortlist.md`
 - locked on: `2026-04-22` (updated to match the current safe local bundle unless the final live run clearly surfaces a cleaner example)
 

@@ -21,7 +21,7 @@ Prediction markets are information-dense, but raw market lists do not tell you w
 ## Strongest proof points
 
 - real Zerve notebook pipeline is live end to end
-- the demo app flow is verified and presentation-safe through the local fallback path
+- the demo app flow is verified and presentation-safe through the locked safe local default path
 - the product is explainable, not a black-box score dump
 - the app exposes caveats and QA context instead of pretending certainty
 - the MVP is narrow on purpose and honest about single-source scope

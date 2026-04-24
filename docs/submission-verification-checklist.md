@@ -109,7 +109,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ### 2026-04-21 local fallback export check
 - command: `python3 scripts/export_streamlit_bundle.py --limit 200`
-- goal: verify the repo can still generate the saved app bundle artifact used by the local fallback path
+- goal: verify the repo can still generate the saved app bundle artifact used by the locked safe local default path
 - expected result: refreshed `artifacts/streamlit/app_bundle.json` without failure
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T070336Z` and `ranked_market_count` `200`
 - status: passed
@@ -123,7 +123,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ### 2026-04-21 refreshed local fallback export check
 - command: `python3 scripts/export_streamlit_bundle.py --limit 200`
-- goal: reconfirm the local fallback bundle can still be refreshed late in packaging without regressions
+- goal: reconfirm the safe local default bundle can still be refreshed late in packaging without regressions
 - observed result: passed, refreshed `artifacts/streamlit/app_bundle.json` with `refresh_id` `refresh-20260421T140836Z` and `ranked_market_count` `200`
 - status: passed
 
@@ -133,7 +133,7 @@ Use it before recording, presenting, or submitting so the project is checked int
   - refresh limit: `200`
   - address: `127.0.0.1`
   - port: `8768`
-- goal: verify the documented one-command local fallback path refreshes the bundle and serves the app cleanly for recording and final verification
+- goal: verify the documented one-command safe local default path refreshes the bundle and serves the app cleanly for recording and final verification
 - observed result: passed, the helper refreshed the bundle and served the app cleanly on `http://127.0.0.1:8768`
 - status: passed
 
@@ -171,7 +171,7 @@ The project is in a strong near-ready state, but it is not submission-complete y
 
 What is already verified or present:
 - deployed-product path exists
-- local fallback path exists and now renders cleanly
+- locked safe local default path exists and now renders cleanly
 - demo script exists
 - compact Google Slides deck exists and has been read back successfully through the Workspace APIs
 - presenter-notes doc exists and has been read back successfully through the Workspace APIs

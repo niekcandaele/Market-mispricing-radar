@@ -86,7 +86,7 @@ Use this:
 
 ## Demo link field
 Safe default:
-- use the verified local fallback path from `docs/submission-verification-checklist.md`
+- use the locked safe local default path from `docs/submission-verification-checklist.md`
 
 Optional last-minute upgrade only if it opens cleanly:
 - current live Zerve preview opened fresh from the deploy tab right before submission

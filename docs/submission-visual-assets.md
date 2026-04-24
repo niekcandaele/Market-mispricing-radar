@@ -8,7 +8,7 @@ Use it when building the deck or assembling visual proof for the submission.
 
 ## Current screenshot set
 
-Captured from the verified local fallback app using the refreshed local bundle.
+Captured from the locked safe local default app using the refreshed local bundle.
 
 Bundle basis:
 - `artifacts/streamlit/app_bundle.json`
@@ -89,7 +89,7 @@ Why:
 - these are local fallback screenshots, not live Zerve preview captures
 - the 16:9 crops are the preferred slide assets, while the uncropped PNGs remain useful as raw proof captures
 - matching Google Workspace copies now exist in `Documents`, so the office layer has the same default visuals as the repo
-- they are still useful because the local fallback path is verified and presentation-safe
+- they are still useful because the safe local default path is verified and presentation-safe
 - if a clean live preview screenshot pass becomes available later, it can replace or complement these assets
 
 ## If adding live screenshots later

@@ -8,8 +8,8 @@ It is designed so Niek or Cata can present the project quickly without having to
 
 ## Submission-state checklist
 
-- [x] default demo entrypoint locked to the verified local fallback path
-- [x] local fallback demo entrypoint confirmed
+- [x] default demo entrypoint locked to the safe local default path
+- [x] safe local default demo entrypoint confirmed
 - [x] slide deck created from this outline
 - [x] speaker notes copied into the final deck and companion notes doc
 - [ ] short demo video recorded on the same story arc

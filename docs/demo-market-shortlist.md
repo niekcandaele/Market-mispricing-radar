@@ -12,7 +12,7 @@ Use it to pick a strong drilldown market quickly instead of improvising during a
 - refresh id: `refresh-20260422T022427Z`
 - ranked market count: `200`
 
-These picks are based on the current local fallback bundle, so they should be treated as practical candidates, not permanent canon.
+These picks are based on the current safe local default bundle, so they should be treated as practical candidates, not permanent canon.
 
 ## Best current demo-safe picks
 
@@ -20,12 +20,12 @@ These picks are based on the current local fallback bundle, so they should be tr
 - category: `entertainment`
 - headline: `Extreme pricing is being carried with relatively weak support.`
 - why it works:
-  - currently rank `3` in the verified local fallback bundle
+  - currently rank `3` in the locked safe local default bundle
   - clearly visible in the default Radar slice, so it supports a cleaner one-take recording flow
   - highly recognizable market for a broad audience
   - clean explanation headline and a readable detail view
 - best use:
-  - current safe default drilldown for the local fallback path
+  - current safe default drilldown for the locked safe local default path
 
 ### 2. Putin out as President of Russia by December 31, 2026?
 - category: `politics`
