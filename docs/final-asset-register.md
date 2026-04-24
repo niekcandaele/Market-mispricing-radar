@@ -137,7 +137,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
 - office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, final submission-copy doc, slide speaker notes, and visible slide body copy still match the current repo wording after the latest safe-local proof-flow updates, so no further office resync was needed
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
-- video link checked: pending until a real video file or upload URL exists
+- video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
