@@ -56,11 +56,11 @@ Why:
 - the blocker is now operationally clear: first make the notebook public in Zerve, then recheck the resulting public project/share URL
 - the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem
 - the repo now includes a real gate, `python3 scripts/check_zerve_public_share.py`, and the share-post link should only be treated as unblocked when that checker reports `summary.ready_for_share_post_link: true`
-- the latest retained notebook-route baseline still ends in the generic Zerve shell plus auth `403`, so the gate is not just missing a URL, it is still failing the actual public-route check
+- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`, while the same gate run still only reaches auth `403`, so the gate is not just missing a URL, it is still failing the actual public-route check
 - if the UI path is unavailable, the alternative is a human-confirmed final public link after the project has been made public
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260423T230244Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T152548Z.json`
 
 ### Verified but still optional
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
