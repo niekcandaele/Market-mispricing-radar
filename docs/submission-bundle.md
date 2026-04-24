@@ -14,9 +14,10 @@ Use it to answer four questions quickly:
 
 ### Demo
 - status: usable
-- preferred last-minute upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
-- repo docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- local fallback: verified locally, including a refreshed 2026-04-21 export-and-render pass against the current bundle, and should still be treated as the locked safe recording/submission path because it is one-command and presentation-safe even though a fresh 2026-04-22 live preview check did recover a real working preview after warm-up
+- default path: verified local fallback, which remains the locked safe recording/submission path because it is one-command and presentation-safe
+- optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
+- source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
+- note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the safe-default local choice
 
 ### Slides
 - status: compact 6-slide deck now populated, tightened, styled, given embedded speaker notes, pushed through a visually coherent first background pass in Google Workspace `Documents`, given a final copy-tightening readability pass, upgraded with stronger section-hierarchy kickers on the body slides, and given right-side visual proof cards on the core workflow/product/zerve/next slides
