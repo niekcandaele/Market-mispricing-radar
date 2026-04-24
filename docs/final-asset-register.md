@@ -99,24 +99,24 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - `Market Mispricing Radar - local-methodology-view-16x9.png` — file id `1ABee8QF2x6RYPEZo43LEn9h0H4CI1Y4l`
 - office-layer note: the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on `2026-04-24` from the current repo assets, and Drive md5 checks matched the local slide-ready PNGs after upload
 
-Remaining `pending` values below are intentional submission-time fields, not packaging gaps.
+Remaining unresolved values below are intentional submission-time fields, not packaging gaps.
 
 ## Final video asset
 
-- status: pending until the final demo is recorded and a real file path or upload URL exists
-- title or filename: pending real recording output
-- location or upload URL: pending recorded file path or final upload URL
-- recorded on: pending completed recording session
+- status: not recorded yet; record the final demo and capture the real file path or upload URL
+- title or filename: set after recording
+- location or upload URL: set after recording or upload
+- recorded on: set after the recording session
 - notes: use `docs/video-recording-run-sheet.md`
 
 ## Final submission form
 
-- status: pending until the actual Devpost form is filled with final links and submitted
-- Devpost submission URL: pending live submission URL capture after the real form pass
-- final project URL used in form: pending the final chosen project/demo URL at form-fill time
-- video URL used in form: pending final video file or upload URL
-- screenshot/image URL used in form: pending the final screenshot choice used during form fill
-- submitted on: pending the actual submission event
+- status: not submitted yet; fill the real Devpost form with final links and submit
+- Devpost submission URL: capture after the real form submission
+- final project URL used in form: set at form-fill time
+- video URL used in form: set after the final video file or upload URL exists
+- screenshot/image URL used in form: set at form-fill time
+- submitted on: set at the actual submission event
 
 ## Required public share post
 
@@ -125,8 +125,8 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- project link to use: pending until the notebook is made public in Zerve and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
-- posted on: pending verified public link plus human platform choice and approval
+- project link to use: blocked until the notebook is made public in Zerve and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
+- posted on: set after a verified public link exists and the human chooses and approves the final platform/post
 
 ## Last verification snapshot
 
