@@ -131,7 +131,7 @@ Remaining `pending` values below are intentional submission-time fields, not pac
 ## Last verification snapshot
 
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-24, and the live preview remains a separately verified optional upgrade
-- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T091814Z.json` (`refreshId`: `refresh-20260424T091747Z`)
+- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T133334Z.json` (`refreshId`: `refresh-20260424T133232Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and demo-link notes
