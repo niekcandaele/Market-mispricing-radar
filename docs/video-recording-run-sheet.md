@@ -132,7 +132,7 @@ Override with env vars if needed, for example `MMR_SERVER_PORT=8765 ./scripts/ru
 
 - do one clean take instead of over-explaining
 - keep the story focused on inspection, explainability, and credibility
-- treat the locked safe local default as the safe default and only upgrade to live if it is clearly healthy
+- treat the locked safe local default as the default path and only upgrade to live if it is clearly healthy
 - better to sound honest and sharp than overclaiming
 - if needed, use `docs/video-voiceover-script.md` to keep the spoken pass tight and consistent
 - if the safe local sweep fails, stop and fix that before recording instead of improvising around it

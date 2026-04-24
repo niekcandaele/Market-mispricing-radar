@@ -63,7 +63,7 @@ Create or store:
 - one clean note in the office layer with the final chosen demo path
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
-- status: demo-link notes doc exists and already captures the locked safe local default plus the default visual pairings for recording
+- status: demo-link notes doc exists and already captures the locked safe local default plus the chosen visual pairings for recording
 
 Source materials:
 - `docs/submission-verification-checklist.md`

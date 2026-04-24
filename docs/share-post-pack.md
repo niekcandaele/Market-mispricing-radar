@@ -105,7 +105,7 @@ Before posting:
 - do not silently swap in the gallery/community route unless that exact route has been consciously chosen and verified
 - use one clean screenshot only
 - keep the tone product-facing, not overly technical
-- do not mention local fallback commands in the public post
+- do not mention safe local default launch commands in the public post
 
 ## Approval boundary
 

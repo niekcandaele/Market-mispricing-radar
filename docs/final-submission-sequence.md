@@ -160,12 +160,12 @@ Reference:
 - `docs/submission-verification-checklist.md`
 - `docs/final-asset-register.md`
 
-## Emergency fallback path
+## Emergency minimal submission path
 
 If time is collapsing:
 1. verify a working demo path, live or safe local default
 2. run the recording preflight checklist, and on the safe local path run `./scripts/check_safe_local_demo.sh`, then record the one-take demo using the run sheet and voiceover script
-3. paste the safe default field set from the form map
+3. paste the default field set from the form map
 4. submit with honest scope and working assets
 
 In a crunch, working and credible beats incomplete perfection.

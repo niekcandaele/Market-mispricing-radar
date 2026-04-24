@@ -55,7 +55,7 @@ Use it to answer four questions quickly:
 These should be treated as useful breadcrumbs, not permanent URLs.
 
 ### Safe local default demo
-This is now the submission-safe default path unless a fresh live preview opens cleanly at the final check.
+This is now the submission-safe chosen path unless a fresh live preview opens cleanly at the final check.
 
 Right before the real recording take on this path, run the one-command final sweep:
 
@@ -182,7 +182,7 @@ Defaults:
 
 While the live-preview path remains an optional upgrade:
 1. keep polishing the compact deck and presenter notes
-2. treat the locked safe local default as the presentation-safe chosen path
+2. treat the locked safe local default as the presentation-safe default path
 3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
 4. use the repaired direct deploy-script path if a fresh live host needs to be regenerated right before recording
 
