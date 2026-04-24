@@ -32,7 +32,7 @@ Use it to answer four questions quickly:
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
-- status: draft-ready
+- status: paste-ready source material exists in both the repo and Google Workspace
 - repo source material: `docs/submission-copy-draft.md`
 - required next artifact: paste/adapt into the actual hackathon submission form
 
