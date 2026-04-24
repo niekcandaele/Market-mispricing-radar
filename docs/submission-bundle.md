@@ -172,7 +172,7 @@ Defaults:
 - Google Workspace office artifacts now exist and are no longer blocked on auth
 - the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and a fresh 2026-04-22 bearer-auth preview trigger produced a new working preview again
 - the current concrete live-preview behavior is now understood: a fresh host can resolve immediately, serve ELB `503` during warm-up, then turn into a healthy rendered Streamlit app about 45 seconds later
-- the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the local fallback is already one-command and fully presentation-safe
+- the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the locked safe local default is already one-command and fully presentation-safe
 
 ### Not a blocker right now, but still needed before calling the project ready
 - keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents`
@@ -182,7 +182,7 @@ Defaults:
 
 While the live-preview path remains an optional upgrade:
 1. keep polishing the compact deck and presenter notes
-2. treat the locked safe local default as the presentation-safe default path
+2. treat the locked safe local default as the presentation-safe chosen path
 3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
 4. use the repaired direct deploy-script path if a fresh live host needs to be regenerated right before recording
 

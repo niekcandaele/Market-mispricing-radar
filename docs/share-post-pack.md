@@ -31,7 +31,7 @@ Default link choice:
 - after the notebook is made public, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - treat a bare `200` as insufficient if the route only serves the generic Zerve shell instead of the actual public project page
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
-- if the submission-day choice is the local fallback for demo reliability, keep the public post about the project itself, not about local-only launch commands
+- if the submission-day choice is the locked safe local default for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
 - no verified public Zerve project/share URL yet for the required share post. The latest authenticated evidence still says `canvas.is_public: false`, and the public-share gate is still red.

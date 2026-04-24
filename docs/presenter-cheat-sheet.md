@@ -77,7 +77,7 @@ The value is not just finding odd-looking markets. It is giving someone a usable
 
 ## Demo-path note
 
-For the final presentation, treat the locked safe local default as the safe default. Only switch to a live Zerve preview if it opens cleanly right before use.
+For the final presentation, treat the locked safe local default as the default path. Only switch to a live Zerve preview if it opens cleanly right before use.
 
 ## Good closing line
 

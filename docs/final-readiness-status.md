@@ -61,7 +61,7 @@ Why:
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
 - the live deploy repair path is verified: use the in-editor `Start Preview Deployment` action / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` remains the clean repair seam when needed
 - a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
-- current conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the safer default because it is scripted and presentation-safe
+- conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the chosen default because it is scripted and presentation-safe
 - Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path
 
 ### Still required even after blocker resolution

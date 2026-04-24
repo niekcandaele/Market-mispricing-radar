@@ -15,7 +15,7 @@ The repo source material is strong, the Google Workspace office artifacts are re
 ## Final demo path
 
 ### Primary demo path
-- status: ready and locked as the safe default
+- status: ready and locked as the safe local default
 - chosen path: locked safe local default
 - URL or launch source:
   - `./scripts/run_local_demo.sh`
@@ -23,12 +23,12 @@ The repo source material is strong, the Google Workspace office artifacts are re
   - refresh limit: `200`
   - address: `127.0.0.1`
   - port: `8768`
-- verified on: `2026-04-22`
+- verified on: `2026-04-24`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-22, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
-- status: verified, but not chosen as the safe default
+- status: verified, but not chosen as the default path
 - path: fresh live Zerve Streamlit preview reopened from the deploy tab
 - URL or launch source: `https://1237c1f1-ee724b30.hub.zerve.cloud/` (fresh 2026-04-22 recovery) or a fresh equivalent reopened from the deploy tab
 - verified on: `2026-04-22`
