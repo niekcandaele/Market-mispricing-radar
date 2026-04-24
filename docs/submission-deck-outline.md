@@ -6,13 +6,13 @@ This document is the source outline for the hackathon deck, speaker notes, and s
 
 It is designed so Niek or Cata can present the project quickly without having to reconstruct the story from implementation notes.
 
-## Submission-ready checklist
+## Submission-state checklist
 
-- [ ] chosen demo entrypoint confirmed before recording or presenting
-- [ ] local fallback demo entrypoint confirmed
-- [ ] slide deck created from this outline
-- [ ] speaker notes copied into the final deck or companion doc
-- [ ] short demo video follows the same story arc
+- [x] default demo entrypoint locked to the verified local fallback path
+- [x] local fallback demo entrypoint confirmed
+- [x] slide deck created from this outline
+- [x] speaker notes copied into the final deck and companion notes doc
+- [ ] short demo video recorded on the same story arc
 - [ ] final submission links checked
 
 ## Demo entrypoints
