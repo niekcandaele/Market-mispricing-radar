@@ -53,6 +53,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - Drive bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - Drive PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - local PDF export: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
+- PDF verification: local PDF exists, is non-empty, and has 9 pages matching the rebuilt 9-slide deck
 - alignment note: rebuilt around the locked safe local default, the GTA drilldown default, current proof screenshots, generated visual assets, and hidden per-slide speaker notes.
 - QA note: local Playwright QA on 2026-04-25 confirmed 9 slides, 9 nav dots, all six images loaded with alt text, no overflowing slides at 1280x720, and the vanilla `SlidePresentation` controller present; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/html-deck-qa-20260425T0533Z.json`
 - source docs:
