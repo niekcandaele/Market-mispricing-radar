@@ -62,13 +62,13 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] rebuilt deck ZIP verified as complete and uncorrupted
 - [x] Drive deck HTML, ZIP, and PDF artifacts verified against local size/md5 checks
 - [x] rebuilt deck exported to PDF, verified as 9 pages, and uploaded to Google Drive
-- [x] Google Doc presenter notes finalized
+- [x] Google Doc presenter notes refreshed to the rebuilt 9-slide deck and readback-verified
 - [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] demo link reference created in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] assets stored cleanly in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] authenticated `gws` CLI path for Google Workspace creation is available
 - [x] office-layer handoff checklist exists
-- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs, the submission-copy doc was refreshed and reverified against the latest submission copy, and the Demo Link Notes doc was refreshed and reread after the latest safe-local recheck
+- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs; latest office-doc QA confirmed presenter notes, submission copy, and Demo Link Notes contain the required current story/proof markers
 
 ## Submission-form checks
 
@@ -178,7 +178,7 @@ What is already verified or present:
 - locked safe local default path exists and now renders cleanly
 - demo script exists
 - rebuilt 9-slide HTML deck exists locally and in Google Drive as both an HTML file and a ZIP bundle
-- presenter-notes doc exists and has been read back successfully through the Workspace APIs
+- presenter-notes doc exists, was refreshed to the rebuilt 9-slide HTML/PDF deck, and has been read back successfully through the Workspace APIs
 - final submission-copy doc exists, was refreshed to match the latest submission copy, and has been read back successfully through the Workspace APIs
 - demo-link reference doc exists, was refreshed after the latest safe-local recheck, and has been read back successfully through the Workspace APIs
 - short submission variants exist

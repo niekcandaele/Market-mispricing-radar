@@ -64,10 +64,10 @@ The main demo path, office artifacts, and submission materials are in place. The
   - `docs/slide-copy-pack.md`
 
 ### Speaker notes / presenter notes
-- status: created, structured presenter notes are aligned to the locked safe local default, readback-verified against the current recording path, and ready for recording use
+- status: created, refreshed on 2026-04-25 to match the rebuilt 9-slide HTML/PDF deck, aligned to the locked safe local default, readback-verified against the current recording path, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, and the rebuilt 9-slide deck order.
+- alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, the rebuilt 9-slide deck order, and the public-share blocker wording.
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
@@ -142,8 +142,8 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, local Playwright QA confirmed the rebuilt 9-slide HTML deck structure, navigation dots, image loading, alt text, hidden notes, and no 1280x720 slide overflow
-- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh
-- office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the latest repo wording, and the final submission-copy doc was refreshed and read back again later the same day to match the latest submission copy
+- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh; latest office-doc readback QA evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260425T1032Z.json`
+- office wording drift checked: yes, a 2026-04-25 readback pass confirmed the presenter notes doc, Demo Link Notes doc, and final submission-copy doc are readable through Workspace APIs and contain the current required proof/deck/story markers
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh

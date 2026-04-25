@@ -49,7 +49,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or hidden per-slide notes inside the rebuilt HTML deck if that is cleaner
-- status: presenter-notes doc exists, and the rebuilt HTML deck includes hidden per-slide notes aligned to the locked safe local default plan
+- status: presenter-notes doc exists, was refreshed and read back on 2026-04-25 to match the rebuilt 9-slide HTML/PDF deck, locked safe local default, GTA drilldown, and public-share blocker wording; the rebuilt HTML deck also includes hidden per-slide notes aligned to the locked safe local default plan
 
 Source materials:
 - `docs/judge-demo-script.md`
@@ -73,7 +73,7 @@ Source materials:
 ### 4. Final submission text reference
 Create or store:
 - one clean reference doc or note with the exact final wording used in the submission form
-- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully again on 2026-04-24
+- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully again in the 2026-04-25 office-doc QA pass
 
 Source materials:
 - `docs/submission-form-map.md`
