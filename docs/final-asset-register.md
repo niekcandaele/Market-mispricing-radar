@@ -138,7 +138,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 
 ## Last verification snapshot
 
-- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, and public-share blocker evidence
+- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share blocker evidence
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-25, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
@@ -148,6 +148,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
+- repo reference audit checked: yes, `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/repo-reference-audit-20260425T1146Z.json` found no missing real proof/artifact paths; the only misses are intentional branch-name examples in `docs/repo-workflow.md`
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 - notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T094845Z.json`
 - verified on: `2026-04-25`
