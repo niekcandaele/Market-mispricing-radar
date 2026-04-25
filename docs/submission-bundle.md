@@ -10,6 +10,8 @@ Use it to answer four questions quickly:
 - what presentation material already exists
 - what is still missing before the hackathon submission is truly ready
 
+If someone needs only the shortest operational handoff, use `docs/final-human-handoff.md` first.
+
 ## Current status snapshot
 
 Retained evidence manifest:

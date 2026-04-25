@@ -15,6 +15,7 @@ Use these first during the final ZerveHack sprint:
 - form map: `docs/submission-form-map.md`
 - recording preflight: `docs/recording-preflight-checklist.md`
 - final asset register: `docs/final-asset-register.md`
+- final human handoff: `docs/final-human-handoff.md`
 
 Current locked demo path:
 - default: locked safe local default via `./scripts/check_safe_local_demo.sh` then `./scripts/run_local_demo.sh`
