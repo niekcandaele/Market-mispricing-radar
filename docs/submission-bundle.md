@@ -185,7 +185,7 @@ Defaults:
 ## Recommended next steps
 
 While the live-preview path remains an optional upgrade:
-1. keep polishing the compact deck and presenter notes
+1. keep any remaining deck work limited to low-risk polish on the rebuilt 9-slide HTML/PDF package and presenter notes
 2. treat the locked safe local default as the presentation-safe default path
 3. keep late-stage polish focused on consistency, verification freshness, and handoff clarity
 4. use the repaired direct deploy-script path if a fresh live host needs to be regenerated right before recording

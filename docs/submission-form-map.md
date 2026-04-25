@@ -87,9 +87,18 @@ Use this:
 ## Demo link field
 Safe default:
 - use the locked safe local default path from `docs/submission-verification-checklist.md`
+- current retained safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 
 Optional last-minute upgrade only if it opens cleanly:
 - current live Zerve preview opened fresh from the deploy tab right before submission
+
+## Deck / presentation field
+Use the rebuilt 9-slide deck package:
+- HTML deck: `https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`
+- ZIP bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
+- PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
+
+If the form accepts only one presentation attachment/link, prefer the PDF for easy judging and keep the ZIP bundle as the portable source package.
 
 ## Video field
 Use:

@@ -197,7 +197,7 @@ What is already verified or present:
 
 What still blocks a true done call:
 - final live preview recheck right before submission
-- final visual polish on the compact deck
+- optional final visual polish on the rebuilt 9-slide HTML/PDF deck package
 - actual recording execution against the aligned presenter notes / recording plan
 - final link and form verification pass
 

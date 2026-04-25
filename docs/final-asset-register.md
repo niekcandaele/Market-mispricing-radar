@@ -65,7 +65,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - status: created, structured presenter notes are aligned to the locked safe local default, readback-verified against the current recording path, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, and the compact deck order.
+- alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, and the rebuilt 9-slide deck order.
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
