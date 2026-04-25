@@ -33,79 +33,81 @@ It is designed so Niek or Cata can present the project quickly without having to
 Market Mispricing Radar
 
 ### On-slide content
-- Find prediction markets whose pricing looks fragile, stale, or weakly supported
+- A live prediction-market radar for fragile, stale, extreme, or weakly supported prices
 - Explainable ranking, not a black-box score dump
 - Built and deployed through a real Zerve notebook-to-app pipeline
 
 ### Speaker notes
-Prediction markets are powerful, but most interfaces still make you scan one market at a time. We built a live radar that surfaces which markets deserve a second look right now, and explains why they surfaced.
+Open with the inspection problem: prediction markets are dense, but most interfaces leave triage to the user.
 
-## Slide 2, Problem
-
-### Slide title
-The problem with raw market interfaces
-
-### On-slide content
-- too many markets, too little prioritization
-- fragile or weakly supported pricing can hide in plain sight
-- raw odds alone do not explain which markets deserve inspection first
-
-### Speaker notes
-The problem is not a lack of market data, it is a lack of triage. If you want to inspect market quality, you should not need to manually browse endless raw odds and guess what looks unstable or stale.
-
-## Slide 3, Solution
+## Slide 2, Raw odds are not enough
 
 ### Slide title
-A ranked radar for markets that deserve scrutiny
+Raw odds are not enough
 
 ### On-slide content
-- ranks markets that look stale, fragile, extreme, or weakly supported
-- surfaces explanation headlines and drilldown detail
-- keeps the MVP honest about scope and confidence
+- too many markets compete for attention
+- fragile pricing can hide in plain sight
+- users need reasons, not just ranks
 
 ### Speaker notes
-The product claim is intentionally tight. We are not saying we know the true fair value of every market. We are saying we can rank which markets look most worthy of inspection and explain the reasons behind that ranking.
+Frame the problem as inspection and prioritization, not guaranteed arbitrage.
 
-## Slide 4, Product flow
+## Slide 3, Explainable triage surface
 
 ### Slide title
-How the product works
+The product is an explainable triage surface
 
 ### On-slide content
-1. ingest live Polymarket markets
-2. normalize and categorize markets
-3. build market features and score fragility signals
-4. generate explanations and a deployed radar app
+- fetch live Polymarket market data
+- score staleness, extremeness, weak support, and instability
+- rank markets by inspection priority
+- explain why each market surfaced
+- expose caveats instead of hiding them
 
 ### Speaker notes
-This is a real end-to-end flow. The notebook ingests live market data, normalizes it, builds features, scores markets, generates explanations, and feeds the deployed Streamlit app.
+Keep this as a product story: the app helps decide what deserves a second look.
 
-## Slide 5, Live product proof
+## Slide 4, Radar view proof
 
 ### Slide title
-Live demo proof
+Radar view proof
 
 ### On-slide content
-- Radar view ranks live markets with explanation headlines
-- Detail view shows score drivers, signals, and caveats
-- Methodology view explains what the score means and what it does not mean
+- ranked cards
+- explanation headlines
+- category context
+- visible caveats
 
 ### Speaker notes
-This is the strongest demo section. Start on the Radar view, click into a top market, and show that the score is interpretable. Then briefly show the Methodology page to reinforce that the scope is honest and deliberate.
+Show the top-ranked markets and point out the default GTA VI drilldown path.
 
-## Slide 6, Why this is credible
+## Slide 5, Detail view proof
 
 ### Slide title
-Why the output is worth trusting
+The score is inspection evidence, not a profit promise
 
 ### On-slide content
-- explainable fragility scoring
-- visible QA warnings and caveats
-- product surfaces evidence, not just a rank
-- deployed app connected to the live notebook pipeline
+- score drivers show what moved the market up the radar
+- observed signals make the ranking auditable
+- caveats keep the MVP honest
 
 ### Speaker notes
-We tried hard not to build a flashy but dishonest project. The app exposes caveats, shows QA warnings, and explains why a market surfaced instead of hiding behind an opaque score.
+Use GTA VI as the locked default drilldown example.
+
+## Slide 6, Methodology honesty
+
+### Slide title
+Methodology honesty
+
+### On-slide content
+- Polymarket-first MVP
+- explanation-first ranking
+- clear limitations
+- triage signal, not financial advice
+
+### Speaker notes
+This is the honesty beat. Say what the score does and does not claim.
 
 ## Slide 7, Why Zerve matters
 
@@ -113,31 +115,40 @@ We tried hard not to build a flashy but dishonest project. The app exposes cavea
 Why this fits ZerveHack
 
 ### On-slide content
-- notebook pipeline and deployed app are connected in one environment
-- analysis becomes a usable product with a real app surface
-- real deployment with a usable app, not static screenshots
+- notebook blocks produce the live analysis pipeline
+- outputs flow into a deployed Streamlit product
+- the workflow turns analysis into something judges can inspect
 
 ### Speaker notes
-The Zerve story matters here. This project turns live notebook analysis into a usable deployed product. The same environment handles ingestion, scoring, explanation generation, and deployment.
+Close the loop from Zerve notebook to deployed app. Mention the safe local default only if needed for recording reliability.
 
-## Slide 8, MVP honesty and next steps
+## Slide 8, Submission status
 
 ### Slide title
-What is live now, and what comes next
+Submission status is near-ready, not pretend-complete
 
 ### On-slide content
-Live now:
-- Polymarket-first MVP
-- deployed radar, detail, and methodology views
-- explanation-rich market ranking
-
-Next:
-- add cross-source comparison
-- strengthen confidence calibration
-- expand richer event/news context
+- ready: locked safe local demo path
+- ready: submission copy and notes
+- blocked: public Zerve share link
 
 ### Speaker notes
-The MVP is intentionally single-source and honest about that. The obvious next step is cross-source confirmation, but the current version already demonstrates a strong explainable workflow end to end.
+Be explicit: the remaining blocker is public sharing, not the product demo.
+
+## Slide 9, Close
+
+### Slide title
+A usable radar for markets worth a second look
+
+### On-slide content
+- fast triage
+- explainable evidence
+- honest scope
+- default demo: locked safe local path
+- drilldown: GTA VI released before June 2026?
+
+### Speaker notes
+End on the value: fast triage, explainable evidence, honest scope.
 
 ## Legacy compact 6-slide deck
 
