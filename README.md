@@ -25,6 +25,14 @@ Current deck handoff:
 - judge-facing PDF: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - portable ZIP: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 
+Current blocker:
+- required public share-post link is not ready yet
+- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T094845Z.json`
+- only clear this when `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
+
+Retained evidence manifest:
+- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
+
 See `PROJECT_PLAN.md` for the initial project plan.
 
 Project workflow and repo conventions live in `docs/repo-workflow.md`.
