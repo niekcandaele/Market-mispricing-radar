@@ -28,7 +28,7 @@ Why:
 - demo script exists
 - submission deck outline exists
 - previous Google Slides deck was trashed per updated deck instruction
-- fresh 9-slide HTML submission deck was rebuilt with the updated `slides-generator` skill and uploaded to Google Drive as HTML plus ZIP bundle
+- fresh 9-slide HTML submission deck was rebuilt with the updated `slides-generator` skill and uploaded to Google Drive as HTML, ZIP bundle, and verified 9-page PDF export
 - slide build kit exists
 - slide copy pack exists
 - presenter cheat sheet exists

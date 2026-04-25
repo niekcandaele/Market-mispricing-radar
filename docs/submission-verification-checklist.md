@@ -196,10 +196,13 @@ What is already verified or present:
 - bundle index exists
 
 What still blocks a true done call:
-- final live preview recheck right before submission
-- optional final visual polish on the rebuilt 9-slide HTML/PDF deck package
 - actual recording execution against the aligned presenter notes / recording plan
+- final public Zerve/share-post gate, form submission, and real final link capture
 - final link and form verification pass
+
+Optional, not blocking the safe-local submission path:
+- final live preview recheck right before submission, only if considering a live upgrade
+- low-risk visual polish on the rebuilt 9-slide HTML/PDF deck package, only if it is clearly beneficial
 
 ### 2026-04-21 repaired live preview recheck
 - browser/auth path: passed, Browserless + Playwright reopened the Zerve notebook successfully

@@ -4,7 +4,7 @@
 
 Chosen concept for ZerveHack.
 
-This repository is the support layer for planning, backup, project management, and portable artifacts. The core analysis and deployment are expected to happen in Zerve, with selected assets copied between this repo and Zerve as needed.
+This repository is the support layer for planning, backup, project management, and portable artifacts. The core analysis and deployment now live in the Zerve notebook/app path, with selected assets copied between this repo, Zerve, and Google Workspace as needed.
 
 Primary planning document:
 - `PRD.md`
@@ -15,10 +15,12 @@ This file is the execution-oriented plan.
 
 We are building a prediction-market intelligence product in Zerve that ranks potentially mispriced or fragile markets and explains why they are flagged.
 
-The intended final artifact is:
-- a public Zerve project
-- a deployed Streamlit app in Zerve
-- optionally a FastAPI endpoint if it is low-friction after the app works
+Current late-stage target:
+- a deployed Streamlit app in Zerve, with the locked safe local default as the presentation-safe recording path
+- a public Zerve project/share URL once the Zerve visibility blocker is cleared and verified by `python3 scripts/check_zerve_public_share.py`
+- a polished submission package: 9-slide HTML/PDF deck, presenter notes, recording plan, form copy, share-post pack, and final asset register
+
+FastAPI is no longer part of the submission-critical path; keep it as future optional expansion only.
 
 ## What the Zerve docs change in our plan
 
@@ -91,8 +93,8 @@ Suggested pipeline stages:
 Primary deployment:
 - Streamlit app consuming ranked and explained outputs from the development layer
 
-Optional deployment:
-- FastAPI endpoint serving ranked outputs and market detail views
+Optional future deployment:
+- FastAPI endpoint serving ranked outputs and market detail views, only after submission-critical app/video/form work is complete
 
 ### Scheduled jobs layer
 
@@ -194,9 +196,10 @@ Rule:
 ### Must-have
 - one strong question
 - one coherent ranking system
-- one deployed app
+- one deployed app or locked safe demo path
 - clear explanations
-- public Zerve project
+- public Zerve project/share URL for the required share post, verified by `scripts/check_zerve_public_share.py`
+- final video, submission form, and share-post execution
 
 ### Nice-to-have
 - API deployment
