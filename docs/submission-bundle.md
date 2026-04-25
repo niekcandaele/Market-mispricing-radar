@@ -24,7 +24,7 @@ Use it to answer four questions quickly:
 - status: previous Google Slides deck was trashed, then the deck was rebuilt from scratch with the updated `slides-generator` skill as a 9-slide HTML deck with generated visuals, proof screenshots, and hidden per-slide notes
 - source doc: `docs/submission-deck-outline.md`
 - deck artifact: `artifacts/submission/slides-generator-deck/slides.html`
-- Drive bundle: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)` (`1FFroHF0Gj-wie5AyykylTb08soQT79Bb`)
+- Drive bundle: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)` (`1FFroHF0Gj-wie5AyykylTb08soQT79Bb`); local ZIP QA confirmed the bundle contains `slides.html` plus all six required image assets with no corrupt entries
 - Drive PDF export: `Market Mispricing Radar - Submission Deck (PDF)` (`17smwphggaqZGOWXU5CNBgafynE4pAtKh`)
 - remaining work: optional low-risk layout polish only if it is clearly worth it
 
