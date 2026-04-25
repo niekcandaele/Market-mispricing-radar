@@ -136,7 +136,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-24, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T193220Z.json` (`refreshId`: `refresh-20260424T193220Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
-- deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
+- deck link checked: yes, local Playwright QA confirmed the rebuilt 9-slide HTML deck structure, navigation dots, image loading, alt text, hidden notes, and no 1280x720 slide overflow
 - notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh
 - office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the latest repo wording, and the final submission-copy doc was refreshed and read back again later the same day to match the latest submission copy
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, docs, and screenshot assets without duplicate presentation decks

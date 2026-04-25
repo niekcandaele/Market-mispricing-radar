@@ -48,7 +48,7 @@ Source materials:
 ### 2. Google Doc or speaker notes artifact
 Create one of:
 - one Google Doc for recording notes and presenter notes
-- or deck speaker notes embedded slide by slide if that is cleaner
+- or hidden per-slide notes inside the rebuilt HTML deck if that is cleaner
 - status: presenter-notes doc exists, and the rebuilt HTML deck includes hidden per-slide notes aligned to the locked safe local default plan
 
 Source materials:
