@@ -160,7 +160,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - commands:
   - `./scripts/run_local_demo.sh`
   - local Playwright verification against `http://127.0.0.1:8768`
-- goal: reconfirm the current safe local default still renders the full demo flow during late-stage submission polish
+- goal: reconfirm the locked safe local default still renders the full demo flow during late-stage submission polish
 - observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, `Methodology`, and `Focus in detail`, then successfully navigated into Market Detail and Methodology
 - notable observed values: `refresh_id` `refresh-20260421T140836Z`, `ranked_market_count` `200`
 - status: passed
