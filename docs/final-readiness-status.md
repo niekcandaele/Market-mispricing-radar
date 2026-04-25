@@ -64,7 +64,7 @@ Why:
 - if the UI path is unavailable, the alternative is a human-confirmed final public link after the project has been made public
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260424T194951Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T094845Z.json`
 
 ### Verified but still optional
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
