@@ -4,7 +4,7 @@
 
 This is the bridge between the deck outline and the actual slide build.
 
-Use it when turning the submission story into Google Slides so the visual choices are mostly pre-made instead of improvised.
+Use it when turning the submission story into the current slides-generator HTML deck or any future presentation rebuild so the visual choices are mostly pre-made instead of improvised.
 
 ## Source inputs
 
@@ -24,13 +24,13 @@ Visual sources:
 
 ## Recommended deck shape
 
-Default: compact 6-slide deck.
+Current default: rebuilt 9-slide `slides-generator` HTML deck at `artifacts/submission/slides-generator-deck/slides.html`.
 
-Only expand beyond that if a fuller version becomes clearly stronger.
+The older compact 6-slide shape below is retained as source structure only. Do not treat it as the active deck artifact.
 
-Use a clean, visual deck. Prefer one strong screenshot plus a few bullets over dense text blocks.
+Use a clean, visual deck. Prefer one strong screenshot or generated visual plus a few bullets over dense text blocks.
 
-## Expanded 8-slide build notes
+## Legacy expanded build notes
 
 ### Slide 1, Title / hook
 Use:
@@ -127,9 +127,9 @@ On-slide emphasis:
 Keep it short:
 - this is a close, not a roadmap lecture
 
-## Default compact 6-slide version
+## Legacy compact 6-slide version
 
-This is the current default deck path.
+This is retained as source structure only. The current deck artifact is the rebuilt 9-slide `slides-generator` HTML deck at `artifacts/submission/slides-generator-deck/slides.html`.
 
 1. title / hook with `local-radar-view-16x9.png`
 2. problem and solution with either light radar reuse or a text-first slide
@@ -190,7 +190,7 @@ Use one of:
 ## Final build reminder
 
 Use this order:
-1. keep the compact 6-slide deck as the default unless a fuller version clearly improves the story
-2. use this kit for screenshot/layout refinement
-3. copy speaker notes from `docs/submission-deck-outline.md` and `docs/judge-demo-script.md`
+1. treat `artifacts/submission/slides-generator-deck/slides.html` as the current deck artifact
+2. use this kit for screenshot/layout refinement only when it clearly improves the rebuilt deck
+3. keep speaker notes aligned with `docs/submission-deck-outline.md` and `docs/judge-demo-script.md`
 4. do one final readability and alignment pass before recording or submitting

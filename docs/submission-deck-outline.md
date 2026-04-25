@@ -139,9 +139,9 @@ Next:
 ### Speaker notes
 The MVP is intentionally single-source and honest about that. The obvious next step is cross-source confirmation, but the current version already demonstrates a strong explainable workflow end to end.
 
-## Default compact 6-slide deck
+## Legacy compact 6-slide deck
 
-This is the current default deck path.
+This is retained as source structure. The current deck artifact is the rebuilt 9-slide `slides-generator` HTML deck at `artifacts/submission/slides-generator-deck/slides.html`.
 
 ### Slide 1, Title / hook
 Speaker notes:

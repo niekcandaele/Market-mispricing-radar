@@ -96,9 +96,9 @@ What is live now, and what comes next
 - next: cross-source comparison and stronger calibration
 - keep expanding context only where it improves explainability
 
-## Default compact 6-slide deck version
+## Legacy compact 6-slide deck version
 
-This is the current default deck path.
+This is retained as source copy. The current deck artifact is the rebuilt 9-slide `slides-generator` HTML deck at `artifacts/submission/slides-generator-deck/slides.html`.
 
 ### Slide 1, Title / hook
 #### Title
