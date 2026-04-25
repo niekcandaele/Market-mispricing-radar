@@ -62,6 +62,8 @@ Why before recording:
 Do:
 - use the fresh 9-slide HTML deck rebuilt with the updated `slides-generator` skill
 - treat `artifacts/submission/slides-generator-deck/slides.html` as the current deck source
+- use the Drive PDF export as the easiest single judge-facing presentation link: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
+- keep the Drive HTML deck (`https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`) and ZIP bundle (`https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`) as the interactive/portable deck package
 - only do another screenshot/layout or readability pass if there is a clearly beneficial, low-risk improvement
 - keep it concise and visually clean
 - include problem, solution, product flow, proof/demo, why Zerve matters, and next steps
