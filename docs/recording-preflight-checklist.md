@@ -9,8 +9,8 @@ Use it to avoid wasting a take on preventable setup mistakes.
 ## Demo path check
 
 Current retained safe-local proof before recording:
-- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json`
-- `refreshId`: `refresh-20260425T080227Z`
+- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T130211Z.json`
+- `refreshId`: `refresh-20260425T130211Z`
 
 - [ ] run `./scripts/check_safe_local_demo.sh` before the real take if using the safe local default path
 - [ ] keep the fresh retained JSON that script writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current proof for the take
