@@ -8,7 +8,7 @@ Use it when the demo script is too broad and you need a crisp filming sequence w
 
 If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
 
-Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep. That script now writes the current retained proof JSON automatically under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` and archives the previously active safe-local baseline.
+Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep. That script now writes the current retained proof JSON automatically under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` and archives the previously active safe-local baseline. Current retained proof before recording: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`).
 
 ## Target shape
 
@@ -26,6 +26,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 - only switch to the live Zerve preview if it is clearly healthy right before recording
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section, defaulting to `GTA VI released before June 2026?` on the locked safe local default path
+- keep the Drive PDF deck open as a backup story spine: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 
 ## Recording order
 

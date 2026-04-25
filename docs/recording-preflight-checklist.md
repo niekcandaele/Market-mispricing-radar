@@ -8,6 +8,10 @@ Use it to avoid wasting a take on preventable setup mistakes.
 
 ## Demo path check
 
+Current retained safe-local proof before recording:
+- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json`
+- `refreshId`: `refresh-20260425T080227Z`
+
 - [ ] run `./scripts/check_safe_local_demo.sh` before the real take if using the safe local default path
 - [ ] keep the fresh retained JSON that script writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current proof for the take
 - [ ] default to the locked safe local default as the primary recording path
@@ -25,6 +29,7 @@ Use it to avoid wasting a take on preventable setup mistakes.
 - [ ] decide whether to use the primary voiceover, fuller voiceover, or tight fallback from `docs/video-voiceover-script.md`
 - [ ] keep `docs/video-recording-run-sheet.md` open for beat order
 - [ ] keep `docs/judge-demo-script.md` nearby for backup phrasing if needed
+- [ ] keep the deck PDF nearby as a backup story spine: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 
 ## Screen check
 
