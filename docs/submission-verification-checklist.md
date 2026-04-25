@@ -58,6 +58,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 ### Office-layer artifacts
 - [x] old Google Slides deck trashed per updated deck instruction
 - [x] fresh slides-generator HTML deck created and aligned with the safe local default plan
+- [x] rebuilt HTML deck passed local Playwright QA: 9 slides, 9 nav dots, all six images loaded with alt text, no overflowing slides at 1280x720
 - [x] Google Doc presenter notes finalized
 - [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] demo link reference created in Google Workspace `Documents/Hackathons/ZerveHack`
