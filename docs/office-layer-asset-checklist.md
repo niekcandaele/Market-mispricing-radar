@@ -104,6 +104,7 @@ Current verified state on `2026-04-25`:
 - the previous Google Slides deck was trashed
 - the `Documents/Hackathons/ZerveHack` folder now contains these nine expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
+- Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260425T1016Z.json`
 
 ## What should not be left messy
 

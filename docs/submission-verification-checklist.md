@@ -60,6 +60,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] fresh slides-generator HTML deck created and aligned with the safe local default plan
 - [x] rebuilt HTML deck passed local Playwright QA: 9 slides, 9 nav dots, all six images loaded with alt text, no overflowing slides at 1280x720
 - [x] rebuilt deck ZIP verified as complete and uncorrupted
+- [x] Drive deck HTML, ZIP, and PDF artifacts verified against local size/md5 checks
 - [x] rebuilt deck exported to PDF, verified as 9 pages, and uploaded to Google Drive
 - [x] Google Doc presenter notes finalized
 - [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
