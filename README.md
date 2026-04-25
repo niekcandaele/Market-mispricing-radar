@@ -7,6 +7,24 @@ Primary goals:
 - keep project management sane
 - mirror important Zerve artifacts locally
 
+## Current submission handoff
+
+Use these first during the final ZerveHack sprint:
+- bundle index: `docs/submission-bundle.md`
+- final sequence: `docs/final-submission-sequence.md`
+- form map: `docs/submission-form-map.md`
+- recording preflight: `docs/recording-preflight-checklist.md`
+- final asset register: `docs/final-asset-register.md`
+
+Current locked demo path:
+- default: locked safe local default via `./scripts/check_safe_local_demo.sh` then `./scripts/run_local_demo.sh`
+- retained proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
+
+Current deck handoff:
+- source: `artifacts/submission/slides-generator-deck/slides.html`
+- judge-facing PDF: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
+- portable ZIP: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
+
 See `PROJECT_PLAN.md` for the initial project plan.
 
 Project workflow and repo conventions live in `docs/repo-workflow.md`.
