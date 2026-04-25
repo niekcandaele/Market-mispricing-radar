@@ -231,6 +231,6 @@ Current sharp blocker:
 - the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`, while the same gate run still only reaches auth `403`, so the gate is still failing the actual public-route check
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T120212Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

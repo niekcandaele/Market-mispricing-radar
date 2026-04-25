@@ -150,7 +150,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
 - repo reference audit checked: yes, `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/repo-reference-audit-20260425T1146Z.json` found no missing real proof/artifact paths; the only misses are intentional branch-name examples in `docs/repo-workflow.md`
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-- notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T120212Z.json`
+- notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
 - verified on: `2026-04-25`
 - verified by: `Jefke`
 

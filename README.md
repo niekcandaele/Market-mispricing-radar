@@ -27,7 +27,7 @@ Current deck handoff:
 
 Current blocker:
 - required public share-post link is not ready yet
-- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T120212Z.json`
+- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
 - only clear this when `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
 
 Immediate human actions:
