@@ -25,7 +25,7 @@ The main demo path, office artifacts, and submission materials are in place. The
   - port: `8768`
 - verified on: `2026-04-24`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the locked safe local default bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-25, including Radar, Methodology, and Market Detail on the locked safe local default bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
 - status: verified, but not chosen as the default path
@@ -137,7 +137,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 ## Last verification snapshot
 
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-24, and the live preview remains a separately verified optional upgrade
-- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T193220Z.json` (`refreshId`: `refresh-20260424T193220Z`)
+- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, local Playwright QA confirmed the rebuilt 9-slide HTML deck structure, navigation dots, image loading, alt text, hidden notes, and no 1280x720 slide overflow
 - notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh

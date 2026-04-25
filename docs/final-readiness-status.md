@@ -21,7 +21,7 @@ Why:
 ### Product / demo
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
-- locked safe local default demo exists and was reverified on 2026-04-24 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T193220Z.json` (`refreshId`: `refresh-20260424T193220Z`)
+- locked safe local default demo exists and was reverified on 2026-04-25 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - product and demo polish are done
 
 ### Narrative / presentation sources
@@ -43,7 +43,7 @@ Why:
 - submission verification checklist exists
 - office-layer asset checklist exists
 - the live Google submission-copy doc was refreshed and read back again on 2026-04-24 to match the latest submission copy
-- the live Google Demo Link Notes doc was refreshed and read back again on 2026-04-24 after the latest safe-local recheck
+- the live Google Demo Link Notes doc was refreshed and read back again on 2026-04-25 after the latest safe-local recheck
 
 ### Visual assets
 - raw local screenshots exist
