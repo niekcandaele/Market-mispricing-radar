@@ -119,6 +119,7 @@ If the blocker does not clear in time:
 
 ## References
 
+- `docs/final-human-handoff.md`
 - `docs/submission-bundle.md`
 - `docs/submission-verification-checklist.md`
 - `docs/final-submission-sequence.md`

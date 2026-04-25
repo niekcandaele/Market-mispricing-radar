@@ -177,6 +177,7 @@ In a crunch, working and credible beats incomplete perfection.
 ## Fast handoff summary
 
 If another person has to finish the submission quickly, tell them:
+- use `docs/final-human-handoff.md` first for the shortest operational handoff
 - use `docs/final-submission-sequence.md` for order of operations
 - use `docs/submission-form-map.md` for the form
 - use `docs/recording-preflight-checklist.md`, `docs/video-recording-run-sheet.md`, and `docs/video-voiceover-script.md` for recording

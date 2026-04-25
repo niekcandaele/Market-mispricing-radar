@@ -157,6 +157,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 ## References
 
 Use these during the final sprint:
+- `docs/final-human-handoff.md`
 - `docs/final-submission-sequence.md`
 - `docs/submission-verification-checklist.md`
 - `docs/office-layer-asset-checklist.md`

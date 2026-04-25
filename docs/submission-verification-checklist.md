@@ -38,6 +38,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/judge-demo-script.md`
 - [x] `docs/submission-deck-outline.md`
 - [x] `docs/submission-bundle.md`
+- [x] `docs/final-human-handoff.md`
 - [x] `docs/submission-copy-draft.md`
 - [x] `docs/submission-short-variants.md`
 - [x] `docs/video-recording-run-sheet.md`
