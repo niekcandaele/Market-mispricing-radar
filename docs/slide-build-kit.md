@@ -30,102 +30,121 @@ The older compact 6-slide shape below is retained as source structure only. Do n
 
 Use a clean, visual deck. Prefer one strong screenshot or generated visual plus a few bullets over dense text blocks.
 
-## Legacy expanded build notes
+## Current 9-slide build mapping
+
+Use this mapping for the rebuilt `slides-generator` deck and any low-risk visual polish pass.
 
 ### Slide 1, Title / hook
 Use:
-- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- generated hero visual: `artifacts/submission/slides-generator-deck/images/hero.png`
 
 On-slide emphasis:
 - product name
-- one-line value proposition
-- one strong phrase about explainable market inspection
-
-Avoid:
-- too many bullets
-- technical implementation details
-
-### Slide 2, Problem
-Use:
-- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- or a clean text slide with light visual support if the screenshot makes the slide too repetitive
-
-On-slide emphasis:
-- too many markets
-- too little prioritization
-- raw odds do not tell you what to inspect first
+- live prediction-market radar
+- fragile, stale, extreme, or weakly supported prices
+- Zerve notebook-to-app workflow
 
 Speaker note reminder:
-- frame this as a triage problem, not just a data problem
+- open with the inspection problem: dense markets, weak triage.
 
-### Slide 3, Solution
+### Slide 2, Raw odds are not enough
 Use:
-- `artifacts/submission/slide-ready/local-radar-view-16x9.png`
+- generated inspection visual: `artifacts/submission/slides-generator-deck/images/inspection.png`
 
 On-slide emphasis:
-- ranks markets that deserve scrutiny
-- explanation headlines
-- visible caveats and context
+- too many markets compete for attention
+- fragile pricing can hide in plain sight
+- users need reasons, not just ranks
+
+Speaker note reminder:
+- frame this as inspection and prioritization, not guaranteed arbitrage.
+
+### Slide 3, Explainable triage surface
+Use:
+- text-first layout with strong hierarchy
+
+On-slide emphasis:
+- live Polymarket data
+- staleness, extremeness, weak support, and instability
+- inspection-priority ranking
+- explanations and caveats
 
 Best visual reason:
-- this screenshot makes the product immediately legible
+- this slide sets up the product model before the screenshots prove it.
 
-### Slide 4, Product drilldown / explainability
+### Slide 4, Radar view proof
 Use:
-- `artifacts/submission/slide-ready/local-market-detail-view-16x9.png`
+- `artifacts/submission/slides-generator-deck/images/radar.png`
+
+On-slide emphasis:
+- ranked cards
+- explanation headlines
+- category context
+- visible caveats
+
+Speaker note reminder:
+- point out the default GTA VI drilldown path.
+
+### Slide 5, Detail view proof
+Use:
+- `artifacts/submission/slides-generator-deck/images/detail.png`
 
 On-slide emphasis:
 - score drivers
 - observed signals
 - caveats
-- drilldown clarity
+- auditability
 
 Speaker note reminder:
-- say the score is a triage signal, not a profit promise
+- say the score is inspection evidence, not a profit promise.
 
-### Slide 5, Methodology / honest scope
+### Slide 6, Methodology honesty
 Use:
-- `artifacts/submission/slide-ready/local-methodology-view-16x9.png`
+- `artifacts/submission/slides-generator-deck/images/methodology.png`
 
 On-slide emphasis:
 - Polymarket-first MVP
-- explainable fragility scoring
-- honest scope and limitations
+- explanation-first ranking
+- clear limitations
+- triage signal, not financial advice
 
 Best reason to include:
-- it signals credibility because the product explains what it does not claim
+- it makes the project more credible by showing what the score does not claim.
 
-### Slide 6, Why Zerve matters
+### Slide 7, Why Zerve matters
 Use:
-- either a lighter screenshot reuse or a clean text slide
+- generated pipeline visual: `artifacts/submission/slides-generator-deck/images/pipeline.png`
 
 On-slide emphasis:
-- notebook pipeline and deployed app live in one environment
-- analysis becomes a usable product
-- turns live notebook analysis into a usable deployed product
+- notebook blocks produce the live analysis pipeline
+- outputs flow into a deployed Streamlit product
+- judges can inspect a real workflow, not static screenshots
 
-### Slide 7, Proof / accomplishments
+### Slide 8, Final-mile truth
 Use:
-- optional reuse of `local-radar-view-16x9.png` or `local-market-detail-view-16x9.png`
-- fall back to the uncropped proof captures only if a taller crop is genuinely more readable
+- stats/card layout
 
 On-slide emphasis:
-- real notebook-to-app pipeline
-- deployed Streamlit product
-- explanation-rich ranking
-- product-facing polish completed against live deployment
+- ready: locked safe local demo path
+- ready: submission copy and notes
+- blocked: public Zerve share link
 
-### Slide 8, Next steps
+Speaker note reminder:
+- be explicit that the remaining blocker is public sharing, not the product demo.
+
+### Slide 9, Close
 Use:
-- simple text-first slide
+- clean closing card
 
 On-slide emphasis:
-- cross-source comparison
-- stronger calibration
-- richer context where it improves explainability
+- fast triage
+- explainable evidence
+- honest scope
+- default demo: locked safe local path
+- drilldown: GTA VI released before June 2026?
 
 Keep it short:
-- this is a close, not a roadmap lecture
+- this is the close, not a roadmap lecture.
 
 ## Legacy compact 6-slide version
 
