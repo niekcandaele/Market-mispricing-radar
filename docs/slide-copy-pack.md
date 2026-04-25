@@ -106,7 +106,7 @@ A usable radar for markets worth a second look
 - explainable evidence
 - honest scope
 - default demo: locked safe local path
-- drilldown: GTA VI released before June 2026?
+- drilldown: Putin out as President of Russia by December 31, 2026?
 
 ## Legacy compact 6-slide deck version
 

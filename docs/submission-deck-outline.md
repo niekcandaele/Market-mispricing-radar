@@ -80,7 +80,7 @@ Radar view proof
 - visible caveats
 
 ### Speaker notes
-Show the top-ranked markets and point out the default GTA VI drilldown path.
+Show the top-ranked markets and point out the default Putin drilldown path.
 
 ## Slide 5, Detail view proof
 
@@ -93,7 +93,7 @@ The score is inspection evidence, not a profit promise
 - caveats keep the MVP honest
 
 ### Speaker notes
-Use GTA VI as the locked default drilldown example.
+Use Putin as the refreshed locked default drilldown example.
 
 ## Slide 6, Methodology honesty
 
@@ -145,7 +145,7 @@ A usable radar for markets worth a second look
 - explainable evidence
 - honest scope
 - default demo: locked safe local path
-- drilldown: GTA VI released before June 2026?
+- drilldown: Putin out as President of Russia by December 31, 2026?
 
 ### Speaker notes
 End on the value: fast triage, explainable evidence, honest scope.

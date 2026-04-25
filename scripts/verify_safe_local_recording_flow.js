@@ -9,8 +9,8 @@ function loadPlaywright() {
 const { chromium } = loadPlaywright();
 
 const APP_URL = process.env.MMR_VERIFY_URL || 'http://127.0.0.1:8768';
-const TARGET_TITLE = process.env.MMR_DEFAULT_DRILLDOWN || 'GTA VI released before June 2026?';
-const TARGET_HEADLINE = process.env.MMR_DEFAULT_HEADLINE || 'Extreme pricing is being carried with relatively weak support.';
+const TARGET_TITLE = process.env.MMR_DEFAULT_DRILLDOWN || 'Putin out as President of Russia by December 31, 2026?';
+const TARGET_HEADLINE = process.env.MMR_DEFAULT_HEADLINE || 'Recent movement or instability is doing meaningful work in the score.';
 
 function assertCheck(name, value) {
   if (!value) {

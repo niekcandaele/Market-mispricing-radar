@@ -68,7 +68,7 @@ slides = [
         'image': 'images/radar.png',
         'alt': 'Market Mispricing Radar ranked cards view',
         'caption': 'Radar view: ranked cards, explanation headlines, category context, and caveats',
-        'notes': 'Show the top-ranked markets and point out the default GTA VI drilldown path.'
+        'notes': 'Show the top-ranked markets and point out the refreshed default Putin drilldown path.'
     },
     {
         'type': 'split',
@@ -80,7 +80,7 @@ slides = [
             'Observed signals make the ranking auditable',
             'Caveats keep the MVP honest'
         ],
-        'notes': 'Use GTA VI as the locked default drilldown example.'
+        'notes': 'Use Putin as the refreshed locked default drilldown example.'
     },
     {
         'type': 'image',
@@ -114,7 +114,7 @@ slides = [
     {
         'type': 'closer',
         'headline': 'A usable radar for markets worth a second look',
-        'contact': 'Default demo: locked safe local path · Drilldown: GTA VI released before June 2026?',
+        'contact': 'Default demo: locked safe local path · Drilldown: Putin out as President of Russia by December 31, 2026?',
         'notes': 'End on the value: fast triage, explainable evidence, honest scope.'
     },
 ]

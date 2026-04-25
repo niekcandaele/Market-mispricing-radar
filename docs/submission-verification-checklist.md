@@ -59,7 +59,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 ### Office-layer artifacts
 - [x] old Google Slides deck trashed per updated deck instruction
 - [x] fresh slides-generator HTML deck created and aligned with the safe local default plan
-- [x] rebuilt HTML deck passed local Playwright QA: 9 slides, 9 nav dots, all six images loaded with alt text, no overflowing slides at 1280x720
+- [x] rebuilt HTML deck passed local Playwright QA: 9 slides, 9 nav dots, all visible slide images loaded with alt text, no overflowing slides at 1280x720
 - [x] rebuilt deck ZIP verified as complete and uncorrupted
 - [x] Drive deck HTML, ZIP, and PDF artifacts verified against local size/md5 checks
 - [x] rebuilt deck exported to PDF, verified as 9 pages, and uploaded to Google Drive
@@ -104,7 +104,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] use `docs/video-recording-run-sheet.md` as the actual beat-by-beat recording order
 - [ ] run `docs/recording-preflight-checklist.md` before the real take
 - [ ] on the safe local default path, run `./scripts/check_safe_local_demo.sh` right before the real take instead of trusting older evidence alone
-- [x] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example (`GTA VI released before June 2026?` locked as the current default for the safe local path unless the final live run clearly surfaces a cleaner option)
+- [x] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example (`Putin out as President of Russia by December 31, 2026?` locked as the current default for the refreshed safe local path unless the final live run clearly surfaces a cleaner option)
 - [ ] keep the recording to one coherent story arc
 - [ ] verify the chosen demo path before recording begins
 - [ ] avoid relying on an old rotated preview URL without rechecking it
@@ -146,9 +146,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 - commands:
   - `./scripts/check_safe_local_demo.sh`
 - goal: reconfirm shortly before submission work that the locked safe local default still passes the exact intended story arc without manual repair steps
-- observed result: passed, the one-command sweep launched the app, verified Radar, confirmed the Methodology honesty beat, clicked the real `Focus in detail` control on the GTA card, and then verified true detail-only markers including `Primary signal`, `Why this market is flagged`, and `Observed market signals`
-- notable observed values: `refresh_id` `refresh-20260425T130211Z`
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T130211Z.json`
+- observed result: passed, the one-command sweep launched the app, verified Radar, confirmed the Methodology honesty beat, clicked the real `Focus in detail` control on the rank-1 Putin card, and then verified true detail-only markers including `Primary signal`, `Why this market is flagged`, and `Observed market signals`
+- notable observed values: `refresh_id` `refresh-20260425T194755Z`
+- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json`
 - note: the `refresh_id` and evidence filename are UTC-stamped, while this verification entry is dated in local Europe/Brussels time; `./scripts/check_safe_local_demo.sh` now writes this retained JSON automatically and archives the previously active safe-local baseline on success
 - status: passed
 
@@ -156,8 +156,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - commands:
   - `./scripts/run_local_demo.sh`
   - local Playwright verification against `http://127.0.0.1:8768`
-- goal: verify the current one-command local recording path still supports the exact intended story arc: Radar, Methodology honesty beat, and a clean GTA VI drilldown from the default Radar slice into Market Detail
-- observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, and `Methodology`, confirmed the honest-scope beat on Methodology, and then reopened the Radar to drill cleanly into `GTA VI released before June 2026?` in Market Detail
+- goal: verify the current one-command local recording path still supports the exact intended story arc: Radar, Methodology honesty beat, and a clean drilldown from the default Radar slice into Market Detail
+- observed result: passed, local Playwright confirmed visible `Market Mispricing Radar`, `Ranked Radar`, and `Methodology`, confirmed the honest-scope beat on Methodology, and then reopened the Radar to drill cleanly into the selected default market in Market Detail
 - notable observed values: `refresh_id` `refresh-20260422T030359Z`, `ranked_market_count` `200`
 - status: passed
 

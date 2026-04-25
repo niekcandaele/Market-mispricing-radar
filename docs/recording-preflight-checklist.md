@@ -9,8 +9,8 @@ Use it to avoid wasting a take on preventable setup mistakes.
 ## Demo path check
 
 Current retained safe-local proof before recording:
-- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T130211Z.json`
-- `refreshId`: `refresh-20260425T130211Z`
+- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json`
+- `refreshId`: `refresh-20260425T194755Z`
 
 - [ ] run `./scripts/check_safe_local_demo.sh` before the real take if using the safe local default path
 - [ ] keep the fresh retained JSON that script writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current proof for the take
@@ -24,7 +24,7 @@ Current retained safe-local proof before recording:
 ## Content check
 
 - [ ] lock the exact drilldown market before recording
-- [ ] safe local default: `GTA VI released before June 2026?`
+- [ ] safe local default: `Putin out as President of Russia by December 31, 2026?`
 - [ ] keep `docs/demo-market-shortlist.md` open or nearby in case the live run clearly suggests a better option
 - [ ] decide whether to use the primary voiceover, fuller voiceover, or tight fallback from `docs/video-voiceover-script.md`
 - [ ] keep `docs/video-recording-run-sheet.md` open for beat order
@@ -60,7 +60,7 @@ Current retained safe-local proof before recording:
 Record only if:
 - [ ] the chosen demo path is healthy enough for one clean take
 - [ ] the chosen path is already locked before the real take starts
-- [ ] the drilldown market is already chosen (default safe local choice: `GTA VI released before June 2026?`)
+- [ ] the drilldown market is already chosen (default safe local choice: `Putin out as President of Russia by December 31, 2026?`)
 - [ ] the spoken script choice is decided
 - [ ] the screen is clean
 - [ ] the story fits in about 60 to 90 seconds

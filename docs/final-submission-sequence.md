@@ -12,7 +12,7 @@ The submission package is strong, and Google Workspace artifact creation is no l
 
 Current state:
 - Google Docs are available through the authenticated `gws` CLI path, and the submission deck is now the rebuilt slides-generator HTML deck rather than the old Google Slides deck
-- the locked safe local default was reverified on 2026-04-25 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T130211Z.json` (`refreshId`: `refresh-20260425T130211Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- the locked safe local default was reverified on 2026-04-25 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
 This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.
@@ -47,7 +47,7 @@ Why now:
 
 Do:
 - choose the strongest current drilldown candidate
-- for the verified safe local path, default to `GTA VI released before June 2026?` unless the live run clearly suggests a better example
+- for the refreshed verified safe local path, default to `Putin out as President of Russia by December 31, 2026?` unless the live run clearly suggests a better example
 - avoid awkward or overly niche examples if a cleaner one is available
 
 References:

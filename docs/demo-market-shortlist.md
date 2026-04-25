@@ -16,34 +16,34 @@ These picks are based on the locked safe local default bundle, so they should be
 
 ## Best current demo-safe picks
 
-### 1. GTA VI released before June 2026?
+### 1. Putin out as President of Russia by December 31, 2026?
+- category: `politics`
+- headline: `Recent movement or instability is doing meaningful work in the score.`
+- why it works:
+  - currently rank `1` in the refreshed locked safe local default bundle
+  - clearly visible in the default Radar slice, so it supports a clean one-take recording flow
+  - highly recognizable market for a broad audience
+  - movement-driven explanation gives a stronger “why now?” story than a static extreme-price example
+- best use:
+  - current default drilldown for the refreshed locked safe local default path
+
+### 2. GTA VI released before June 2026?
 - category: `entertainment`
 - headline: `Extreme pricing is being carried with relatively weak support.`
 - why it works:
-  - currently rank `3` in the locked safe local default bundle
-  - clearly visible in the default Radar slice, so it supports a cleaner one-take recording flow
-  - highly recognizable market for a broad audience
-  - clean explanation headline and a readable detail view
+  - broadly understandable and still a strong fit for the product story
+  - currently rank `31`, so it is no longer in the default top Radar slice on the refreshed local bundle
+  - still useful if you deliberately select it through a broader slice or if the final bundle changes again
 - best use:
-  - current default drilldown for the locked safe local default path
-
-### 2. Putin out as President of Russia by December 31, 2026?
-- category: `politics`
-- headline: `Extreme pricing is being carried with relatively weak support.`
-- why it works:
-  - still broadly understandable and a strong fit for the product story
-  - remains high enough to be credible, but is no longer in the default top Radar slice on the current local bundle
-  - still useful if you deliberately switch to it through Market Detail selection or a broader slice
-- best use:
-  - strong alternate drilldown when you want a geopolitics example and do not mind one extra selection step
+  - alternate drilldown when you want an entertainment example and do not mind one extra selection step
 
 ### 3. Xi Jinping out before 2027?
 - category: `world`
 - headline: `Extreme pricing is being carried with relatively weak support.`
 - why it works:
   - easy to understand quickly
-  - gives a second geopolitics-style example without repeating the exact same reason pattern as sports clusters
-  - useful if the top politics example looks stale or awkward on the live run
+  - gives a second geopolitics-style example without repeating the exact same market
+  - useful if the top Putin card looks stale or awkward on the live run
 - best use:
   - backup drilldown if the top-ranked politics card is not presentation-friendly in the current slice
 
@@ -60,6 +60,7 @@ These picks are based on the locked safe local default bundle, so they should be
 - category: `sports`
 - headline: `Recent movement or instability is doing meaningful work in the score.`
 - why it works:
+  - currently rank `2`, so it is a very visible fallback
   - keeps sports represented without relying on repetitive Stanley Cup markets
   - useful if you want a clean sports example with visible movement-driven reasoning
 - best use:
@@ -93,8 +94,8 @@ If the live bundle has drifted by recording time, prefer a market that:
 ## Recommended recording default
 
 If no better live option appears, use this order of preference:
-1. `GTA VI released before June 2026?`
-2. `Putin out as President of Russia by December 31, 2026?`
+1. `Putin out as President of Russia by December 31, 2026?`
+2. `GTA VI released before June 2026?`
 3. `Xi Jinping out before 2027?`
 
 That gives a strong default path with understandable topics and readable explanation framing while keeping the primary drilldown visible in the locked safe local default Radar slice.

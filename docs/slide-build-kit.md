@@ -83,7 +83,7 @@ On-slide emphasis:
 - visible caveats
 
 Speaker note reminder:
-- point out the default GTA VI drilldown path.
+- point out the default Putin drilldown path.
 
 ### Slide 5, Detail view proof
 Use:
@@ -141,7 +141,7 @@ On-slide emphasis:
 - explainable evidence
 - honest scope
 - default demo: locked safe local path
-- drilldown: GTA VI released before June 2026?
+- drilldown: Putin out as President of Russia by December 31, 2026?
 
 Keep it short:
 - this is the close, not a roadmap lecture.

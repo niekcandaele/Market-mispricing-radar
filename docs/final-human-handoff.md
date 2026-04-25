@@ -6,7 +6,7 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 
 - Status: near-ready, not submission-complete.
 - Default demo: locked safe local default.
-- Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T130211Z.json` (`refreshId`: `refresh-20260425T130211Z`).
+- Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`).
 - Public share-post gate: still blocked.
 - Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
@@ -30,6 +30,6 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 
 - Command preflight: `./scripts/check_safe_local_demo.sh`
 - Command launch: `./scripts/run_local_demo.sh`
-- Drilldown: `GTA VI released before June 2026?`
+- Drilldown: `Putin out as President of Russia by December 31, 2026?`
 
 Do not use a guessed Zerve public URL. Do not post externally without human approval.
