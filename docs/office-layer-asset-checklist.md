@@ -92,6 +92,7 @@ Current folder path:
 Recommended set:
 - `Market Mispricing Radar - Submission Deck (HTML)`
 - `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)`
+- `Market Mispricing Radar - Submission Deck (PDF)`
 - `Market Mispricing Radar - Presenter Notes`
 - `Market Mispricing Radar - Final Submission Copy`
 - `Market Mispricing Radar - Demo Link Notes`
@@ -101,7 +102,7 @@ Recommended set:
 
 Current verified state on `2026-04-25`:
 - the previous Google Slides deck was trashed
-- the `Documents/Hackathons/ZerveHack` folder now contains these eight expected Market Mispricing Radar artifacts
+- the `Documents/Hackathons/ZerveHack` folder now contains these nine expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
 
 ## What should not be left messy

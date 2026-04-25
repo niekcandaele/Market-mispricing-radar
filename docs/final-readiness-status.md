@@ -50,7 +50,7 @@ Why:
 - slide-ready 16:9 screenshot crops exist
 - visual asset map exists
 - the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on 2026-04-24 to match the current repo assets
-- the `Documents/Hackathons/ZerveHack` office folder was inspected directly on 2026-04-25 after the deck rebuild; the previous Google Slides deck is trashed, and the folder now contains the expected HTML deck, deck ZIP bundle, docs, and screenshot assets without duplicate presentation decks
+- the `Documents/Hackathons/ZerveHack` office folder was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder now contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 
 ## What is still blocked or missing
 

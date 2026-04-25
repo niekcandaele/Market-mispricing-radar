@@ -25,6 +25,7 @@ Use it to answer four questions quickly:
 - source doc: `docs/submission-deck-outline.md`
 - deck artifact: `artifacts/submission/slides-generator-deck/slides.html`
 - Drive bundle: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)` (`1FFroHF0Gj-wie5AyykylTb08soQT79Bb`)
+- Drive PDF export: `Market Mispricing Radar - Submission Deck (PDF)` (`17smwphggaqZGOWXU5CNBgafynE4pAtKh`)
 - remaining work: optional low-risk layout polish only if it is clearly worth it
 
 ### Video / talking track
