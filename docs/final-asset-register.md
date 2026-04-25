@@ -25,7 +25,7 @@ The main demo path, office artifacts, and submission materials are in place. The
   - port: `8768`
 - verified on: `2026-04-24`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the current safe local bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-24, including Radar, Methodology, and Market Detail on the locked safe local default bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
 - status: verified, but not chosen as the default path
@@ -40,7 +40,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - chosen market: `GTA VI released before June 2026?`
 - why this one: currently rank `3` in the locked safe local default bundle, visible in the default Radar slice, broadly understandable, and easier to demo cleanly in one take from Radar into Market Detail
 - source doc reference: `docs/demo-market-shortlist.md`
-- locked on: `2026-04-24` (reconfirmed against the current safe local bundle unless the final live run clearly surfaces a cleaner example)
+- locked on: `2026-04-24` (reconfirmed against the locked safe local default bundle unless the final live run clearly surfaces a cleaner example)
 
 ## Final presentation assets
 

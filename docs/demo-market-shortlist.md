@@ -12,7 +12,7 @@ Use it to pick a strong drilldown market quickly instead of improvising during a
 - refresh id: `refresh-20260422T022427Z`
 - ranked market count: `200`
 
-These picks are based on the current safe local default bundle, so they should be treated as practical candidates, not permanent canon.
+These picks are based on the locked safe local default bundle, so they should be treated as practical candidates, not permanent canon.
 
 ## Best current demo-safe picks
 
@@ -97,4 +97,4 @@ If no better live option appears, use this order of preference:
 2. `Putin out as President of Russia by December 31, 2026?`
 3. `Xi Jinping out before 2027?`
 
-That gives a strong default path with understandable topics and readable explanation framing while keeping the primary drilldown visible in the current safe local Radar slice.
+That gives a strong default path with understandable topics and readable explanation framing while keeping the primary drilldown visible in the locked safe local default Radar slice.
