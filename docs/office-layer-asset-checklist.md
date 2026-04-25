@@ -27,11 +27,11 @@ This checklist can still be executed now for the Workspace artifact portion.
 
 ## Required Google Workspace artifacts
 
-### 1. Google Slides deck
+### 1. Submission deck
 Create:
 - one polished presentation deck for the hackathon submission
-- prefer the slide-ready 16:9 screenshots as the default visuals and keep the uncropped PNGs as backup proof captures
-- status: compact 6-slide deck exists, is already polished around the default visual set, and only has optional low-risk layout refinement left
+- prefer the slide-ready 16:9 screenshots as the default proof visuals and generated imagery where it strengthens the story
+- status: previous Google Slides deck was trashed, then a fresh 9-slide HTML deck was rebuilt with the updated `slides-generator` skill and uploaded as a Drive HTML file plus ZIP bundle
 
 Source materials:
 - `docs/submission-deck-outline.md`
@@ -49,7 +49,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or deck speaker notes embedded slide by slide if that is cleaner
-- status: both artifacts exist, and the presenter-notes doc plus embedded deck speaker notes are aligned to the compact deck order and safe local default plan
+- status: presenter-notes doc exists, and the rebuilt HTML deck includes hidden per-slide notes aligned to the locked safe local default plan
 
 Source materials:
 - `docs/judge-demo-script.md`
@@ -90,7 +90,8 @@ Current folder path:
 - `ZerveHack` folder id: `18O-ZVgNpN0-vxbuQHxZjjChnQw82psk8`
 
 Recommended set:
-- `Market Mispricing Radar - Submission Deck`
+- `Market Mispricing Radar - Submission Deck (HTML)`
+- `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)`
 - `Market Mispricing Radar - Presenter Notes`
 - `Market Mispricing Radar - Final Submission Copy`
 - `Market Mispricing Radar - Demo Link Notes`
@@ -98,9 +99,10 @@ Recommended set:
 - `Market Mispricing Radar - local-market-detail-view-16x9.png`
 - `Market Mispricing Radar - local-methodology-view-16x9.png`
 
-Current verified state on `2026-04-24`:
-- the `Documents/Hackathons/ZerveHack` folder contains exactly these seven expected Market Mispricing Radar artifacts
-- no extra duplicate deck/doc/image artifacts were present in that folder during the verification pass
+Current verified state on `2026-04-25`:
+- the previous Google Slides deck was trashed
+- the `Documents/Hackathons/ZerveHack` folder now contains these eight expected Market Mispricing Radar artifacts
+- no extra duplicate presentation decks were present after the rebuild pass
 
 ## What should not be left messy
 

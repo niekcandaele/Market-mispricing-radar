@@ -11,7 +11,7 @@ Use it when the remaining work needs to happen in the right order without thrash
 The submission package is strong, and Google Workspace artifact creation is no longer the blocker.
 
 Current state:
-- Google Slides and Google Docs are available through the authenticated `gws` CLI path
+- Google Docs are available through the authenticated `gws` CLI path, and the submission deck is now the rebuilt slides-generator HTML deck rather than the old Google Slides deck
 - the locked safe local default was reverified on 2026-04-24 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260424T193220Z.json` (`refreshId`: `refresh-20260424T193220Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
@@ -54,13 +54,14 @@ References:
 - `docs/demo-market-shortlist.md`
 - `docs/video-recording-run-sheet.md`
 
-### 3. Refine the Google Slides deck
+### 3. Use the rebuilt slides-generator deck
 
 Why before recording:
 - the deck clarifies the story and can double as backup structure for the video
 
 Do:
-- treat the compact deck as the default
+- use the fresh 9-slide HTML deck rebuilt with the updated `slides-generator` skill
+- treat `artifacts/submission/slides-generator-deck/slides.html` as the current deck source
 - only do another screenshot/layout or readability pass if there is a clearly beneficial, low-risk improvement
 - keep it concise and visually clean
 - include problem, solution, product flow, proof/demo, why Zerve matters, and next steps
@@ -75,7 +76,7 @@ Why now:
 - the speaker notes or recording notes should match the actual deck and chosen demo path
 
 Do:
-- keep the Google Doc and deck speaker notes aligned with the chosen demo path
+- keep the Google Doc presenter notes and the rebuilt deck's hidden per-slide notes aligned with the chosen demo path
 - use the demo script as the base
 - keep the one-take run sheet folded into the notes so the recording flow stays operational, not just conceptual
 

@@ -11,8 +11,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - narrative artifacts: present
 - safe local default demo path: verified end to end
 - live Zerve preview path: verified as an optional upgrade path, with the latest 2026-04-22 recheck showing the known warm-up pattern before the real app renders
-- Google Slides deck: compact deck exists in Google Workspace `Documents/Hackathons/ZerveHack`, is aligned to the safe local default plan, and only has optional low-risk polish left
-- office-layer speaker notes doc: presenter notes and deck speaker notes reflect the safe local default and align with the compact deck order
+- submission deck: previous Google Slides deck was trashed, and a fresh 9-slide HTML deck rebuilt with the updated `slides-generator` skill now exists locally and in Google Drive
+- office-layer speaker notes doc: presenter notes remain aligned to the safe local default and the rebuilt deck includes hidden per-slide notes
 - final submission form paste/check: pending the final form-fill pass
 
 ## Demo checks
@@ -56,8 +56,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/submission-verification-checklist.md`
 
 ### Office-layer artifacts
-- [x] Google Slides deck created
-- [x] deck speaker notes updated and aligned with the safe local default plan
+- [x] old Google Slides deck trashed per updated deck instruction
+- [x] fresh slides-generator HTML deck created and aligned with the safe local default plan
 - [x] Google Doc presenter notes finalized
 - [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] demo link reference created in Google Workspace `Documents/Hackathons/ZerveHack`
@@ -173,7 +173,7 @@ What is already verified or present:
 - deployed-product path exists
 - locked safe local default path exists and now renders cleanly
 - demo script exists
-- compact Google Slides deck exists and has been read back successfully through the Workspace APIs
+- rebuilt 9-slide HTML deck exists locally and in Google Drive as both an HTML file and a ZIP bundle
 - presenter-notes doc exists and has been read back successfully through the Workspace APIs
 - final submission-copy doc exists, was refreshed to match the latest submission copy, and has been read back successfully through the Workspace APIs
 - demo-link reference doc exists, was refreshed after the latest safe-local recheck, and has been read back successfully through the Workspace APIs

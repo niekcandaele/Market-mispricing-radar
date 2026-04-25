@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Market Mispricing Radar — ZerveHack Submission Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* =============================================================
+   viewport-base.css — mandatory base for slides-generator decks
+   -------------------------------------------------------------
+   Every generated deck inlines this file verbatim at the TOP of
+   its <style> block. Style-specific rules (colors, fonts, slide
+   layouts) go AFTER this block so they can override as needed.
+
+   Load-bearing invariants enforced here:
+   - Each slide fills the viewport, never scrolls internally.
+   - Scroll-snap keeps the deck behaving one-slide-at-a-time.
+   - Typography uses clamp() so it scales down on short screens
+     without breaking the viewport-fit promise.
+   - prefers-reduced-motion disables all animations and snapping.
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: var(--font-body, system-ui, sans-serif);
+  color: var(--color-text, #111);
+  background: var(--color-bg, #fafafa);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+main.slides {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide {
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Headline scale — clamp against both viewport dims so tall + short
+   screens both fit without overflow. */
+.slide h1 {
+  font-family: var(--font-display, var(--font-body));
+  font-size: clamp(2.25rem, 6vw + 1rem, 6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.slide h2 {
+  font-family: var(--font-display, var(--font-body));
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.slide h3 {
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 2.25rem);
+  line-height: 1.2;
+}
+
+.slide p,
+.slide li {
+  font-size: clamp(1rem, 1.2vw + 0.6rem, 1.5rem);
+  line-height: 1.5;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: min(55vh, 500px);
+  object-fit: contain;
+  display: block;
+}
+
+.slide ul,
+.slide ol {
+  list-style: none;
+}
+
+/* Reveal animation — JS adds .visible via IntersectionObserver.
+   Style-specific CSS can override the translate/opacity values. */
+.slide .reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.slide.visible .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal — children of a .stagger container come in in
+   order. Decks apply this to bullet lists. */
+.slide.visible .stagger > * {
+  animation: slide-fade-in 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.slide.visible .stagger > *:nth-child(1) { animation-delay: 80ms; }
+.slide.visible .stagger > *:nth-child(2) { animation-delay: 180ms; }
+.slide.visible .stagger > *:nth-child(3) { animation-delay: 280ms; }
+.slide.visible .stagger > *:nth-child(4) { animation-delay: 380ms; }
+.slide.visible .stagger > *:nth-child(5) { animation-delay: 480ms; }
+.slide.visible .stagger > *:nth-child(6) { animation-delay: 580ms; }
+
+@keyframes slide-fade-in {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress bar — tracks scroll position across the deck. */
+.deck-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+  pointer-events: none;
+}
+.deck-progress > .fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-accent, currentColor);
+  transition: width 120ms linear;
+}
+
+/* Nav dots — one per slide, fixed right side, click to jump. */
+.deck-nav {
+  position: fixed;
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+.deck-nav button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text, #111);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.deck-nav button:hover { transform: scale(1.3); }
+.deck-nav button[aria-current="true"] {
+  background: var(--color-text, #111);
+}
+
+/* Short-viewport dampening — on laptops with small screen
+   heights, dial everything back so content still fits. */
+@media (max-height: 700px) {
+  .slide {
+    padding: clamp(1.25rem, 3vh, 2rem) clamp(1.25rem, 4vw, 3rem);
+  }
+  .slide h1 { font-size: clamp(2rem, 5vw + 0.5rem, 4.5rem); }
+  .slide h2 { font-size: clamp(1.5rem, 3.5vw + 0.25rem, 3rem); }
+}
+
+@media (max-height: 600px) {
+  .slide img { max-height: 40vh; }
+  .slide p,
+  .slide li { font-size: clamp(0.95rem, 1vw + 0.5rem, 1.25rem); }
+}
+
+@media (max-height: 500px) {
+  .slide { padding: 1rem 1.5rem; }
+  .slide h1 { font-size: clamp(1.75rem, 4vw + 0.25rem, 3rem); }
+}
+
+/* Accessibility — honor the reduced-motion preference. Animations
+   and scroll-snap both disabled; deck becomes a quiet document. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-snap-type: none; scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .slide .reveal { opacity: 1; transform: none; }
+}
+
+/* Print — deterministic 16:9 page size, one slide per page, no animations,
+   nav chrome hidden, reveal elements forced into their final state. This
+   block is what makes both browser "Print to PDF" and the bundled
+   export-pdf.sh script produce predictable output. */
+@media print {
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+  html {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  body {
+    background: var(--color-bg, #fff);
+  }
+  main.slides {
+    display: block;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    min-height: 0;
+    padding: clamp(1.5rem, 4vh, 3rem) clamp(1.5rem, 4vw, 4rem);
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .slide:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  /* Force reveal / stagger elements into their final visible state
+     regardless of whether the IntersectionObserver has fired. Otherwise
+     any slide that hasn't been scrolled to would print blank. */
+  .slide .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .slide .stagger > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .deck-progress,
+  .deck-nav {
+    display: none !important;
+  }
+}
+
+
+:root {
+  --color-bg: oklch(0.16 0.025 255);
+  --color-text: oklch(0.95 0.015 85);
+  --color-accent: oklch(0.72 0.16 190);
+  --color-warn: oklch(0.78 0.16 70);
+  --color-muted: oklch(0.72 0.025 240);
+  --panel: color-mix(in oklch, var(--color-bg) 78%, white 8%);
+  --line: color-mix(in oklch, var(--color-text) 22%, transparent);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Mono', monospace;
+}
+
+body { background: radial-gradient(circle at 20% 10%, color-mix(in oklch, var(--color-accent) 18%, transparent), transparent 34%), var(--color-bg); }
+.slide { isolation: isolate; }
+.slide::after { content: ''; position: absolute; inset: 1.25rem; border: 1px solid var(--line); border-radius: 28px; pointer-events: none; opacity: .7; }
+.eyebrow { color: var(--color-accent); text-transform: uppercase; letter-spacing: .16em; font-weight: 700; font-size: clamp(.78rem, .7vw + .45rem, 1rem); margin-bottom: 1rem; }
+.byline, .subtitle, .contact, figcaption, .status-note, .speaker-notes { color: var(--color-muted); }
+.subtitle { max-width: 760px; margin-top: 1.2rem; font-size: clamp(1.1rem, 1.3vw + .7rem, 1.6rem); }
+.byline { margin-top: 2rem; font-size: .95rem; }
+.has-bg { background-image: linear-gradient(90deg, color-mix(in oklch, var(--color-bg) 92%, black 8%) 0 38%, transparent 70%), var(--slide-bg-image); background-size: cover; background-position: center; }
+.scrim { position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, transparent 0 28%, color-mix(in oklch, var(--color-bg) 70%, transparent) 70%); z-index: -1; }
+.title-card, .closer-card { max-width: 900px; }
+.slide--content h2, .slide--stats h2 { max-width: 980px; }
+.bullet-list { margin-top: 2rem; display: grid; gap: 1rem; max-width: 980px; }
+.bullet-list li { padding: 1rem 1.1rem; border-left: 3px solid var(--color-accent); background: color-mix(in oklch, var(--panel) 88%, transparent); border-radius: 0 18px 18px 0; }
+.slide--split { flex-direction: row; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.split__media, .split__body { flex: 1; min-width: 0; }
+.split__media img, .screenshot-frame img { border-radius: 28px; border: 1px solid var(--line); background: var(--panel); box-shadow: 0 24px 80px color-mix(in oklch, black 48%, transparent); }
+.split__media img { max-height: 62vh; object-fit: cover; width: 100%; }
+.screenshot-frame { width: min(1100px, 92vw); margin: 0 auto; }
+.screenshot-frame img { width: 100%; max-height: 68vh; }
+.screenshot-frame figcaption { margin-top: 1rem; text-align: left; font-size: clamp(.9rem, .8vw + .55rem, 1.1rem); }
+.stats { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.stat { padding: 1.4rem; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); }
+.stat__value { display: block; font-family: var(--font-display); font-size: clamp(1.8rem, 3vw + .5rem, 3.4rem); color: var(--color-accent); line-height: 1; }
+.stat:nth-child(3) .stat__value { color: var(--color-warn); }
+.stat__label { display: block; margin-top: .85rem; color: var(--color-muted); }
+.status-note { margin-top: 2rem; max-width: 850px; }
+.speaker-notes { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.slide--closer { background: radial-gradient(circle at 70% 30%, color-mix(in oklch, var(--color-accent) 20%, transparent), transparent 30%), var(--color-bg); }
+.slide--closer h2 { max-width: 980px; }
+@media screen and (max-width: 900px) {
+  .slide--split { flex-direction: column; align-items: stretch; }
+  .stats { grid-template-columns: 1fr; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="deck-progress" aria-hidden="true"><div class="fill"></div></div>
+  <main class="slides">
+<section class="slide slide--title has-bg" id="s1" style="--slide-bg-image: url('images/hero.png')">
+  <div class="scrim"></div>
+  <div class="title-card reveal">
+    <p class="eyebrow">ZerveHack submission</p>
+    <h1>Market Mispricing Radar</h1>
+    <p class="subtitle">A live prediction-market radar that surfaces fragile, stale, extreme, or weakly supported prices</p>
+    <p class="byline">Niek / Jefke · locked safe local default ready</p>
+  </div>
+  <aside class="speaker-notes">Open with the inspection problem: prediction markets are dense, but most interfaces leave triage to the user.</aside>
+</section>
+<section class="slide slide--split" id="s2">
+  <div class="split__media reveal">
+    <img src="images/inspection.png" alt="market cards pulled into a focused inspection beam" />
+  </div>
+  <div class="split__body">
+    <p class="eyebrow reveal">Market inspection</p>
+    <h2 class="reveal">Raw odds are not enough</h2>
+    <ul class="stagger bullet-list">
+      <li>Too many markets compete for attention</li>
+      <li>Fragile pricing can hide in plain sight</li>
+      <li>Users need reasons, not just ranks</li>
+    </ul>
+  </div>
+  <aside class="speaker-notes">Frame the problem as inspection and prioritization, not guaranteed arbitrage.</aside>
+</section>
+<section class="slide slide--content" id="s3">
+  <p class="eyebrow reveal">Product shape</p>
+  <h2 class="reveal">The product is an explainable triage surface</h2>
+  <ul class="stagger bullet-list">
+    <li>Fetch live Polymarket market data</li>
+    <li>Score staleness, extremeness, weak support, and instability</li>
+    <li>Rank markets by inspection priority</li>
+    <li>Explain why each market surfaced</li>
+    <li>Expose caveats instead of hiding them</li>
+  </ul>
+  <aside class="speaker-notes">Keep this as a product story: the app helps decide what deserves a second look.</aside>
+</section>
+<section class="slide slide--image" id="s4">
+  <figure class="reveal screenshot-frame">
+    <img src="images/radar.png" alt="Market Mispricing Radar ranked cards view" />
+    <figcaption>Radar view: ranked cards, explanation headlines, category context, and caveats</figcaption>
+  </figure>
+  <aside class="speaker-notes">Show the top-ranked markets and point out the default GTA VI drilldown path.</aside>
+</section>
+<section class="slide slide--split" id="s5">
+  <div class="split__media reveal">
+    <img src="images/detail.png" alt="Market Detail view with score drivers and observed market signals" />
+  </div>
+  <div class="split__body">
+    <p class="eyebrow reveal">Market inspection</p>
+    <h2 class="reveal">The score is inspection evidence, not a profit promise</h2>
+    <ul class="stagger bullet-list">
+      <li>Score drivers show what moved the market up the radar</li>
+      <li>Observed signals make the ranking auditable</li>
+      <li>Caveats keep the MVP honest</li>
+    </ul>
+  </div>
+  <aside class="speaker-notes">Use GTA VI as the locked default drilldown example.</aside>
+</section>
+<section class="slide slide--image" id="s6">
+  <figure class="reveal screenshot-frame">
+    <img src="images/methodology.png" alt="Methodology view explaining scope and limitations" />
+    <figcaption>Methodology view: Polymarket-first, explanation-first, clear about limitations</figcaption>
+  </figure>
+  <aside class="speaker-notes">This is the honesty beat. Say what the score does and does not claim.</aside>
+</section>
+<section class="slide slide--split" id="s7">
+  <div class="split__media reveal">
+    <img src="images/pipeline.png" alt="notebook blocks connected into a deployed app surface" />
+  </div>
+  <div class="split__body">
+    <p class="eyebrow reveal">Market inspection</p>
+    <h2 class="reveal">Why this fits ZerveHack</h2>
+    <ul class="stagger bullet-list">
+      <li>Notebook blocks produce the live analysis pipeline</li>
+      <li>Outputs flow into a deployed Streamlit product</li>
+      <li>The workflow turns analysis into something judges can inspect</li>
+    </ul>
+  </div>
+  <aside class="speaker-notes">Close the loop from Zerve notebook to deployed app. Mention the safe local default only if needed for recording reliability.</aside>
+</section>
+<section class="slide slide--stats" id="s8">
+  <p class="eyebrow reveal">Final-mile truth</p>
+  <h2 class="reveal">Submission status is near-ready, not pretend-complete</h2>
+  <div class="stats stagger">
+    <div class="stat">
+      <strong class="stat__value">Ready</strong>
+      <span class="stat__label">locked safe local demo path</span>
+    </div>
+    <div class="stat">
+      <strong class="stat__value">Ready</strong>
+      <span class="stat__label">submission copy + notes</span>
+    </div>
+    <div class="stat">
+      <strong class="stat__value">Blocked</strong>
+      <span class="stat__label">public Zerve share link</span>
+    </div>
+  </div>
+  <p class="status-note reveal">Safe local demo is verified. Public share post stays blocked until Zerve public visibility is confirmed.</p>
+  <aside class="speaker-notes">Be explicit: the remaining blocker is public sharing, not the product demo.</aside>
+</section>
+<section class="slide slide--closer" id="s9">
+  <div class="reveal closer-card">
+    <p class="eyebrow">Close</p>
+    <h2>A usable radar for markets worth a second look</h2>
+    <p class="contact">Default demo: locked safe local path · Drilldown: GTA VI released before June 2026?</p>
+  </div>
+  <aside class="speaker-notes">End on the value: fast triage, explainable evidence, honest scope.</aside>
+</section>
+  </main>
+
+<script>
+  class SlidePresentation {
+    constructor() {
+      this.slides = Array.from(document.querySelectorAll('section.slide'));
+      this.progressFill = document.querySelector('.deck-progress .fill');
+      this.current = 0;
+      this.buildNav();
+      this.bindKeyboard();
+      this.bindTouch();
+      this.bindWheel();
+      this.bindScroll();
+      this.observeReveal();
+    }
+
+    buildNav() {
+      const nav = document.createElement('nav');
+      nav.className = 'deck-nav';
+      nav.setAttribute('aria-label', 'Slide navigation');
+      const frag = document.createDocumentFragment();
+      this.slides.forEach((slide, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        btn.addEventListener('click', () => this.goTo(i));
+        frag.appendChild(btn);
+      });
+      nav.replaceChildren(frag);
+      document.body.appendChild(nav);
+      this.navButtons = Array.from(nav.querySelectorAll('button'));
+      this.updateNav();
+    }
+
+    updateNav() {
+      this.navButtons.forEach((btn, i) => {
+        if (i === this.current) btn.setAttribute('aria-current', 'true');
+        else btn.removeAttribute('aria-current');
+      });
+    }
+
+    goTo(index) {
+      const clamped = Math.max(0, Math.min(this.slides.length - 1, index));
+      this.slides[clamped].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    bindKeyboard() {
+      window.addEventListener('keydown', (e) => {
+        const forward = ['ArrowRight', 'ArrowDown', 'PageDown', ' '];
+        const back = ['ArrowLeft', 'ArrowUp', 'PageUp'];
+        if (forward.includes(e.key)) { e.preventDefault(); this.goTo(this.current + 1); }
+        else if (back.includes(e.key)) { e.preventDefault(); this.goTo(this.current - 1); }
+        else if (e.key === 'Home') { e.preventDefault(); this.goTo(0); }
+        else if (e.key === 'End') { e.preventDefault(); this.goTo(this.slides.length - 1); }
+      });
+    }
+
+    bindTouch() {
+      let startY = 0;
+      window.addEventListener('touchstart', (e) => { startY = e.touches[0].clientY; }, { passive: true });
+      window.addEventListener('touchend', (e) => {
+        const dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dy) < 50) return;
+        this.goTo(this.current + (dy < 0 ? 1 : -1));
+      }, { passive: true });
+    }
+
+    bindWheel() {
+      let locked = false;
+      window.addEventListener('wheel', (e) => {
+        if (locked) return;
+        if (Math.abs(e.deltaY) < 30) return;
+        locked = true;
+        this.goTo(this.current + (e.deltaY > 0 ? 1 : -1));
+        setTimeout(() => { locked = false; }, 700);
+      }, { passive: true });
+    }
+
+    bindScroll() {
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        if (this.progressFill) this.progressFill.style.width = `${pct}%`;
+        let best = 0, bestRatio = 0;
+        this.slides.forEach((slide, i) => {
+          const rect = slide.getBoundingClientRect();
+          const ratio = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)) / window.innerHeight;
+          if (ratio > bestRatio) { bestRatio = ratio; best = i; }
+        });
+        if (best !== this.current) { this.current = best; this.updateNav(); }
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+
+    observeReveal() {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.3 });
+      this.slides.forEach((s) => io.observe(s));
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => new SlidePresentation());
+</script>
+</body>
+</html>

@@ -44,12 +44,14 @@ The main demo path, office artifacts, and submission materials are in place. The
 
 ## Final presentation assets
 
-### Google Slides deck
-- status: created, compact 6-slide deck is fully built in Google Workspace with styling, embedded speaker notes, proof visuals, and current-state readback verification; acceptable for submission with only optional low-risk layout polish left
-- final title: `Market Mispricing Radar - Submission Deck`
-- deck shape used: `compact 6-slide`
-- location: `https://docs.google.com/presentation/d/1MYzlPnXoFbulK9SopHM9Uh1rmAPNRVC8uzH_NurZxKA`
-- alignment note: readback-verified so the body copy and embedded notes match the current compact deck and safe local GTA drilldown path.
+### Submission deck
+- status: rebuilt from scratch with the updated `slides-generator` skill as a 9-slide HTML deck; the previous Google Slides deck was trashed per the updated deck instruction
+- final title: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)`
+- deck shape used: `9-slide HTML deck`
+- local location: `artifacts/submission/slides-generator-deck/slides.html`
+- Drive HTML file: `https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`
+- Drive bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
+- alignment note: rebuilt around the locked safe local default, the GTA drilldown default, current proof screenshots, generated visual assets, and hidden per-slide speaker notes.
 - source docs:
   - `docs/submission-deck-outline.md`
   - `docs/slide-build-kit.md`
@@ -136,7 +138,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - deck link checked: yes, Slides API readback confirmed the compact 6-slide structure and updated speaker notes
 - notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh
 - office wording drift checked: yes, a 2026-04-24 readback pass confirmed the presenter notes doc, slide speaker notes, and visible slide body copy still match the latest repo wording, and the final submission-copy doc was refreshed and read back again later the same day to match the latest submission copy
-- office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-24 and contained exactly the expected seven MMR office artifacts without stray duplicates
+- office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, docs, and screenshot assets without duplicate presentation decks
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
 - public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`

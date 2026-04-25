@@ -21,12 +21,14 @@ Use it to answer four questions quickly:
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the locked safe local default choice
 
 ### Slides
-- status: compact 6-slide deck is built, styled, and readably polished in Google Workspace `Documents/Hackathons/ZerveHack`, with embedded speaker notes and proof visuals already in place
+- status: previous Google Slides deck was trashed, then the deck was rebuilt from scratch with the updated `slides-generator` skill as a 9-slide HTML deck with generated visuals, proof screenshots, and hidden per-slide notes
 - source doc: `docs/submission-deck-outline.md`
+- deck artifact: `artifacts/submission/slides-generator-deck/slides.html`
+- Drive bundle: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)` (`1FFroHF0Gj-wie5AyykylTb08soQT79Bb`)
 - remaining work: optional low-risk layout polish only if it is clearly worth it
 
 ### Video / talking track
-- status: presenter notes exist in Google Workspace `Documents/Hackathons/ZerveHack`, align with the compact deck order, and match the deck speaker notes
+- status: presenter notes exist in Google Workspace `Documents/Hackathons/ZerveHack`, and the rebuilt HTML deck includes hidden per-slide notes aligned to the same locked safe local default story
 - source docs: `docs/judge-demo-script.md`, `docs/video-voiceover-script.md`, `docs/submission-deck-outline.md`, `docs/video-recording-run-sheet.md`, `docs/demo-market-shortlist.md`
 - remaining work: record the demo cleanly on the chosen path
 
@@ -164,7 +166,7 @@ Defaults:
 ## Remaining submission-critical gaps
 
 ### Still missing
-- final visual polish on the compact Google Slides deck
+- optional final visual polish on the rebuilt slides-generator HTML deck
 - actual recording execution against the aligned presenter notes / recording plan
 - one final checked demo link or presentation flow immediately before submission
 - final pass to verify all submission-facing links and artifacts open cleanly
