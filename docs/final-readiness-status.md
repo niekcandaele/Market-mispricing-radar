@@ -52,6 +52,12 @@ Why:
 - the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on 2026-04-24 to match the current repo assets
 - the `Documents/Hackathons/ZerveHack` office folder was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder now contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 
+## Immediate next human actions
+
+1. Make the Zerve notebook/project public, or provide the exact verified public URL / fresh bearer needed to confirm it.
+2. Rerun `python3 scripts/check_zerve_public_share.py`; only clear the share-post blocker when `summary.ready_for_share_post_link: true`.
+3. Record the final short demo on the locked safe local default, then fill the submission form from `docs/submission-form-map.md` and publish the required share post only after human platform/copy approval.
+
 ## What is still blocked or missing
 
 ### Current blocker

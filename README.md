@@ -30,6 +30,11 @@ Current blocker:
 - latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T120212Z.json`
 - only clear this when `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
 
+Immediate human actions:
+1. make the Zerve notebook/project public, or provide the exact verified public URL / fresh bearer needed to confirm it
+2. record the final short demo on the locked safe local default
+3. fill the submission form and publish the required public share post only after human platform/copy approval
+
 Retained evidence manifest:
 - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
 
