@@ -138,6 +138,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 
 ## Last verification snapshot
 
+- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, and public-share blocker evidence
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-25, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match

@@ -12,6 +12,9 @@ Use it to answer four questions quickly:
 
 ## Current status snapshot
 
+Retained evidence manifest:
+- `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
+
 ### Demo
 - status: usable, with the locked safe local default reverified on 2026-04-25 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T080227Z.json` (`refreshId`: `refresh-20260425T080227Z`)
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
