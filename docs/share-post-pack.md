@@ -46,11 +46,11 @@ Current share-post status:
 
 ## Tagging note
 
-The live Devpost page was rechecked on 2026-04-26 and says to tag:
+The live Devpost page was rechecked again on 2026-04-26 and says to tag:
 - `@Zerve AI` on LinkedIn
 - `@Zerve_AI` on X
 
-Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/devpost-requirements-check-20260426T0643Z.json`. Still check the exact platform autocomplete before posting in case branding display differs.
+Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/devpost-requirements-check-20260426T1253Z.json`. Still check the exact platform autocomplete before posting in case branding display differs.
 
 ## LinkedIn draft
 

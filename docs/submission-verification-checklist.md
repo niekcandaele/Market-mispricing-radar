@@ -83,7 +83,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ## Public share-post checks
 
-- [x] confirm the hackathon still lists a public share post as required on the live Devpost page; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/devpost-requirements-check-20260426T0643Z.json`
+- [x] confirm the hackathon still lists a public share post as required on the live Devpost page; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/devpost-requirements-check-20260426T1253Z.json`
 - [ ] choose the posting platform explicitly, default LinkedIn unless the human prefers otherwise
 - [ ] use draft wording from `docs/share-post-pack.md`
 - [x] confirm the exact Zerve tag on the chosen platform from live Devpost page: `@Zerve AI` on LinkedIn or `@Zerve_AI` on X
