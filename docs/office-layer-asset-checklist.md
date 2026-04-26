@@ -99,10 +99,11 @@ Recommended set:
 - `Market Mispricing Radar - local-market-detail-view-16x9.png`
 - `Market Mispricing Radar - local-methodology-view-16x9.png`
 
-Current verified state on `2026-04-25`:
+Current verified state on `2026-04-26`:
 - the previous Google Slides deck was trashed
-- the `Documents/Hackathons/ZerveHack` folder now contains these nine expected Market Mispricing Radar artifacts
+- the `Documents/Hackathons/ZerveHack` folder contains the expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
+- Presenter Notes, Demo Link Notes, and Final Submission Copy were refreshed and read back with current markers for `refresh-20260426T095005Z`, local PDF upload, Drive `401 Unauthorized` warning, required Zerve tags, and the verified public notebook URL; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260426T1149Z.json`
 - Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`. Unauthenticated Drive opening still returns `401 Unauthorized`, so judge-facing use requires changing sharing or uploading files directly; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 ## What should not be left messy
