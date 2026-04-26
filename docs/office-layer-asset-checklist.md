@@ -63,7 +63,7 @@ Create or store:
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
-- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-25 after the latest safe-local recheck, and now captures the locked safe local default, the auto-written retained proof flow, and the chosen visual pairings for recording
+- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-26 with final markers for `refresh-20260426T095005Z`, local deck upload paths, the Drive `401 Unauthorized` warning, required Zerve share-post tags, and the verified public notebook URL
 
 Source materials:
 - `docs/submission-verification-checklist.md`
@@ -72,7 +72,7 @@ Source materials:
 ### 4. Final submission text reference
 Create or store:
 - one clean reference doc or note with the exact final wording used in the submission form
-- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully again in the 2026-04-25 office-doc QA pass
+- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully in the 2026-04-26 office-doc QA pass with current proof, upload, public-link, and share-post markers
 
 Source materials:
 - `docs/submission-form-map.md`
