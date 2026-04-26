@@ -103,6 +103,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] run `docs/recording-preflight-checklist.md` before the real take
 - [ ] on the safe local default path, run `./scripts/check_safe_local_demo.sh` right before the real take instead of trusting older evidence alone
 - [x] use `docs/demo-market-shortlist.md` to pre-pick a strong drilldown example (`Putin out as President of Russia by December 31, 2026?` locked as the current default for the refreshed safe local path unless the final live run clearly surfaces a cleaner option)
+- [x] primary, fuller, and fallback voiceover sections are each under the 3-minute Devpost video cap at conservative 130 wpm timing; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/video-script-timing-check-20260426T1054Z.json`
 - [ ] keep the recording to one coherent story arc
 - [ ] verify the chosen demo path before recording begins
 - [ ] avoid relying on an old rotated preview URL without rechecking it
