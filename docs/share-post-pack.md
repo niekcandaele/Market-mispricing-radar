@@ -66,6 +66,8 @@ Public notebook: https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250
 
 Built with Zerve, Python, Streamlit, and live Polymarket data.
 
+@Zerve AI
+
 #ZerveHack #DataScience #PredictionMarkets #AI
 
 ## Shorter LinkedIn variant
@@ -77,6 +79,8 @@ It turns live prediction-market data into an explainable radar that surfaces the
 Public notebook: https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4
 
 Built with Zerve, Python, Streamlit, and live Polymarket data.
+
+@Zerve AI
 
 #ZerveHack #AI #DataScience
 

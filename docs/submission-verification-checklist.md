@@ -87,6 +87,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] choose the posting platform explicitly, default LinkedIn unless the human prefers otherwise
 - [ ] use draft wording from `docs/share-post-pack.md`
 - [x] confirm the exact Zerve tag on the chosen platform from live Devpost page: `@Zerve AI` on LinkedIn or `@Zerve_AI` on X
+- [x] share-post drafts include the required platform tags and X variants still fit the 280-character limit with URL-as-23 counting; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/share-post-length-check-20260426T1127Z.json`
 - [ ] attach one clean screenshot and the verified public project link: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - [x] verify the notebook share route with `python3 scripts/check_zerve_public_share.py`; latest retained gate reports `summary.ready_for_share_post_link: true`
 - [x] confirm authenticated public status: latest retained gate reports `canvas.is_public: true`
