@@ -14,7 +14,7 @@ Why:
 - the product and submission pack are strong
 - the remaining gaps are concentrated in final demo/video/submission execution, with only optional low-risk deck polish left if a clearly better layout pass appears
 - the locked safe local default should remain the demo path unless a fresh live Zerve preview opens cleanly at the final moment
-- the sharpest remaining blocker is the required public share-post link path, which is still blocked because the authenticated Zerve canvas currently reports `is_public: false`
+- the sharpest remaining blocker is the required public share-post link path: authenticated Zerve metadata now reports `is_public: true`, but the notebook route still does not verify as a usable public project page
 
 ## What is already done
 
@@ -61,16 +61,16 @@ Why:
 ## What is still blocked or missing
 
 ### Current blocker
-- no verified public Zerve project/share URL yet for the required share post. The latest retained authenticated canvas-metadata baseline still says `canvas.is_public: false`, and the public-share gate is still red.
+- no verified public Zerve project/share URL yet for the required share post. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the public-share gate remains red.
 - do not guess that link from notebook ids, preview hosts, or repo notes
 - the blocker is now operationally clear: first make the notebook public in Zerve, then recheck the resulting public project/share URL
 - the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem
 - the repo now includes a real gate, `python3 scripts/check_zerve_public_share.py`, and the share-post link should only be treated as unblocked when that checker reports `summary.ready_for_share_post_link: true`
-- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`, while the same gate run still only reaches auth `403`, so the gate is not just missing a URL, it is still failing the actual public-route check
+- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`; authenticated canvas metadata now reports `is_public: true`, but the route is not verified as a usable public project page, so the gate is not just missing a URL, it is still failing the actual public-route check
 - if the UI path is unavailable, the alternative is a human-confirmed final public link after the project has been made public
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
 
 ### Verified but still optional
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
@@ -106,7 +106,7 @@ If the public project/share URL blocker clears:
 2. right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh`
 3. record the video against the locked safe demo path
 4. fill the submission form
-5. use the Zerve share/privacy control to make the project public if it is not already, then run `python3 scripts/check_zerve_public_share.py` and only proceed if it reports `summary.ready_for_share_post_link: true`
+5. fix or provide the exact public Zerve project URL until `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`; authenticated metadata already reports `canvas.is_public: true`, but the route still is not verified
 6. publish the required public share post using the prepared draft pack and human approval
 7. run the final verification pass
 8. update the final asset register

@@ -56,7 +56,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - Drive PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - local PDF export: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 - PDF verification: local PDF exists, is non-empty, and has 9 pages matching the rebuilt 9-slide deck
-- alignment note: rebuilt around the locked safe local default, the GTA drilldown default, current proof screenshots, generated visual assets, and hidden per-slide speaker notes.
+- alignment note: rebuilt around the locked safe local default, the Putin drilldown default, current proof screenshots, generated visual assets, and hidden per-slide speaker notes.
 - QA note: local Playwright QA on 2026-04-25 confirmed 9 slides, 9 nav dots, all visible slide images loaded with alt text, no overflowing slides at 1280x720, and the vanilla `SlidePresentation` controller present; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/html-deck-qa-20260425T1951Z.json`
 - source docs:
   - `docs/submission-deck-outline.md`
@@ -67,7 +67,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - status: created, refreshed on 2026-04-25 to match the rebuilt 9-slide HTML/PDF deck, aligned to the locked safe local default, readback-verified against the current recording path, and ready for recording use
 - final title: `Market Mispricing Radar - Presenter Notes`
 - location: `https://docs.google.com/document/d/17fNahknqysD206KM9VRocYRcOCOoQyrPDmsBVjQQhU4`
-- alignment note: readback-verified so the presenter notes match the locked safe local default, the GTA drilldown default, the rebuilt 9-slide deck order, and the public-share blocker wording.
+- alignment note: readback-verified so the presenter notes match the locked safe local default, the Putin drilldown default, the rebuilt 9-slide deck order, and the public-share blocker wording.
 - source docs:
   - `docs/judge-demo-script.md`
   - `docs/video-voiceover-script.md`
@@ -133,24 +133,24 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - fallback platform: X
 - draft pack: `docs/share-post-pack.md`
 - screenshot default: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
-- project link to use: blocked until the notebook is made public in Zerve and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
+- project link to use: blocked until the public Zerve route renders a verified project page and `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
 - posted on: set after a verified public link exists and the human chooses and approves the final platform/post
 
 ## Last verification snapshot
 
-- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share blocker evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-25T12:02Z public gate as still not share-ready
+- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share blocker evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-26T04:47Z public gate as still not share-ready
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-25, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, local Playwright QA confirmed the rebuilt 9-slide HTML deck structure, navigation dots, image loading, alt text, hidden notes, and no 1280x720 slide overflow
-- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh; latest office-doc readback QA evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260425T1954Z.json`
+- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh; latest office-doc readback QA evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260426T0450Z.json`
 - office wording drift checked: yes, a 2026-04-25 readback pass confirmed the presenter notes doc, Demo Link Notes doc, and final submission-copy doc are readable through Workspace APIs and contain the current required proof/deck/story markers
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
 - repo reference audit checked: yes, `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/repo-reference-audit-20260425T1146Z.json` found no missing real proof/artifact paths; the only misses are intentional branch-name examples in `docs/repo-workflow.md`
-- public project status checked: yes, the latest retained authenticated metadata baseline still says `canvas.is_public: false`, so there is no verified public project/share URL yet; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-- notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`, while the same gate run still only reached auth `403`, so `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+- public project status checked: yes, the latest retained public-share checker confirms authenticated `canvas.is_public: true`, but there is still no verified public project/share URL because the notebook route does not render a verified project page; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
+- notebook public-route baseline checked: yes, latest retained route-check evidence still ends in the generic Zerve shell with `200`; authenticated canvas metadata now reports `is_public: true`, but `summary.ready_for_share_post_link: false`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
 - verified on: `2026-04-25`
 - verified by: `Jefke`
 

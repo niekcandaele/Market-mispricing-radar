@@ -94,7 +94,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [ ] if you use the checker, require `summary.ready_for_share_post_link: true` instead of manually eyeballing a bare `200`
 - [ ] do not treat a bare `200` on that route as success if it only returns the generic Zerve shell instead of the actual public project page
 - [ ] if a different public route is used, confirm it was chosen deliberately and verified, not silently swapped in from the gallery/community path
-- [ ] confirm the latest public-status check is no longer `canvas.is_public: false` before treating the share-post path as unblocked
+- [ ] confirm the latest public-share checker reports `summary.ready_for_share_post_link: true` before treating the share-post path as unblocked
 - [ ] verify the post is actually published before treating the requirement as done
 
 ## Recording checks

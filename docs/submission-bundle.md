@@ -17,7 +17,7 @@ If someone needs only the shortest operational handoff, use `docs/final-human-ha
 Retained evidence manifest:
 - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
 - includes repo-reference audit evidence; no missing real proof/artifact paths were found
-- latest manifest self-check has no missing evidence paths and records the 2026-04-25T12:02Z public gate as still not share-ready
+- latest manifest self-check has no missing evidence paths and records the 2026-04-26T04:47Z public gate as still not share-ready
 
 ### Demo
 - status: usable, with the locked safe local default reverified on 2026-04-25 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`)
@@ -226,13 +226,13 @@ It does **not** yet have:
 - the required public share post and its final public URL
 
 Current sharp blocker:
-- no verified public Zerve project/share URL yet. The latest retained authenticated canvas-metadata baseline still says `canvas.is_public: false`, and the public-share gate is still red.
-- the required share post stays blocked until the notebook is made public in Zerve and the resulting public link is verified
+- no verified public Zerve project/share URL yet. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the public-share gate remains red.
+- the required share post stays blocked until the public Zerve route renders a verified project page and the resulting public link is verified
 - the next action is explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only clear the blocker when the checker reports `summary.ready_for_share_post_link: true`
-- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`, while the same gate run still only reaches auth `403`, so the gate is still failing the actual public-route check
+- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`; authenticated canvas metadata now reports `is_public: true`, but the route is not verified as a usable public project page, so the gate is still failing the actual public-route check
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

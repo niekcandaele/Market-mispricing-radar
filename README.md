@@ -29,11 +29,12 @@ Current deck handoff:
 
 Current blocker:
 - required public share-post link is not ready yet
-- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
+- authenticated Zerve metadata now reports `canvas.is_public: true`, but the notebook route still renders the generic Zerve shell instead of a verified project page
 - only clear this when `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
 
 Immediate human actions:
-1. make the Zerve notebook/project public, or provide the exact verified public URL / fresh bearer needed to confirm it
+1. provide/open the exact verified public project URL or fix the Zerve route until the checker confirms it is share-ready
 2. record the final short demo on the locked safe local default
 3. fill the submission form and publish the required public share post only after human platform/copy approval
 

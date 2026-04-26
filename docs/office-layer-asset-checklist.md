@@ -11,13 +11,13 @@ Use it to make the final office-layer finish clean, complete, and easy to inspec
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 Current project-level sharp blocker:
-- no verified public Zerve project/share URL yet. The latest retained authenticated canvas-metadata baseline still says `canvas.is_public: false`, and the latest public-share gate is still red.
-- the required public share post stays blocked until the project is made public in Zerve and the resulting public link is verified
+- no verified public Zerve project/share URL yet. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the latest public-share gate remains red.
+- the required public share post stays blocked until the public Zerve route renders a verified project page and the resulting public link is verified
 - the next action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - evidence:
   - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app
@@ -49,7 +49,7 @@ Source materials:
 Create one of:
 - one Google Doc for recording notes and presenter notes
 - or hidden per-slide notes inside the rebuilt HTML deck if that is cleaner
-- status: presenter-notes doc exists, was refreshed and read back on 2026-04-25 to match the rebuilt 9-slide HTML/PDF deck, locked safe local default, GTA drilldown, and public-share blocker wording; the rebuilt HTML deck also includes hidden per-slide notes aligned to the locked safe local default plan
+- status: presenter-notes doc exists, was refreshed and read back on 2026-04-25 to match the rebuilt 9-slide HTML/PDF deck, locked safe local default, Putin drilldown, and public-share blocker wording; the rebuilt HTML deck also includes hidden per-slide notes aligned to the locked safe local default plan
 
 Source materials:
 - `docs/judge-demo-script.md`

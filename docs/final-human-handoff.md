@@ -7,13 +7,13 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 - Status: near-ready, not submission-complete.
 - Default demo: locked safe local default.
 - Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`).
-- Public share-post gate: still blocked.
-- Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`.
+- Public share-post gate: still blocked; authenticated Zerve metadata now says `canvas.is_public: true`, but the notebook route still renders the generic Zerve shell rather than a verified project page.
+- Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
 
 ## Do next
 
-1. Make the Zerve notebook/project public, or provide the exact verified public URL / fresh bearer needed to confirm it.
+1. Provide/open the exact verified public project URL or fix the Zerve route until the checker sees the real public project page.
 2. Rerun `python3 scripts/check_zerve_public_share.py`; only clear the blocker when `summary.ready_for_share_post_link: true`.
 3. Record the final short demo using `docs/recording-preflight-checklist.md` and `docs/video-recording-run-sheet.md`.
 4. Fill the submission form from `docs/submission-form-map.md`.

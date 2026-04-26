@@ -28,13 +28,13 @@ Default screenshot:
 
 Default link choice:
 - use the final public Zerve project/share link if that is the expected hackathon proof link
-- after the notebook is made public, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- after the public route is fixed or a final public URL is provided, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - treat a bare `200` as insufficient if the route only serves the generic Zerve shell instead of the actual public project page
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
 - if the submission-day choice is the locked safe local default for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
 Current blocker:
-- no verified public Zerve project/share URL yet for the required share post. The latest retained authenticated metadata baseline still says `canvas.is_public: false`, and the public-share gate is still red.
+- no verified public Zerve project/share URL yet for the required share post. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the public-share gate remains red.
 - do not guess the link from notebook ids, preview hosts, or repo notes
 - the next action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
 - the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
@@ -45,7 +45,7 @@ Current blocker:
 - it can use `--bearer`, `ZERVE_BEARER`, or a best-effort Chromium token extraction path for the authenticated check
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - the checker now emits a `summary` block and exits non-zero until the share-post link is actually ready
-- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260425T133229Z.json`
+- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
 - if the project is already public by the time this is used, still reverify the exact final link before posting
 - evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
 
