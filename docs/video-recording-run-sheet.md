@@ -26,7 +26,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 - only switch to the live Zerve preview if it is clearly healthy right before recording
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section, defaulting to `Putin out as President of Russia by December 31, 2026?` on the refreshed locked safe local default path
-- keep the Drive PDF deck open as a backup story spine: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
+- keep the local PDF deck open as a backup story spine: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 
 ## Recording order
 
