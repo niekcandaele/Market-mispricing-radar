@@ -4,7 +4,10 @@ import base64
 import json
 import os
 import re
+import subprocess
 import sys
+import tempfile
+import textwrap
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -156,6 +159,76 @@ def try_public_route(url):
         return {"ok": False, "error": repr(e)}
 
 
+def try_browser_public_route(url):
+    """Render the route with Playwright because Zerve notebooks are client-side apps.
+
+    The static CloudFront response can look like a generic Zerve shell even when the
+    browser-rendered public notebook is valid. Treat the route as verified only when
+    the rendered page exposes the project title and public/view-only notebook chrome.
+    """
+    js = textwrap.dedent(
+        f"""
+        const fs = require('fs');
+        function loadPlaywright() {{
+          try {{ return require('playwright'); }}
+          catch (_) {{ return require('/home/catalysm/.openclaw/workspace/state/browser/node_modules/playwright'); }}
+        }}
+        const {{ chromium }} = loadPlaywright();
+        (async () => {{
+          const browser = await chromium.launch({{ headless: true }});
+          const context = await browser.newContext({{ viewport: {{ width: 1440, height: 1200 }} }});
+          const page = await context.newPage();
+          const result = {{ url: {json.dumps(url)}, checked_at: new Date().toISOString() }};
+          try {{
+            const resp = await page.goto(result.url, {{ waitUntil: 'domcontentloaded', timeout: 60000 }});
+            result.initial_status = resp && resp.status();
+            await page.waitForTimeout(12000);
+            result.final_url = page.url();
+            result.title = await page.title().catch(() => null);
+            const body = await page.locator('body').innerText({{ timeout: 5000 }}).catch(() => '');
+            result.body_excerpt = body.slice(0, 2000);
+            result.signals = {{
+              has_project_name: body.includes('Market Mispricing Radar') || (result.title || '').includes('Market Mispricing Radar'),
+              has_view_only: body.includes('View only'),
+              has_streamlit_block: body.includes('Streamlit'),
+              has_canvas_view: body.includes('Canvas View'),
+              has_not_found: /not found|404/i.test(body),
+            }};
+            result.route_looks_verified = Boolean(
+              result.signals.has_project_name &&
+              result.signals.has_view_only &&
+              result.signals.has_canvas_view &&
+              !result.signals.has_not_found
+            );
+          }} catch (error) {{
+            result.error = String(error.stack || error);
+            result.route_looks_verified = false;
+          }} finally {{
+            console.log(JSON.stringify(result));
+            await context.close();
+            await browser.close();
+          }}
+        }})().catch((error) => {{ console.log(JSON.stringify({{ error: String(error.stack || error), route_looks_verified: false }})); }});
+        """
+    )
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as f:
+            f.write(js)
+            script_path = f.name
+        proc = subprocess.run(["node", script_path], capture_output=True, text=True, timeout=90, check=False)
+        stdout = (proc.stdout or "").strip().splitlines()[-1] if proc.stdout else "{}"
+        result = json.loads(stdout)
+        result["ok"] = proc.returncode == 0 or "error" not in result
+        return result
+    except Exception as e:
+        return {"ok": False, "route_looks_verified": False, "error": repr(e)}
+    finally:
+        try:
+            Path(script_path).unlink()
+        except Exception:
+            pass
+
+
 def try_canvas_status(bearer):
     headers = {"Authorization": f"Bearer {bearer}"}
     result = {"used_bearer": True}
@@ -188,7 +261,8 @@ def try_canvas_status(bearer):
 def derive_summary(result):
     route_check = result.get("public_route_check", {})
     interpretation = route_check.get("interpretation", {})
-    route_verified = bool(interpretation.get("route_looks_verified"))
+    browser_route_check = result.get("browser_public_route_check", {})
+    route_verified = bool(interpretation.get("route_looks_verified") or browser_route_check.get("route_looks_verified"))
 
     auth_check = result.get("auth_check", {})
     canvas_public = auth_check.get("canvas", {}).get("is_public")
@@ -232,6 +306,7 @@ def main():
         "canvas_id": CANVAS_ID,
         "notebook_share_url": NOTEBOOK_URL,
         "public_route_check": try_public_route(NOTEBOOK_URL),
+        "browser_public_route_check": try_browser_public_route(NOTEBOOK_URL),
         "auth_check": {"used_bearer": False, "note": "Pass --bearer, set ZERVE_BEARER, or rely on best-effort Chromium token extraction."},
         "bearer_resolution": bearer_meta,
     }

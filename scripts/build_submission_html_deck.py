@@ -107,9 +107,9 @@ slides = [
         'stats': [
             ('Ready', 'locked safe local demo path'),
             ('Ready', 'submission copy + notes'),
-            ('Blocked', 'public Zerve share link')
+            ('Ready', 'verified public Zerve notebook link')
         ],
-        'notes': 'Be explicit: the remaining blocker is public sharing, not the product demo.'
+        'notes': 'Be explicit: the public Zerve notebook link is verified; remaining external action is the human-approved public share post.'
     },
     {
         'type': 'closer',
@@ -181,7 +181,7 @@ for i, slide in enumerate(slides, start=1):
   <div class="stats stagger">
 {stat_html}
   </div>
-  <p class="status-note reveal">Safe local demo is verified. Public share post stays blocked until Zerve public visibility is confirmed.</p>
+  <p class="status-note reveal">Safe local demo is verified. Public Zerve notebook link is verified; public share post still needs human-approved platform/copy.</p>
   {notes}
 </section>''')
     elif slide['type'] == 'closer':

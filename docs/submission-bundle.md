@@ -20,7 +20,7 @@ Retained evidence manifest:
 - latest manifest self-check has no missing evidence paths and records the 2026-04-26T04:47Z public gate as still not share-ready
 
 ### Demo
-- status: usable, with the locked safe local default reverified on 2026-04-25 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`)
+- status: usable, with the locked safe local default reverified on 2026-04-26 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T050430Z.json` (`refreshId`: `refresh-20260426T050430Z`)
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
@@ -179,7 +179,7 @@ Defaults:
 - one final checked demo link or presentation flow immediately before submission
 - final pass to verify all submission-facing links and artifacts open cleanly
 
-### Current blocker snapshot
+### Current final-action snapshot
 - Google Workspace office artifacts now exist and are no longer blocked on auth
 - the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and a fresh 2026-04-22 bearer-auth preview trigger produced a new working preview again
 - the current concrete live-preview behavior is now understood: a fresh host can resolve immediately, serve ELB `503` during warm-up, then turn into a healthy rendered Streamlit app about 45 seconds later
@@ -226,13 +226,12 @@ It does **not** yet have:
 - the required public share post and its final public URL
 
 Current sharp blocker:
-- no verified public Zerve project/share URL yet. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the public-share gate remains red.
-- the required share post stays blocked until the public Zerve route renders a verified project page and the resulting public link is verified
-- the next action is explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
+- verified public Zerve notebook URL is available: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained checker reports `summary.ready_for_share_post_link: true`.
+- the required share post is unblocked on link availability, but still requires human platform/copy approval before posting
+- the next action is the human-approved public post itself; rerun `python3 scripts/check_zerve_public_share.py` only as a final link sanity check
 - only clear the blocker when the checker reports `summary.ready_for_share_post_link: true`
-- the latest retained notebook-route baseline still ends in the generic Zerve shell with `200`; authenticated canvas metadata now reports `is_public: true`, but the route is not verified as a usable public project page, so the gate is still failing the actual public-route check
+- the latest retained route-check evidence uses browser-rendered verification and reports `route_verified: true`, `auth_public_confirmed: true`, and `ready_for_share_post_link: true`
 - evidence:
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

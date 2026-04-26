@@ -33,21 +33,16 @@ Default link choice:
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
 - if the submission-day choice is the locked safe local default for demo reliability, keep the public post about the project itself, not about local-only launch commands
 
-Current blocker:
-- no verified public Zerve project/share URL yet for the required share post. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the public-share gate remains red.
-- do not guess the link from notebook ids, preview hosts, or repo notes
-- the next action is explicit: make the notebook public in Zerve via the share/privacy control, then recheck the resulting public project/share URL
-- the known privacy seam is the notebook public toggle backed by `PATCH /canvas/<canvas_id>` with `is_public`, so the blocker is no longer a vague search problem
-- the first recheck target after the toggle is the notebook share route `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- the gallery/community path is separate and should not be assumed to be the required project link
-- current baseline check confirms that this route can return the generic Zerve shell with `200`, so success must mean the actual public project page renders, not just that the route responds
+Current share-post status:
+- verified public Zerve notebook URL is available for the required share post: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained checker reports `summary.ready_for_share_post_link: true`.
+- do not guess alternate links from notebook ids, preview hosts, or repo notes
+- the next action is now the human-approved public post itself, not more link discovery
+- the gallery/community path is separate and should not be assumed to be the required project link unless the submission flow explicitly asks for it
 - reusable recheck helper: `python3 scripts/check_zerve_public_share.py`
-- it can use `--bearer`, `ZERVE_BEARER`, or a best-effort Chromium token extraction path for the authenticated check
-- only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
-- the checker now emits a `summary` block and exits non-zero until the share-post link is actually ready
-- latest route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
-- if the project is already public by the time this is used, still reverify the exact final link before posting
-- evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
+- it can use `--bearer`, `ZERVE_BEARER`, or best-effort Chromium token extraction for the authenticated check, and browser-rendered route verification for the client-side notebook page
+- only treat the link as ready while that checker reports `summary.ready_for_share_post_link: true`
+- latest route evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- still reverify the exact final link before posting
 
 ## Tagging note
 

@@ -94,7 +94,7 @@ Submission status is near-ready, not pretend-complete
 ### Bullets
 - ready: locked safe local demo path
 - ready: submission copy and notes
-- blocked: public Zerve share link
+- ready: verified public Zerve notebook link
 
 ## Slide 9, Close
 

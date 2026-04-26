@@ -20,23 +20,22 @@ Use these first during the final ZerveHack sprint:
 Current locked demo path:
 - default: locked safe local default via `./scripts/check_safe_local_demo.sh` then `./scripts/run_local_demo.sh`
 - drilldown: `Putin out as President of Russia by December 31, 2026?`
-- retained proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`)
+- retained proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T050430Z.json` (`refreshId`: `refresh-20260426T050430Z`)
 
 Current deck handoff:
 - source: `artifacts/submission/slides-generator-deck/slides.html`
 - judge-facing PDF: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - portable ZIP: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 
-Current blocker:
-- required public share-post link is not ready yet
-- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
-- authenticated Zerve metadata now reports `canvas.is_public: true`, but the notebook route still renders the generic Zerve shell instead of a verified project page
-- only clear this when `python3 scripts/check_zerve_public_share.py` reports `summary.ready_for_share_post_link: true`
+Current public link:
+- verified public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- `python3 scripts/check_zerve_public_share.py` now reports `summary.ready_for_share_post_link: true`
 
 Immediate human actions:
-1. provide/open the exact verified public project URL or fix the Zerve route until the checker confirms it is share-ready
-2. record the final short demo on the locked safe local default
-3. fill the submission form and publish the required public share post only after human platform/copy approval
+1. record the final short demo on the locked safe local default
+2. fill the submission form
+3. publish the required public share post only after human platform/copy approval
 
 Retained evidence manifest:
 - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`

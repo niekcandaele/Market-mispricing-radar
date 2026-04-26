@@ -130,10 +130,10 @@ Submission status is near-ready, not pretend-complete
 ### On-slide content
 - ready: locked safe local demo path
 - ready: submission copy and notes
-- blocked: public Zerve share link
+- ready: verified public Zerve notebook link
 
 ### Speaker notes
-Be explicit: the remaining blocker is public sharing, not the product demo.
+Be explicit: the remaining external action is the human-approved public share post, not the product demo.
 
 ## Slide 9, Close
 

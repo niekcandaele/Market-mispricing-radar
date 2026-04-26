@@ -87,7 +87,7 @@ Use this:
 ## Demo link field
 Safe default:
 - use the locked safe local default path from `docs/submission-verification-checklist.md`
-- current retained safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260425T194755Z.json` (`refreshId`: `refresh-20260425T194755Z`)
+- current retained safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T050430Z.json` (`refreshId`: `refresh-20260426T050430Z`)
 
 Optional last-minute upgrade only if it opens cleanly:
 - current live Zerve preview opened fresh from the deploy tab right before submission
@@ -115,8 +115,8 @@ Use:
 Blocking note:
 - if the project is still not public in Zerve, first use the Zerve share/privacy control to make it public
 - after that, rerun `python3 scripts/check_zerve_public_share.py` and only treat the share-post link as ready when it reports `summary.ready_for_share_post_link: true`
-- latest retained public-share checker: authenticated `canvas.is_public: true`, but `summary.ready_for_share_post_link: false`
-- latest retained route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`, which still ends in the generic Zerve shell with `200`; authenticated canvas metadata now reports `is_public: true`, but the route is not verified as a usable public project page
+- latest retained public-share checker: authenticated `canvas.is_public: true` and `summary.ready_for_share_post_link: true`
+- latest retained route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`, which now passes browser-rendered route verification with authenticated `canvas.is_public: true`
 
 Default recommendation:
 - one simple LinkedIn post, unless the human explicitly prefers X or another platform

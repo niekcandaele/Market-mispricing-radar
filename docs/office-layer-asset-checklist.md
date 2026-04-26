@@ -6,18 +6,17 @@ This is the practical checklist for what should exist in the Google Workspace of
 
 Use it to make the final office-layer finish clean, complete, and easy to inspect.
 
-## Current blocker context
+## Current share-post context
 
 Google Workspace artifact creation itself is no longer blocked, because the authenticated `gws` CLI path is available for Docs, Slides, and Drive work.
 
 Current project-level sharp blocker:
-- no verified public Zerve project/share URL yet. The latest retained public-share checker confirms authenticated `canvas.is_public: true`, but the notebook route still only serves the generic Zerve shell, so the latest public-share gate remains red.
-- the required public share post stays blocked until the public Zerve route renders a verified project page and the resulting public link is verified
-- the next action is now explicit: use the Zerve share/privacy control to make the notebook public, then rerun `python3 scripts/check_zerve_public_share.py`
+- verified public Zerve notebook URL is available: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained public-share checker reports `summary.ready_for_share_post_link: true`.
+- the required public share post is unblocked on link availability, but still requires human platform/copy approval before posting
+- the next action is the human-approved public post itself; rerun `python3 scripts/check_zerve_public_share.py` only as a final link sanity check
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - evidence:
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-status-20260423T055107Z.json`
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T044718Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app
@@ -104,7 +103,7 @@ Current verified state on `2026-04-25`:
 - the previous Google Slides deck was trashed
 - the `Documents/Hackathons/ZerveHack` folder now contains these nine expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
-- Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260425T1953Z.json`
+- Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`
 
 ## What should not be left messy
 
