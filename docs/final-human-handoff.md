@@ -22,9 +22,9 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 ## Use these links
 
 - Public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- Public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- Local deck PDF: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
-- Local deck ZIP: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
+- Upload deck PDF: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
+- Optional upload ZIP: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
+- Local upload manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/local-submission-upload-manifest-20260426T0913Z.json`
 - Drive deck links require sharing fix before judge use; unauthenticated checks return `401 Unauthorized`. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 ## Demo default

@@ -93,12 +93,16 @@ Optional last-minute upgrade only if it opens cleanly:
 - current live Zerve preview opened fresh from the deploy tab right before submission
 
 ## Deck / presentation field
-Use the rebuilt 9-slide deck package:
+Safest path: upload local files directly instead of relying on Drive links.
+- PDF deck to upload: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
+- portable ZIP source bundle: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
+- local upload manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/local-submission-upload-manifest-20260426T0913Z.json`
+
+Drive copies exist, but do not use them as judge-facing links unless sharing is changed first:
 - HTML deck: `https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`
 - ZIP bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
-
-If the form accepts file uploads, upload the local PDF directly and keep the ZIP bundle as the portable source package. If using Drive links instead, first change sharing so unauthenticated judges can open them; latest unauthenticated checks return `401 Unauthorized`.
+- latest unauthenticated check: `401 Unauthorized`, so Drive links are not judge-safe yet.
 
 ## Video field
 Use:
