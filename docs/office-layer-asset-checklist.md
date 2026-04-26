@@ -103,7 +103,7 @@ Current verified state on `2026-04-25`:
 - the previous Google Slides deck was trashed
 - the `Documents/Hackathons/ZerveHack` folder now contains these nine expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
-- Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`
+- Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`. Unauthenticated Drive opening still returns `401 Unauthorized`, so judge-facing use requires changing sharing or uploading files directly; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 ## What should not be left messy
 

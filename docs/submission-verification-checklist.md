@@ -62,6 +62,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] rebuilt HTML deck passed local Playwright QA: 9 slides, 9 nav dots, all visible slide images loaded with alt text, no overflowing slides at 1280x720
 - [x] rebuilt deck ZIP verified as complete and uncorrupted
 - [x] Drive deck HTML, ZIP, and PDF artifacts verified against local size/md5 checks
+- [ ] If Drive links are used for judges, make them publicly readable or verify the form accepts uploaded files instead; latest unauthenticated Drive checks return `401 Unauthorized`
 - [x] rebuilt deck exported to PDF, verified as 9 pages, and uploaded to Google Drive
 - [x] Google Doc presenter notes refreshed to the rebuilt 9-slide deck and readback-verified
 - [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`

@@ -28,7 +28,7 @@ Why:
 - demo script exists
 - submission deck outline exists
 - previous Google Slides deck was trashed per updated deck instruction
-- fresh 9-slide HTML submission deck was rebuilt with the updated `slides-generator` skill and uploaded to Google Drive as HTML, ZIP bundle, and verified 9-page PDF export
+- fresh 9-slide HTML submission deck was rebuilt with the updated `slides-generator` skill; local HTML, ZIP bundle, and verified 9-page PDF export are ready, while Drive copies currently need a sharing fix before judge-link use
 - slide build kit exists
 - slide copy pack exists
 - presenter cheat sheet exists
@@ -50,7 +50,7 @@ Why:
 - slide-ready 16:9 screenshot crops exist
 - visual asset map exists
 - the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed on 2026-04-24 to match the current repo assets
-- the `Documents/Hackathons/ZerveHack` office folder was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder now contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
+- the `Documents/Hackathons/ZerveHack` office folder was inspected directly after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks; however, unauthenticated Drive link checks currently return `401 Unauthorized` for the deck files
 
 ## Immediate next human actions
 

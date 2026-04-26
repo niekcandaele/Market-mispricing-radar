@@ -53,6 +53,7 @@ The main demo path, office artifacts, and submission materials are in place. The
 - Drive bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - ZIP verification: local ZIP is non-empty, has no corrupt entries, and contains the deck root with `slides.html` plus all six required image assets; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/deck-package-qa-20260426T0501Z.json`
 - Drive deck-file verification: Drive HTML, ZIP, and PDF size/md5 checks match local artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`
+- Drive deck-link access: blocked for unauthenticated viewers right now (`401 Unauthorized` on PDF/HTML/ZIP view URLs); use local uploads or change Drive sharing before relying on those links for judges. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 - Drive PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - local PDF export: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 - PDF verification: local PDF exists, is non-empty, and has 9 pages matching the rebuilt 9-slide deck

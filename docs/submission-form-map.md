@@ -98,7 +98,7 @@ Use the rebuilt 9-slide deck package:
 - ZIP bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 
-If the form accepts only one presentation attachment/link, prefer the PDF for easy judging and keep the ZIP bundle as the portable source package.
+If the form accepts file uploads, upload the local PDF directly and keep the ZIP bundle as the portable source package. If using Drive links instead, first change sharing so unauthenticated judges can open them; latest unauthenticated checks return `401 Unauthorized`.
 
 ## Video field
 Use:

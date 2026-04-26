@@ -24,8 +24,9 @@ Current locked demo path:
 
 Current deck handoff:
 - source: `artifacts/submission/slides-generator-deck/slides.html`
-- judge-facing PDF: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
-- portable ZIP: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
+- local PDF: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
+- local ZIP: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
+- Drive PDF/HTML/ZIP links exist, but unauthenticated checks currently return `401 Unauthorized`; do not rely on Drive links for judges unless sharing is changed or the files are uploaded directly. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 Current public link:
 - verified public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
