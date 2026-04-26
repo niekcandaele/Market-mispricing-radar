@@ -48,14 +48,16 @@ The main demo path, office artifacts, and submission materials are in place. The
 - status: rebuilt from scratch with the updated `slides-generator` skill as a 9-slide HTML deck; the previous Google Slides deck was trashed per the updated deck instruction
 - final title: `Market Mispricing Radar - Submission Deck (slides-generator HTML bundle)`
 - deck shape used: `9-slide HTML deck`
-- local location: `artifacts/submission/slides-generator-deck/slides.html`
+- local HTML source: `artifacts/submission/slides-generator-deck/slides.html`
+- local PDF to upload: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
+- local ZIP bundle to upload if the form accepts/supports it: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
+- local upload manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/local-submission-upload-manifest-20260426T0913Z.json`
 - Drive HTML file: `https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`
 - Drive bundle: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - ZIP verification: local ZIP is non-empty, has no corrupt entries, and contains the deck root with `slides.html` plus all six required image assets; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/deck-package-qa-20260426T0501Z.json`
 - Drive deck-file verification: Drive HTML, ZIP, and PDF size/md5 checks match local artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`
 - Drive deck-link access: blocked for unauthenticated viewers right now (`401 Unauthorized` on PDF/HTML/ZIP view URLs); use local uploads or change Drive sharing before relying on those links for judges. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 - Drive PDF export: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
-- local PDF export: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 - PDF verification: local PDF exists, is non-empty, and has 9 pages matching the rebuilt 9-slide deck
 - alignment note: rebuilt around the locked safe local default, the Putin drilldown default, current proof screenshots, generated visual assets, and hidden per-slide speaker notes.
 - QA note: local Playwright QA on 2026-04-25 confirmed 9 slides, 9 nav dots, all visible slide images loaded with alt text, no overflowing slides at 1280x720, and the vanilla `SlidePresentation` controller present; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/html-deck-qa-20260426T0501Z.json`
