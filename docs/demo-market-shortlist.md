@@ -9,10 +9,11 @@ Use it to pick a strong drilldown market quickly instead of improvising during a
 ## Current shortlist basis
 
 - source bundle: `artifacts/streamlit/app_bundle.json`
-- refresh id: `refresh-20260422T022427Z`
+- latest local bundle refresh id: `refresh-20260425T195505Z`
+- retained safe-local proof refresh id: `refresh-20260425T194755Z`
 - ranked market count: `200`
 
-These picks are based on the locked safe local default bundle, so they should be treated as practical candidates, not permanent canon.
+These picks are based on the refreshed locked safe local default bundle and retained proof, so they should be treated as practical candidates, not permanent canon.
 
 ## Best current demo-safe picks
 
