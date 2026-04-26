@@ -8,7 +8,7 @@ Use it when the demo script is too broad and you need a crisp filming sequence w
 
 If you want a more literal spoken pass during recording, pair this with `docs/video-voiceover-script.md`.
 
-Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep. That script now writes the current retained proof JSON automatically under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` and archives the previously active safe-local baseline. Current retained proof before recording: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T050430Z.json` (`refreshId`: `refresh-20260426T050430Z`).
+Right before the real take, run `docs/recording-preflight-checklist.md`, and on the safe local default path use `./scripts/check_safe_local_demo.sh` for the one-command final sweep. That script now writes the current retained proof JSON automatically under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` and archives the previously active safe-local baseline. Current retained proof before recording: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`).
 
 ## Target shape
 
