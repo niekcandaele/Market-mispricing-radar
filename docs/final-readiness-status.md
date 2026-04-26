@@ -85,7 +85,7 @@ Why:
 - paste the final wording into the actual submission form
 - publish the required public share post with human-approved wording and platform choice
 - run the last verification pass with real final links and artifacts
-- fill in the final asset register with the actual chosen demo, deck, notes, video, submission, and share-post links
+- after recording/form/share-post completion, replace the remaining submission-time fields in the final asset register with the actual video, submission, and share-post links
 
 ## What would flip this to submission-complete
 
