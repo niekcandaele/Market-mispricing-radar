@@ -73,8 +73,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 ## Submission-form checks
 
-- [ ] short description reflects the real MVP scope
-- [ ] longer project summary matches the live product
+- [x] short description reflects the real MVP scope and is within form-safe length; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-word-count-check-20260426T0804Z.json`
+- [x] longer project summary matches the live product and is under the Devpost 300-word limit; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-word-count-check-20260426T0804Z.json`
 - [ ] accomplishments section is specific and believable
 - [ ] caveats stay honest about single-source MVP limits
 - [ ] built-with / stack section matches the real implementation
