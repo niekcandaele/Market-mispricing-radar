@@ -27,11 +27,11 @@ Default screenshot:
 - Google Drive copy: `Market Mispricing Radar - local-radar-view-16x9.png`
 
 Default link choice:
-- use the final public Zerve project/share link if that is the expected hackathon proof link
-- after the public route is fixed or a final public URL is provided, recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- treat a bare `200` as insufficient if the route only serves the generic Zerve shell instead of the actual public project page
+- use the verified public Zerve notebook link: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- latest retained checker evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- the checker reports `summary.ready_for_share_post_link: true`
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
-- if the submission-day choice is the locked safe local default for demo reliability, keep the public post about the project itself, not about local-only launch commands
+- because the demo recording path remains the locked safe local default, keep the public post about the project itself, not about local-only launch commands
 
 Current share-post status:
 - verified public Zerve notebook URL is available for the required share post: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained checker reports `summary.ready_for_share_post_link: true`.
@@ -62,6 +62,8 @@ The project runs as a real Zerve notebook-to-app workflow: live market ingestion
 
 The key design choice was honesty. This is not claiming perfect fair value or guaranteed arbitrage. It is a triage tool for figuring out which markets are most worth inspecting right now.
 
+Public notebook: https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4
+
 Built with Zerve, Python, Streamlit, and live Polymarket data.
 
 #ZerveHack #DataScience #PredictionMarkets #AI
@@ -71,6 +73,8 @@ Built with Zerve, Python, Streamlit, and live Polymarket data.
 Built for ZerveHack: **Market Mispricing Radar**.
 
 It turns live prediction-market data into an explainable radar that surfaces the markets most worth inspecting, then shows why they were flagged. The full workflow runs inside Zerve, from notebook analysis to a deployed app.
+
+Public notebook: https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4
 
 Built with Zerve, Python, Streamlit, and live Polymarket data.
 
@@ -82,21 +86,23 @@ Built for #ZerveHack: Market Mispricing Radar.
 
 It ranks prediction markets whose pricing looks fragile, stale, extreme, or weakly supported, then explains why they surfaced. Real Zerve notebook-to-app workflow, not just a static demo.
 
+https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4
+
 Built with Zerve, Python, Streamlit, and live Polymarket data. @Zerve_AI
 
 ## Ultra-short X fallback
 
-Built for #ZerveHack: Market Mispricing Radar, an explainable prediction-market radar built in Zerve that surfaces markets worth a second look and shows why. @Zerve_AI
+Built for #ZerveHack: Market Mispricing Radar, an explainable prediction-market radar built in Zerve that surfaces markets worth a second look and shows why.
+
+https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4 @Zerve_AI
 
 ## Post checklist
 
 Before posting:
 - confirm which platform to use
 - confirm exact tag on that platform
-- confirm the public project link to include
-- if the project is still not public in Zerve, first flip the Zerve share/privacy toggle and then check the notebook share route for this project
-- if the notebook route only returns the generic Zerve shell, do not treat that as a valid public-link success
-- if the project is public but the URL is still unresolved, stop and reverify the exact final link before posting
+- keep the public project link as `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4` unless the submission flow explicitly requests another verified route
+- optionally rerun `python3 scripts/check_zerve_public_share.py` as a final sanity check; require `summary.ready_for_share_post_link: true`
 - do not silently swap in the gallery/community route unless that exact route has been consciously chosen and verified
 - use one clean screenshot only
 - keep the tone product-facing, not overly technical

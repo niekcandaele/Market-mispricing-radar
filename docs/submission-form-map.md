@@ -112,11 +112,10 @@ The live Devpost page currently lists a public share post tagging Zerve as requi
 Use:
 - `docs/share-post-pack.md`
 
-Blocking note:
-- if the project is still not public in Zerve, first use the Zerve share/privacy control to make it public
-- after that, rerun `python3 scripts/check_zerve_public_share.py` and only treat the share-post link as ready when it reports `summary.ready_for_share_post_link: true`
+Link note:
+- public Zerve notebook URL: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - latest retained public-share checker: authenticated `canvas.is_public: true` and `summary.ready_for_share_post_link: true`
-- latest retained route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`, which now passes browser-rendered route verification with authenticated `canvas.is_public: true`
+- latest retained route baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`, which passes browser-rendered route verification with authenticated `canvas.is_public: true`
 
 Default recommendation:
 - one simple LinkedIn post, unless the human explicitly prefers X or another platform
