@@ -107,7 +107,7 @@ Use:
 
 ## Required public share-post note
 
-The live Devpost page currently lists a public share post tagging Zerve as required.
+The live Devpost page was rechecked on 2026-04-26 and lists a public share post tagging Zerve as required. Evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/devpost-requirements-check-20260426T0643Z.json`.
 
 Use:
 - `docs/share-post-pack.md`
