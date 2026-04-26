@@ -75,9 +75,9 @@ Use it before recording, presenting, or submitting so the project is checked int
 
 - [x] short description reflects the real MVP scope and is within form-safe length; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-word-count-check-20260426T0804Z.json`
 - [x] longer project summary matches the live product and is under the Devpost 300-word limit; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-word-count-check-20260426T0804Z.json`
-- [ ] accomplishments section is specific and believable
-- [ ] caveats stay honest about single-source MVP limits
-- [ ] built-with / stack section matches the real implementation
+- [x] accomplishments section is specific and believable; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-content-check-20260426T0822Z.json`
+- [x] caveats stay honest about single-source MVP limits; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-content-check-20260426T0822Z.json`
+- [x] built-with / stack section matches the real implementation; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-form-content-check-20260426T0822Z.json`
 - [ ] links pasted into the submission form actually open
 
 ## Public share-post checks
