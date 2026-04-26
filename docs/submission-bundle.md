@@ -17,7 +17,7 @@ If someone needs only the shortest operational handoff, use `docs/final-human-ha
 Retained evidence manifest:
 - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
 - includes repo-reference audit evidence; no missing real proof/artifact paths were found
-- latest manifest self-check has no missing evidence paths and records the 2026-04-26T04:47Z public gate as still not share-ready
+- latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
 
 ### Demo
 - status: usable, with the locked safe local default reverified on 2026-04-26 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T050430Z.json` (`refreshId`: `refresh-20260426T050430Z`)

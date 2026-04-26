@@ -133,13 +133,9 @@ Why before the final submit click:
 Do:
 - default to one simple LinkedIn post unless there is a better human preference
 - use the prepared draft pack instead of improvising under time pressure
-- attach one clean screenshot and the final public project link
-- if the latest check still says the project is not public in Zerve, first use the Zerve share/privacy control to make it public
-- after the privacy change, first recheck the notebook share route at `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- use `python3 scripts/check_zerve_public_share.py` for the route-plus-auth sanity check
-- the checker can auto-attempt a best-effort Chromium token extraction path, but prefer a fresh `ZERVE_BEARER` or `--bearer` when available so the gate can confirm both route health and `is_public`
-- treat the share-post link as unblocked only when that checker reports `summary.ready_for_share_post_link: true`
-- do not treat a bare `200` there as success if it only serves the generic Zerve shell instead of the actual public project page
+- attach one clean screenshot and the verified public project link: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- optionally rerun `python3 scripts/check_zerve_public_share.py` immediately before posting as a final route-plus-auth sanity check
+- keep the share-post link treated as ready only while that checker reports `summary.ready_for_share_post_link: true`
 - only use a different public route if it has been consciously chosen and verified, because the gallery/community path is separate
 - the latest retained public-share checker confirms authenticated `canvas.is_public: true` and browser-rendered route verification, so the public Zerve notebook link is usable for the share post
 - confirm the exact Zerve tag on the chosen platform before posting
