@@ -142,6 +142,7 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 ## Last verification snapshot
 
 - retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share link evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
+- final pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260426T1219Z.json` reports `all_green_before_human_gates: true`; remaining gates are final video recording, Devpost submission, human-approved public share post, and final URL capture
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-26, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
