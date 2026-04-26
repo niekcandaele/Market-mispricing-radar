@@ -13,15 +13,15 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 
 ## Do next
 
-1. Use the verified public Zerve notebook URL in the submission/share-post materials.
-2. Rerun `python3 scripts/check_zerve_public_share.py`; keep it marked clear only while `summary.ready_for_share_post_link: true`.
-3. Record the final short demo using `docs/recording-preflight-checklist.md` and `docs/video-recording-run-sheet.md`.
-4. Fill the submission form from `docs/submission-form-map.md`.
-5. Publish the required public share post only after human platform/copy approval.
-6. Run the final verification pass and update `docs/final-asset-register.md` with real final links.
+1. Record the final short demo using `docs/recording-preflight-checklist.md` and `docs/video-recording-run-sheet.md`.
+2. Fill the submission form from `docs/submission-form-map.md`.
+3. Use the verified public Zerve notebook URL in the submission/share-post materials.
+4. Publish the required public share post only after human platform/copy approval.
+5. Run the final verification pass and update `docs/final-asset-register.md` with real final links.
 
 ## Use these links
 
+- Public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
 - Deck PDF: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
 - Deck ZIP: `https://drive.google.com/file/d/1FFroHF0Gj-wie5AyykylTb08soQT79Bb/view`
 - Deck HTML: `https://drive.google.com/file/d/1Jdoz2KKe7Tgr602TwS8b-t69Aoj5YzHt/view`
