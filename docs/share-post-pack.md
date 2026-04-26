@@ -84,11 +84,11 @@ Built with Zerve, Python, Streamlit, and live Polymarket data.
 
 Built for #ZerveHack: Market Mispricing Radar.
 
-It ranks prediction markets whose pricing looks fragile, stale, extreme, or weakly supported, then explains why they surfaced. Real Zerve notebook-to-app workflow, not just a static demo.
+It ranks prediction markets that look fragile, stale, extreme, or weakly supported, then explains why they surfaced. Real Zerve notebook-to-app workflow.
 
 https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4
 
-Built with Zerve, Python, Streamlit, and live Polymarket data. @Zerve_AI
+@Zerve_AI
 
 ## Ultra-short X fallback
 
