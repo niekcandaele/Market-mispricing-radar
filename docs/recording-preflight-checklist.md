@@ -29,7 +29,7 @@ Current retained safe-local proof before recording:
 - [ ] decide whether to use the primary voiceover, fuller voiceover, or tight fallback from `docs/video-voiceover-script.md`
 - [ ] keep `docs/video-recording-run-sheet.md` open for beat order
 - [ ] keep `docs/judge-demo-script.md` nearby for backup phrasing if needed
-- [ ] keep the deck PDF nearby as a backup story spine: `https://drive.google.com/file/d/17smwphggaqZGOWXU5CNBgafynE4pAtKh/view`
+- [ ] keep the local deck PDF nearby as a backup story spine: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 
 ## Screen check
 
