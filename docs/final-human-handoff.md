@@ -10,7 +10,7 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 - Public Zerve notebook link: verified and share-ready; the remaining public-share task is publishing the required human-approved post.
 - Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
-- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260427T1224Z.json` (`all_green_before_human_gates: true`).
+- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260427T1240Z.json` (`all_green_before_human_gates: true`).
 
 ## Do next
 
