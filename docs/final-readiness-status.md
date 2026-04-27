@@ -42,8 +42,8 @@ Why:
 - final asset register exists
 - submission verification checklist exists
 - office-layer asset checklist exists
-- the live Google submission-copy doc was refreshed and read back again on 2026-04-26 to match the latest submission copy, public link, deck-upload path, and required share-post tags
-- the live Google Demo Link Notes doc was refreshed and read back again on 2026-04-26 after the latest safe-local recheck and final office-layer alignment pass
+- the live Google submission-copy doc was refreshed and read back again on 2026-04-27 to match the latest submission copy, public link, deck-upload path, and required share-post tags
+- the live Google Demo Link Notes doc was refreshed and read back again on 2026-04-27 after the latest safe-local recheck and final office-layer alignment pass
 
 ### Visual assets
 - raw local screenshots exist
