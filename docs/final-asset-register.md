@@ -25,7 +25,7 @@ The main demo path, office artifacts, and submission materials are in place. The
   - port: `8768`
 - verified on: `2026-04-25`
 - verified by: `Jefke`
-- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-26, including Radar, Methodology, and Market Detail on the locked safe local default bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
+- notes: dedicated demo-link reference doc now exists in Google Workspace `Documents/Hackathons/ZerveHack` at `https://docs.google.com/document/d/1gA2LDL0E_2T-DfyQ8Fxxhw1DqvBjqPg2B5Fpl33c9UQ`; the one-command `./scripts/run_local_demo.sh` path was reverified on 2026-04-27, including Radar, Methodology, and Market Detail on the locked safe local default bundle, and should be used for recording and submission unless a final live preview check opens cleanly enough to justify switching
 
 ### Optional live upgrade path
 - status: verified, but not chosen as the default path
@@ -142,13 +142,13 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 ## Last verification snapshot
 
 - retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share link evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
-- final pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260426T1301Z.json` reports `all_green_before_human_gates: true`; remaining gates are final video recording, Devpost submission, human-approved public share post, and final URL capture
+- final pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260427T1224Z.json` reports `all_green_before_human_gates: true`; remaining gates are final video recording, Devpost submission, human-approved public share post, and final URL capture
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-26, and the live preview remains a separately verified optional upgrade
-- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`)
+- demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
 - deck link checked: yes, local Playwright QA confirmed the rebuilt 9-slide HTML deck structure, navigation dots, image loading, alt text, hidden notes, and no 1280x720 slide overflow
-- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh; latest office-doc readback QA evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260426T1149Z.json`
-- office wording drift checked: yes, a 2026-04-26 readback pass confirmed the presenter notes doc, Demo Link Notes doc, and final submission-copy doc are readable through Workspace APIs and contain the current required proof, deck-upload, Drive-access, share-tag, and public-link markers
+- notes link checked: yes, Docs API readback confirmed the presenter notes and the Demo Link Notes doc, including the latest safe-local proof refresh; latest office-doc readback QA evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260427T1223Z.json`
+- office wording drift checked: yes, a 2026-04-27 readback pass confirmed the presenter notes doc, Demo Link Notes doc, and final submission-copy doc are readable through Workspace APIs and contain the current required proof, deck-upload, Drive-access, share-tag, and public-link markers
 - office folder checked: yes, `Documents/Hackathons/ZerveHack` was inspected directly on 2026-04-25 after the deck rebuild and PDF export; the previous Google Slides deck is trashed, and the folder contains the expected HTML deck, deck ZIP bundle, PDF export, docs, and screenshot assets without duplicate presentation decks
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh

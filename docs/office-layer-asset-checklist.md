@@ -63,7 +63,7 @@ Create or store:
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
-- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-26 with final markers for `refresh-20260426T095005Z`, local deck upload paths, the Drive `401 Unauthorized` warning, required Zerve share-post tags, and the verified public notebook URL
+- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-27 with final markers for `refresh-20260427T122231Z`, local deck upload paths, the Drive `401 Unauthorized` warning, required Zerve share-post tags, and the verified public notebook URL
 
 Source materials:
 - `docs/submission-verification-checklist.md`
@@ -103,7 +103,7 @@ Current verified state on `2026-04-26`:
 - the previous Google Slides deck was trashed
 - the `Documents/Hackathons/ZerveHack` folder contains the expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
-- Presenter Notes, Demo Link Notes, and Final Submission Copy were refreshed and read back with current markers for `refresh-20260426T095005Z`, local PDF upload, Drive `401 Unauthorized` warning, required Zerve tags, and the verified public notebook URL; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260426T1149Z.json`
+- Presenter Notes, Demo Link Notes, and Final Submission Copy were refreshed and read back on 2026-04-27 with current markers for `refresh-20260427T122231Z`, local PDF upload, Drive `401 Unauthorized` warning, required Zerve tags, and the verified public notebook URL; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260427T1223Z.json`
 - Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`. Unauthenticated Drive opening still returns `401 Unauthorized`, so judge-facing use requires changing sharing or uploading files directly; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 ## What should not be left messy

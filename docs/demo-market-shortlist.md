@@ -10,7 +10,7 @@ Use it to pick a strong drilldown market quickly instead of improvising during a
 
 - source bundle: `artifacts/streamlit/app_bundle.json`
 - latest local bundle refresh id: `refresh-20260425T195505Z`
-- retained safe-local proof refresh id: `refresh-20260426T095005Z`
+- retained safe-local proof refresh id: `refresh-20260427T122231Z`
 - ranked market count: `200`
 
 These picks are based on the refreshed locked safe local default bundle and retained proof, so they should be treated as practical candidates, not permanent canon.

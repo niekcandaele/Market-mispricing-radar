@@ -20,7 +20,7 @@ Use these first during the final ZerveHack sprint:
 Current locked demo path:
 - default: locked safe local default via `./scripts/check_safe_local_demo.sh` then `./scripts/run_local_demo.sh`
 - drilldown: `Putin out as President of Russia by December 31, 2026?`
-- retained proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`)
+- retained proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`)
 
 Current deck handoff:
 - source: `artifacts/submission/slides-generator-deck/slides.html`

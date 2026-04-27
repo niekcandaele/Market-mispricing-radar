@@ -87,7 +87,7 @@ Use this:
 ## Demo link field
 Safe default:
 - use the locked safe local default path from `docs/submission-verification-checklist.md`
-- current retained safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`)
+- current retained safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`)
 
 Optional last-minute upgrade only if it opens cleanly:
 - current live Zerve preview opened fresh from the deploy tab right before submission

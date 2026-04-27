@@ -20,7 +20,7 @@ Retained evidence manifest:
 - latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
 
 ### Demo
-- status: usable, with the locked safe local default reverified on 2026-04-26 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260426T095005Z.json` (`refreshId`: `refresh-20260426T095005Z`)
+- status: usable, with the locked safe local default reverified on 2026-04-27 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`)
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
