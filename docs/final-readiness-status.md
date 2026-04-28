@@ -21,7 +21,7 @@ Why:
 ### Product / demo
 - live Zerve notebook-to-app pipeline exists
 - deployed Streamlit app exists
-- locked safe local default demo exists and was reverified on 2026-04-27 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`)
+- locked safe local default demo exists and was reverified on 2026-04-28 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`)
 - product and demo polish are done
 
 ### Narrative / presentation sources
@@ -42,8 +42,8 @@ Why:
 - final asset register exists
 - submission verification checklist exists
 - office-layer asset checklist exists
-- the live Google submission-copy doc was refreshed and read back again on 2026-04-27 to match the latest submission copy, public link, deck-upload path, and required share-post tags
-- the live Google Demo Link Notes doc was refreshed and read back again on 2026-04-27 after the latest safe-local recheck and final office-layer alignment pass
+- the live Google submission-copy doc was last refreshed and read back on 2026-04-27; the 2026-04-28 safe-local proof refresh could not be written to Workspace because `gws` auth fails with `invalid_grant`
+- the live Google Demo Link Notes doc was last refreshed and read back on 2026-04-27; rerun `gws auth login` before refreshing it with the 2026-04-28 proof
 
 ### Visual assets
 - raw local screenshots exist

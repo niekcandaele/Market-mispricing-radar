@@ -12,7 +12,7 @@ The submission package is strong, and Google Workspace artifact creation is no l
 
 Current state:
 - Google Docs are available through the authenticated `gws` CLI path, and the submission deck is now the rebuilt slides-generator HTML deck rather than the old Google Slides deck
-- the locked safe local default was reverified on 2026-04-27 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260427T122231Z.json` (`refreshId`: `refresh-20260427T122231Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- the locked safe local default was reverified on 2026-04-28 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
 This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.

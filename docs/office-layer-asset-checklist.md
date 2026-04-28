@@ -63,7 +63,7 @@ Create or store:
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
-- status: demo-link notes doc exists, was refreshed and read back again on 2026-04-27 with final markers for `refresh-20260427T122231Z`, local deck upload paths, the Drive `401 Unauthorized` warning, required Zerve share-post tags, and the verified public notebook URL
+- status: demo-link notes doc exists, but the 2026-04-28 proof refresh is blocked from Workspace because `gws` auth fails with `invalid_grant`; last successful readback was 2026-04-27, and `gws auth login` is required before updating the doc with `refresh-20260428T050332Z`
 
 Source materials:
 - `docs/submission-verification-checklist.md`
@@ -72,7 +72,7 @@ Source materials:
 ### 4. Final submission text reference
 Create or store:
 - one clean reference doc or note with the exact final wording used in the submission form
-- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`, was refreshed to match the latest submission copy, and was read back successfully in the 2026-04-27 office-doc QA pass with current proof, upload, public-link, and share-post markers
+- status: final submission-copy doc exists in `Documents/Hackathons/ZerveHack`; last successful readback was the 2026-04-27 office-doc QA pass, and the 2026-04-28 update is blocked until `gws auth login` repairs expired/revoked auth
 
 Source materials:
 - `docs/submission-form-map.md`
@@ -99,11 +99,11 @@ Recommended set:
 - `Market Mispricing Radar - local-market-detail-view-16x9.png`
 - `Market Mispricing Radar - local-methodology-view-16x9.png`
 
-Current verified state on `2026-04-27`:
+Current verified state on `2026-04-28`:
 - the previous Google Slides deck was trashed
 - the `Documents/Hackathons/ZerveHack` folder contains the expected Market Mispricing Radar artifacts
 - no extra duplicate presentation decks were present after the rebuild pass
-- Presenter Notes, Demo Link Notes, and Final Submission Copy were refreshed and read back on 2026-04-27 with current markers for `refresh-20260427T122231Z`, local PDF upload, Drive `401 Unauthorized` warning, required Zerve tags, and the verified public notebook URL; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/office-docs-readback-qa-20260427T1223Z.json`
+- Presenter Notes, Demo Link Notes, and Final Submission Copy were last refreshed/read back on 2026-04-27; the new 2026-04-28 safe-local proof is repo-local only until Google Workspace auth is refreshed. Current blocker: `gws invalid_grant`; required repair: `gws auth login`.
 - Drive HTML, ZIP bundle, and PDF export size/md5 checks match the local submission artifacts; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-files-qa-20260426T0501Z.json`. Unauthenticated Drive opening still returns `401 Unauthorized`, so judge-facing use requires changing sharing or uploading files directly; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/drive-deck-unauth-open-check-20260426T0856Z.json`
 
 ## What should not be left messy
