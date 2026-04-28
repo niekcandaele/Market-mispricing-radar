@@ -14,8 +14,6 @@ function candidatePlaywrightModulePaths() {
       candidates.push(path.join(nvmVersionsDir, version, 'lib', 'node_modules', 'playwright'));
     }
   }
-
-  candidates.push('/home/catalysm/.openclaw/workspace/state/browser/node_modules/playwright');
   return candidates;
 }
 

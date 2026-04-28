@@ -170,8 +170,7 @@ def try_browser_public_route(url):
         f"""
         const fs = require('fs');
         function loadPlaywright() {{
-          try {{ return require('playwright'); }}
-          catch (_) {{ return require('/home/catalysm/.openclaw/workspace/state/browser/node_modules/playwright'); }}
+          return require('playwright');
         }}
         const {{ chromium }} = loadPlaywright();
         (async () => {{
