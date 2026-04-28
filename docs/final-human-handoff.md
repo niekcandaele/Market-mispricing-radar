@@ -11,7 +11,7 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 - Current blocker: Google Workspace auth is expired/revoked (`gws invalid_grant`), so Workspace docs cannot be refreshed until `gws auth login` is rerun.
 - Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
-- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T0521Z.json` (`all_green_before_human_gates: false`).
+- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1522Z.json` (`all_green_before_human_gates: false`).
 - Agentic Reports upgrade: source prepared in `zerve/reports/agentic-market-mispricing-report.Rmd`; latest browser/API check is View-only/public, so publishing needs an edit-capable Zerve session and should only be used if the report opens cleanly afterward.
 
 ## Do next
