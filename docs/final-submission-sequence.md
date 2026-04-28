@@ -8,14 +8,16 @@ Use it when the remaining work needs to happen in the right order without thrash
 
 ## Current share-post context
 
-The submission package is strong, and Google Workspace artifact creation is no longer the blocker.
+The submission package is strong, but it is not submission-complete.
 
 Current state:
-- Google Docs are available through the authenticated `gws` CLI path, and the submission deck is now the rebuilt slides-generator HTML deck rather than the old Google Slides deck
+- Google Workspace refresh/readback is currently blocked by `gws invalid_grant`; rerun `gws auth login` before refreshing the live Docs layer
+- the submission deck is the rebuilt slides-generator HTML/PDF/ZIP package rather than the old Google Slides deck
 - the locked safe local default was reverified on 2026-04-28 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- the prepared Agentic Report source is optional; the latest Zerve check was View-only/public, so publishing needs an edit-capable Zerve session and clean open verification before it can be called live
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
-This runbook is ready to use for the office-layer and submission-day steps now, with the live demo recheck treated as a separate final decision.
+This runbook is ready to use for the submission-day steps now, with Workspace refresh, live preview, and optional Agentic Report publishing treated as separate final decisions.
 
 ## Submission-day order of operations
 
@@ -79,16 +81,32 @@ Why now:
 - the speaker notes or recording notes should match the actual deck and chosen demo path
 
 Do:
-- keep the Google Doc presenter notes and the rebuilt deck's hidden per-slide notes aligned with the chosen demo path
+- keep the Google Doc presenter notes and the rebuilt deck's hidden per-slide notes aligned with the chosen demo path after `gws auth login` repairs Workspace auth
 - use the demo script as the base
 - keep the one-take run sheet folded into the notes so the recording flow stays operational, not just conceptual
+- do not block recording on Workspace if the local deck/run-sheet path is otherwise ready
 
 References:
 - `docs/judge-demo-script.md`
 - `docs/video-voiceover-script.md`
 - `docs/video-recording-run-sheet.md`
 
-### 5. Record the demo video
+### 5. Optional: publish the Agentic Report only if edit access is available
+
+Why optional:
+- it is a Zerve-native wow-factor, but the core submission should not depend on it
+- the latest check opened the notebook as View-only/public, which is not enough to publish reports
+
+Do:
+- if an edit-capable Zerve session is available, paste `zerve/reports/agentic-market-mispricing-report.Rmd` into an R Markdown block
+- run the block, publish the report, then open the resulting report to verify it renders cleanly
+- only mention the report as live/shareable after that verification
+- if edit access is not available quickly, skip this step and keep the locked safe local default/deck/video path
+
+Reference:
+- `docs/agentic-report-upgrade.md`
+
+### 6. Record the demo video
 
 Why after deck and notes:
 - by this point the story, example market, and flow should already be stable
@@ -110,7 +128,7 @@ References:
 - `docs/video-recording-run-sheet.md`
 - `docs/demo-market-shortlist.md`
 
-### 6. Fill the submission form
+### 7. Fill the submission form
 
 Why after recording:
 - then the form can point to the final chosen assets instead of placeholders
@@ -125,7 +143,7 @@ References:
 - `docs/submission-copy-draft.md`
 - `docs/submission-short-variants.md`
 
-### 7. Handle the required public share post
+### 8. Handle the required public share post
 
 Why before the final submit click:
 - the live Devpost page currently lists a public share post tagging Zerve as a required submission item
@@ -144,14 +162,15 @@ Do:
 Reference:
 - `docs/share-post-pack.md`
 
-### 8. Run the final verification pass
+### 9. Run the final verification pass
 
 Why last:
 - this is the checkpoint before pressing submit
 
 Do:
 - verify the final chosen demo path opens
-- verify the final deck and presenter notes open
+- verify the final deck and presenter notes open if Workspace auth was repaired; otherwise rely on the local deck/run-sheet packet and keep the Workspace blocker explicit
+- verify the optional Agentic Report only if it was published from an edit-capable Zerve session
 - verify the video link or upload is correct
 - verify the submission form text matches the real MVP scope
 - verify no stale preview URL or placeholder artifact slipped in
@@ -190,3 +209,4 @@ The submission is actually ready when all of these are true:
 - the video exists or is ready to upload
 - the submission form is filled with final wording
 - the final verification pass is complete
+- optional extras such as the Agentic Report are either verified live or explicitly skipped

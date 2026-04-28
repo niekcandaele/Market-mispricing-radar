@@ -24,6 +24,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 - confirm the chosen demo entrypoint actually opens
 - default to the locked safe local default path
 - only switch to the live Zerve preview if it is clearly healthy right before recording
+- treat the Agentic Report as optional: include it only if it has been published from an edit-capable Zerve session and opened cleanly; otherwise skip it without changing the core take
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section, defaulting to `Putin out as President of Russia by December 31, 2026?` on the refreshed locked safe local default path
 - keep the local PDF deck open as a backup story spine: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
@@ -92,6 +93,11 @@ Screen:
 Say:
 The whole workflow runs through a real Zerve notebook-to-app pipeline, so this is a real deployed workflow. It is live analysis turned into a usable product.
 
+Optional if the Agentic Report was published and verified:
+- show the report for a few seconds after the app flow
+- say: The same notebook analysis can also be published as an Agentic Report, so reviewers can ask follow-up questions against the underlying work instead of reading a static write-up.
+- do not include this beat if the report is only prepared in Git and not live in Zerve
+
 ## Fast fallback version, under 60 seconds
 
 Use this if time is tight:
@@ -100,6 +106,7 @@ Use this if time is tight:
 2. one market drilldown
 3. one sentence on honest scope
 4. one sentence on Zerve-native deployment proof
+5. optional one-sentence Agentic Report mention only if published/opened cleanly
 
 Suggested words:
 We built a live radar for prediction markets that deserve a second look. It ranks fragile or weakly supported markets, explains why they surfaced, and lets you drill into the score drivers and caveats. The MVP is intentionally honest about scope, and the whole flow is deployed from a real Zerve notebook pipeline.
