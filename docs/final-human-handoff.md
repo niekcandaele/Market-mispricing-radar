@@ -6,12 +6,12 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 
 - Status: near-ready, not submission-complete.
 - Default demo: locked safe local default.
-- Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`).
+- Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T165354Z.json` (`refreshId`: `refresh-20260428T165354Z`).
 - Public Zerve notebook link: verified and share-ready; the remaining public-share task is publishing the required human-approved post.
 - Current blocker: Google Workspace auth is expired/revoked (`gws invalid_grant`), so Workspace docs cannot be refreshed until `gws auth login` is rerun.
 - Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
-- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1636Z.json` (`all_green_before_human_gates: false`).
+- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1655Z.json` (`all_green_before_human_gates: false`).
 - Agentic Reports upgrade: Zerve-native report generated and verified in the authenticated report view: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`. API status is `completed`, `answerable: confirmed`, `is_public: true`; unauthenticated browser route still shows Zerve login/build, so keep the verified public notebook URL as the main judge/share link.
 
 ## Do next

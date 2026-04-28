@@ -13,7 +13,7 @@ The submission package is strong, but it is not submission-complete.
 Current state:
 - Google Workspace refresh/readback is currently blocked by `gws invalid_grant`; rerun `gws auth login` before refreshing the live Docs layer
 - the submission deck is the rebuilt slides-generator HTML/PDF/ZIP package rather than the old Google Slides deck
-- the locked safe local default was reverified on 2026-04-28 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
+- the locked safe local default was reverified on 2026-04-28 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T165354Z.json` (`refreshId`: `refresh-20260428T165354Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
 - the optional Zerve Agentic Report is now generated and verified in the authenticated report view; the API reports `completed`, `answerable: confirmed`, and `is_public: true`, but unauthenticated browser rendering still lands on Zerve login/build, so keep the public notebook URL as the main judge/share link
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 

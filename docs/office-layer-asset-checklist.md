@@ -63,7 +63,7 @@ Create or store:
 - default that note to the locked safe local default unless a last-minute live check actually opens cleanly
 - right before the real take on the safe local path, run `./scripts/check_safe_local_demo.sh` instead of relying only on older proof
 - use the retained JSON it writes under `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/` as the current safe-local proof, and let the script archive the previously active baseline automatically
-- status: demo-link notes doc exists, but the 2026-04-28 proof refresh is blocked from Workspace because `gws` auth fails with `invalid_grant`; last successful readback was 2026-04-27, and `gws auth login` is required before updating the doc with `refresh-20260428T050332Z`
+- status: demo-link notes doc exists, but the 2026-04-28 proof refresh is blocked from Workspace because `gws` auth fails with `invalid_grant`; last successful readback was 2026-04-27, and `gws auth login` is required before updating the doc with `refresh-20260428T165354Z`
 
 Source materials:
 - `docs/submission-verification-checklist.md`
