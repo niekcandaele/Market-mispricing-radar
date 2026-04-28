@@ -41,6 +41,10 @@ Ask these in the final video only if the report is published and opens cleanly:
 2. Which top-ranked market looks most like a false positive, and why?
 3. What evidence would you want before acting on one of these flags?
 
+## Current publish status
+
+Latest browser/API check opened the public notebook in **View only** mode with `permission: public`. That is enough to verify the notebook route, but not enough to add an R Markdown block or click **publish report**. Publishing the report needs an edit-capable Zerve session.
+
 ## Submission posture
 
 Do **not** overclaim this as part of the final submission until it is actually published and opened in Zerve. Current wording should be:
