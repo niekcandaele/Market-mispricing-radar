@@ -1,8 +1,46 @@
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+
+function candidatePlaywrightModulePaths() {
+  const candidates = [];
+  if (process.env.MMR_PLAYWRIGHT_MODULE_PATH) {
+    candidates.push(process.env.MMR_PLAYWRIGHT_MODULE_PATH);
+  }
+
+  const nvmVersionsDir = path.join(os.homedir(), '.nvm', 'versions', 'node');
+  if (fs.existsSync(nvmVersionsDir)) {
+    for (const version of fs.readdirSync(nvmVersionsDir)) {
+      candidates.push(path.join(nvmVersionsDir, version, 'lib', 'node_modules', 'playwright'));
+    }
+  }
+
+  candidates.push('/home/catalysm/.openclaw/workspace/state/browser/node_modules/playwright');
+  return candidates;
+}
+
 function loadPlaywright() {
   try {
     return require('playwright');
-  } catch (_) {
-    return require('/home/catalysm/.openclaw/workspace/state/browser/node_modules/playwright');
+  } catch (localError) {
+    const attempted = ['playwright'];
+    for (const modulePath of candidatePlaywrightModulePaths()) {
+      attempted.push(modulePath);
+      try {
+        return require(modulePath);
+      } catch (_) {
+        // Keep trying known local/global install locations before failing.
+      }
+    }
+
+    throw new Error(
+      [
+        'Playwright is required for safe local demo verification, but it was not found.',
+        `Attempted: ${attempted.join(', ')}`,
+        'Install it in this repo with `npm install playwright`, or set MMR_PLAYWRIGHT_MODULE_PATH to an existing Playwright module path.',
+        `Original error: ${localError.message}`,
+      ].join('\n')
+    );
   }
 }
 

@@ -185,15 +185,46 @@ def build_qa_summary(bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def unique_paths(paths: list[Path]) -> list[Path]:
+    seen: set[Path] = set()
+    unique: list[Path] = []
+    for path in paths:
+        normalized = path.resolve()
+        if normalized in seen:
+            continue
+        seen.add(normalized)
+        unique.append(normalized)
+    return unique
+
+
+def app_root_candidates() -> list[Path]:
+    app_file = Path(__file__).resolve()
+    return unique_paths([app_file.parent, *app_file.parents, Path.cwd()])
+
+
+def find_local_artifact_paths() -> list[Path]:
+    return [
+        root / "artifacts" / "streamlit" / "app_bundle.json"
+        for root in app_root_candidates()
+    ]
+
+
+def find_snippet_dir() -> Path | None:
+    for root in app_root_candidates():
+        for candidate in (root / "snippets", root / "zerve" / "snippets"):
+            if candidate.is_dir():
+                return candidate
+    return None
+
+
 def load_local_bundle_artifact() -> tuple[dict[str, Any] | None, Path | None]:
-    repo_root = Path(__file__).resolve().parents[2]
     configured_path = os.environ.get(LOCAL_BUNDLE_ENV_VAR)
     candidate_paths: list[Path] = []
     if configured_path:
         candidate_paths.append(Path(configured_path).expanduser())
-    candidate_paths.append(repo_root / "artifacts" / "streamlit" / "app_bundle.json")
+    candidate_paths.extend(find_local_artifact_paths())
 
-    for path in candidate_paths:
+    for path in unique_paths(candidate_paths):
         if not path.exists() or not path.is_file():
             continue
         payload = json.loads(path.read_text())
@@ -295,7 +326,14 @@ if app_bundle is None:
 
 
 if app_bundle is None:
-    snippet_dir = Path(__file__).resolve().parents[1] / "snippets"
+    snippet_dir = find_snippet_dir()
+    if snippet_dir is None:
+        raise RuntimeError(
+            "Could not load app data from Zerve variables, a local bundle artifact, "
+            "or mirrored snippets. In Zerve, verify that the deployed app can read "
+            "`variable('build_app_bundle', 'app_bundle')`, or set MMR_APP_BUNDLE_PATH "
+            "to a bundled app_bundle.json file."
+        )
 
     bundle_path = snippet_dir / "polymarket_app_bundle_block.py"
     bundle_spec = importlib.util.spec_from_file_location("polymarket_app_bundle_block", bundle_path)
