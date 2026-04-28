@@ -54,9 +54,10 @@ Why:
 
 ## Immediate next human actions
 
-1. Make the Zerve notebook/project public, or provide the exact verified public URL / fresh bearer needed to confirm it.
-2. Rerun `python3 scripts/check_zerve_public_share.py`; only clear the share-post blocker when `summary.ready_for_share_post_link: true`.
-3. Record the final short demo on the locked safe local default, then fill the submission form from `docs/submission-form-map.md` and publish the required share post only after human platform/copy approval.
+1. Rerun `gws auth login` if Workspace docs need refresh/readback.
+2. Record the final short demo on the locked safe local default.
+3. Fill the submission form from `docs/submission-form-map.md` and publish the required share post only after human platform/copy approval.
+4. Optional: publish/open the prepared Agentic Report in Zerve if there is time to verify it cleanly.
 
 ## What is still missing
 
@@ -76,7 +77,8 @@ Why:
 - the live deploy repair path is verified: use the in-editor `Start Preview Deployment` action / `POST https://canvas.api.zerve.ai/script/<deployment_script_id>/deploy_preview`, and direct `PATCH https://canvas.api.zerve.ai/script/<deployment_script_id>` remains the clean repair seam when needed
 - a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
 - conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the chosen default because it is scripted and presentation-safe
-- Google Workspace artifact creation is unblocked through the authenticated `gws` CLI path, and the current `Documents/Hackathons/ZerveHack` office folder state has been verified directly rather than assumed
+- Google Workspace artifact creation/readback is currently blocked by `gws invalid_grant`; rerun `gws auth login` before refreshing the office docs with the 2026-04-28 proof
+- Agentic Reports source is prepared in `zerve/reports/agentic-market-mispricing-report.Rmd`, but it should only be described as live after publishing/opening it in Zerve
 
 ### Still required even after blocker resolution
 - only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path
@@ -124,3 +126,4 @@ If the blocker does not clear in time:
 - `docs/final-submission-sequence.md`
 - `docs/final-asset-register.md`
 - `docs/office-layer-asset-checklist.md`
+- `docs/agentic-report-upgrade.md`

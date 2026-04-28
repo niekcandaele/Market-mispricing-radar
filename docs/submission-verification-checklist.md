@@ -14,6 +14,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - submission deck: previous Google Slides deck was trashed, and a fresh 9-slide HTML deck rebuilt with the updated `slides-generator` skill now exists locally and in Google Drive
 - office-layer speaker notes doc: presenter notes remain aligned to the safe local default and the rebuilt deck includes hidden per-slide notes
 - final submission form paste/check: pending the final form-fill pass
+- Agentic Report source: prepared, but not yet verified as a published Zerve report
 
 ## Demo checks
 
@@ -55,6 +56,8 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] `docs/final-asset-register.md`
 - [x] `docs/final-readiness-status.md`
 - [x] `docs/submission-verification-checklist.md`
+- [x] `docs/agentic-report-upgrade.md`
+- [x] `zerve/reports/agentic-market-mispricing-report.Rmd`
 
 ### Office-layer artifacts
 - [x] old Google Slides deck trashed per updated deck instruction
@@ -64,13 +67,20 @@ Use it before recording, presenting, or submitting so the project is checked int
 - [x] Drive deck HTML, ZIP, and PDF artifacts verified against local size/md5 checks
 - [ ] If Drive links are used for judges, make them publicly readable or verify the form accepts uploaded files instead; latest unauthenticated Drive checks return `401 Unauthorized`
 - [x] rebuilt deck exported to PDF, verified as 9 pages, and uploaded to Google Drive
-- [x] Google Doc presenter notes refreshed to the rebuilt 9-slide deck and readback-verified
-- [x] final submission copy reference created in Google Workspace `Documents/Hackathons/ZerveHack`
-- [x] demo link reference created in Google Workspace `Documents/Hackathons/ZerveHack`
+- [x] Google Doc presenter notes were refreshed/readback-verified before the current auth failure
+- [x] final submission copy reference exists in Google Workspace `Documents/Hackathons/ZerveHack`
+- [x] demo link reference exists in Google Workspace `Documents/Hackathons/ZerveHack`
 - [x] assets stored cleanly in Google Workspace `Documents/Hackathons/ZerveHack`
-- [x] authenticated `gws` CLI path for Google Workspace creation is available
+- [ ] rerun `gws auth login`; current `gws` token fails with `invalid_grant`, so 2026-04-28 proof refresh/readback cannot be written yet
 - [x] office-layer handoff checklist exists
-- [x] deck, notes, submission-copy, and demo-link artifacts can all be read back successfully through the Workspace APIs; latest office-doc QA confirmed presenter notes, submission copy, and Demo Link Notes contain the required current story/proof markers
+- [x] latest successful office-doc QA from 2026-04-27 confirmed presenter notes, submission copy, and Demo Link Notes contained the required story/proof markers
+
+## Agentic Report checks
+
+- [x] source R Markdown report exists: `zerve/reports/agentic-market-mispricing-report.Rmd`
+- [x] publish instructions and safe/unsafe wording are documented in `docs/agentic-report-upgrade.md`
+- [ ] if used in the final video/submission, publish from a Zerve R Markdown block and verify the report opens cleanly
+- [ ] only describe the report as live/shareable after that verification
 
 ## Submission-form checks
 
@@ -179,9 +189,10 @@ What is already verified or present:
 - locked safe local default path exists and now renders cleanly
 - demo script exists
 - rebuilt 9-slide HTML deck exists locally and in Google Drive as both an HTML file and a ZIP bundle
-- presenter-notes doc exists, was refreshed to the rebuilt 9-slide HTML/PDF deck, and has been read back successfully through the Workspace APIs
-- final submission-copy doc exists, was refreshed to match the latest submission copy, and has been read back successfully through the Workspace APIs
-- demo-link reference doc exists, was refreshed after the latest safe-local recheck, and has been read back successfully through the Workspace APIs
+- presenter-notes doc exists and was read back successfully before the current `gws invalid_grant` blocker
+- final submission-copy doc exists and was read back successfully before the current `gws invalid_grant` blocker
+- demo-link reference doc exists and was read back successfully before the current `gws invalid_grant` blocker
+- Agentic Report source exists for optional Zerve-native report publishing
 - short submission variants exist
 - video recording run sheet exists
 - video voiceover script exists
@@ -200,7 +211,8 @@ What is already verified or present:
 
 What still blocks a true done call:
 - actual recording execution against the aligned presenter notes / recording plan
-- final public Zerve/share-post gate, form submission, and real final link capture
+- Workspace auth repair if office docs need another refresh/readback
+- final public share-post publication, form submission, and real final link capture
 - final link and form verification pass
 
 Optional, not blocking the safe-local submission path:

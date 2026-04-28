@@ -12,6 +12,7 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 - Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
 - Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T0521Z.json` (`all_green_before_human_gates: false`).
+- Agentic Reports upgrade: source prepared in `zerve/reports/agentic-market-mispricing-report.Rmd`; publish from a Zerve R Markdown block only if there is time to verify it opens cleanly.
 
 ## Do next
 
@@ -19,7 +20,8 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 2. Fill the submission form from `docs/submission-form-map.md`.
 3. Use the verified public Zerve notebook URL in the submission/share-post materials.
 4. Publish the required public share post only after human platform/copy approval.
-5. Run the final verification pass and update `docs/final-asset-register.md` with real final links.
+5. Optional: publish the prepared Agentic Report from `docs/agentic-report-upgrade.md` if Zerve is open and the result can be verified quickly.
+6. Run the final verification pass and update `docs/final-asset-register.md` with real final links.
 
 ## Use these links
 

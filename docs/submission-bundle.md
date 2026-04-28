@@ -24,7 +24,7 @@ Retained evidence manifest:
 - default path: locked safe local default, which remains the recording/submission path because it is one-command and presentation-safe
 - optional live upgrade: current Zerve Streamlit preview from the deploy tab, but only if it opens cleanly at the final check
 - source docs: `docs/judge-demo-script.md`, `docs/app-flow.md`
-- office note: the live Google Demo Link Notes doc was refreshed and read back again after the latest safe-local recheck, so the office-layer demo reference now matches the current retained proof too
+- office note: Google Demo Link Notes was last successfully read back on 2026-04-27; the 2026-04-28 proof refresh is blocked until `gws auth login` repairs Workspace auth
 - note: a fresh 2026-04-22 live preview check did recover a real working preview after warm-up, but that does not change the locked safe local default choice
 
 ### Slides
@@ -41,9 +41,15 @@ Retained evidence manifest:
 - remaining work: record the demo cleanly on the chosen path
 
 ### Submission copy
-- status: paste-ready submission copy exists, and the live Google submission-copy doc was refreshed and reverified against the latest submission copy
+- status: paste-ready submission copy exists; the live Google submission-copy doc was last refreshed/read back on 2026-04-27 and now needs `gws auth login` before it can be refreshed with the 2026-04-28 proof
 - source doc: `docs/submission-copy-draft.md`
 - remaining work: paste or adapt it into the actual hackathon submission form
+
+### Agentic Report
+- status: opportunistic Zerve-native upgrade prepared, not yet verified as a published report
+- source: `zerve/reports/agentic-market-mispricing-report.Rmd`
+- instructions: `docs/agentic-report-upgrade.md`
+- use only if it can be published from a Zerve R Markdown block and opened cleanly before recording/submission
 
 ### Submission readiness
 - status: not submission-complete yet
@@ -155,6 +161,10 @@ Defaults:
 - `docs/final-readiness-status.md`
 - best for the shortest honest readiness snapshot of what is done, blocked, and still needed
 
+### Agentic Report upgrade
+- `docs/agentic-report-upgrade.md`
+- best for publishing the prepared R Markdown report if there is time to use Zerve's Agentic Reports feature cleanly
+
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
 - best for the final pre-recording and pre-submission sweep
@@ -180,13 +190,14 @@ Defaults:
 - final pass to verify all submission-facing links and artifacts open cleanly
 
 ### Current final-action snapshot
-- Google Workspace office artifacts now exist and are no longer blocked on auth
+- Google Workspace office artifacts exist, but refresh/readback is currently blocked by `gws invalid_grant` until `gws auth login` is rerun
 - the live deploy seam is now better than before: a valid deployed Streamlit script was recovered from Zerve canvas metadata, the stale probe deploy was directly patched back to the repo app, and a fresh 2026-04-22 bearer-auth preview trigger produced a new working preview again
 - the current concrete live-preview behavior is now understood: a fresh host can resolve immediately, serve ELB `503` during warm-up, then turn into a healthy rendered Streamlit app about 45 seconds later
 - the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the locked safe local default is already one-command and fully presentation-safe
 
 ### Not a blocker right now, but still needed before calling the project ready
-- keep the final deck, notes, submission-copy doc, and demo-entry reference tidy in Google Workspace `Documents/Hackathons/ZerveHack`
+- if using Agentic Reports, publish/open the prepared R Markdown report before mentioning it as live
+- after `gws auth login`, refresh/read back the final notes, submission-copy doc, and demo-entry reference in Google Workspace `Documents/Hackathons/ZerveHack`
 - do a final presentation-quality verification pass instead of only a code/demo verification pass
 
 ## Recommended next steps

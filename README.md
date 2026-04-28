@@ -50,6 +50,7 @@ Submission deck outline and speaker notes live in `docs/submission-deck-outline.
 Submission bundle index lives in `docs/submission-bundle.md`.
 Submission copy draft lives in `docs/submission-copy-draft.md`.
 Submission short variants live in `docs/submission-short-variants.md`.
+Agentic Report upgrade notes live in `docs/agentic-report-upgrade.md`; source lives in `zerve/reports/agentic-market-mispricing-report.Rmd`.
 Video recording run sheet lives in `docs/video-recording-run-sheet.md`.
 Video voiceover script lives in `docs/video-voiceover-script.md`.
 Recording preflight checklist lives in `docs/recording-preflight-checklist.md`.
@@ -74,6 +75,9 @@ The current local bridge artifacts also carry heuristic category/topic context f
 Prototype harness:
 - `python3 scripts/polymarket_ranker.py`
 - `python3 scripts/render_local_demo.py`
+
+Zerve Agentic Reports source:
+- `zerve/reports/agentic-market-mispricing-report.Rmd` (paste into a Zerve R Markdown block, run, then publish report if time allows)
 
 Zerve snippet mirror:
 - `python3 zerve/snippets/polymarket_ingestion_block.py`

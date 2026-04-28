@@ -1,0 +1,60 @@
+---
+title: "Market Mispricing Radar — Agentic Report"
+output: html_document
+---
+
+## Why this report exists
+
+This is the Zerve Agentic Reports layer for **Market Mispricing Radar**. The app is the exploration surface; this report is the judge-friendly briefing that can be published from a Zerve R Markdown block and then queried with Zerve's built-in AI agent.
+
+Use it to show the new Reports workflow: notebook analysis → narrative report → interactive follow-up questions grounded in the underlying ranking outputs.
+
+## Executive read
+
+Prediction markets are noisy, fast-moving, and easy to overread. This project does not claim guaranteed arbitrage. It ranks markets that deserve a second look because their price, staleness, movement, support, or resolution timing makes the current odds feel fragile.
+
+The current locked safe demo drilldown is:
+
+> **Putin out as President of Russia by December 31, 2026?**
+
+It is ranked first because recent movement or instability is doing meaningful work in the score. That makes it a strong report example: the signal is explainable, high-stakes, and easy for a judge to interrogate.
+
+## Current top radar slice
+
+```{r top-radar-slice, echo=FALSE}
+top_markets <- do.call(rbind, list(
+  data.frame(rank=1, title="Putin out as President of Russia by December 31, 2026?", probability=0.1150, score=1.0000, reason="Recent movement or instability is doing meaningful work in the score.", category="politics"),
+  data.frame(rank=2, title="Will the Dallas Stars win the 2026 NHL Stanley Cup?", probability=0.0555, score=0.5626, reason="Extreme pricing is being carried with relatively weak support.", category="sports"),
+  data.frame(rank=3, title="Will the Tampa Bay Lightning win the 2026 NHL Stanley Cup?", probability=0.0915, score=0.5505, reason="Extreme pricing is being carried with relatively weak support.", category="sports"),
+  data.frame(rank=4, title="Will the Buffalo Sabres win the 2026 NHL Stanley Cup?", probability=0.0755, score=0.5417, reason="Extreme pricing is being carried with relatively weak support.", category="sports"),
+  data.frame(rank=5, title="Will Harvey Weinstein be sentenced to less than 5 years in prison?", probability=0.0325, score=0.5159, reason="The source still presents this market as open even though its end date is in the past.", category="general"),
+  data.frame(rank=6, title="Will Harvey Weinstein be sentenced to between 5 and 10 years in prison?", probability=0.0370, score=0.5101, reason="The source still presents this market as open even though its end date is in the past.", category="general"),
+  data.frame(rank=7, title="Will the Edmonton Oilers win the 2026 NHL Stanley Cup?", probability=0.0250, score=0.4996, reason="Extreme pricing is being carried with relatively weak support.", category="sports"),
+  data.frame(rank=8, title="Will Harvey Weinstein be sentenced to more than 30 years in prison?", probability=0.0585, score=0.4990, reason="The source still presents this market as open even though its end date is in the past.", category="general"),
+  data.frame(rank=9, title="Will the Boston Celtics win the 2026 NBA Finals?", probability=0.1435, score=0.4861, reason="Extreme pricing is being carried with relatively weak support.", category="sports"),
+  data.frame(rank=10, title="Will Kamala Harris win the 2028 Democratic presidential nomination?", probability=0.0795, score=0.4844, reason="Extreme pricing is being carried with relatively weak support.", category="politics")
+))
+top_markets$probability <- paste0(round(top_markets$probability * 100, 1), "%")
+top_markets$score <- round(top_markets$score, 3)
+knitr::kable(top_markets, col.names = c("Rank", "Market", "Probability", "Radar score", "Why flagged", "Category"))
+```
+
+## What the agent should explain
+
+When publishing the report, use this customization prompt:
+
+> Create a concise, judge-facing report for a hackathon submission. Focus on why this project is more than a dashboard: it uses a Zerve notebook pipeline to ingest prediction-market data, compute explainable fragility signals, and ship an interactive app. Highlight the locked Putin drilldown, the honest scope limits, and three useful follow-up questions a reviewer can ask the report agent.
+
+## Suggested report-agent questions for the demo
+
+Ask these after publishing the report:
+
+1. **Why is the Putin market ranked first right now?**
+2. **Which top-ranked market looks most like a false positive, and why?**
+3. **What evidence would you want before acting on one of these flags?**
+
+These questions reinforce the product's core promise: it is an explainable triage assistant, not a black-box trading oracle.
+
+## Honest scope note
+
+This is a Polymarket-first MVP. The score is designed to prioritize human review, not prove mispricing. A stronger production version would add more sources, richer liquidity history, calibration benchmarks, and alert monitoring.
