@@ -14,7 +14,7 @@ Use it before recording, presenting, or submitting so the project is checked int
 - submission deck: previous Google Slides deck was trashed, and a fresh 9-slide HTML deck rebuilt with the updated `slides-generator` skill now exists locally and in Google Drive
 - office-layer speaker notes doc: presenter notes remain aligned to the safe local default and the rebuilt deck includes hidden per-slide notes
 - final submission form paste/check: pending the final form-fill pass
-- Agentic Report source: prepared, but not yet verified as a published Zerve report
+- Agentic Report: generated and verified in the authenticated Zerve report view; public API readback succeeds, but unauthenticated browser rendering still shows Zerve login/build
 
 ## Demo checks
 
@@ -78,9 +78,12 @@ Use it before recording, presenting, or submitting so the project is checked int
 ## Agentic Report checks
 
 - [x] source R Markdown report exists: `zerve/reports/agentic-market-mispricing-report.Rmd`
-- [x] publish instructions and safe/unsafe wording are documented in `docs/agentic-report-upgrade.md`
-- [ ] if used in the final video/submission, publish from a Zerve R Markdown block and verify the report opens cleanly
-- [ ] only describe the report as live/shareable after that verification
+- [x] R Markdown block was inserted into the authenticated Zerve notebook
+- [x] Zerve-native Agentic Report generated from notebook outputs: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`
+- [x] API readback reports `status: completed`, `answerable: confirmed`, `components: 14`, `is_public: true`
+- [x] authenticated browser render check opens the report, shows the title/content, and exposes report AI affordance
+- [ ] unauthenticated browser route still needs improvement before using the report URL as a judge-facing public link; current route shows Zerve login/build despite public API readback
+- [x] safe/caveated wording is documented in `docs/agentic-report-upgrade.md`
 
 ## Submission-form checks
 
@@ -192,7 +195,7 @@ What is already verified or present:
 - presenter-notes doc exists and was read back successfully before the current `gws invalid_grant` blocker
 - final submission-copy doc exists and was read back successfully before the current `gws invalid_grant` blocker
 - demo-link reference doc exists and was read back successfully before the current `gws invalid_grant` blocker
-- Agentic Report source exists for optional Zerve-native report publishing
+- Agentic Report exists as an optional Zerve-native report with authenticated render evidence
 - short submission variants exist
 - video recording run sheet exists
 - video voiceover script exists

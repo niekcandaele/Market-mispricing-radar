@@ -16,7 +16,7 @@ Current project-level sharp blocker:
 - the next action is the human-approved public post itself; rerun `python3 scripts/check_zerve_public_share.py` only as a final link sanity check
 - only treat the link as ready when that checker reports `summary.ready_for_share_post_link: true`
 - evidence:
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 
 Relevant demo-path note:
 - the live Zerve preview path is now understood concretely: a fresh bearer-auth trigger can emit a new host that resolves immediately, serves a short warm-up `503` window, then turns into the real app

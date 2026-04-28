@@ -30,7 +30,7 @@ Current deck handoff:
 
 Current public link:
 - verified public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- latest route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 - `python3 scripts/check_zerve_public_share.py` now reports `summary.ready_for_share_post_link: true`
 
 Immediate human actions:
@@ -76,8 +76,9 @@ Prototype harness:
 - `python3 scripts/polymarket_ranker.py`
 - `python3 scripts/render_local_demo.py`
 
-Zerve Agentic Reports source:
-- `zerve/reports/agentic-market-mispricing-report.Rmd` (paste into a Zerve R Markdown block, run, then publish report if time allows)
+Zerve Agentic Report:
+- source: `zerve/reports/agentic-market-mispricing-report.Rmd`
+- optional report: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56` (authenticated render verified; public API readback succeeds, but unauthenticated browser route still shows Zerve login/build)
 
 Zerve snippet mirror:
 - `python3 zerve/snippets/polymarket_ingestion_block.py`

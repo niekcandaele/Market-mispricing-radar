@@ -14,7 +14,7 @@ Current state:
 - Google Workspace refresh/readback is currently blocked by `gws invalid_grant`; rerun `gws auth login` before refreshing the live Docs layer
 - the submission deck is the rebuilt slides-generator HTML/PDF/ZIP package rather than the old Google Slides deck
 - the locked safe local default was reverified on 2026-04-28 through the one-command safe-local sweep, with the current retained baseline at `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`), and remains the demo path unless a fresh live preview opens cleanly enough to justify switching at the final moment
-- the prepared Agentic Report source is optional; the latest Zerve check was View-only/public, so publishing needs an edit-capable Zerve session and clean open verification before it can be called live
+- the optional Zerve Agentic Report is now generated and verified in the authenticated report view; the API reports `completed`, `answerable: confirmed`, and `is_public: true`, but unauthenticated browser rendering still lands on Zerve login/build, so keep the public notebook URL as the main judge/share link
 - the live Zerve preview now has a concrete behavior model: a fresh host can resolve immediately, warm through a brief ELB `503` window, then turn healthy
 
 This runbook is ready to use for the submission-day steps now, with Workspace refresh, live preview, and optional Agentic Report publishing treated as separate final decisions.
@@ -91,17 +91,17 @@ References:
 - `docs/video-voiceover-script.md`
 - `docs/video-recording-run-sheet.md`
 
-### 5. Optional: publish the Agentic Report only if edit access is available
+### 5. Optional: use the verified Agentic Report
 
 Why optional:
 - it is a Zerve-native wow-factor, but the core submission should not depend on it
-- the latest check opened the notebook as View-only/public, which is not enough to publish reports
+- the report is verified in the authenticated Zerve report view, while the unauthenticated browser route still shows Zerve login/build
 
 Do:
-- if an edit-capable Zerve session is available, paste `zerve/reports/agentic-market-mispricing-report.Rmd` into an R Markdown block
-- run the block, publish the report, then open the resulting report to verify it renders cleanly
-- only mention the report as live/shareable after that verification
-- if edit access is not available quickly, skip this step and keep the locked safe local default/deck/video path
+- if time allows, open `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56` in the authenticated Zerve session
+- use it as a short optional proof that the notebook outputs can become an agentic report
+- keep the required public/share project link as the verified notebook URL unless a final unauthenticated report-browser check renders the report
+- do not block recording or form submission on this optional report beat
 
 Reference:
 - `docs/agentic-report-upgrade.md`
@@ -170,7 +170,7 @@ Why last:
 Do:
 - verify the final chosen demo path opens
 - verify the final deck and presenter notes open if Workspace auth was repaired; otherwise rely on the local deck/run-sheet packet and keep the Workspace blocker explicit
-- verify the optional Agentic Report only if it was published from an edit-capable Zerve session
+- verify the optional Agentic Report only if using it in the final take; authenticated render evidence exists, but the unauthenticated browser caveat remains
 - verify the video link or upload is correct
 - verify the submission form text matches the real MVP scope
 - verify no stale preview URL or placeholder artifact slipped in

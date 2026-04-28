@@ -43,13 +43,30 @@ Ask these in the final video only if the report is published and opens cleanly:
 
 ## Current publish status
 
-Latest browser/API check opened the public notebook in **View only** mode with `permission: public`. That is enough to verify the notebook route, but not enough to add an R Markdown block or click **publish report**. Publishing the report needs an edit-capable Zerve session.
+A Zerve-native Agentic Report has now been generated and verified from the authenticated report route.
+
+- report URL: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`
+- report status from API: `completed`
+- answerable status from API: `confirmed`
+- component count: `14`
+- public toggle: enabled; unauthenticated API readback returns `is_public: true`
+- authenticated browser verification: route loads, report title/content render, and report AI affordance is visible
+- unauthenticated browser caveat: the Zerve web route currently shows Zerve's login/build landing rather than the rendered report, even though the unauthenticated API readback succeeds
+
+Evidence:
+- public toggle/readback: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-public-toggle-20260428T1631Z.json`
+- unauthenticated API/browser check: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-public-20260428T1632Z.json`
+- authenticated render check: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-auth-20260428T1633Z.json`
+
+Important implementation note: the prepared R Markdown block was inserted into the notebook, but Zerve's R Markdown runner failed to produce usable block output in this environment. The verified live report was created through Zerve's native **Generate automatic report** flow from notebook outputs.
 
 ## Submission posture
 
-Do **not** overclaim this as part of the final submission until it is actually published and opened in Zerve. Current wording should be:
+Safe wording now:
 
-- safe: "An Agentic Report source is prepared and can be published from an R Markdown block."
-- unsafe until verified: "The final public report is live and shareable."
+- "A Zerve-native Agentic Report was generated from the notebook outputs and opens cleanly in the authenticated Zerve report view."
+- "The report API is public, but the unauthenticated browser route still lands on Zerve's login/build screen, so do not rely on the report URL as the main judge-facing public link unless a final unauthenticated browser check improves."
 
-If the report is published before recording, use it as a short wow-factor beat after the app drilldown: app shows the operational workflow; report shows Zerve's agentic explanation layer.
+Do **not** replace the verified public notebook link with the report link for the required share post. Keep the public notebook URL as the required public project link.
+
+If used in the recording, use it as a short optional wow-factor beat after the app drilldown: app shows the operational workflow; report shows Zerve's agentic explanation layer.

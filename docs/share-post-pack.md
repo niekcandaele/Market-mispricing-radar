@@ -28,7 +28,7 @@ Default screenshot:
 
 Default link choice:
 - use the verified public Zerve notebook link: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
-- latest retained checker evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- latest retained checker evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 - the checker reports `summary.ready_for_share_post_link: true`
 - do not substitute the gallery/community route unless the submission flow explicitly wants the gallery page instead
 - because the demo recording path remains the locked safe local default, keep the public post about the project itself, not about local-only launch commands
@@ -41,7 +41,7 @@ Current share-post status:
 - reusable recheck helper: `python3 scripts/check_zerve_public_share.py`
 - it can use `--bearer`, `ZERVE_BEARER`, or best-effort Chromium token extraction for the authenticated check, and browser-rendered route verification for the client-side notebook page
 - only treat the link as ready while that checker reports `summary.ready_for_share_post_link: true`
-- latest route evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- latest route evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 - still reverify the exact final link before posting
 
 ## Tagging note

@@ -57,12 +57,12 @@ Why:
 1. Rerun `gws auth login` if Workspace docs need refresh/readback.
 2. Record the final short demo on the locked safe local default.
 3. Fill the submission form from `docs/submission-form-map.md` and publish the required share post only after human platform/copy approval.
-4. Optional: publish/open the prepared Agentic Report in Zerve if there is time to verify it cleanly.
+4. Optional: show the verified Agentic Report in the authenticated Zerve report view; keep the public notebook URL as the required share/submission link.
 
 ## What is still missing
 
 ### Current public-link status
-- verified public Zerve notebook URL is available for the required share post: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained checker reports `summary.ready_for_share_post_link: true`.
+- verified public Zerve notebook URL is still the required share-post link: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`. The latest retained checker reports `summary.ready_for_share_post_link: true`.
 - do not guess that link from notebook ids, preview hosts, or repo notes
 - the public-link blocker is cleared; keep the checker green as a final sanity check, then handle the remaining recording/form/share-post execution
 - the known Zerve privacy seam is the notebook share/privacy control backed by `PATCH /canvas/<canvas_id>` with `is_public`, so this is no longer a vague URL-hunting problem
@@ -70,7 +70,7 @@ Why:
 - the latest retained public-share checker uses browser-rendered route verification and reports `route_verified: true`, `auth_public_confirmed: true`, and `ready_for_share_post_link: true`
 - if the UI path is unavailable, the alternative is a human-confirmed final public link after the project has been made public
 - evidence:
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 
 ### Verified but still optional
 - the Browserless + Playwright path is healthy and can open fresh isolated Chromium sessions
@@ -78,7 +78,7 @@ Why:
 - a fresh authenticated 2026-04-22 recheck confirmed the live preview can recover cleanly: the deploy-preview call returned `200`, emitted new preview metadata, the host resolved immediately, warmed through a brief ELB `503` window, and then rendered the real app
 - conclusion: the live preview is a usable optional upgrade, but the locked safe local default remains the chosen default because it is scripted and presentation-safe
 - Google Workspace artifact creation/readback is currently blocked by `gws invalid_grant`; rerun `gws auth login` before refreshing the office docs with the 2026-04-28 proof
-- Agentic Reports source is prepared in `zerve/reports/agentic-market-mispricing-report.Rmd`, but it should only be described as live after publishing/opening it in Zerve
+- Agentic Report is now generated and verified in the authenticated Zerve report view (`status: completed`, `answerable: confirmed`, `is_public: true` by API); unauthenticated browser rendering still lands on Zerve login/build, so it remains optional and should not replace the verified public notebook link
 
 ### Still required even after blocker resolution
 - only do another Slides polish pass if there is a clearly beneficial, low-risk improvement path

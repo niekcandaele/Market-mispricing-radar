@@ -24,7 +24,7 @@ Right before the real take, run `docs/recording-preflight-checklist.md`, and on 
 - confirm the chosen demo entrypoint actually opens
 - default to the locked safe local default path
 - only switch to the live Zerve preview if it is clearly healthy right before recording
-- treat the Agentic Report as optional: include it only if it has been published from an edit-capable Zerve session and opened cleanly; otherwise skip it without changing the core take
+- treat the Agentic Report as optional: include it only if the authenticated Zerve report view opens cleanly; skip it without changing the core take if time is tight or if a public-browser caveat would distract from the main demo
 - close unrelated tabs and distractions
 - pre-select a strong top-ranked market for the drilldown section, defaulting to `Putin out as President of Russia by December 31, 2026?` on the refreshed locked safe local default path
 - keep the local PDF deck open as a backup story spine: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
@@ -93,10 +93,10 @@ Screen:
 Say:
 The whole workflow runs through a real Zerve notebook-to-app pipeline, so this is a real deployed workflow. It is live analysis turned into a usable product.
 
-Optional if the Agentic Report was published and verified:
-- show the report for a few seconds after the app flow
-- say: The same notebook analysis can also be published as an Agentic Report, so reviewers can ask follow-up questions against the underlying work instead of reading a static write-up.
-- do not include this beat if the report is only prepared in Git and not live in Zerve
+Optional Agentic Report beat:
+- show `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56` for a few seconds in the authenticated Zerve session
+- say: The same notebook analysis can also become an Agentic Report, so reviewers can ask follow-up questions against the underlying work instead of reading a static write-up.
+- do not use the report as the main public project link; the verified public notebook URL remains the share/submission link
 
 ## Fast fallback version, under 60 seconds
 

@@ -94,6 +94,15 @@ The main demo path, office artifacts, and submission materials are in place. The
   - `docs/demo-market-shortlist.md`
   - `docs/video-recording-run-sheet.md`
 
+### Optional Zerve Agentic Report
+- status: generated and verified in the authenticated Zerve report view; optional wow-factor, not the primary public project link
+- report URL: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`
+- API status: `completed`, `answerable: confirmed`, `is_public: true`, `components: 14`
+- authenticated browser evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-auth-20260428T1633Z.json`
+- public/API evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-public-20260428T1632Z.json`
+- public toggle evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-agentic-report-public-toggle-20260428T1631Z.json`
+- caveat: unauthenticated browser route currently shows Zerve's login/build landing, so do not replace the verified public notebook/share URL with the report URL unless a final unauthenticated browser check improves.
+
 ## Final screenshot set used in slides or form
 
 - product hero screenshot: `artifacts/submission/slide-ready/local-radar-view-16x9.png`
@@ -141,8 +150,8 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 
 ## Last verification snapshot
 
-- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share link evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
-- final pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1547Z.json` reports `all_green_before_human_gates: false`; remaining gates are final video recording, Devpost submission, human-approved public share post, and final URL capture
+- retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json` covers the current safe-local proof, deck QA, Drive deck checks, office-doc readbacks, live-preview recovery, repo-reference audit, and public-share link evidence; latest manifest self-check has no missing evidence paths and records the 2026-04-28T16:36Z public gate as share-ready
+- final pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1636Z.json` reports `repo_packet_green_except_workspace_auth: true` and `all_green_before_human_gates: false`; remaining gates are final video recording, Devpost submission, human-approved public share post, Workspace auth refresh if needed, and final URL capture
 - final demo link checked: yes, the safe local path was re-verified on 2026-04-28, and the live preview remains a separately verified optional upgrade
 - demo evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`)
 - screenshot assets checked: yes, the local raw and slide-ready screenshot set was regenerated on 2026-04-24 against bundle `refresh-20260424T120713Z`, the repo-side crops now read cleanly without the earlier top-clipping, and the `Documents/Hackathons/ZerveHack` screenshot copies were refreshed to match
@@ -153,8 +162,8 @@ Remaining unresolved values below are intentional submission-time fields, not pa
 - video link checked: not checked yet; this stays unresolved until a real video file or upload URL exists
 - submission wording checked: yes, Docs API readback confirmed the final submission-copy reference content again after the latest submission-copy refresh
 - repo reference audit checked: yes, `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/repo-reference-audit-20260425T1146Z.json` found no missing real proof/artifact paths; the only misses are intentional branch-name examples in `docs/repo-workflow.md`
-- public project status checked: yes, the latest retained public-share checker confirms authenticated `canvas.is_public: true` and browser-rendered route verification; public URL: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
-- notebook public-route baseline checked: yes, latest retained route-check evidence uses browser-rendered verification and reports `summary.ready_for_share_post_link: true`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+- public project status checked: yes, the latest retained public-share checker confirms authenticated `canvas.is_public: true` and browser-rendered route verification; public URL: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
+- notebook public-route baseline checked: yes, latest retained route-check evidence uses browser-rendered verification and reports `summary.ready_for_share_post_link: true`; evidence: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 - verified on: `2026-04-28`
 - verified by: `Jefke`
 

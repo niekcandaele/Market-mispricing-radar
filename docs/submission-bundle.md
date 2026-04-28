@@ -17,7 +17,7 @@ If someone needs only the shortest operational handoff, use `docs/final-human-ha
 Retained evidence manifest:
 - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`
 - includes repo-reference audit evidence; no missing real proof/artifact paths were found
-- latest manifest self-check has no missing evidence paths and records the 2026-04-26T05:03Z public gate as share-ready
+- latest manifest self-check has no missing evidence paths and records the 2026-04-28T16:36Z public gate as share-ready
 
 ### Demo
 - status: usable, with the locked safe local default reverified on 2026-04-28 through the one-command safe-local sweep, which now writes and rotates the retained proof automatically; current retained baseline: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`)
@@ -46,10 +46,11 @@ Retained evidence manifest:
 - remaining work: paste or adapt it into the actual hackathon submission form
 
 ### Agentic Report
-- status: opportunistic Zerve-native upgrade prepared, not yet verified as a published report
+- status: optional Zerve-native report generated and verified in the authenticated report view
+- report: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`
 - source: `zerve/reports/agentic-market-mispricing-report.Rmd`
-- instructions: `docs/agentic-report-upgrade.md`
-- use only if it can be published from a Zerve R Markdown block and opened cleanly before recording/submission
+- instructions/evidence: `docs/agentic-report-upgrade.md`
+- caveat: public API readback succeeds, but unauthenticated browser rendering still shows Zerve login/build, so keep the verified public notebook URL as the main judge/share link
 
 ### Submission readiness
 - status: not submission-complete yet
@@ -163,7 +164,7 @@ Defaults:
 
 ### Agentic Report upgrade
 - `docs/agentic-report-upgrade.md`
-- best for publishing the prepared R Markdown report if there is time to use Zerve's Agentic Reports feature cleanly
+- best for using the verified Agentic Report as an optional Zerve-native wow-factor, with the public-browser caveat
 
 ### Submission verification checklist
 - `docs/submission-verification-checklist.md`
@@ -196,7 +197,7 @@ Defaults:
 - the remaining practical reason not to switch defaults is operational simplicity, not mystery failure: the locked safe local default is already one-command and fully presentation-safe
 
 ### Not a blocker right now, but still needed before calling the project ready
-- if using Agentic Reports, publish/open the prepared R Markdown report before mentioning it as live
+- if using Agentic Reports, open the verified report in the authenticated Zerve session and keep the public-browser caveat honest
 - after `gws auth login`, refresh/read back the final notes, submission-copy doc, and demo-entry reference in Google Workspace `Documents/Hackathons/ZerveHack`
 - do a final presentation-quality verification pass instead of only a code/demo verification pass
 
@@ -243,6 +244,6 @@ Current sharp blocker:
 - only clear the blocker when the checker reports `summary.ready_for_share_post_link: true`
 - the latest retained route-check evidence uses browser-rendered verification and reports `route_verified: true`, `auth_public_confirmed: true`, and `ready_for_share_post_link: true`
 - evidence:
-  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`
+  - `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`
 
 So this should be treated as **near-ready, but not submission-complete yet**.

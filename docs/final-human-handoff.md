@@ -9,10 +9,10 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 - Current safe-local proof: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/safe-local-demo-20260428T050332Z.json` (`refreshId`: `refresh-20260428T050332Z`).
 - Public Zerve notebook link: verified and share-ready; the remaining public-share task is publishing the required human-approved post.
 - Current blocker: Google Workspace auth is expired/revoked (`gws invalid_grant`), so Workspace docs cannot be refreshed until `gws auth login` is rerun.
-- Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260426T0503Z.json`.
+- Latest public-route gate: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/zerve-public-route-check-20260428T1636Z.json`.
 - Retained evidence manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/submission-evidence-manifest-20260425T1116Z.json`.
-- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1547Z.json` (`all_green_before_human_gates: false`).
-- Agentic Reports upgrade: source prepared in `zerve/reports/agentic-market-mispricing-report.Rmd`; latest browser/API check is View-only/public, so publishing needs an edit-capable Zerve session and should only be used if the report opens cleanly afterward.
+- Latest pre-submit sweep: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/final-pre-submit-sweep-20260428T1636Z.json` (`all_green_before_human_gates: false`).
+- Agentic Reports upgrade: Zerve-native report generated and verified in the authenticated report view: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`. API status is `completed`, `answerable: confirmed`, `is_public: true`; unauthenticated browser route still shows Zerve login/build, so keep the verified public notebook URL as the main judge/share link.
 
 ## Do next
 
@@ -20,12 +20,13 @@ Use this when someone needs to finish the ZerveHack submission without reading t
 2. Fill the submission form from `docs/submission-form-map.md`.
 3. Use the verified public Zerve notebook URL in the submission/share-post materials.
 4. Publish the required public share post only after human platform/copy approval.
-5. Optional: publish the prepared Agentic Report from `docs/agentic-report-upgrade.md` if Zerve is open and the result can be verified quickly.
+5. Optional: show the verified Agentic Report as a short Zerve-native wow-factor beat, but do not use it as the primary public project/share link unless a final unauthenticated browser check renders the report.
 6. Run the final verification pass and update `docs/final-asset-register.md` with real final links.
 
 ## Use these links
 
 - Public Zerve notebook: `https://app.zerve.ai/notebook/1b13702d-5502-47d1-b1e0-6ba476250dc4`
+- Optional Agentic Report: `https://app.zerve.ai/report/4b2bcec4-48d2-4960-b051-cd465aa18a56`
 - Upload deck PDF: `artifacts/submission/market-mispricing-radar-slides-generator-deck.pdf`
 - Optional upload ZIP: `artifacts/submission/market-mispricing-radar-slides-generator-deck.zip`
 - Local upload manifest: `/home/catalysm/.openclaw/workspace/state/hackathons/market-mispricing-radar/local-submission-upload-manifest-20260426T0913Z.json`
